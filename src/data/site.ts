@@ -5,15 +5,15 @@
 export const SITE = {
   name: 'Pinterest Video İndir',
   shortName: 'PinVideoİndir',
-  domain: 'pinterestvideoindir.com',
-  url: 'https://pinterestvideoindir.com',
+  domain: 'pinterestvideoindirme.tr',
+  url: 'https://pinterestvideoindirme.tr',
   lang: 'tr',
   locale: 'tr_TR',
   title: 'Pinterest Video İndir – HD MP4 Video İndirici (Ücretsiz)',
   description:
     'Pinterest videolarını HD kalitede, ücretsiz ve filigransız indirin. ' +
     'Kayıt olmadan, reklamsız ve tek tıkla Pinterest MP4, GIF ve görsel indirme aracı.',
-  email: 'destek@pinterestvideoindir.com',
+  email: 'destek@pinterestvideoindirme.tr',
   author: 'Pinterest Video İndir Ekibi',
   twitter: '@pinvideoindir',
   // Launch/updated dates are used in structured data + footer.

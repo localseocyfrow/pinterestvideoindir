@@ -4,7 +4,7 @@ import cloudflare from '@astrojs/cloudflare';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://pinterestvideoindir.com',
+  site: 'https://pinterestvideoindirme.tr',
   trailingSlash: 'ignore',
   // Pages stay static (prerendered) for SEO. Only /api/* routes opt into
   // on-demand rendering via `export const prerender = false`, so an adapter
