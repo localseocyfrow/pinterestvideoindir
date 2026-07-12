@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 510 100" role="img" aria-label="pinterestvideoindirme Pinterest video indirme aracı logosu">
+  <defs>
+    <linearGradient id="pviLogoIcon" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff1f47"/>
+      <stop offset="1" stop-color="#c8081e"/>
+    </linearGradient>
+  </defs>
+  <!-- Icon -->
+  <g transform="translate(6 10) scale(0.5556)">
+    <path fill="url(#pviLogoIcon)" d="M60 6C88 6 110 27 110 54c0 20-12 36-26 52v28L60 120 36 134v-28C22 90 10 74 10 54 10 27 32 6 60 6Z"/>
+    <circle cx="60" cy="52" r="27" fill="#fff"/>
+    <path fill="#17171d" d="M53 39l24 13-24 13z" stroke="#17171d" stroke-width="4" stroke-linejoin="round"/>
+    <g fill="#fff">
+      <rect x="55" y="86" width="10" height="12" rx="5"/>
+      <path d="M48 96l12 15 12-15z" stroke="#fff" stroke-width="4" stroke-linejoin="round"/>
+    </g>
+  </g>
+  <!-- Wordmark -->
+  <text x="88" y="50" dominant-baseline="central" text-anchor="start"
+    font-family="'Segoe UI Rounded','SF Pro Rounded',Nunito,'Segoe UI',system-ui,Roboto,Arial,sans-serif"
+    font-size="35" font-weight="800" letter-spacing="-0.6">
+    <tspan fill="#14141a">pinterest</tspan><tspan fill="#e60023">video</tspan><tspan fill="#14141a">indirme</tspan>
+  </text>
+</svg>
