@@ -1,0 +1,105 @@
+---
+import ToolPageLayout from '../layouts/ToolPageLayout.astro';
+import ShortAnswerBox from '../components/ShortAnswerBox.astro';
+import RelatedGuides from '../components/RelatedGuides.astro';
+import ToolCta from '../components/ToolCta.astro';
+import { WATERMARK_FAQ } from '../data/faq';
+
+const path = '/pinterest-filigransiz-video-indir/';
+const title = 'Pinterest Filigransız Video İndir – Logosuz, Temiz HD MP4';
+const description =
+  'Pinterest videolarını filigransız indirin: logo, damga veya izleme kodu olmadan temiz HD/4K MP4. Ücretsiz, kayıtsız ve tek tıkla filigransız video indirme.';
+
+const crumbs = [
+  { name: 'Ana Sayfa', href: '/' },
+  { name: 'Filigransız Video İndir', href: path },
+];
+
+const howTo = {
+  name: 'Pinterest videosunu filigransız indirme',
+  description:
+    'Pinterest videosunu filigransız indirmek için bağlantıyı kopyalayın, araca yapıştırın ve indirin.',
+  steps: [
+    { name: 'Bağlantıyı kopyala', text: 'Pinterest’te videoyu açıp “Paylaş → Bağlantıyı kopyala” deyin.' },
+    { name: 'Araca yapıştır', text: 'Bağlantıyı yukarıdaki kutuya yapıştırıp “İndir”e basın.' },
+    { name: 'Filigransız kaydet', text: 'Videoyu kaliteyi seçerek filigransız, temiz MP4 olarak kaydedin.' },
+  ],
+};
+---
+
+<ToolPageLayout
+  title={title}
+  description={description}
+  path={path}
+  eyebrow="Filigransız · Temiz video"
+  h1="Pinterest Filigransız Video İndir"
+  lead="Pinterest videolarını logo, damga veya izleme kodu olmadan indirin. Videolar orijinal kaynağından alınır; temiz, HD ve 4K kalitede kaydedilir."
+  kind="video"
+  placeholder="Pinterest video bağlantısını buraya yapıştırın…"
+  crumbs={crumbs}
+  faq={WATERMARK_FAQ}
+  faqTitle="Filigransız indirme — SSS"
+  howTo={howTo}
+>
+  <ShortAnswerBox question="Pinterest videosu filigransız nasıl indirilir?">
+    <p class="mt-0" style="margin:0">
+      Videonun bağlantısını <strong>kopyalayın</strong>, kutuya
+      <strong>yapıştırın</strong> ve <strong>“İndir”</strong>e basın. Videolar
+      <strong>orijinal kaynaktan</strong> alındığı için üzerine logo veya
+      filigran eklenmez; dosyayı temiz ve HD kalitede kaydedersiniz.
+    </p>
+  </ShortAnswerBox>
+
+  <h2>Filigran nedir, neden önemli?</h2>
+  <p>
+    Filigran (watermark), bazı indirme araçlarının indirilen videoya eklediği
+    logo, yazı veya izleme koddur. Bu damgalar videoyu kalabalık gösterir, izleme
+    deneyimini bozar ve içeriği yeniden düzenlemeyi zorlaştırır. Aracımız videoya
+    <strong>kendi damgasını basmaz</strong>; kaynağı olduğu gibi indirir, böylece
+    elde ettiğiniz dosya temiz kalır.
+  </p>
+
+  <h2>Filigransız nasıl indirilir?</h2>
+  <div class="steps" style="margin:20px 0">
+    <div class="step"><h3>Bağlantıyı kopyala</h3><p>Videoyu Pinterest’te açın, “Paylaş → Bağlantıyı kopyala” deyin.</p></div>
+    <div class="step"><h3>Yapıştır</h3><p>Bağlantıyı bu sayfadaki kutuya yapıştırın.</p></div>
+    <div class="step"><h3>İndir</h3><p>“İndir”e basın; video filigransız, temiz MP4 olarak kaydedilir.</p></div>
+  </div>
+
+  <h2>Neden aracımız filigran eklemez?</h2>
+  <p>
+    Videoyu Pinterest’teki orijinal kaynağından doğrudan alırız; araya bir
+    logo veya izleme kodu yerleştirmeyiz. Bu sayede indirdiğiniz videoda yalnızca
+    içeriğin kendisi bulunur. <strong>Not:</strong> Videoyu üreten kişinin
+    videonun <em>içine</em> yerleştirdiği yazı veya logo içeriğin bir parçasıdır
+    ve teknik olarak kaldırılamaz; biz yalnızca platform kaynaklı filigran
+    olmamasını sağlarız.
+  </p>
+
+  <h2>Öne çıkan özellikler</h2>
+  <ul>
+    <li><strong>Filigransız:</strong> Logo, damga veya izleme kodu yok.</li>
+    <li><strong>HD &amp; 4K:</strong> Kaynaktaki en yüksek kaliteyi koruyarak indirir.</li>
+    <li><strong>MP4:</strong> Tüm cihaz ve oynatıcılarla uyumlu format.</li>
+    <li><strong>Ücretsiz &amp; sınırsız:</strong> Kayıt veya limit olmadan filigransız indirme.</li>
+  </ul>
+
+  <ToolCta
+    slot="after"
+    title="Temiz, filigransız video indirin"
+    text="Bağlantıyı yapıştırın ve videoyu logo olmadan HD kalitede kaydedin."
+    href="/pinterest-video-indir/"
+    label="Pinterest Video İndir"
+  />
+
+  <RelatedGuides
+    slot="after"
+    title="İlgili araçlar ve rehberler"
+    items={[
+      { title: 'Pinterest Video İndir', href: '/pinterest-video-indir/', description: 'HD, Full HD ve 4K MP4 indirme aracı.' },
+      { title: 'Pinterest 4K Video İndir', href: '/pinterest-4k-video-indir/', description: 'Videoları en yüksek çözünürlükte kaydedin.' },
+      { title: 'Video Nasıl İndirilir', href: '/pinterest-video-nasil-indirilir/', description: 'Adım adım Pinterest video indirme rehberi.' },
+      { title: 'Video İndir Galeriye', href: '/pinterest-video-galeriye-indir/', description: 'Videoyu doğrudan telefon galerinize kaydedin.' },
+    ]}
+  />
+</ToolPageLayout>

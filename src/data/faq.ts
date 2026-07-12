@@ -216,6 +216,54 @@ export const PIN_FAQ: QA[] = [
   },
 ];
 
+// "How to download" cluster — /pinterest-video-nasil-indirilir/.
+export const HOWTO_FAQ: QA[] = [
+  {
+    q: 'Pinterest videosu nasıl indirilir?',
+    a: 'Videoyu Pinterest’te açın, “Paylaş → Bağlantıyı kopyala” deyin. Kopyaladığınız bağlantıyı aracımızdaki kutuya yapıştırıp “İndir”e basın; ardından kaliteyi seçerek videoyu MP4 olarak kaydedin.',
+  },
+  {
+    q: 'Telefondan Pinterest videosu nasıl indirilir?',
+    a: 'Android’de Pinterest uygulamasında “Paylaş → Bağlantıyı kopyala” deyin, bağlantıyı tarayıcıdaki aracımıza yapıştırıp indirin; video galeriye kaydedilir. iPhone’da video önce Dosyalar’a iner, oradan “Videoyu Kaydet” ile Fotoğraflar’a eklenir.',
+  },
+  {
+    q: 'Bilgisayardan Pinterest videosu nasıl indirilir?',
+    a: 'Pinterest’te videonun altındaki “Paylaş” düğmesinden bağlantıyı kopyalayın (veya tarayıcının adres çubuğundaki URL’yi alın), aracımıza yapıştırın ve “İndir”e basın. Video, İndirilenler klasörüne MP4 olarak kaydedilir.',
+  },
+  {
+    q: 'Pinterest uygulamasında neden “videoyu indir” seçeneği yok?',
+    a: 'Pinterest uygulaması videoları yalnızca uygulama içinde kaydeder; cihaza indirme seçeneği sunmaz. Videoyu gerçekten indirmek için bağlantısını kopyalayıp aracımız gibi bir indirici kullanmanız gerekir.',
+  },
+  {
+    q: 'Bağlantıyı kopyalayamıyorum, ne yapmalıyım?',
+    a: 'Videoyu tarayıcıda açıp adres çubuğundaki URL’yi kopyalayabilir ya da pinin “...” menüsündeki “Bağlantıyı kopyala” seçeneğini kullanabilirsiniz. Bağlantı pin.it veya pinterest.com ile başlıyorsa araçla çalışır.',
+  },
+];
+
+// Watermark-free cluster — /pinterest-filigransiz-video-indir/.
+export const WATERMARK_FAQ: QA[] = [
+  {
+    q: 'Pinterest videosunu filigransız nasıl indirebilirim?',
+    a: 'Bağlantıyı aracımıza yapıştırıp indirmeniz yeterli. Videolar orijinal kaynağından alındığı için üzerine logo veya filigran eklenmez; dosyayı temiz ve HD kalitede kaydedersiniz.',
+  },
+  {
+    q: 'İndirilen videoda Pinterest logosu veya filigran olur mu?',
+    a: 'Hayır. Aracımız videoya kendi damgasını basmaz ve kaynağı olduğu gibi indirir. Bu nedenle indirdiğiniz videoda filigran, logo veya izleme kodu bulunmaz.',
+  },
+  {
+    q: 'Filigransız indirmek ücretsiz mi?',
+    a: 'Evet. Filigransız indirme ek bir ücret gerektirmez; tüm videolar ücretsiz, sınırsız ve filigransız olarak kaydedilir.',
+  },
+  {
+    q: 'Videoda içerik üreticisinin kendi eklediği yazı/logo varsa kaldırılır mı?',
+    a: 'Hayır. Yalnızca platform kaynaklı filigran olmaması sağlanır. İçeriği üreten kişinin videonun içine yerleştirdiği metin veya logo videonun bir parçasıdır ve kaldırılmaz.',
+  },
+  {
+    q: 'Filigransız video indirmek yasal mı?',
+    a: 'Kişisel kullanım ve çevrimdışı izleme için indirmek genellikle uygundur. Videoyu yeniden yayınlar veya ticari olarak kullanırsanız içerik sahibinin telif haklarına saygı göstermelisiniz.',
+  },
+];
+
 // Consumed by the dedicated /sss/ page.
 export const ALL_FAQ_GROUPS: FaqGroup[] = [
   { title: 'Genel & Video İndirme', items: HOME_FAQ },
