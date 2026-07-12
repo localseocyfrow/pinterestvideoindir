@@ -166,6 +166,14 @@ img { max-width: 100%; display: block; }
   font-weight: 900;
   box-shadow: 0 6px 16px -6px rgba(230, 0, 35, 0.7);
 }
+/* Header logo (SVG wordmark on desktop, icon-only on small screens) */
+.brand-logo { display: block; height: 34px; width: auto; }
+.brand-logo--full { max-width: 68vw; }
+.brand-logo--icon { display: none; height: 34px; width: 34px; }
+@media (max-width: 520px) {
+  .brand-logo--full { display: none; }
+  .brand-logo--icon { display: block; }
+}
 .nav {
   display: flex;
   align-items: center;

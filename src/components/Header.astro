@@ -6,8 +6,20 @@ const current = Astro.url.pathname.replace(/\/$/, '') || '/';
 <header class="site-header">
   <div class="container header-inner">
     <a class="brand" href="/" aria-label={`${SITE.name} ana sayfa`}>
-      <span class="brand-mark" aria-hidden="true">P</span>
-      <span>{SITE.name}</span>
+      <img
+        class="brand-logo brand-logo--full"
+        src="/logo.svg"
+        width="170"
+        height="32"
+        alt="pinterestvideoindirme Pinterest video indirme aracı logosu"
+      />
+      <img
+        class="brand-logo brand-logo--icon"
+        src="/logo-icon.svg"
+        width="34"
+        height="34"
+        alt="pinterestvideoindirme Pinterest video indirme aracı logosu"
+      />
     </a>
 
     <!-- CSS-only mobile toggle -->
