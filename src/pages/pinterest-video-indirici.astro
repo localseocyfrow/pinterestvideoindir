@@ -1,0 +1,109 @@
+---
+import ToolPageLayout from '../layouts/ToolPageLayout.astro';
+import ShortAnswerBox from '../components/ShortAnswerBox.astro';
+import RelatedGuides from '../components/RelatedGuides.astro';
+import ToolCta from '../components/ToolCta.astro';
+import { DOWNLOADER_FAQ } from '../data/faq';
+
+const path = '/pinterest-video-indirici/';
+const title = 'Pinterest Video İndirici – Online, Ücretsiz HD/4K MP4 Aracı';
+const description =
+  'Pinterest video indirici: bağlantıyı yapıştırın, videoyu HD, Full HD veya 4K kalitede filigransız MP4 olarak indirin. Kurulum yok, kayıt yok, tamamen ücretsiz.';
+
+const crumbs = [
+  { name: 'Ana Sayfa', href: '/' },
+  { name: 'Video İndirici', href: path },
+];
+
+const howTo = {
+  name: 'Pinterest video indirici kullanımı',
+  description:
+    'Pinterest video indiriciyi kullanmak için bağlantıyı kopyalayın, araca yapıştırın ve videoyu indirin.',
+  steps: [
+    { name: 'Bağlantıyı kopyala', text: 'Pinterest’te videoyu açıp “Paylaş → Bağlantıyı kopyala” deyin.' },
+    { name: 'Araca yapıştır', text: 'Bağlantıyı yukarıdaki kutuya yapıştırıp “İndir”e basın.' },
+    { name: 'Kaliteyi seç & indir', text: 'HD, Full HD veya 4K seçeneğini seçip MP4 olarak kaydedin.' },
+  ],
+};
+---
+
+<ToolPageLayout
+  title={title}
+  description={description}
+  path={path}
+  eyebrow="Online araç · Ücretsiz"
+  h1="Pinterest Video İndirici"
+  lead="Bağlantıyı yapıştırın, Pinterest videolarını HD, Full HD ve 4K kalitede filigransız MP4 olarak indirin. Kurulum ve kayıt gerektirmeyen çevrimiçi indirici."
+  kind="video"
+  placeholder="Pinterest video bağlantısını buraya yapıştırın…"
+  crumbs={crumbs}
+  faq={DOWNLOADER_FAQ}
+  faqTitle="Pinterest video indirici — SSS"
+  howTo={howTo}
+>
+  <ShortAnswerBox question="Pinterest video indirici nedir ve nasıl kullanılır?">
+    <p class="mt-0" style="margin:0">
+      Pinterest video indirici, bir pinin <strong>bağlantısını
+      yapıştırdığınızda</strong> videoyu <strong>MP4</strong> olarak cihazınıza
+      kaydeden çevrimiçi bir araçtır. Bağlantıyı kutuya yapıştırın,
+      <strong>“İndir”</strong>e basın ve HD, Full HD veya 4K kaliteyi seçin.
+      Uygulama, eklenti veya üyelik gerekmez.
+    </p>
+  </ShortAnswerBox>
+
+  <h2>Pinterest video indirici nasıl çalışır?</h2>
+  <div class="steps" style="margin:20px 0">
+    <div class="step"><h3>Bağlantıyı kopyala</h3><p>Videoyu Pinterest’te açın, “Paylaş” simgesine dokunup “Bağlantıyı kopyala” deyin.</p></div>
+    <div class="step"><h3>Yapıştır</h3><p>Bağlantıyı bu sayfadaki indirici kutusuna yapıştırın.</p></div>
+    <div class="step"><h3>Kaliteyi seç &amp; indir</h3><p>“İndir”e basın, çözünürlüğü seçin ve videoyu MP4 olarak kaydedin.</p></div>
+  </div>
+
+  <h2>Neden çevrimiçi (online) indirici?</h2>
+  <p>
+    Çevrimiçi indirici, telefonunuza veya bilgisayarınıza herhangi bir program
+    yüklemeden çalışır. Uygulama tabanlı indiricilerin aksine depolama alanı
+    kaplamaz, güncelleme istemez ve tek bir işletim sistemine bağlı değildir.
+    Aynı bağlantıyı <strong>Android, iPhone (iOS), tablet ve PC</strong>
+    üzerinde aynı şekilde kullanırsınız; tarayıcınız neyse indirici de orada
+    çalışır. Tarayıcı eklentilerinden farklı olarak ek izin veya erişim talep
+    etmez.
+  </p>
+
+  <h2>İndirici özellikleri</h2>
+  <ul>
+    <li><strong>HD, Full HD &amp; 4K:</strong> Kaynakta mevcut olan en yüksek kaliteyi indirir.</li>
+    <li><strong>MP4 çıktısı:</strong> Tüm cihaz ve oynatıcılarla uyumlu evrensel format.</li>
+    <li><strong>Filigransız:</strong> Video orijinal kaynaktan alınır, logo içermez.</li>
+    <li><strong>Kurulumsuz:</strong> Uygulama, eklenti veya kayıt olmadan tarayıcıdan çalışır.</li>
+    <li><strong>Ücretsiz &amp; sınırsız:</strong> Günlük limit veya gizli ücret yoktur.</li>
+  </ul>
+
+  <h2>Hangi cihazlarda çalışır?</h2>
+  <p>
+    İndirici; Android telefon ve tabletlerde, iPhone ve iPad’de (iOS), Windows
+    ve macOS bilgisayarlarda çalışır. Videoyu telefonunuzun galerisine kaydetmek
+    için <a href="/pinterest-video-galeriye-indir/">galeriye indirme
+    rehberimize</a>, en yüksek çözünürlük için
+    <a href="/pinterest-4k-video-indir/">4K video indirme</a> sayfamıza
+    bakabilirsiniz.
+  </p>
+
+  <ToolCta
+    slot="after"
+    title="Pinterest videosunu şimdi indirin"
+    text="Bağlantıyı yapıştırın, kaliteyi seçin ve videoyu saniyeler içinde MP4 olarak kaydedin."
+    href="/pinterest-video-indir/"
+    label="Pinterest Video İndir"
+  />
+
+  <RelatedGuides
+    slot="after"
+    title="İlgili araçlar ve rehberler"
+    items={[
+      { title: 'Pinterest Video İndir', href: '/pinterest-video-indir/', description: 'Tüm cihazlarda HD, Full HD ve 4K MP4 indirme.' },
+      { title: 'Pinterest 4K Video İndir', href: '/pinterest-4k-video-indir/', description: 'Videoları en yüksek çözünürlükte kaydedin.' },
+      { title: 'Video İndir Galeriye', href: '/pinterest-video-galeriye-indir/', description: 'Videoyu doğrudan telefon galerinize kaydedin.' },
+      { title: 'Pinterest Pin İndir', href: '/pinterest-pin-indir/', description: 'Video, görsel ve GIF — her türlü pini indirin.' },
+    ]}
+  />
+</ToolPageLayout>

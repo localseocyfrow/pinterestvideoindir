@@ -144,6 +144,78 @@ export const VIDEO_4K_FAQ: QA[] = [
   },
 ];
 
+// "Video indirici" (downloader tool) cluster — /pinterest-video-indirici/.
+export const DOWNLOADER_FAQ: QA[] = [
+  {
+    q: 'Pinterest video indirici nedir?',
+    a: 'Pinterest video indirici, bir pinin bağlantısını yapıştırdığınızda videoyu MP4 olarak cihazınıza kaydetmenizi sağlayan çevrimiçi bir araçtır. Tarayıcı üzerinden çalışır; ayrı bir uygulama veya eklenti kurmanız gerekmez.',
+  },
+  {
+    q: 'İndiriciyi kullanmak için uygulama kurmam gerekir mi?',
+    a: 'Hayır. Araç tamamen tarayıcı tabanlıdır. Android, iPhone, tablet veya bilgisayarınızdaki tarayıcıdan açıp bağlantıyı yapıştırmanız yeterlidir; kurulum, kayıt ve giriş gerekmez.',
+  },
+  {
+    q: 'Pinterest video indirici HD ve 4K destekliyor mu?',
+    a: 'Evet. İndirici, kaynak videoda mevcut olan en yüksek kaliteyi (HD 720p, Full HD 1080p ve mümkünse 4K) seçenek olarak sunar ve videoyu filigransız indirir.',
+  },
+  {
+    q: 'Online indirici ile tarayıcı eklentisi arasındaki fark nedir?',
+    a: 'Online indirici herhangi bir eklenti gerektirmez, her cihazda ve her tarayıcıda aynı şekilde çalışır ve güncelleme gerektirmez. Eklentiler ise yalnızca belirli masaüstü tarayıcılarında çalışır ve ek izin ister.',
+  },
+  {
+    q: 'İndirici güvenli mi?',
+    a: 'Evet. Yapıştırdığınız bağlantı yalnızca indirme işlemi için kullanılır ve saklanmaz; videolar sunucularımızda kalıcı olarak tutulmaz. Kişisel bilgi veya giriş istemez.',
+  },
+];
+
+// Free / ücretsiz cluster — /pinterest-video-indir-ucretsiz/.
+export const FREE_FAQ: QA[] = [
+  {
+    q: 'Pinterest video indirmek gerçekten ücretsiz mi?',
+    a: 'Evet, tamamen ücretsizdir. Video indirmek için ödeme, abonelik veya kredi kartı bilgisi gerekmez. İstediğiniz kadar video indirebilirsiniz.',
+  },
+  {
+    q: 'Günlük indirme sınırı var mı?',
+    a: 'Hayır. Günlük veya aylık bir indirme limiti yoktur; sınırsız sayıda Pinterest videosu indirebilirsiniz.',
+  },
+  {
+    q: 'Ücretsiz sürümde filigran veya kalite kısıtlaması oluyor mu?',
+    a: 'Hayır. Ücretsiz olmasına rağmen videolar filigransız ve kaynaktaki en yüksek kalitede (HD, Full HD, 4K) indirilir. “Premium” için saklanan gizli bir özellik yoktur.',
+  },
+  {
+    q: 'Kayıt olmam veya hesap açmam gerekir mi?',
+    a: 'Hayır. Üyelik, e-posta veya giriş gerektirmez. Bağlantıyı yapıştırıp doğrudan indirebilirsiniz.',
+  },
+  {
+    q: 'Gizli ücret veya sonradan çıkan abonelik var mı?',
+    a: 'Hayır. Hiçbir aşamada ücret talep edilmez; deneme süresi veya otomatik yenilenen abonelik yoktur. Araç kalıcı olarak ücretsizdir.',
+  },
+];
+
+// Generic "pin" cluster (any media type) — /pinterest-pin-indir/.
+export const PIN_FAQ: QA[] = [
+  {
+    q: 'Pinterest pini nasıl indirilir?',
+    a: 'Pinin bağlantısını kopyalayın, aracımıza yapıştırın ve “İndir”e basın. Araç, pindeki içeriği (video, görsel veya GIF) algılar ve uygun formatta filigransız indirmenizi sağlar.',
+  },
+  {
+    q: 'Her tür pini indirebilir miyim?',
+    a: 'Evet. Video pinleri MP4, görsel pinleri tam çözünürlüklü resim, hareketli pinler GIF/MP4 ve karusel pinleri içindeki tüm medya olarak indirilebilir.',
+  },
+  {
+    q: 'Pin içinde birden fazla görsel varsa ne olur?',
+    a: 'Karusel (çoklu) pinlerde araç pindeki tüm görselleri ve videoları listeler; istediğinizi tek tek veya tümünü indirebilirsiniz.',
+  },
+  {
+    q: 'Pin bağlantısını nereden alırım?',
+    a: 'Pini açın, “Paylaş” simgesine dokunun ve “Bağlantıyı kopyala” deyin. Kopyaladığınız bağlantıyı aracımızın kutusuna yapıştırmanız yeterlidir.',
+  },
+  {
+    q: 'Pin indirmek ücretsiz mi?',
+    a: 'Evet. Pin türü ne olursa olsun indirme tamamen ücretsiz ve sınırsızdır; kayıt gerektirmez.',
+  },
+];
+
 // Consumed by the dedicated /sss/ page.
 export const ALL_FAQ_GROUPS: FaqGroup[] = [
   { title: 'Genel & Video İndirme', items: HOME_FAQ },

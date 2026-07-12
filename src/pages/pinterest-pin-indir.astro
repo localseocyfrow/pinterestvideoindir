@@ -1,0 +1,102 @@
+---
+import ToolPageLayout from '../layouts/ToolPageLayout.astro';
+import ShortAnswerBox from '../components/ShortAnswerBox.astro';
+import RelatedGuides from '../components/RelatedGuides.astro';
+import ToolCta from '../components/ToolCta.astro';
+import { PIN_FAQ } from '../data/faq';
+
+const path = '/pinterest-pin-indir/';
+const title = 'Pinterest Pin İndir – Video, Görsel & GIF Pin İndirme Aracı';
+const description =
+  'Pinterest pinlerini indirin: video, görsel, GIF ve karusel pinlerini tek araçla, filigransız ve ücretsiz kaydedin. Bağlantıyı yapıştırın, pini indirin.';
+
+const crumbs = [
+  { name: 'Ana Sayfa', href: '/' },
+  { name: 'Pin İndir', href: path },
+];
+
+const howTo = {
+  name: 'Pinterest pini indirme',
+  description:
+    'Pinterest pinini indirmek için pinin bağlantısını kopyalayın, araca yapıştırın ve indirin.',
+  steps: [
+    { name: 'Pin bağlantısını kopyala', text: 'Pini açıp “Paylaş → Bağlantıyı kopyala” deyin.' },
+    { name: 'Araca yapıştır', text: 'Bağlantıyı yukarıdaki kutuya yapıştırıp “İndir”e basın.' },
+    { name: 'İndir', text: 'Araç pin türünü algılar; içeriği filigransız olarak kaydedin.' },
+  ],
+};
+---
+
+<ToolPageLayout
+  title={title}
+  description={description}
+  path={path}
+  eyebrow="Tüm pinler · Video, görsel, GIF"
+  h1="Pinterest Pin İndir"
+  lead="Her türlü Pinterest pinini tek araçla indirin: video, görsel, GIF ve karusel pinleri filigransız ve ücretsiz kaydedin."
+  kind="video"
+  placeholder="Pinterest pin bağlantısını buraya yapıştırın…"
+  crumbs={crumbs}
+  faq={PIN_FAQ}
+  faqTitle="Pin indirme — SSS"
+  howTo={howTo}
+>
+  <ShortAnswerBox question="Pinterest pini nasıl indirilir?">
+    <p class="mt-0" style="margin:0">
+      Pinin bağlantısını <strong>kopyalayın</strong>, kutuya
+      <strong>yapıştırın</strong> ve <strong>“İndir”</strong>e basın. Araç,
+      pindeki içeriğin <strong>video, görsel veya GIF</strong> olduğunu algılar
+      ve uygun formatta, filigransız indirmenizi sağlar.
+    </p>
+  </ShortAnswerBox>
+
+  <h2>Pin nedir? Pin türleri</h2>
+  <p>
+    Pinterest’te her içerik bir “pin”dir. Pinler farklı medya türlerinde olabilir
+    ve her biri farklı formatta indirilir:
+  </p>
+  <ul>
+    <li><strong>Video pin:</strong> MP4 olarak, HD/4K kalitede indirilir.</li>
+    <li><strong>Görsel (fotoğraf) pin:</strong> Tam çözünürlüklü resim olarak indirilir.</li>
+    <li><strong>Hareketli pin / GIF:</strong> GIF veya MP4 olarak kaydedilir.</li>
+    <li><strong>Karusel pin:</strong> Birden fazla görsel/video içerir; tümü tek tek indirilebilir.</li>
+  </ul>
+
+  <h2>Pin nasıl indirilir?</h2>
+  <div class="steps" style="margin:20px 0">
+    <div class="step"><h3>Bağlantıyı kopyala</h3><p>Pini açın, “Paylaş” simgesine dokunup “Bağlantıyı kopyala” deyin.</p></div>
+    <div class="step"><h3>Yapıştır</h3><p>Bağlantıyı bu sayfadaki kutuya yapıştırın.</p></div>
+    <div class="step"><h3>İndir</h3><p>“İndir”e basın; araç pin türünü algılar ve içeriği kaydedin.</p></div>
+  </div>
+
+  <h2>Pin türüne göre özel araçlar</h2>
+  <p>
+    Yalnızca belirli bir pin türünü indirecekseniz, o türe özel araçlarımız daha
+    ayrıntılı seçenekler sunar:
+  </p>
+  <ul>
+    <li><a href="/pinterest-video-indir/">Pinterest Video İndir</a> — video pinleri için HD/4K MP4.</li>
+    <li><a href="/pinterest-resim-indir/">Pinterest Fotoğraf &amp; Resim İndir</a> — görsel pinleri tam çözünürlükte.</li>
+    <li><a href="/pinterest-gif-indir/">Pinterest GIF İndir</a> — hareketli pinler için GIF/MP4.</li>
+    <li><a href="/pinterest-karusel-indir/">Pinterest Karusel İndir</a> — çoklu görselli pinler.</li>
+  </ul>
+
+  <ToolCta
+    slot="after"
+    title="Pini şimdi indirin"
+    text="Bağlantıyı yapıştırın; video, görsel veya GIF — pin ne olursa olsun filigransız kaydedin."
+    href="/pinterest-video-indir/"
+    label="Aracı aç"
+  />
+
+  <RelatedGuides
+    slot="after"
+    title="İlgili araçlar ve rehberler"
+    items={[
+      { title: 'Pinterest Video İndir', href: '/pinterest-video-indir/', description: 'Video pinleri HD, Full HD ve 4K MP4 olarak.' },
+      { title: 'Pinterest Resim & Fotoğraf İndir', href: '/pinterest-resim-indir/', description: 'Görsel pinleri tam çözünürlükte indirin.' },
+      { title: 'Pinterest GIF İndir', href: '/pinterest-gif-indir/', description: 'Hareketli pinleri GIF/MP4 olarak kaydedin.' },
+      { title: 'Pinterest Karusel İndir', href: '/pinterest-karusel-indir/', description: 'Çoklu görselli pinlerdeki tüm medyayı indirin.' },
+    ]}
+  />
+</ToolPageLayout>
