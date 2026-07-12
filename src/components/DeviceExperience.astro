@@ -1,0 +1,108 @@
+---
+// Homepage section: Pinterest download experience across every device.
+// Uses local assets from /public/images/devices/. Semantic HTML,
+// lazy-loaded images with explicit width/height.
+const devices = [
+  {
+    img: '/images/devices/phone.svg',
+    name: 'Telefon',
+    text: "Android ve iPhone'da tarayıcıdan doğrudan indirin; uygulama kurmanıza gerek yok.",
+  },
+  {
+    img: '/images/devices/tablet.svg',
+    name: 'Tablet',
+    text: 'iPad ve Android tabletlerde büyük ekranda rahat bir indirme deneyimi.',
+  },
+  {
+    img: '/images/devices/laptop.svg',
+    name: 'Dizüstü Bilgisayar',
+    text: 'Windows ve macOS dizüstü bilgisayarlarında hızlı ve pratik indirme.',
+  },
+  {
+    img: '/images/devices/desktop.svg',
+    name: 'Masaüstü',
+    text: 'Masaüstü bilgisayarlarda içerikleri tam çözünürlükte kaydedin.',
+  },
+  {
+    img: '/images/devices/chromebook.svg',
+    name: 'Chromebook',
+    text: 'ChromeOS üzerinden erişim hedeflenir; Chromebook’ta tarayıcıdan sorunsuz çalışır.',
+  },
+];
+---
+
+<section class="dev section" id="cihazlar" aria-labelledby="dev-title">
+  <div class="container">
+    <header class="dev-head">
+      <span class="eyebrow">Her cihazda</span>
+      <h2 id="dev-title">Her Cihazda Pinterest İçeriği İndirme Deneyimi</h2>
+      <p class="dev-sub">
+        Pinterest video, görsel, GIF ve karusel içeriklerini telefondan
+        bilgisayara kadar tüm cihazlarınızda indirin. Tarayıcı tabanlı
+        çalışır; kurulum gerektirmez.
+      </p>
+    </header>
+
+    <ul class="dev-grid" role="list">
+      {
+        devices.map((d) => (
+          <li>
+            <figure class="dev-card">
+              <img
+                src={d.img}
+                width="96"
+                height="96"
+                loading="lazy"
+                decoding="async"
+                alt={`${d.name} simgesi`}
+              />
+              <figcaption>
+                <h3>{d.name}</h3>
+                <p>{d.text}</p>
+              </figcaption>
+            </figure>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>
+
+<style>
+  .dev { background: var(--bg-soft); }
+  .dev-head { max-width: 680px; margin: 0 auto clamp(36px, 5vw, 52px); text-align: center; }
+  .dev-head h2 { font-size: clamp(1.8rem, 3.6vw, 2.5rem); margin: 12px 0 14px; }
+  .dev-sub { font-size: clamp(1rem, 2vw, 1.18rem); color: var(--ink-2); margin: 0 auto; max-width: 54ch; }
+
+  .dev-grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+  }
+  .dev-card {
+    margin: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 12px;
+    padding: 26px 18px;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.16s ease, box-shadow 0.2s ease;
+  }
+  .dev-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+  .dev-card img { width: 84px; height: 84px; }
+  .dev-card figcaption h3 { font-size: 1.08rem; margin: 0 0 6px; color: var(--ink); }
+  .dev-card figcaption p { margin: 0; font-size: 0.9rem; color: var(--ink-2); line-height: 1.55; }
+
+  @media (max-width: 1000px) { .dev-grid { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 680px) { .dev-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; } }
+  @media (max-width: 420px) { .dev-grid { grid-template-columns: 1fr; } }
+</style>

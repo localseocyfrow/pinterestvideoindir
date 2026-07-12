@@ -1,0 +1,90 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE } from '../data/site';
+import { breadcrumbSchema } from '../lib/schema';
+
+const path = '/kullanim-sartlari/';
+const title = `Kullanım Şartları – ${SITE.name}`;
+const description =
+  'Pinterest Video İndir kullanım şartları: hizmetin kapsamı, kullanıcı sorumlulukları, telif hakları ve sorumluluk reddi. Aracı kullanmadan önce okuyun.';
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  path={path}
+  schemas={[
+    breadcrumbSchema([
+      { name: 'Ana Sayfa', href: '/' },
+      { name: 'Kullanım Şartları', href: path },
+    ]),
+  ]}
+>
+  <article class="section">
+    <div class="container">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <a href="/">Ana Sayfa</a><span>/</span>Kullanım Şartları
+      </nav>
+      <div class="prose">
+        <span class="eyebrow">Yasal</span>
+        <h1>Kullanım Şartları</h1>
+        <p class="lead">Son güncelleme: 10 Temmuz 2026</p>
+
+        <p>
+          {SITE.name} hizmetini kullanarak aşağıdaki şartları kabul etmiş
+          sayılırsınız. Lütfen aracı kullanmadan önce bu şartları dikkatlice
+          okuyun.
+        </p>
+
+        <h2>1. Hizmetin kapsamı</h2>
+        <p>
+          {SITE.name}, herkese açık Pinterest içeriklerinin (video, resim, GIF,
+          karusel) kişisel kullanım amacıyla indirilmesini kolaylaştıran
+          ücretsiz bir araçtır. Hizmet “olduğu gibi” sunulur.
+        </p>
+
+        <h2>2. Kullanıcı sorumlulukları</h2>
+        <ul>
+          <li>Aracı yalnızca yasal amaçlarla ve kişisel kullanım için kullanacaksınız.</li>
+          <li>Telif hakkıyla korunan içerikleri hak sahibinin izni olmadan yeniden yayımlamayacak veya ticari olarak kullanmayacaksınız.</li>
+          <li>Hizmeti kötüye kullanmayacak, otomatik/aşırı istek göndererek sistemi zorlamayacaksınız.</li>
+        </ul>
+
+        <h2>3. Telif hakları ve fikri mülkiyet</h2>
+        <p>
+          İndirdiğiniz içeriklerin telif hakları ilgili sahiplerine aittir.
+          İçeriklerin uygunsuz kullanımından doğacak her türlü sorumluluk
+          kullanıcıya aittir. {SITE.name}, kullanıcıların indirdiği içeriklerden
+          sorumlu tutulamaz.
+        </p>
+
+        <h2>4. Marka bildirimi</h2>
+        <p>
+          {SITE.name}, Pinterest, Inc. ile bağlantılı, onun tarafından
+          desteklenen veya onaylanan bir hizmet değildir. “Pinterest” adı ve
+          logosu ilgili sahibine aittir.
+        </p>
+
+        <h2>5. Sorumluluk reddi</h2>
+        <p>
+          Hizmetin kesintisiz veya hatasız olacağını garanti etmeyiz. Hizmetin
+          kullanımından doğabilecek doğrudan veya dolaylı zararlardan sorumlu
+          değiliz.
+        </p>
+
+        <h2>6. Değişiklikler</h2>
+        <p>
+          Bu şartları zaman zaman güncelleyebiliriz. Güncel sürüm her zaman bu
+          sayfada yayımlanır. Hizmeti kullanmaya devam etmeniz, güncel şartları
+          kabul ettiğiniz anlamına gelir.
+        </p>
+
+        <div class="disclaimer" style="margin-top:28px">
+          Sorularınız için:
+          <a href={`mailto:${SITE.email}`}>{SITE.email}</a> ·
+          <a href="/gizlilik-politikasi/">Gizlilik Politikası</a>
+        </div>
+      </div>
+    </div>
+  </article>
+</BaseLayout>

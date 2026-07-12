@@ -1,0 +1,43 @@
+---
+import { SITE, FOOTER_GROUPS } from '../data/site';
+const year = 2026;
+---
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="brand" href="/">
+          <span class="brand-mark" aria-hidden="true">P</span>
+          <span>{SITE.name}</span>
+        </a>
+        <p>
+          Pinterest videolarını, resimlerini, GIF'lerini ve karusel
+          içeriklerini HD kalitede, ücretsiz ve filigransız indirmenin en
+          hızlı yolu. Kayıt yok, reklam yok, sınır yok.
+        </p>
+      </div>
+
+      {
+        FOOTER_GROUPS.map((group) => (
+          <div class="footer-col">
+            <h4>{group.title}</h4>
+            <ul>
+              {group.links.map((l) => (
+                <li><a href={l.href}>{l.label}</a></li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="footer-bottom">
+      <span>© {year} {SITE.name}. Tüm hakları saklıdır.</span>
+      <span>
+        Pinterest, Pinterest, Inc. şirketinin ticari markasıdır. Bu site
+        Pinterest ile bağlantılı değildir.
+      </span>
+    </div>
+  </div>
+</footer>

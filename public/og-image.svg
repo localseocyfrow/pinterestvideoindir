@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1b1030"/>
+      <stop offset="0.6" stop-color="#2a0e1c"/>
+      <stop offset="1" stop-color="#3a0713"/>
+    </linearGradient>
+    <linearGradient id="mark" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e60023"/>
+      <stop offset="1" stop-color="#bd081c"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1050" cy="90" r="320" fill="#e60023" opacity="0.12"/>
+  <circle cx="120" cy="560" r="260" fill="#7c3aed" opacity="0.12"/>
+
+  <g transform="translate(90,150)">
+    <rect width="96" height="96" rx="22" fill="url(#mark)"/>
+    <text x="48" y="66" font-family="Inter, Arial, sans-serif" font-size="58" font-weight="900" fill="#fff" text-anchor="middle">P</text>
+  </g>
+
+  <text x="90" y="360" font-family="Inter, Arial, sans-serif" font-size="82" font-weight="900" fill="#ffffff">Pinterest Video İndir</text>
+  <text x="90" y="430" font-family="Inter, Arial, sans-serif" font-size="40" font-weight="700" fill="#ff5c78">HD · Filigransız · Ücretsiz</text>
+  <text x="92" y="500" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="500" fill="#c9c9d4">Bağlantıyı yapıştır · Tek tıkla MP4, GIF ve görsel indir</text>
+
+  <g transform="translate(90,540)" fill="#e9e9f0" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="600">
+    <text x="0" y="0">✓ Kayıt yok</text>
+    <text x="200" y="0">✓ Reklamsız</text>
+    <text x="400" y="0">✓ Telefon &amp; PC</text>
+  </g>
+</svg>

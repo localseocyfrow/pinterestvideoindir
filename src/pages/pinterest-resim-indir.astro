@@ -1,0 +1,82 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Downloader from '../components/Downloader.astro';
+import Faq from '../components/Faq.astro';
+import { IMAGE_FAQ } from '../data/faq';
+import { webAppSchema, faqSchema, breadcrumbSchema } from '../lib/schema';
+
+const path = '/pinterest-resim-indir/';
+const title = 'Pinterest Resim İndir – Tam Çözünürlük Görsel İndirici';
+const description =
+  'Pinterest resimlerini (görsellerini) tam çözünürlükte, ücretsiz ve filigransız indirin. Kayıt olmadan, tek tıkla yüksek kaliteli fotoğraf kaydetme aracı.';
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  path={path}
+  schemas={[
+    webAppSchema(),
+    breadcrumbSchema([
+      { name: 'Ana Sayfa', href: '/' },
+      { name: 'Resim İndir', href: path },
+    ]),
+    faqSchema(IMAGE_FAQ),
+  ]}
+>
+  <section class="hero">
+    <div class="container" style="max-width:760px;margin-inline:auto;text-align:center">
+      <div class="stack">
+        <span class="eyebrow">Tam çözünürlük · Ücretsiz</span>
+        <h1 style="margin-inline:auto">Pinterest Resim İndir</h1>
+        <p class="lead" style="margin-inline:auto">
+          Pinterest resimlerini <strong>en yüksek çözünürlükte</strong>,
+          <strong>filigransız</strong> ve ücretsiz indirin. Tek tıkla
+          cihazınıza kaydedin.
+        </p>
+      </div>
+      <div style="margin-top:34px">
+        <Downloader
+          kind="gorsel"
+          placeholder="Pinterest resim bağlantısını buraya yapıştırın…"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container prose" style="margin-inline:auto">
+      <h2>Pinterest resmi nasıl indirilir?</h2>
+      <div class="answer-box" style="margin:20px 0">
+        <p class="mt-0" style="margin:0">
+          Resmin Pinterest bağlantısını <strong>kopyalayın</strong>, yukarıdaki
+          kutuya <strong>yapıştırın</strong> ve <strong>“İndir”</strong>e basın.
+          Görseli tam çözünürlükte, filigransız olarak kaydedin.
+        </p>
+      </div>
+
+      <div class="steps" style="margin:24px 0">
+        <div class="step"><h3>Bağlantıyı kopyala</h3><p>Resmi Pinterest’te açıp “Paylaş → Bağlantıyı kopyala” deyin.</p></div>
+        <div class="step"><h3>Yapıştır</h3><p>Bağlantıyı indirme kutusuna yapıştırın.</p></div>
+        <div class="step"><h3>İndir</h3><p>“İndir”e basın ve en yüksek çözünürlüğü seçip kaydedin.</p></div>
+      </div>
+
+      <h2>Öne çıkan özellikler</h2>
+      <ul>
+        <li><strong>Tam çözünürlük:</strong> Görselin mevcut en yüksek kalitesini indirir.</li>
+        <li><strong>Filigransız:</strong> Logo veya damga olmadan temiz resim.</li>
+        <li><strong>Ücretsiz:</strong> Sınırsız görsel indirme, kayıt yok.</li>
+        <li><strong>Tüm cihazlar:</strong> Telefon, tablet ve bilgisayarda çalışır.</li>
+      </ul>
+
+      <p style="margin-top:24px">
+        Video, GIF veya karusel mi indireceksiniz?
+        <a href="/pinterest-video-indir/">Video</a>,
+        <a href="/pinterest-gif-indir/">GIF</a> ve
+        <a href="/pinterest-karusel-indir/">karusel</a> araçlarımızı deneyin.
+      </p>
+    </div>
+  </section>
+
+  <Faq items={IMAGE_FAQ} title="Pinterest resim indirme — SSS" />
+</BaseLayout>

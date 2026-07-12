@@ -1,0 +1,226 @@
+---
+// Premium "how to download" visual section shown on the homepage.
+// Desktop: horizontal timeline. Mobile: vertical stack.
+// CTA scrolls to the downloader (#arac).
+interface Props {
+  /** Anchor id of the downloader to scroll to. */
+  target?: string;
+}
+const { target = '#arac' } = Astro.props;
+
+const steps = [
+  {
+    title: 'Pinterest bağlantısını kopyalayın',
+    text: 'İndirmek istediğiniz video, görsel, GIF veya karusel gönderisinin bağlantısını Pinterest üzerinden kopyalayın.',
+  },
+  {
+    title: 'Bağlantıyı kutuya yapıştırın',
+    text: 'Ana sayfadaki indirme kutusuna Pinterest bağlantısını ekleyin.',
+  },
+  {
+    title: 'İndir butonuna tıklayın',
+    text: 'Araç aktif olduğunda bağlantı analiz edilir ve uygun indirme seçenekleri gösterilir.',
+  },
+  {
+    title: 'Dosyanızı kaydedin',
+    text: 'Video, görsel, GIF veya karusel içeriğini cihazınıza kaydedebilirsiniz.',
+  },
+];
+---
+
+<section class="htd" id="nasil-indirilir" aria-labelledby="htd-title">
+  <div class="container">
+    <div class="htd-head">
+      <span class="eyebrow">4 kolay adım</span>
+      <h2 id="htd-title">Pinterest Video Nasıl İndirilir?</h2>
+      <p class="htd-sub">
+        Pinterest video, görsel, GIF ve karusel içeriklerini indirmek çok
+        kolay. Aşağıdaki adımları izleyerek saniyeler içinde kaydedin.
+      </p>
+    </div>
+
+    <ol class="htd-timeline">
+      {
+        steps.map((s, i) => (
+          <li class="htd-step">
+            <div class="htd-num">{i + 1}</div>
+            <div class="htd-card">
+              <h3>{s.title}</h3>
+              <p>{s.text}</p>
+            </div>
+          </li>
+        ))
+      }
+    </ol>
+
+    <div class="htd-cta">
+      <a class="btn btn-primary htd-btn" href={target}>
+        Hemen İndirmeye Başla
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 5v14M19 12l-7 7-7-7" />
+        </svg>
+      </a>
+      <a class="btn btn-ghost htd-btn-2" href="/nasil-kullanilir/">
+        Ayrıntılı rehberi oku →
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .htd {
+    position: relative;
+    padding-block: clamp(56px, 8vw, 104px);
+    background:
+      radial-gradient(760px 380px at 50% -10%, rgba(230, 0, 35, 0.10), transparent 60%),
+      linear-gradient(180deg, #fff 0%, #fff5f7 100%);
+    overflow: hidden;
+  }
+
+  .htd-head {
+    max-width: 640px;
+    margin: 0 auto clamp(40px, 6vw, 60px);
+    text-align: center;
+  }
+  .htd-head h2 {
+    font-size: clamp(1.9rem, 4vw, 2.75rem);
+    margin: 12px 0 14px;
+  }
+  .htd-sub {
+    font-size: clamp(1.02rem, 2vw, 1.22rem);
+    color: var(--ink-2);
+    margin: 0 auto;
+    max-width: 52ch;
+  }
+
+  /* Timeline */
+  .htd-timeline {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+    position: relative;
+  }
+  /* Horizontal connector line through the number circles (desktop) */
+  .htd-timeline::before {
+    content: '';
+    position: absolute;
+    top: 32px;
+    left: 12.5%;
+    right: 12.5%;
+    height: 3px;
+    border-radius: 3px;
+    background: linear-gradient(90deg, var(--brand), #ff6b8a, var(--accent));
+    opacity: 0.35;
+    z-index: 0;
+  }
+
+  .htd-step {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .htd-num {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: #fff;
+    background: linear-gradient(135deg, #ff3d63 0%, var(--brand) 45%, var(--brand-dark) 100%);
+    box-shadow: 0 12px 26px -8px rgba(230, 0, 35, 0.6),
+      0 0 0 6px #fff, 0 0 0 7px rgba(230, 0, 35, 0.12);
+    margin-bottom: 20px;
+  }
+
+  .htd-card {
+    width: 100%;
+    border-radius: var(--radius-lg);
+    padding: 26px 22px;
+    background: linear-gradient(165deg, #ffffff 0%, #ffe9ee 130%);
+    border: 1px solid #f6d3db;
+    box-shadow: 0 18px 40px -24px rgba(189, 8, 28, 0.35);
+    transition: transform 0.18s ease, box-shadow 0.22s ease, border-color 0.2s ease;
+  }
+  .htd-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 26px 50px -22px rgba(189, 8, 28, 0.45);
+    border-color: #efb9c4;
+  }
+  .htd-card h3 {
+    font-size: 1.14rem;
+    margin: 0 0 8px;
+    color: var(--ink);
+  }
+  .htd-card p {
+    margin: 0;
+    font-size: 0.96rem;
+    color: var(--ink-2);
+    line-height: 1.6;
+  }
+
+  .htd-cta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-top: clamp(36px, 5vw, 52px);
+  }
+  .htd-btn {
+    font-size: 1.05rem;
+    padding: 16px 32px;
+  }
+  .htd-btn-2 {
+    font-size: 0.98rem;
+    padding: 14px 24px;
+  }
+
+  /* Tablet: 2 columns, drop the straight connector */
+  @media (max-width: 900px) {
+    .htd-timeline { grid-template-columns: repeat(2, 1fr); gap: 28px 20px; }
+    .htd-timeline::before { display: none; }
+  }
+
+  /* Mobile: vertical layout with a left-aligned rail */
+  @media (max-width: 600px) {
+    .htd-timeline { grid-template-columns: 1fr; gap: 0; }
+    .htd-step {
+      flex-direction: row;
+      align-items: flex-start;
+      text-align: left;
+      gap: 16px;
+      padding-bottom: 26px;
+    }
+    .htd-step:not(:last-child) .htd-num::after {
+      content: '';
+      position: absolute;
+      top: 56px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 3px;
+      height: calc(100% + 26px);
+      background: linear-gradient(180deg, var(--brand), rgba(230, 0, 35, 0.15));
+      border-radius: 3px;
+      z-index: 0;
+    }
+    .htd-num {
+      position: relative;
+      flex: 0 0 auto;
+      width: 52px;
+      height: 52px;
+      font-size: 1.25rem;
+      margin-bottom: 0;
+      box-shadow: 0 10px 22px -8px rgba(230, 0, 35, 0.55), 0 0 0 5px #fff5f7;
+    }
+    .htd-card { padding: 18px 18px; }
+  }
+</style>

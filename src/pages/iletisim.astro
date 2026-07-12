@@ -1,0 +1,61 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE } from '../data/site';
+import { breadcrumbSchema } from '../lib/schema';
+
+const path = '/iletisim';
+const title = `İletişim – ${SITE.name}`;
+const description =
+  'Pinterest Video İndir ile iletişime geçin. Soru, öneri, geri bildirim veya iş birliği talepleriniz için bize ulaşın.';
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  path={path}
+  schemas={[
+    breadcrumbSchema([
+      { name: 'Ana Sayfa', href: '/' },
+      { name: 'İletişim', href: path },
+    ]),
+  ]}
+>
+  <article class="section">
+    <div class="container">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <a href="/">Ana Sayfa</a><span>/</span>İletişim
+      </nav>
+      <div class="prose">
+        <span class="eyebrow">İletişim</span>
+        <h1>Bize Ulaşın</h1>
+        <p class="lead">
+          Soru, öneri ve geri bildirimlerinizi memnuniyetle karşılıyoruz.
+        </p>
+
+        <p>
+          Aşağıdaki e-posta adresi üzerinden bizimle iletişime geçebilirsiniz.
+          Genellikle 1–2 iş günü içinde yanıt veriyoruz.
+        </p>
+
+        <div class="answer-box" style="margin:22px 0">
+          <p class="q">E-posta</p>
+          <p class="mt-0" style="margin:0">
+            <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
+          </p>
+        </div>
+
+        <h2>Sık gelen konular</h2>
+        <ul>
+          <li><strong>Teknik sorun:</strong> İndirme sırasında karşılaştığınız hataları bize iletin.</li>
+          <li><strong>Öneri:</strong> Yeni özellik veya iyileştirme fikirleriniz.</li>
+          <li><strong>Telif / kaldırma talebi:</strong> Hak sahibiyseniz ilgili içeriğin kaldırılması için bize yazın.</li>
+        </ul>
+
+        <p style="margin-top:20px">
+          Hemen başlamak isterseniz
+          <a href="/">Pinterest video indirme aracımıza</a> göz atın.
+        </p>
+      </div>
+    </div>
+  </article>
+</BaseLayout>

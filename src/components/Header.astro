@@ -1,0 +1,36 @@
+---
+import { SITE, NAV } from '../data/site';
+const current = Astro.url.pathname.replace(/\/$/, '') || '/';
+---
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/" aria-label={`${SITE.name} ana sayfa`}>
+      <span class="brand-mark" aria-hidden="true">P</span>
+      <span>{SITE.name}</span>
+    </a>
+
+    <!-- CSS-only mobile toggle -->
+    <input type="checkbox" id="nav-toggle" class="nav-toggle-input" aria-hidden="true" />
+    <label for="nav-toggle" class="nav-toggle" aria-label="Menüyü aç/kapat">
+      <span></span><span></span><span></span>
+    </label>
+
+    <nav class="nav" aria-label="Ana menü">
+      {
+        NAV.map((item) => {
+          const target = item.href.replace(/\/$/, '') || '/';
+          const isActive = current === target;
+          return (
+            <a href={item.href} aria-current={isActive ? 'page' : undefined}>
+              {item.label}
+            </a>
+          );
+        })
+      }
+      <a class="btn btn-primary nav-cta" href="/pinterest-video-indir/#arac">
+        Hemen İndir
+      </a>
+    </nav>
+  </div>
+</header>

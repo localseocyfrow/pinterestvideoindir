@@ -1,0 +1,168 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Downloader from '../components/Downloader.astro';
+import Faq from '../components/Faq.astro';
+import { SITE } from '../data/site';
+import type { QA } from '../data/faq';
+import {
+  howToSchema,
+  faqSchema,
+  breadcrumbSchema,
+  type Step,
+} from '../lib/schema';
+
+const path = '/nasil-kullanilir/';
+const title = 'Nasıl Kullanılır? Pinterest Video İndirme Rehberi (2026)';
+const description =
+  'Pinterest videosu telefona ve bilgisayara nasıl indirilir? Android, iPhone ve PC için adım adım anlatım. Filigransız ve HD Pinterest video kaydetme rehberi.';
+
+const steps: Step[] = [
+  {
+    name: 'Pinterest içeriğini açın',
+    text: 'Pinterest uygulamasını veya pinterest.com sitesini açın ve indirmek istediğiniz videoyu, resmi ya da karuseli görüntüleyin.',
+  },
+  {
+    name: 'Paylaş menüsünü açın',
+    text: 'İçeriğin üzerindeki üç nokta (•••) veya “Paylaş” simgesine dokunun.',
+  },
+  {
+    name: '“Bağlantıyı kopyala” deyin',
+    text: 'Açılan menüden “Bağlantıyı kopyala” seçeneğine dokunun. Bağlantı panonuza kopyalanır.',
+  },
+  {
+    name: 'Bağlantıyı araca yapıştırın',
+    text: `${SITE.name} sitesindeki indirme kutusuna bağlantıyı yapıştırın.`,
+  },
+  {
+    name: 'İndirin ve kaydedin',
+    text: '“İndir” düğmesine basın, istediğiniz kaliteyi (HD/Full HD) seçin ve dosyayı cihazınıza kaydedin.',
+  },
+];
+
+const pageFaq: QA[] = [
+  {
+    q: 'Pinterest videosu galeriye nasıl indirilir?',
+    a: 'Video bağlantısını kopyalayıp aracımıza yapıştırın ve indirin. Android’de video doğrudan galeriye kaydedilir. iPhone’da ise indirdikten sonra “Dosyalar” uygulamasından “Fotoğraflara Kaydet” diyerek galeriye aktarabilirsiniz.',
+  },
+  {
+    q: 'Pinterest uygulamasında “indir” seçeneği neden yok?',
+    a: 'Pinterest, tüm içerikler için doğrudan indirme düğmesi sunmaz. Bu yüzden bağlantıyı kopyalayıp harici bir indirme aracı (bu site gibi) kullanmak en pratik yöntemdir.',
+  },
+  {
+    q: 'iPhone’a Pinterest videosu nasıl kaydedilir?',
+    a: 'Safari’de sitemizi açın, bağlantıyı yapıştırıp indirin. Video “Dosyalar” uygulamasına iner; oradan Fotoğraflar’a kaydedebilirsiniz. Ek uygulama gerekmez.',
+  },
+  {
+    q: 'Bilgisayardan Pinterest içeriği indirilir mi?',
+    a: 'Evet. Windows veya Mac’te herhangi bir tarayıcıdan sitemizi açın, bağlantıyı yapıştırın ve indirin. Dosya “İndirilenler” klasörüne kaydedilir.',
+  },
+  {
+    q: 'İndirdiğim videoda ses yok, ne yapmalıyım?',
+    a: 'Bazı Pinterest videolarında kaynak sessizdir. Farklı bir kalite seçeneği deneyin; sorun devam ederse videonun orijinalinde ses bulunmuyordur.',
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  path={path}
+  ogType="article"
+  schemas={[
+    breadcrumbSchema([
+      { name: 'Ana Sayfa', href: '/' },
+      { name: 'Nasıl Kullanılır', href: path },
+    ]),
+    howToSchema({
+      name: 'Pinterest içeriği nasıl indirilir?',
+      description: description,
+      steps,
+      totalTime: 'PT2M',
+    }),
+    faqSchema(pageFaq),
+  ]}
+>
+  <article class="section">
+    <div class="container">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <a href="/">Ana Sayfa</a><span>/</span>Nasıl Kullanılır
+      </nav>
+
+      <div class="prose">
+        <span class="eyebrow">Adım adım rehber</span>
+        <h1>Nasıl Kullanılır? Pinterest İndirme Rehberi</h1>
+        <p class="lead">
+          Pinterest videolarını, resimlerini ve karusel içeriklerini telefona
+          (Android &amp; iPhone) veya bilgisayara indirmenin en kolay yolu.
+          Filigransız, HD kalitede ve ücretsiz — sadece birkaç adım.
+        </p>
+
+        <div class="answer-box" style="margin:26px 0">
+          <p class="q">Kısa cevap</p>
+          <p class="mt-0" style="margin:0">
+            Pinterest içeriği indirmek için <strong>“Paylaş → Bağlantıyı
+            kopyala”</strong> yolunu izleyin, kopyaladığınız bağlantıyı aşağıdaki
+            araca <strong>yapıştırın</strong> ve <strong>“İndir”</strong>e basın.
+            İçeriği HD kalitede, filigransız ve ücretsiz kaydedersiniz.
+          </p>
+        </div>
+      </div>
+
+      <div style="max-width:760px;margin:32px 0">
+        <Downloader heading="Bağlantıyı yapıştırıp indirin" />
+      </div>
+
+      <div class="prose">
+        <h2>Adım adım: Pinterest videosu indirme</h2>
+        <div class="steps" style="margin:24px 0">
+          {steps.map((s) => (
+            <div class="step"><h3>{s.name}</h3><p>{s.text}</p></div>
+          ))}
+        </div>
+
+        <h2>Android’de Pinterest video indirme</h2>
+        <p>
+          Android telefonlarda işlem çok kolaydır. Pinterest uygulamasında
+          videoyu açın, <strong>Paylaş</strong> simgesine dokunun ve
+          <strong>Bağlantıyı kopyala</strong> deyin. Chrome tarayıcısında
+          sitemizi açıp bağlantıyı yapıştırın ve indirin. Video doğrudan
+          <strong>Galeri</strong> veya <strong>İndirilenler</strong> klasörüne
+          kaydedilir.
+        </p>
+
+        <h2>iPhone (iOS) için Pinterest video indirme</h2>
+        <p>
+          iPhone’da Safari tarayıcısını kullanın. Bağlantıyı kopyaladıktan
+          sonra sitemizde yapıştırıp indirin. Video önce <strong>Dosyalar</strong>
+          uygulamasına iner; buradan <strong>Fotoğraflara Kaydet</strong>
+          seçeneğiyle galerinize aktarabilirsiniz. Herhangi bir uygulama
+          kurmanıza gerek yoktur.
+        </p>
+
+        <h2>Bilgisayardan (Windows &amp; Mac) indirme</h2>
+        <p>
+          Masaüstünde Chrome, Edge, Firefox veya Safari fark etmeksizin
+          herhangi bir tarayıcıdan sitemizi açın. Pinterest bağlantısını
+          yapıştırıp <strong>İndir</strong>’e tıklayın. Dosya
+          <strong>İndirilenler</strong> klasörüne kaydedilir.
+        </p>
+
+        <blockquote>
+          <strong>İpucu:</strong> En yüksek kaliteyi almak için indirme
+          ekranında <em>Full HD (1080p)</em> veya varsa <em>4K</em>
+          seçeneğini tercih edin.
+        </blockquote>
+
+        <h2>Hangi içerikleri indirebilirim?</h2>
+        <ul>
+          <li><a href="/pinterest-video-indir/">Pinterest video indir</a> — HD/4K MP4.</li>
+          <li><a href="/pinterest-resim-indir/">Pinterest resim indir</a> — tam çözünürlük görsel.</li>
+          <li><a href="/pinterest-gif-indir/">Pinterest GIF indir</a> — GIF &amp; MP4.</li>
+          <li><a href="/pinterest-karusel-indir/">Pinterest karusel indir</a> — çoklu görsel.</li>
+        </ul>
+      </div>
+    </div>
+  </article>
+
+  <Faq items={pageFaq} title="Nasıl kullanılır? — Sık sorulanlar" />
+</BaseLayout>

@@ -1,0 +1,31 @@
+---
+import type { QA } from '../data/faq';
+interface Props {
+  items: QA[];
+  title?: string;
+}
+const { items, title = 'Sıkça Sorulan Sorular' } = Astro.props;
+---
+
+<section class="section" id="sss">
+  <div class="container">
+    <div class="center" style="margin-bottom:36px">
+      <span class="eyebrow">SSS</span>
+      <h2>{title}</h2>
+      <p class="lead">
+        Pinterest video indirme hakkında en çok merak edilenler.
+      </p>
+    </div>
+
+    <div class="faq">
+      {
+        items.map((item, i) => (
+          <details open={i === 0}>
+            <summary>{item.q}</summary>
+            <div class="faq-a"><p>{item.a}</p></div>
+          </details>
+        ))
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,62 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Downloader from '../components/Downloader.astro';
+import { ALL_FAQ_GROUPS } from '../data/faq';
+import { faqSchema, breadcrumbSchema } from '../lib/schema';
+
+const path = '/sss/';
+const title = 'Sıkça Sorulan Sorular (SSS) – Pinterest Video İndir';
+const description =
+  'Pinterest video, resim, GIF ve karusel indirme hakkında sıkça sorulan sorular. Ücretsiz mi, filigran var mı, nasıl indirilir? Tüm yanıtlar tek sayfada.';
+
+const allItems = ALL_FAQ_GROUPS.flatMap((g) => g.items);
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  path={path}
+  schemas={[
+    breadcrumbSchema([
+      { name: 'Ana Sayfa', href: '/' },
+      { name: 'SSS', href: path },
+    ]),
+    faqSchema(allItems),
+  ]}
+>
+  <article class="section">
+    <div class="container">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <a href="/">Ana Sayfa</a><span>/</span>SSS
+      </nav>
+
+      <div class="center section-head">
+        <span class="eyebrow">Yardım Merkezi</span>
+        <h1>Sıkça Sorulan Sorular</h1>
+        <p class="lead" style="margin-inline:auto">
+          Pinterest içeriklerini indirme hakkında en çok merak edilenler.
+        </p>
+      </div>
+
+      <div class="faq">
+        {
+          ALL_FAQ_GROUPS.map((group) => (
+            <section style="margin-bottom:34px">
+              <h2 style="font-size:1.35rem;margin-bottom:16px">{group.title}</h2>
+              {group.items.map((item, i) => (
+                <details open={i === 0}>
+                  <summary>{item.q}</summary>
+                  <div class="faq-a"><p>{item.a}</p></div>
+                </details>
+              ))}
+            </section>
+          ))
+        }
+      </div>
+
+      <div style="max-width:760px;margin:40px auto 0">
+        <Downloader heading="Sorunuz yanıtlandı mı? Hemen indirin" />
+      </div>
+    </div>
+  </article>
+</BaseLayout>

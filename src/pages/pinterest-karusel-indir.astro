@@ -1,0 +1,90 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Downloader from '../components/Downloader.astro';
+import Faq from '../components/Faq.astro';
+import { CAROUSEL_FAQ } from '../data/faq';
+import { webAppSchema, faqSchema, breadcrumbSchema } from '../lib/schema';
+
+const path = '/pinterest-karusel-indir/';
+const title = 'Pinterest Karusel İndir – Çoklu Görsel & Video İndirici';
+const description =
+  'Pinterest karusel (çoklu görsel) pinlerindeki tüm resim ve videoları tek seferde, ücretsiz ve filigransız indirin. Kayıt gerektirmeyen karusel indirme aracı.';
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  path={path}
+  schemas={[
+    webAppSchema(),
+    breadcrumbSchema([
+      { name: 'Ana Sayfa', href: '/' },
+      { name: 'Karusel İndir', href: path },
+    ]),
+    faqSchema(CAROUSEL_FAQ),
+  ]}
+>
+  <section class="hero">
+    <div class="container" style="max-width:760px;margin-inline:auto;text-align:center">
+      <div class="stack">
+        <span class="eyebrow">Çoklu görsel · Ücretsiz</span>
+        <h1 style="margin-inline:auto">Pinterest Karusel İndir</h1>
+        <p class="lead" style="margin-inline:auto">
+          Bir karusel pinindeki <strong>tüm görselleri ve videoları</strong>
+          tek seferde, <strong>filigransız</strong> ve ücretsiz indirin.
+          İstediğinizi seçin veya hepsini kaydedin.
+        </p>
+      </div>
+      <div style="margin-top:34px">
+        <Downloader
+          kind="video"
+          placeholder="Pinterest karusel bağlantısını buraya yapıştırın…"
+          heading="Karusel bağlantısını yapıştırın"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container prose" style="margin-inline:auto">
+      <h2>Pinterest karusel nedir?</h2>
+      <p>
+        Karusel, tek bir pinde birden fazla görsel veya videonun kaydırılarak
+        görüntülendiği içerik türüdür. Genellikle 2–5 medya içerir; adım adım
+        tarifler, ilham panoları ve “önce/sonra” içerikleri için sık kullanılır.
+      </p>
+
+      <h2>Karuseldeki tüm görseller nasıl indirilir?</h2>
+      <div class="answer-box" style="margin:20px 0">
+        <p class="mt-0" style="margin:0">
+          Karusel pininin bağlantısını <strong>kopyalayın</strong>, yukarıdaki
+          kutuya <strong>yapıştırın</strong> ve <strong>“İndir”</strong>e basın.
+          Araç, pindeki tüm medyayı listeler; dilediğinizi veya hepsini
+          filigransız olarak kaydedebilirsiniz.
+        </p>
+      </div>
+
+      <div class="steps" style="margin:24px 0">
+        <div class="step"><h3>Bağlantıyı kopyala</h3><p>Karusel pinini açıp “Paylaş → Bağlantıyı kopyala” deyin.</p></div>
+        <div class="step"><h3>Yapıştır</h3><p>Bağlantıyı indirme kutusuna yapıştırın.</p></div>
+        <div class="step"><h3>Seç &amp; indir</h3><p>Listelenen görsellerden istediğinizi ya da tümünü indirin.</p></div>
+      </div>
+
+      <h2>Öne çıkan özellikler</h2>
+      <ul>
+        <li><strong>Toplu indirme:</strong> Tüm karusel medyasını tek seferde alın.</li>
+        <li><strong>Seçmeli indirme:</strong> Yalnızca istediğiniz görseli kaydedin.</li>
+        <li><strong>Filigransız &amp; ücretsiz:</strong> Kayıt veya ödeme gerekmez.</li>
+      </ul>
+
+      <p style="margin-top:24px">
+        Tekli içerikler için
+        <a href="/pinterest-video-indir/">video</a>,
+        <a href="/pinterest-resim-indir/">resim</a> ve
+        <a href="/pinterest-gif-indir/">GIF</a> araçlarımızı kullanabilirsiniz.
+      </p>
+    </div>
+  </section>
+
+  <Faq items={CAROUSEL_FAQ} title="Pinterest karusel indirme — SSS" />
+</BaseLayout>

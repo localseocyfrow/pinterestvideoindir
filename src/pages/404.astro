@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const title = 'Sayfa bulunamadı (404)';
+const description = 'Aradığınız sayfa bulunamadı. Pinterest video indirme aracına geri dönün.';
+---
+
+<BaseLayout title={title} description={description} path="/404" noindex={true}>
+  <section class="section center">
+    <div class="container">
+      <span class="eyebrow">404</span>
+      <h1>Sayfa bulunamadı</h1>
+      <p class="lead" style="margin-inline:auto">
+        Aradığınız sayfa taşınmış veya hiç var olmamış olabilir.
+      </p>
+      <p style="margin-top:24px">
+        <a class="btn btn-primary" href="/">Ana sayfaya dön</a>
+      </p>
+    </div>
+  </section>
+</BaseLayout>

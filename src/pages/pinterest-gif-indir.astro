@@ -1,0 +1,82 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Downloader from '../components/Downloader.astro';
+import Faq from '../components/Faq.astro';
+import { GIF_FAQ } from '../data/faq';
+import { webAppSchema, faqSchema, breadcrumbSchema } from '../lib/schema';
+
+const path = '/pinterest-gif-indir/';
+const title = 'Pinterest GIF İndir – Ücretsiz GIF & MP4 İndirici';
+const description =
+  'Pinterest GIF’lerini ücretsiz ve hızlı indirin. Hareketli görselleri GIF veya MP4 olarak, filigransız ve kayıt olmadan telefonunuza kaydedin.';
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  path={path}
+  schemas={[
+    webAppSchema(),
+    breadcrumbSchema([
+      { name: 'Ana Sayfa', href: '/' },
+      { name: 'GIF İndir', href: path },
+    ]),
+    faqSchema(GIF_FAQ),
+  ]}
+>
+  <section class="hero">
+    <div class="container" style="max-width:760px;margin-inline:auto;text-align:center">
+      <div class="stack">
+        <span class="eyebrow">GIF &amp; MP4 · Ücretsiz</span>
+        <h1 style="margin-inline:auto">Pinterest GIF İndir</h1>
+        <p class="lead" style="margin-inline:auto">
+          Pinterest’teki hareketli GIF’leri <strong>ücretsiz</strong> ve
+          <strong>filigransız</strong> indirin. GIF veya MP4 formatında,
+          tek tıkla kaydedin.
+        </p>
+      </div>
+      <div style="margin-top:36px">
+        <Downloader
+          kind="gif"
+          placeholder="Pinterest GIF bağlantısını buraya yapıştırın…"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container prose" style="margin-inline:auto">
+      <h2>Pinterest GIF nasıl indirilir?</h2>
+      <div class="answer-box" style="margin:20px 0">
+        <p class="mt-0" style="margin:0">
+          GIF’in Pinterest bağlantısını <strong>kopyalayın</strong>, yukarıdaki
+          kutuya <strong>yapıştırın</strong> ve <strong>“İndir”</strong>e basın.
+          GIF’i orijinal kalitesinde, filigransız olarak cihazınıza kaydedin.
+        </p>
+      </div>
+
+      <div class="steps" style="margin:24px 0">
+        <div class="step"><h3>Bağlantıyı kopyala</h3><p>Pinterest’te GIF’i açıp “Paylaş → Bağlantıyı kopyala” deyin.</p></div>
+        <div class="step"><h3>Yapıştır</h3><p>Kopyaladığınız bağlantıyı indirme kutusuna yapıştırın.</p></div>
+        <div class="step"><h3>İndir</h3><p>“İndir”e basın, GIF veya MP4 formatını seçip kaydedin.</p></div>
+      </div>
+
+      <h2>Neden Pinterest GIF indirici?</h2>
+      <ul>
+        <li><strong>Çift format:</strong> Hem GIF hem MP4 olarak indirme imkânı.</li>
+        <li><strong>Filigransız:</strong> Temiz, orijinal kalite.</li>
+        <li><strong>Ücretsiz &amp; sınırsız:</strong> Kayıt veya ödeme gerekmez.</li>
+        <li><strong>Her cihaz:</strong> Android, iPhone ve bilgisayarda çalışır.</li>
+      </ul>
+
+      <p style="margin-top:24px">
+        Video, resim veya karusel mi arıyorsunuz?
+        <a href="/pinterest-video-indir/">Video</a>,
+        <a href="/pinterest-resim-indir/">resim</a> ve
+        <a href="/pinterest-karusel-indir/">karusel</a> araçlarımızı kullanın.
+      </p>
+    </div>
+  </section>
+
+  <Faq items={GIF_FAQ} title="Pinterest GIF indirme — SSS" />
+</BaseLayout>

@@ -1,0 +1,129 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Downloader from '../components/Downloader.astro';
+import Faq from '../components/Faq.astro';
+import { SITE } from '../data/site';
+import { HOME_FAQ } from '../data/faq';
+import {
+  webAppSchema,
+  faqSchema,
+  breadcrumbSchema,
+} from '../lib/schema';
+
+const path = '/pinterest-video-indir/';
+const title = 'Pinterest Video İndir | Hızlı HD MP4 Video İndirme Aracı';
+const description =
+  'Pinterest videolarını tek tıkla HD, Full HD ve 4K kalitede indirin. Ücretsiz, filigransız ve reklamsız Pinterest video indirici.';
+
+const qualities = [
+  ['4K (2160p)', 'En yüksek çözünürlük', 'Kaynakta mevcutsa'],
+  ['Full HD (1080p)', 'Keskin, net görüntü', 'Önerilen'],
+  ['HD (720p)', 'Dengeli boyut/kalite', 'Hızlı indirme'],
+  ['SD (480p)', 'Küçük dosya boyutu', 'Sınırlı internet'],
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  path={path}
+  schemas={[
+    webAppSchema(),
+    breadcrumbSchema([
+      { name: 'Ana Sayfa', href: '/' },
+      { name: 'Video İndir', href: path },
+    ]),
+    faqSchema(HOME_FAQ),
+  ]}
+>
+  <section class="hero">
+    <div class="container" style="max-width:780px;margin-inline:auto;text-align:center">
+      <div class="stack">
+        <span class="eyebrow">HD · 4K · Filigransız</span>
+        <h1 style="margin-inline:auto">Pinterest Video İndir</h1>
+        <p class="lead" style="margin-inline:auto">
+          Pinterest videolarını tek tıkla <strong>HD, Full HD ve 4K</strong>
+          kalitede, <strong>filigransız</strong> ve <strong>ücretsiz</strong>
+          indirin. Bağlantıyı yapıştırın, MP4 olarak kaydedin.
+        </p>
+      </div>
+
+      <div style="margin-top:34px">
+        <Downloader kind="video" heading="Video bağlantısını yapıştırın" />
+      </div>
+
+      <div class="stats">
+        <div class="stat"><b>%100</b><span>Ücretsiz</span></div>
+        <div class="stat"><b>4K</b><span>Kaliteye kadar</span></div>
+        <div class="stat"><b>0</b><span>Filigran</span></div>
+        <div class="stat"><b>∞</b><span>Sınırsız indirme</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container prose" style="margin-inline:auto">
+      <h2>Pinterest videosu nasıl indirilir?</h2>
+      <div class="answer-box" style="margin:20px 0">
+        <p class="mt-0" style="margin:0">
+          Videonun Pinterest bağlantısını <strong>kopyalayın</strong>, yukarıdaki
+          kutuya <strong>yapıştırın</strong> ve <strong>“İndir”</strong>e basın.
+          Ardından HD, Full HD veya 4K kaliteyi seçerek videoyu MP4 olarak
+          telefonunuza ya da bilgisayarınıza kaydedin.
+        </p>
+      </div>
+
+      <div class="steps" style="margin:24px 0">
+        <div class="step"><h3>Bağlantıyı kopyala</h3><p>Pinterest’te videoyu açıp “Paylaş → Bağlantıyı kopyala” deyin.</p></div>
+        <div class="step"><h3>Yapıştır</h3><p>Bağlantıyı indirme kutusuna yapıştırın.</p></div>
+        <div class="step"><h3>Kaliteyi seç &amp; indir</h3><p>“İndir”e basın, çözünürlüğü seçin ve kaydedin.</p></div>
+      </div>
+
+      <h2>İndirme kalitesi seçenekleri</h2>
+      <p>
+        Kaynak videonun yüklendiği çözünürlüğe bağlı olarak aşağıdaki kalite
+        seçeneklerini sunmayı hedefliyoruz:
+      </p>
+    </div>
+
+    <div class="container" style="max-width:760px;margin-top:12px">
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th style="text-align:right">Kalite</th><th>Açıklama</th><th>Uygun</th></tr>
+          </thead>
+          <tbody>
+            {qualities.map((q) => (
+              <tr>
+                <td style="font-weight:700;color:var(--ink)">{q[0]}</td>
+                <td>{q[1]}</td>
+                <td>{q[2]}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="container prose" style="margin-inline:auto;margin-top:40px">
+      <h2>Neden {SITE.name}?</h2>
+      <ul>
+        <li><strong>Filigransız:</strong> Videolar orijinal kaynaktan alınır, logo içermez.</li>
+        <li><strong>Ücretsiz &amp; sınırsız:</strong> Kayıt, ödeme veya uygulama gerekmez.</li>
+        <li><strong>Tüm cihazlar:</strong> Android, iPhone, tablet ve PC uyumlu.</li>
+        <li><strong>Hızlı &amp; güvenli:</strong> Bağlantınız saklanmaz, saniyeler içinde indirin.</li>
+      </ul>
+
+      <p style="margin-top:22px">
+        Ayrıntılı anlatım için
+        <a href="/nasil-kullanilir/">Nasıl Kullanılır rehberimize</a> göz atın.
+        Resim, GIF veya karusel indirmek için
+        <a href="/pinterest-resim-indir/">resim</a>,
+        <a href="/pinterest-gif-indir/">GIF</a> ve
+        <a href="/pinterest-karusel-indir/">karusel</a> araçlarımızı kullanın.
+      </p>
+    </div>
+  </section>
+
+  <Faq items={HOME_FAQ} title="Pinterest video indirme — SSS" />
+</BaseLayout>

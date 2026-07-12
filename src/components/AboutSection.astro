@@ -1,0 +1,56 @@
+---
+// Homepage "Hakkımızda" (About) section with an AEO short-answer box.
+// Semantic HTML; reuses the global .answer-box styling.
+---
+
+<section class="about section" id="hakkimizda" aria-labelledby="about-title">
+  <div class="container about-inner">
+    <header class="about-head">
+      <span class="eyebrow">Hakkımızda</span>
+      <h2 id="about-title">Hakkımızda</h2>
+      <p class="about-lead">
+        Pinterest Video İndir, kullanıcıların Pinterest içeriklerini hızlı ve
+        güvenli şekilde kaydedebilmesi için hazırlanmış, tamamen
+        <strong>ücretsiz Pinterest video indirici</strong> ve içerik indirme
+        aracıdır. Amacımız; herhangi bir uygulama kurmadan, üyelik
+        gerektirmeden ve reklam yoğunluğu olmadan sade bir indirme deneyimi
+        sunmaktır.
+      </p>
+    </header>
+
+    <div class="answer-box about-answer">
+      <p class="q">Kısa Cevap: Pinterest Video İndirme Nedir?</p>
+      <p class="mt-0" style="margin:0">
+        Pinterest Video İndirme, Pinterest video, görsel, GIF ve karusel
+        içerikleri için ücretsiz ve web tabanlı bir indirme deneyimi sunmak
+        amacıyla hazırlanan bağımsız bir araç sitesidir.
+      </p>
+    </div>
+
+    <p class="about-note">
+      Bu site bağımsız bir projedir; Pinterest, Inc. ile bağlantılı değildir.
+      Daha fazla bilgi için
+      <a href="/hakkinda/">Hakkında sayfamıza</a> göz atabilirsiniz.
+    </p>
+  </div>
+</section>
+
+<style>
+  .about-inner { max-width: 820px; margin-inline: auto; }
+  .about-head { text-align: center; margin-bottom: clamp(24px, 4vw, 34px); }
+  .about-head h2 { font-size: clamp(1.8rem, 3.6vw, 2.5rem); margin: 12px 0 14px; }
+  .about-lead {
+    font-size: clamp(1rem, 2vw, 1.16rem);
+    color: var(--ink-2);
+    margin: 0 auto;
+    max-width: 60ch;
+  }
+  .about-answer { margin-inline: auto; }
+  .about-note {
+    margin: 22px auto 0;
+    text-align: center;
+    font-size: 0.92rem;
+    color: var(--muted);
+    max-width: 56ch;
+  }
+</style>

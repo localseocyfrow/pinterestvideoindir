@@ -1,0 +1,76 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE } from '../data/site';
+import { breadcrumbSchema } from '../lib/schema';
+
+const path = '/hakkinda';
+const title = `Hakkında – ${SITE.name}`;
+const description =
+  'Pinterest Video İndir hakkında: misyonumuz, nasıl çalıştığımız, gizlilik yaklaşımımız ve ücretsiz Pinterest indirme aracımızın sunduğu özellikler.';
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  path={path}
+  schemas={[
+    breadcrumbSchema([
+      { name: 'Ana Sayfa', href: '/' },
+      { name: 'Hakkında', href: path },
+    ]),
+  ]}
+>
+  <article class="section">
+    <div class="container">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <a href="/">Ana Sayfa</a><span>/</span>Hakkında
+      </nav>
+      <div class="prose">
+        <span class="eyebrow">Hakkında</span>
+        <h1>{SITE.name} Hakkında</h1>
+        <p class="lead">
+          Pinterest içeriklerini herkes için hızlı, ücretsiz ve güvenli bir
+          şekilde indirilebilir kılmak için buradayız.
+        </p>
+
+        <h2>Misyonumuz</h2>
+        <p>
+          {SITE.name}, Pinterest videolarını, GIF’lerini ve görsellerini
+          indirmeyi olabildiğince basit hale getirmek için tasarlandı.
+          Kullanıcıların karmaşık uygulamalar kurmadan, üyelik açmadan ve ücret
+          ödemeden içeriklerini çevrimdışı arşivleyebilmesini istiyoruz.
+        </p>
+
+        <h2>Nasıl çalışır?</h2>
+        <p>
+          Bir Pinterest bağlantısı yapıştırdığınızda, aracımız içeriğin herkese
+          açık medya dosyasını çözümleyerek indirilebilir bir bağlantı sunar.
+          İşlem tamamen tarayıcı üzerinden yürür; ek yazılım gerektirmez.
+        </p>
+
+        <h2>Gizlilik önceliğimiz</h2>
+        <p>
+          Yapıştırdığınız bağlantıları kalıcı olarak saklamayız ve indirdiğiniz
+          dosyaları sunucularımızda tutmayız. Ayrıntılar için
+          <a href="/gizlilik-politikasi">Gizlilik Politikası</a> sayfamıza
+          bakabilirsiniz.
+        </p>
+
+        <h2>Sunduğumuz araçlar</h2>
+        <ul>
+          <li><a href="/pinterest-video-indir/">Pinterest Video İndir</a> — HD/4K, filigransız MP4.</li>
+          <li><a href="/pinterest-resim-indir/">Pinterest Resim İndir</a> — tam çözünürlük görsel.</li>
+          <li><a href="/pinterest-gif-indir/">Pinterest GIF İndir</a> — GIF &amp; MP4.</li>
+          <li><a href="/pinterest-karusel-indir/">Pinterest Karusel İndir</a> — çoklu görsel.</li>
+        </ul>
+
+        <div class="disclaimer" style="margin-top:28px">
+          {SITE.name}, Pinterest, Inc. ile bağlantılı, onun tarafından
+          desteklenen ya da onaylanan bir hizmet değildir. “Pinterest” adı ve
+          logosu ilgili sahibine aittir. Aracımızı yalnızca telif haklarına
+          saygı göstererek ve kişisel kullanım amacıyla kullanın.
+        </div>
+      </div>
+    </div>
+  </article>
+</BaseLayout>

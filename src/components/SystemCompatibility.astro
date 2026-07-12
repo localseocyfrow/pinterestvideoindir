@@ -1,0 +1,81 @@
+---
+// Homepage section: compatible with popular operating systems.
+// Uses local assets from /public/images/systems/. Semantic HTML,
+// lazy-loaded images with explicit width/height.
+const systems = [
+  { img: '/images/systems/windows.svg', name: 'Windows', text: 'Windows 10 ve 11’de tüm tarayıcılarla uyumlu.' },
+  { img: '/images/systems/macos.svg', name: 'macOS', text: 'Mac bilgisayarlarda Safari, Chrome ve Firefox ile çalışır.' },
+  { img: '/images/systems/android.svg', name: 'Android', text: 'Android telefon ve tabletlerde doğrudan galeriye indirin.' },
+  { img: '/images/systems/ios.svg', name: 'iOS', text: 'iPhone ve iPad’de Safari üzerinden kolay kaydetme.' },
+  { img: '/images/systems/linux.svg', name: 'Linux', text: 'Ubuntu ve diğer Linux dağıtımlarında sorunsuz kullanım.' },
+  { img: '/images/systems/chromeos.svg', name: 'ChromeOS', text: 'Chromebook’larda ChromeOS üzerinden erişim hedeflenir.' },
+];
+---
+
+<section class="sys section" id="isletim-sistemleri" aria-labelledby="sys-title">
+  <div class="container">
+    <header class="sys-head">
+      <span class="eyebrow">Tam uyumluluk</span>
+      <h2 id="sys-title">Popüler İşletim Sistemleriyle Uyumlu</h2>
+      <p class="sys-sub">
+        Hangi işletim sistemini kullanırsanız kullanın, Pinterest içeriklerini
+        indirmek için ekstra bir programa ihtiyacınız yok. Her şey tarayıcınızda
+        çalışır.
+      </p>
+    </header>
+
+    <ul class="sys-grid" role="list">
+      {
+        systems.map((s) => (
+          <li class="sys-card">
+            <img
+              src={s.img}
+              width="72"
+              height="72"
+              loading="lazy"
+              decoding="async"
+              alt={`${s.name} logosu`}
+            />
+            <h3>{s.name}</h3>
+            <p>{s.text}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>
+
+<style>
+  .sys-head { max-width: 680px; margin: 0 auto clamp(36px, 5vw, 52px); text-align: center; }
+  .sys-head h2 { font-size: clamp(1.8rem, 3.6vw, 2.5rem); margin: 12px 0 14px; }
+  .sys-sub { font-size: clamp(1rem, 2vw, 1.18rem); color: var(--ink-2); margin: 0 auto; max-width: 54ch; }
+
+  .sys-grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 18px;
+  }
+  .sys-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    padding: 24px 14px;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.16s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  }
+  .sys-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: #e3d3d8; }
+  .sys-card img { width: 60px; height: 60px; }
+  .sys-card h3 { font-size: 1.02rem; margin: 2px 0 0; color: var(--ink); }
+  .sys-card p { margin: 0; font-size: 0.85rem; color: var(--muted); line-height: 1.5; }
+
+  @media (max-width: 1000px) { .sys-grid { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 560px) { .sys-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; } }
+</style>

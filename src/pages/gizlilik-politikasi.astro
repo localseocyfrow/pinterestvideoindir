@@ -1,0 +1,90 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE } from '../data/site';
+import { breadcrumbSchema } from '../lib/schema';
+
+const path = '/gizlilik-politikasi';
+const title = `Gizlilik Politikası – ${SITE.name}`;
+const description =
+  'Pinterest Video İndir gizlilik politikası: hangi verileri işlediğimiz, çerezler, bağlantıların saklanmaması ve kullanıcı haklarınız hakkında bilgi.';
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  path={path}
+  schemas={[
+    breadcrumbSchema([
+      { name: 'Ana Sayfa', href: '/' },
+      { name: 'Gizlilik Politikası', href: path },
+    ]),
+  ]}
+>
+  <article class="section">
+    <div class="container">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <a href="/">Ana Sayfa</a><span>/</span>Gizlilik Politikası
+      </nav>
+      <div class="prose">
+        <span class="eyebrow">Yasal</span>
+        <h1>Gizlilik Politikası</h1>
+        <p class="lead">Son güncelleme: 10 Temmuz 2026</p>
+
+        <p>
+          {SITE.name} olarak gizliliğinize önem veriyoruz. Bu politika,
+          hizmetimizi kullanırken hangi bilgilerin işlendiğini açıklar.
+        </p>
+
+        <h2>1. Topladığımız veriler</h2>
+        <ul>
+          <li>
+            <strong>Yapıştırdığınız bağlantılar:</strong> Yalnızca indirme
+            işlemini gerçekleştirmek için geçici olarak işlenir; kalıcı olarak
+            saklanmaz.
+          </li>
+          <li>
+            <strong>Anonim kullanım istatistikleri:</strong> Site performansını
+            ölçmek için toplu ve kimliksizleştirilmiş veriler kullanılabilir.
+          </li>
+        </ul>
+
+        <h2>2. İndirilen dosyalar</h2>
+        <p>
+          İndirdiğiniz videolar, GIF’ler ve görseller sunucularımızda kalıcı
+          olarak depolanmaz. İşlem tamamlandıktan sonra geçici veriler silinir.
+        </p>
+
+        <h2>3. Çerezler</h2>
+        <p>
+          Temel işlevsellik ve isteğe bağlı analitik için çerezler
+          kullanılabilir. Tarayıcı ayarlarınızdan çerezleri istediğiniz zaman
+          yönetebilir veya silebilirsiniz.
+        </p>
+
+        <h2>4. Üçüncü taraf hizmetler</h2>
+        <p>
+          Analitik veya reklam sağlayıcıları gibi üçüncü taraf hizmetler kendi
+          gizlilik politikalarına tabidir. Bu hizmetler yalnızca gerekli olduğu
+          ölçüde kullanılır.
+        </p>
+
+        <h2>5. Haklarınız</h2>
+        <p>
+          Kişisel verilerinizin işlenmesine ilişkin bilgi alma, düzeltme veya
+          silme talebinde bulunma hakkına sahipsiniz. Talepleriniz için
+          <a href="/iletisim">iletişim</a> sayfamızı kullanabilirsiniz.
+        </p>
+
+        <h2>6. Değişiklikler</h2>
+        <p>
+          Bu politika zaman zaman güncellenebilir. Güncel sürüm her zaman bu
+          sayfada yayımlanır.
+        </p>
+
+        <div class="disclaimer" style="margin-top:28px">
+          Sorularınız için: <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
+        </div>
+      </div>
+    </div>
+  </article>
+</BaseLayout>
