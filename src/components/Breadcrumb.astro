@@ -1,0 +1,38 @@
+---
+// Visible breadcrumb trail. Pair with breadcrumbSchema() (lib/schema.ts)
+// passed to BaseLayout `schemas` so the visible trail and JSON-LD match.
+// Reuses the global `.crumbs` design-system classes.
+interface Crumb {
+  name: string;
+  href: string;
+}
+interface Props {
+  crumbs: Crumb[];
+}
+const { crumbs } = Astro.props;
+---
+
+<nav class="crumbs" aria-label="Breadcrumb">
+  {
+    crumbs.map((c, i) =>
+      i < crumbs.length - 1 ? (
+        <Fragment>
+          <a href={c.href}>{c.name}</a>
+          <span aria-hidden="true">/</span>
+        </Fragment>
+      ) : (
+        <span class="crumb-current" aria-current="page">{c.name}</span>
+      ),
+    )
+  }
+</nav>
+
+<style>
+  /* Current page: neutralize the separator-span styling from global.css. */
+  .crumbs .crumb-current {
+    margin: 0;
+    opacity: 1;
+    color: var(--ink-2);
+    font-weight: 600;
+  }
+</style>

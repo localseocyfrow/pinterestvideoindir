@@ -1,0 +1,22 @@
+---
+// Legal / safety note (copyright, personal-use, no Pinterest affiliation).
+// Renders default Turkish copy, or override via the default slot. Reuses the
+// global `.disclaimer` design-system class.
+//
+// Usage:
+//   <SafetyNote />
+//   <SafetyNote title="Yasal uyarı">Özel metin…</SafetyNote>
+interface Props {
+  title?: string;
+}
+const { title } = Astro.props;
+---
+
+<div class="disclaimer" role="note">
+  {title && <strong>{title} — </strong>}
+  <slot>
+    Bu araç yalnızca herkese açık pinlerle çalışır. İndirdiğiniz içeriklerin
+    telif haklarına saygı gösterin ve içerikleri yalnızca kişisel amaçlarla
+    kullanın. Sitemizin Pinterest ile resmî bir bağlantısı yoktur.
+  </slot>
+</div>

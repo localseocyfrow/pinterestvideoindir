@@ -1,0 +1,32 @@
+---
+// Conversion CTA band that points a guide/informational page at its matching
+// downloader tool. Every guide page should end with one so informational
+// traffic funnels into the tool. Reuses the global `.cta-band` + `.btn`.
+//
+// Usage:
+//   <ToolCta
+//     title="Hemen Pinterest videosu indirin"
+//     text="Bağlantıyı yapıştırın, saniyeler içinde HD kalitede kaydedin."
+//     href="/pinterest-video-indir/"
+//     label="Aracı aç"
+//   />
+interface Props {
+  title: string;
+  text: string;
+  href: string;
+  label?: string;
+}
+const { title, text, href, label = 'Aracı aç' } = Astro.props;
+---
+
+<section class="section">
+  <div class="container">
+    <div class="cta-band">
+      <h2>{title}</h2>
+      <p>{text}</p>
+      <div style="margin-top:22px">
+        <a class="btn btn-primary" href={href}>{label}</a>
+      </div>
+    </div>
+  </div>
+</section>

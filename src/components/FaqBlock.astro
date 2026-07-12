@@ -1,0 +1,26 @@
+---
+// Embeddable FAQ accordion. Lighter than Faq.astro (which renders a full
+// centered section) — use FaqBlock to drop an accordion inside a page's
+// content flow or under a custom section header. Pair with faqSchema(items)
+// passed to BaseLayout `schemas` so the visible Q&A and JSON-LD match.
+// Reuses the global `.faq` design-system classes.
+import type { QA } from '../data/faq';
+interface Props {
+  items: QA[];
+  title?: string;
+  openFirst?: boolean;
+}
+const { items, title, openFirst = true } = Astro.props;
+---
+
+{title && <h2>{title}</h2>}
+<div class="faq">
+  {
+    items.map((item, i) => (
+      <details open={openFirst && i === 0}>
+        <summary>{item.q}</summary>
+        <div class="faq-a"><p>{item.a}</p></div>
+      </details>
+    ))
+  }
+</div>

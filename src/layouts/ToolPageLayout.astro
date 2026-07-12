@@ -1,0 +1,145 @@
+---
+// Topical tool-page template. Composes the site's SEO + design system so a new
+// downloader page (e.g. galeriye, 4K, ücretsiz) is mostly declarative: pass
+// meta + hero + FAQ, then put the page's UNIQUE, substantive body in the
+// default slot. Handles WebApplication + Breadcrumb + FAQ + optional HowTo
+// JSON-LD automatically, keeping visible content and structured data in sync.
+//
+// This template does NOT replace existing pages — it is opt-in for new ones.
+//
+// Example (src/pages/pinterest-4k-video-indir.astro):
+//   ---
+//   import ToolPageLayout from '../layouts/ToolPageLayout.astro';
+//   import ShortAnswerBox from '../components/ShortAnswerBox.astro';
+//   import RelatedGuides from '../components/RelatedGuides.astro';
+//   import { VIDEO_4K_FAQ } from '../data/faq';
+//   ---
+//   <ToolPageLayout
+//     title="Pinterest 4K Video İndir – Ultra HD MP4"
+//     description="Pinterest videolarını 4K/Full HD kalitede, filigransız indirin."
+//     path="/pinterest-4k-video-indir/"
+//     eyebrow="4K · Ultra HD"
+//     h1="Pinterest 4K Video İndir"
+//     lead="Videoları kaynaktaki en yüksek çözünürlükte kaydedin."
+//     kind="video"
+//     crumbs={[{ name: 'Ana Sayfa', href: '/' }, { name: '4K Video İndir', href: '/pinterest-4k-video-indir/' }]}
+//     faq={VIDEO_4K_FAQ}
+//   >
+//     <ShortAnswerBox question="…" answer="…" />
+//     <h2>…unique, non-thin body…</h2>
+//     <RelatedGuides items={[…]} />
+//   </ToolPageLayout>
+
+import BaseLayout from './BaseLayout.astro';
+import Downloader from '../components/Downloader.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import FaqBlock from '../components/FaqBlock.astro';
+import SafetyNote from '../components/SafetyNote.astro';
+import type { QA } from '../data/faq';
+import {
+  webAppSchema,
+  breadcrumbSchema,
+  faqSchema,
+  howToSchema,
+  type Step,
+} from '../lib/schema';
+
+interface Crumb {
+  name: string;
+  href: string;
+}
+
+interface Props {
+  // SEO / meta (forwarded to BaseLayout)
+  title: string;
+  description: string;
+  path: string;
+  // Hero
+  eyebrow?: string;
+  h1: string;
+  lead: string;
+  // Downloader tool
+  kind?: 'video' | 'gif' | 'gorsel';
+  placeholder?: string;
+  // Breadcrumb — renders the visible trail AND the BreadcrumbList JSON-LD
+  crumbs: Crumb[];
+  // FAQ — renders the visible accordion AND the FAQPage JSON-LD
+  faq?: QA[];
+  faqTitle?: string;
+  // Optional HowTo JSON-LD
+  howTo?: { name: string; description: string; steps: Step[]; totalTime?: string };
+  // Any additional JSON-LD nodes
+  extraSchemas?: Record<string, unknown>[];
+}
+
+const {
+  title,
+  description,
+  path,
+  eyebrow,
+  h1,
+  lead,
+  kind = 'video',
+  placeholder,
+  crumbs,
+  faq,
+  faqTitle = 'Sıkça sorulan sorular',
+  howTo,
+  extraSchemas = [],
+} = Astro.props;
+
+const schemas = [
+  webAppSchema(),
+  breadcrumbSchema(crumbs),
+  ...(faq ? [faqSchema(faq)] : []),
+  ...(howTo ? [howToSchema(howTo)] : []),
+  ...extraSchemas,
+];
+---
+
+<BaseLayout title={title} description={description} path={path} schemas={schemas}>
+  <section class="hero">
+    <div
+      class="container"
+      style="max-width:820px;margin-inline:auto;text-align:center"
+    >
+      <div class="stack">
+        {eyebrow && <span class="eyebrow">{eyebrow}</span>}
+        <h1 style="margin-inline:auto">{h1}</h1>
+        <p class="lead" style="margin-inline:auto">{lead}</p>
+      </div>
+      <div style="margin-top:32px">
+        <Downloader kind={kind} placeholder={placeholder} />
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container prose" style="margin-inline:auto">
+      <Breadcrumb crumbs={crumbs} />
+      <!-- Page's unique, substantive body goes here. Keep it non-thin. -->
+      <slot />
+    </div>
+  </section>
+
+  <!-- Optional full-width blocks (RelatedGuides, ToolCta, tables…) -->
+  <slot name="after" />
+
+  {
+    faq && (
+      <section class="section section-soft" id="sss">
+        <div class="container">
+          <div class="center" style="margin-bottom:36px">
+            <span class="eyebrow">SSS</span>
+            <h2>{faqTitle}</h2>
+          </div>
+          <FaqBlock items={faq} />
+        </div>
+      </section>
+    )
+  }
+
+  <div class="container" style="padding-bottom:56px">
+    <SafetyNote />
+  </div>
+</BaseLayout>

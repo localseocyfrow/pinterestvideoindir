@@ -1,0 +1,58 @@
+---
+// Internal-linking block for topical authority. Renders a grid of link cards
+// to sibling tool/guide pages so hub-and-spoke internal links are consistent.
+// Reuses the global `.toolcards` / `.toolcard` design-system classes.
+//
+// Usage:
+//   <RelatedGuides
+//     title="İlgili araçlar"
+//     items={[
+//       { title: 'Pinterest 4K Video İndir', href: '/pinterest-4k-video-indir/',
+//         description: 'Videoları en yüksek çözünürlükte kaydedin.' },
+//     ]}
+//   />
+interface GuideItem {
+  title: string;
+  href: string;
+  description?: string;
+}
+interface Props {
+  items: GuideItem[];
+  title?: string;
+  eyebrow?: string;
+}
+const { items, title = 'İlgili rehberler', eyebrow = 'Keşfet' } = Astro.props;
+---
+
+<section class="section" aria-labelledby="related-heading">
+  <div class="container">
+    <div class="center" style="margin-bottom:32px">
+      <span class="eyebrow">{eyebrow}</span>
+      <h2 id="related-heading">{title}</h2>
+    </div>
+    <div class="toolcards">
+      {
+        items.map((it) => (
+          <a class="toolcard" href={it.href}>
+            <h3>{it.title}</h3>
+            {it.description && <p>{it.description}</p>}
+            <span class="go">
+              Aç
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                aria-hidden="true"
+              >
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </span>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</section>

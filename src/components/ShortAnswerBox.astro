@@ -1,0 +1,20 @@
+---
+// AEO/GEO "short answer" box — a concise, self-contained answer that can be
+// lifted into Google featured snippets / AI Overviews. Place it directly under
+// the H1 or the first H2 of a topical page. Reuses the global `.answer-box`.
+//
+// Usage:
+//   <ShortAnswerBox question="Pinterest videosu nasıl indirilir?"
+//     answer="Bağlantıyı kopyalayın, kutuya yapıştırın ve İndir'e basın." />
+// or with rich markup via the default slot instead of `answer`.
+interface Props {
+  question?: string;
+  answer?: string;
+}
+const { question, answer } = Astro.props;
+---
+
+<div class="answer-box">
+  {question && <p class="q">{question}</p>}
+  {answer ? <p class="mt-0">{answer}</p> : <slot />}
+</div>
