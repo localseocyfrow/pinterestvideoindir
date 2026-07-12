@@ -1,0 +1,127 @@
+---
+import ToolPageLayout from '../layouts/ToolPageLayout.astro';
+import ShortAnswerBox from '../components/ShortAnswerBox.astro';
+import RelatedGuides from '../components/RelatedGuides.astro';
+import ToolCta from '../components/ToolCta.astro';
+import { VIDEO_4K_FAQ } from '../data/faq';
+
+const path = '/pinterest-4k-video-indir/';
+const title = 'Pinterest 4K Video İndir – Ultra HD & Full HD MP4 (Ücretsiz)';
+const description =
+  'Pinterest videolarını 4K (2160p), Full HD (1080p) ve HD kalitede, filigransız MP4 olarak indirin. En yüksek çözünürlükte, ücretsiz ve kayıt olmadan.';
+
+const crumbs = [
+  { name: 'Ana Sayfa', href: '/' },
+  { name: '4K Video İndir', href: path },
+];
+
+const qualities = [
+  ['4K Ultra HD (2160p)', 'En yüksek netlik, 4× Full HD piksel', 'Kaynakta mevcutsa'],
+  ['Full HD (1080p)', 'Keskin, net görüntü', 'Önerilen'],
+  ['HD (720p)', 'Dengeli boyut/kalite', 'Hızlı indirme'],
+  ['SD (480p)', 'Küçük dosya boyutu', 'Sınırlı internet'],
+];
+
+const howTo = {
+  name: 'Pinterest videosunu 4K kalitede indirme',
+  description:
+    'Pinterest videosunu 4K veya Full HD indirmek için bağlantıyı kopyalayın, araca yapıştırın ve en yüksek kaliteyi seçin.',
+  steps: [
+    { name: 'Bağlantıyı kopyala', text: 'Videoyu Pinterest’te açıp “Paylaş → Bağlantıyı kopyala” deyin.' },
+    { name: 'Araca yapıştır', text: 'Bağlantıyı yukarıdaki kutuya yapıştırıp “İndir”e basın.' },
+    { name: 'En yüksek kaliteyi seç', text: 'Listeden 4K veya Full HD seçeneğini seçip MP4 olarak kaydedin.' },
+  ],
+};
+---
+
+<ToolPageLayout
+  title={title}
+  description={description}
+  path={path}
+  eyebrow="4K · Full HD · Ultra HD"
+  h1="Pinterest 4K Video İndir"
+  lead="Pinterest videolarını kaynaktaki en yüksek çözünürlükte — 4K, Full HD veya HD — filigransız MP4 olarak indirin."
+  kind="video"
+  placeholder="Pinterest video bağlantısını buraya yapıştırın…"
+  crumbs={crumbs}
+  faq={VIDEO_4K_FAQ}
+  faqTitle="4K video indirme — SSS"
+  howTo={howTo}
+>
+  <ShortAnswerBox question="Pinterest videosu 4K kalitede nasıl indirilir?">
+    <p class="mt-0" style="margin:0">
+      Videonun bağlantısını <strong>kopyalayın</strong>, kutuya
+      <strong>yapıştırın</strong> ve <strong>“İndir”</strong>e basın. İndirme
+      seçenekleri arasından <strong>4K (2160p)</strong> veya
+      <strong>Full HD (1080p)</strong> kaliteyi seçip videoyu
+      <strong>MP4</strong> olarak kaydedin. En yüksek kalite, videonun
+      Pinterest’e yüklendiği çözünürlükle sınırlıdır.
+    </p>
+  </ShortAnswerBox>
+
+  <h2>İndirme kalitesi seçenekleri</h2>
+  <p>
+    Aracımız, kaynak videoda gerçekten var olan çözünürlükleri listeler ve
+    aşağıdaki kalite seçeneklerini sunmayı hedefler:
+  </p>
+  <div class="table-wrap" style="margin:18px 0 8px">
+    <table>
+      <thead>
+        <tr><th style="text-align:right">Kalite</th><th>Açıklama</th><th>Uygun</th></tr>
+      </thead>
+      <tbody>
+        {qualities.map((q) => (
+          <tr>
+            <td style="font-weight:700;color:var(--ink)">{q[0]}</td>
+            <td>{q[1]}</td>
+            <td>{q[2]}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Neden bazı videolarda 4K seçeneği çıkmaz?</h2>
+  <p>
+    İndirilebilecek en yüksek kalite, tamamen içeriği <strong>yükleyen kişinin
+    seçtiği çözünürlüğe</strong> bağlıdır. Bir video Pinterest’e yalnızca 1080p
+    olarak yüklendiyse, hiçbir araç onu 4K’ya “yükseltemez”; yapay olarak
+    büyütülen görüntü gerçek 4K netliği vermez. Bu yüzden yalnızca kaynakta
+    mevcut olan gerçek kaliteleri gösteririz — böylece bulanık, şişirilmiş
+    dosyalar yerine net ve doğru bir video indirirsiniz.
+  </p>
+
+  <h2>HD, Full HD ve 4K arasındaki fark</h2>
+  <ul>
+    <li><strong>HD (720p):</strong> 1280×720 piksel. Dosya boyutu küçük, sosyal paylaşım için yeterli.</li>
+    <li><strong>Full HD (1080p):</strong> 1920×1080 piksel. Çoğu ekran için ideal denge; en sık önerilen seçenek.</li>
+    <li><strong>4K Ultra HD (2160p):</strong> 3840×2160 piksel — Full HD’nin dört katı ayrıntı. Büyük ekran ve TV’lerde en yüksek netlik.</li>
+  </ul>
+
+  <h2>Öne çıkan özellikler</h2>
+  <ul>
+    <li><strong>Gerçek kalite:</strong> Yalnızca kaynakta var olan çözünürlükler; yapay büyütme yok.</li>
+    <li><strong>MP4 formatı:</strong> Tüm cihaz ve oynatıcılarla uyumlu, ek uygulama gerektirmez.</li>
+    <li><strong>Filigransız:</strong> Logo veya damga olmadan temiz video.</li>
+    <li><strong>Ücretsiz &amp; sınırsız:</strong> 4K dahil tüm kaliteler kayıt ve limit olmadan.</li>
+  </ul>
+
+  <ToolCta
+    slot="after"
+    title="En yüksek kalitede indirmeye başlayın"
+    text="Bağlantıyı yapıştırın, 4K veya Full HD seçin ve videoyu saniyeler içinde kaydedin."
+    href="/pinterest-video-indir/"
+    label="Pinterest Video İndir"
+  />
+
+  <RelatedGuides
+    slot="after"
+    title="İlgili araçlar ve rehberler"
+    items={[
+      { title: 'Pinterest Video İndir', href: '/pinterest-video-indir/', description: 'Tüm cihazlarda HD, Full HD ve 4K MP4 indirme.' },
+      { title: 'Pinterest Video İndir Galeriye', href: '/pinterest-video-galeriye-indir/', description: 'Videoyu doğrudan telefon galerinize kaydedin.' },
+      { title: 'Pinterest Resim & Fotoğraf İndir', href: '/pinterest-resim-indir/', description: 'Görselleri tam çözünürlükte indirin.' },
+      { title: 'Nasıl Kullanılır', href: '/nasil-kullanilir/', description: 'Adım adım Pinterest indirme rehberi.' },
+    ]}
+  />
+</ToolPageLayout>

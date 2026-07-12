@@ -71,6 +71,14 @@ export const IMAGE_FAQ: QA[] = [
     q: 'Resim indirmek telif hakkına takılır mı?',
     a: 'Kişisel kullanım için indirmek genellikle uygundur. Görseli ticari olarak kullanacaksanız veya yeniden yayınlayacaksanız içerik sahibinden izin almanız gerekir.',
   },
+  {
+    q: 'Pinterest “fotoğraf indir”, “foto indir” ve “resim indir” aynı şey mi?',
+    a: 'Evet. “Fotoğraf”, “foto”, “resim” ve “görsel” aynı içeriği ifade eder. Aracımız hepsini aynı şekilde, tam çözünürlükte ve filigransız indirir; hangi kelimeyi kullandığınız fark etmez.',
+  },
+  {
+    q: 'Pinterest fotoğrafını orijinal (tam) boyutta indirebilir miyim?',
+    a: 'Evet. Küçük önizleme yerine, görselin Pinterest’te bulunan en büyük ve en yüksek çözünürlüklü sürümünü indirmenizi sağlarız; böylece fotoğraf net ve kırpılmamış olarak kaydedilir.',
+  },
 ];
 
 export const CAROUSEL_FAQ: QA[] = [
@@ -85,6 +93,54 @@ export const CAROUSEL_FAQ: QA[] = [
   {
     q: 'Karusel indirmek ücretsiz mi?',
     a: 'Evet. Karusel içeriklerini indirmek de tamamen ücretsizdir ve sınırsızdır; kayıt gerektirmez.',
+  },
+];
+
+// Save-to-gallery / mobile cluster — consumed by /pinterest-video-galeriye-indir/.
+export const GALLERY_FAQ: QA[] = [
+  {
+    q: 'Pinterest videosunu galeriye nasıl kaydederim?',
+    a: 'Videonun bağlantısını kopyalayıp aracımıza yapıştırın ve “İndir”e basın. Android’de video doğrudan galeriye (Galeri/Fotoğraflar) kaydedilir; iPhone’da videoyu “Dosyalar”a indirip oradan “Videoyu Kaydet” ile Fotoğraflar uygulamasına ekleyebilirsiniz.',
+  },
+  {
+    q: 'iPhone’da Pinterest videosu doğrudan fotoğraflara iner mi?',
+    a: 'iOS, tarayıcıdan inen videoları önce “Dosyalar” uygulamasına kaydeder. Dosyalar’dan videoya dokunup “Paylaş → Videoyu Kaydet” dediğinizde video Fotoğraflar (galeri) uygulamanıza taşınır.',
+  },
+  {
+    q: 'Android’de video neden bazen “İndirilenler” klasörüne gidiyor?',
+    a: 'Bazı Android tarayıcıları tüm dosyaları önce “İndirilenler” klasörüne koyar. Videoyu Galeri’de görmüyorsanız Dosya Yöneticisi → İndirilenler klasörüne bakın; çoğu galeri uygulaması bu klasörü otomatik tarar.',
+  },
+  {
+    q: 'Pinterest uygulamasından videoyu neden galeriye kaydedemiyorum?',
+    a: 'Pinterest uygulaması videoları doğrudan galeriye kaydetme seçeneği sunmaz; yalnızca uygulama içinde saklar. Bağlantıyı kopyalayıp aracımızı kullanarak videoyu MP4 olarak cihazınızın galerisine indirebilirsiniz.',
+  },
+  {
+    q: 'Galeriye indirdiğim videoda filigran olur mu?',
+    a: 'Hayır. Video orijinal kaynaktan alındığı için galeriye kaydedilen dosyada logo veya filigran bulunmaz; videoyu temiz ve HD kalitede saklarsınız.',
+  },
+];
+
+// 4K / HD quality cluster — consumed by /pinterest-4k-video-indir/.
+export const VIDEO_4K_FAQ: QA[] = [
+  {
+    q: 'Pinterest’ten 4K video indirebilir miyim?',
+    a: 'Evet. Kaynak video 4K (2160p) olarak yüklendiyse, indirme seçenekleri arasında 4K çözünürlüğü sunarız. Videoyu MP4 formatında, filigransız ve en yüksek kalitede kaydedersiniz.',
+  },
+  {
+    q: 'Video neden 4K yerine daha düşük çözünürlükte iniyor?',
+    a: 'İndirilebilecek en yüksek kalite, videonun Pinterest’e yüklendiği çözünürlükle sınırlıdır. İçerik üreticisi videoyu 1080p olarak yüklediyse 4K seçeneği çıkmaz; aracımız yalnızca kaynakta gerçekten var olan kaliteleri listeler.',
+  },
+  {
+    q: 'HD (720p), Full HD (1080p) ve 4K arasındaki fark nedir?',
+    a: '720p (HD) dengeli boyut/kalite sunar, 1080p (Full HD) daha keskin ve nettir, 4K (2160p) ise dört kat daha fazla piksel içerir ve büyük ekranlarda en yüksek netliği verir. Daha yüksek çözünürlük daha büyük dosya boyutu demektir.',
+  },
+  {
+    q: '4K video hangi formatta indirilir?',
+    a: 'Videolar evrensel olarak uyumlu MP4 (H.264/H.265) formatında indirilir; telefon, tablet, bilgisayar ve akıllı TV’lerde ek uygulama gerekmeden oynatılır.',
+  },
+  {
+    q: '4K Pinterest videosu indirmek ücretsiz mi?',
+    a: 'Evet. HD, Full HD ve 4K dahil tüm kalite seçenekleri tamamen ücretsizdir; kayıt, ödeme veya günlük indirme sınırı yoktur.',
   },
 ];
 

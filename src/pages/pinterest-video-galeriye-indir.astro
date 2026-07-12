@@ -1,0 +1,109 @@
+---
+import ToolPageLayout from '../layouts/ToolPageLayout.astro';
+import ShortAnswerBox from '../components/ShortAnswerBox.astro';
+import RelatedGuides from '../components/RelatedGuides.astro';
+import ToolCta from '../components/ToolCta.astro';
+import { GALLERY_FAQ } from '../data/faq';
+
+const path = '/pinterest-video-galeriye-indir/';
+const title = 'Pinterest Video İndir Galeriye – Telefona Kaydet (Android & iPhone)';
+const description =
+  'Pinterest videolarını doğrudan telefon galerinize indirin. Android ve iPhone için adım adım galeriye kaydetme rehberi. Ücretsiz, filigransız, kayıt yok.';
+
+const crumbs = [
+  { name: 'Ana Sayfa', href: '/' },
+  { name: 'Video İndir Galeriye', href: path },
+];
+
+const howTo = {
+  name: 'Pinterest videosunu telefon galerisine indirme',
+  description:
+    'Pinterest videosunu Android veya iPhone galerisine kaydetmek için bağlantıyı kopyalayın, araca yapıştırın ve indirin.',
+  steps: [
+    { name: 'Bağlantıyı kopyala', text: 'Pinterest’te videoyu açın, “Paylaş → Bağlantıyı kopyala” deyin.' },
+    { name: 'Araca yapıştır', text: 'Bağlantıyı yukarıdaki kutuya yapıştırıp “İndir”e basın.' },
+    { name: 'Galeriye kaydet', text: 'Android’de video galeriye iner; iPhone’da Dosyalar’dan “Videoyu Kaydet” ile Fotoğraflar’a ekleyin.' },
+  ],
+};
+---
+
+<ToolPageLayout
+  title={title}
+  description={description}
+  path={path}
+  eyebrow="Galeriye kaydet · Mobil"
+  h1="Pinterest Video İndir — Galeriye Kaydet"
+  lead="Pinterest videolarını doğrudan telefonunuzun galerisine indirin. Android ve iPhone için filigransız, ücretsiz ve tek tıkla."
+  kind="video"
+  placeholder="Pinterest video bağlantısını buraya yapıştırın…"
+  crumbs={crumbs}
+  faq={GALLERY_FAQ}
+  faqTitle="Galeriye video indirme — SSS"
+  howTo={howTo}
+>
+  <ShortAnswerBox question="Pinterest videosu galeriye nasıl indirilir?">
+    <p class="mt-0" style="margin:0">
+      Videonun Pinterest bağlantısını <strong>kopyalayın</strong>, yukarıdaki
+      kutuya <strong>yapıştırın</strong> ve <strong>“İndir”</strong>e basın.
+      <strong>Android</strong> telefonlarda video doğrudan galeriye kaydedilir;
+      <strong>iPhone</strong>’da video önce “Dosyalar”a iner, ardından
+      “Videoyu Kaydet” ile Fotoğraflar (galeri) uygulamasına eklenir.
+    </p>
+  </ShortAnswerBox>
+
+  <h2>Android’de Pinterest videosunu galeriye indirme</h2>
+  <div class="steps" style="margin:20px 0">
+    <div class="step"><h3>Bağlantıyı kopyala</h3><p>Pinterest uygulamasında videoyu açın, sağ üstteki “Paylaş” simgesine dokunup “Bağlantıyı kopyala” deyin.</p></div>
+    <div class="step"><h3>Yapıştır ve indir</h3><p>Bağlantıyı bu sayfadaki kutuya yapıştırın, “İndir”e basın ve istediğiniz kaliteyi seçin.</p></div>
+    <div class="step"><h3>Galeride aç</h3><p>Video otomatik olarak Galeri / Fotoğraflar uygulamanıza kaydedilir. Görünmüyorsa “İndirilenler” klasörünü kontrol edin.</p></div>
+  </div>
+
+  <h2>iPhone’da (iOS) Pinterest videosunu fotoğraflara kaydetme</h2>
+  <p>
+    iPhone’da Safari, tarayıcıdan inen dosyaları önce <strong>Dosyalar</strong>
+    uygulamasına koyar. Videoyu galeriye taşımak için şu adımları izleyin:
+  </p>
+  <ol>
+    <li>Bağlantıyı yapıştırıp indirmeyi başlatın; kaliteyi seçtikten sonra video <strong>Dosyalar → İndirilenler</strong> klasörüne kaydedilir.</li>
+    <li><strong>Dosyalar</strong> uygulamasını açıp videoya dokunun.</li>
+    <li>Sol alttaki <strong>Paylaş</strong> simgesine basın ve <strong>“Videoyu Kaydet”</strong> seçeneğini seçin.</li>
+    <li>Video artık <strong>Fotoğraflar</strong> (galeri) uygulamanızdadır.</li>
+  </ol>
+
+  <h2>Pinterest uygulaması videoyu neden galeriye kaydetmiyor?</h2>
+  <p>
+    Pinterest’in kendi uygulamasında videoyu doğrudan telefon galerisine
+    aktaran bir “indir” düğmesi yoktur; kaydettiğiniz videolar yalnızca uygulama
+    içindeki panolarda kalır ve çevrimdışı izlenemez. Videoyu gerçekten
+    cihazınıza — fotoğraf ve videolarınızın yanına — almak için bağlantıyı
+    kopyalayıp bu araçla <strong>MP4</strong> olarak indirmeniz gerekir. Böylece
+    video internet olmadan da oynatılabilir, paylaşılabilir ve yedeklenebilir.
+  </p>
+
+  <h2>Öne çıkan özellikler</h2>
+  <ul>
+    <li><strong>Doğrudan galeriye:</strong> Android’de tek adımda galeriye, iPhone’da Dosyalar üzerinden Fotoğraflar’a.</li>
+    <li><strong>Filigransız:</strong> Video orijinal kaynaktan alınır, logo veya damga içermez.</li>
+    <li><strong>Uygulama yok:</strong> Tarayıcıdan çalışır; kurulum ve kayıt gerektirmez.</li>
+    <li><strong>Ücretsiz &amp; sınırsız:</strong> Günlük indirme limiti olmadan istediğiniz kadar video kaydedin.</li>
+  </ul>
+
+  <ToolCta
+    slot="after"
+    title="Videoyu şimdi galerinize indirin"
+    text="Bağlantıyı yapıştırın, saniyeler içinde telefonunuzun galerisine HD kalitede kaydedin."
+    href="/pinterest-video-indir/"
+    label="Pinterest Video İndir"
+  />
+
+  <RelatedGuides
+    slot="after"
+    title="İlgili araçlar ve rehberler"
+    items={[
+      { title: 'Pinterest Video İndir', href: '/pinterest-video-indir/', description: 'Tüm cihazlarda HD, Full HD ve 4K MP4 indirme.' },
+      { title: 'Pinterest 4K Video İndir', href: '/pinterest-4k-video-indir/', description: 'Videoları en yüksek çözünürlükte kaydedin.' },
+      { title: 'Pinterest Resim & Fotoğraf İndir', href: '/pinterest-resim-indir/', description: 'Görselleri tam çözünürlükte indirin.' },
+      { title: 'Nasıl Kullanılır', href: '/nasil-kullanilir/', description: 'Adım adım Pinterest indirme rehberi.' },
+    ]}
+  />
+</ToolPageLayout>

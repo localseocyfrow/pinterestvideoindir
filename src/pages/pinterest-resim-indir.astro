@@ -6,9 +6,9 @@ import { IMAGE_FAQ } from '../data/faq';
 import { webAppSchema, faqSchema, breadcrumbSchema } from '../lib/schema';
 
 const path = '/pinterest-resim-indir/';
-const title = 'Pinterest Resim İndir – Tam Çözünürlük Görsel İndirici';
+const title = 'Pinterest Fotoğraf & Resim İndir – Tam Çözünürlük Görsel İndirici';
 const description =
-  'Pinterest resimlerini (görsellerini) tam çözünürlükte, ücretsiz ve filigransız indirin. Kayıt olmadan, tek tıkla yüksek kaliteli fotoğraf kaydetme aracı.';
+  'Pinterest fotoğraf, resim ve görsellerini tam çözünürlükte, ücretsiz ve filigransız indirin. Kayıt olmadan, tek tıkla yüksek kaliteli foto kaydetme aracı.';
 ---
 
 <BaseLayout
@@ -19,7 +19,7 @@ const description =
     webAppSchema(),
     breadcrumbSchema([
       { name: 'Ana Sayfa', href: '/' },
-      { name: 'Resim İndir', href: path },
+      { name: 'Resim & Fotoğraf İndir', href: path },
     ]),
     faqSchema(IMAGE_FAQ),
   ]}
@@ -28,9 +28,10 @@ const description =
     <div class="container" style="max-width:760px;margin-inline:auto;text-align:center">
       <div class="stack">
         <span class="eyebrow">Tam çözünürlük · Ücretsiz</span>
-        <h1 style="margin-inline:auto">Pinterest Resim İndir</h1>
+        <h1 style="margin-inline:auto">Pinterest Fotoğraf &amp; Resim İndir</h1>
         <p class="lead" style="margin-inline:auto">
-          Pinterest resimlerini <strong>en yüksek çözünürlükte</strong>,
+          Pinterest <strong>fotoğraf</strong>, <strong>resim</strong> ve
+          <strong>görsellerini</strong> en yüksek çözünürlükte,
           <strong>filigransız</strong> ve ücretsiz indirin. Tek tıkla
           cihazınıza kaydedin.
         </p>
@@ -38,7 +39,7 @@ const description =
       <div style="margin-top:34px">
         <Downloader
           kind="gorsel"
-          placeholder="Pinterest resim bağlantısını buraya yapıştırın…"
+          placeholder="Pinterest fotoğraf/resim bağlantısını buraya yapıştırın…"
         />
       </div>
     </div>
@@ -46,37 +47,60 @@ const description =
 
   <section class="section">
     <div class="container prose" style="margin-inline:auto">
-      <h2>Pinterest resmi nasıl indirilir?</h2>
+      <h2>Pinterest fotoğrafı (resmi) nasıl indirilir?</h2>
       <div class="answer-box" style="margin:20px 0">
         <p class="mt-0" style="margin:0">
-          Resmin Pinterest bağlantısını <strong>kopyalayın</strong>, yukarıdaki
-          kutuya <strong>yapıştırın</strong> ve <strong>“İndir”</strong>e basın.
-          Görseli tam çözünürlükte, filigransız olarak kaydedin.
+          Fotoğrafın Pinterest bağlantısını <strong>kopyalayın</strong>,
+          yukarıdaki kutuya <strong>yapıştırın</strong> ve
+          <strong>“İndir”</strong>e basın. Görseli tam çözünürlükte, filigransız
+          olarak telefonunuza veya bilgisayarınıza kaydedin.
         </p>
       </div>
 
       <div class="steps" style="margin:24px 0">
-        <div class="step"><h3>Bağlantıyı kopyala</h3><p>Resmi Pinterest’te açıp “Paylaş → Bağlantıyı kopyala” deyin.</p></div>
+        <div class="step"><h3>Bağlantıyı kopyala</h3><p>Fotoğrafı Pinterest’te açıp “Paylaş → Bağlantıyı kopyala” deyin.</p></div>
         <div class="step"><h3>Yapıştır</h3><p>Bağlantıyı indirme kutusuna yapıştırın.</p></div>
         <div class="step"><h3>İndir</h3><p>“İndir”e basın ve en yüksek çözünürlüğü seçip kaydedin.</p></div>
       </div>
 
+      <h2>Fotoğraf, resim, görsel — hepsi aynı</h2>
+      <p>
+        Türkçede “<strong>fotoğraf indir</strong>”, “<strong>foto indir</strong>”,
+        “<strong>resim indir</strong>” ve “<strong>görsel indir</strong>” aynı
+        işlemi ifade eder: bir pindeki durağan görseli cihazınıza kaydetmek.
+        Aracımız hangi kelimeyi kullandığınıza bakmadan hepsini aynı şekilde,
+        <strong>orijinal (tam) boyutta</strong> ve filigransız indirir. Küçük
+        önizleme yerine görselin Pinterest’te bulunan en büyük sürümünü sunar;
+        böylece fotoğraf net ve kırpılmamış olarak kaydedilir.
+      </p>
+
       <h2>Öne çıkan özellikler</h2>
       <ul>
-        <li><strong>Tam çözünürlük:</strong> Görselin mevcut en yüksek kalitesini indirir.</li>
-        <li><strong>Filigransız:</strong> Logo veya damga olmadan temiz resim.</li>
+        <li><strong>Tam çözünürlük:</strong> Görselin mevcut en yüksek kalitesini (orijinal boyut) indirir.</li>
+        <li><strong>Filigransız:</strong> Logo veya damga olmadan temiz fotoğraf.</li>
+        <li><strong>JPG &amp; PNG:</strong> Kaynak görsel hangi formatta ise onu korur.</li>
         <li><strong>Ücretsiz:</strong> Sınırsız görsel indirme, kayıt yok.</li>
         <li><strong>Tüm cihazlar:</strong> Telefon, tablet ve bilgisayarda çalışır.</li>
       </ul>
 
+      <h2>Fotoğrafı telefon galerisine kaydetme</h2>
+      <p>
+        Android’de indirilen görsel doğrudan Galeri / Fotoğraflar uygulamasına
+        kaydedilir. iPhone’da ise görsele basılı tutup <strong>“Görseli
+        Kaydet”</strong> diyerek Fotoğraflar’a ekleyebilirsiniz. Bir pinde
+        birden fazla görsel varsa <a href="/pinterest-karusel-indir/">karusel
+        indirme aracımızı</a> kullanın.
+      </p>
+
       <p style="margin-top:24px">
         Video, GIF veya karusel mi indireceksiniz?
         <a href="/pinterest-video-indir/">Video</a>,
+        <a href="/pinterest-video-galeriye-indir/">videoyu galeriye</a>,
         <a href="/pinterest-gif-indir/">GIF</a> ve
         <a href="/pinterest-karusel-indir/">karusel</a> araçlarımızı deneyin.
       </p>
     </div>
   </section>
 
-  <Faq items={IMAGE_FAQ} title="Pinterest resim indirme — SSS" />
+  <Faq items={IMAGE_FAQ} title="Pinterest fotoğraf & resim indirme — SSS" />
 </BaseLayout>

@@ -39,6 +39,8 @@ export const FOOTER_GROUPS: { title: string; links: NavItem[] }[] = [
     title: 'Araçlar',
     links: [
       { label: 'Pinterest Video İndir', href: '/pinterest-video-indir/' },
+      { label: 'Video İndir Galeriye', href: '/pinterest-video-galeriye-indir/' },
+      { label: 'Pinterest 4K Video İndir', href: '/pinterest-4k-video-indir/' },
       { label: 'Pinterest Resim İndir', href: '/pinterest-resim-indir/' },
       { label: 'Pinterest GIF İndir', href: '/pinterest-gif-indir/' },
       { label: 'Pinterest Karusel İndir', href: '/pinterest-karusel-indir/' },
