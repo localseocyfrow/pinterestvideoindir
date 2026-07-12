@@ -17,7 +17,7 @@ export function organizationSchema(): JsonLd {
     foundingDate: SITE.founded,
     logo: {
       '@type': 'ImageObject',
-      url: abs('/favicon.svg'),
+      url: abs('/brand/logo.png'),
     },
     description: SITE.description,
   };

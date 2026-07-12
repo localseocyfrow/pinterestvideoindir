@@ -589,6 +589,13 @@ tr:last-child td { border-bottom: none; }
   grid-template-columns: 1.7fr 1fr 1fr 1fr;
 }
 .footer-brand .brand { color: #fff; }
+.footer-logo-link {
+  display: inline-flex;
+  background: #fff;
+  padding: 10px 14px;
+  border-radius: 12px;
+}
+.footer-logo { display: block; height: 40px; width: auto; }
 .footer-brand p { color: #8a8a97; font-size: 0.95rem; max-width: 42ch; }
 .footer-col h4 {
   color: #fff;
