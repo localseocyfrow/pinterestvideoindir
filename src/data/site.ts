@@ -13,7 +13,7 @@ export const SITE = {
   description:
     'Pinterest videolarını HD kalitede, ücretsiz ve filigransız indirin. ' +
     'Kayıt olmadan, reklamsız ve tek tıkla Pinterest MP4, GIF ve görsel indirme aracı.',
-  email: 'destek@pinterestvideoindirme.tr',
+  email: 'pinterestvideoindirme2@gmail.com',
   author: 'Pinterest Video İndir Ekibi',
   twitter: '@pinvideoindir',
   // Launch/updated dates are used in structured data + footer.
