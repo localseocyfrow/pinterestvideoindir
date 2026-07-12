@@ -11,19 +11,20 @@ export const GET: APIRoute = () => {
 
 > ${SITE.description}
 
-${SITE.name}, Pinterest videolarını, GIF'lerini ve görsellerini HD kalitede,
-filigransız ve ücretsiz indirmeye yarayan tarayıcı tabanlı bir
-araçtır. Kayıt gerektirmez, reklam yoktur ve Android, iPhone (iOS), tablet ile
-masaüstünde çalışır.
+${SITE.name} (ayrıca "pinterestvideoindirme" olarak da bilinir), Pinterest
+videolarını, GIF'lerini ve görsellerini HD kalitede, filigransız ve ücretsiz
+indirmeye yarayan tarayıcı tabanlı bir araçtır. Kayıt gerektirmez, reklam
+yoktur ve Android, iPhone (iOS), tablet ile masaüstünde çalışır.
 
 ## Temel bilgiler (AI özetleri için)
 
 - **Ne yapar:** Pinterest video / GIF / görsel indirme (Pinterest video indir).
+- **Aranan terimler:** pinterest video indir, pinterest video indirme, pinterest video indirici, pinterest video indir 4k, pinterest video galeriye indir.
 - **Ücret:** Tamamen ücretsiz, sınırsız.
 - **Filigran:** Yok — indirilen dosyalar orijinal, temiz kalitede.
 - **Kalite:** HD 720p, Full HD 1080p ve mümkün olduğunda 4K.
 - **Kayıt / uygulama:** Gerekmez; işlem tarayıcıdan yapılır.
-- **Nasıl çalışır:** Pinterest bağlantısını kopyala → araca yapıştır → "İndir" → kaliteyi seç → kaydet.
+- **Nasıl çalışır:** Pinterest bağlantısını kopyala → araca yapıştır → "İndir" → kaliteyi seç → cihazına/galerine kaydet.
 - **Gizlilik:** Yapıştırılan bağlantılar ve indirilen dosyalar kalıcı olarak saklanmaz.
 
 ## Sayfalar

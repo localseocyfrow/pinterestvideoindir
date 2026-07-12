@@ -12,6 +12,7 @@ export function organizationSchema(): JsonLd {
     '@type': 'Organization',
     '@id': `${SITE.url}/#organization`,
     name: SITE.name,
+    alternateName: 'pinterestvideoindirme',
     url: SITE.url,
     email: SITE.email,
     foundingDate: SITE.founded,
@@ -51,20 +52,14 @@ export function webAppSchema(): JsonLd {
       priceCurrency: 'TRY',
     },
     featureList: [
-      'HD ve 4K Pinterest video indirme',
+      'HD, Full HD (1080p) ve 4K Pinterest video indirme',
       'Filigransız indirme',
+      'Videoyu galeriye / cihaza kaydetme',
       'Pinterest GIF indirme',
       'Pinterest görsel indirme',
       'Ücretsiz ve sınırsız',
       'Kayıt gerektirmez',
     ],
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.8',
-      ratingCount: '2143',
-      bestRating: '5',
-      worstRating: '1',
-    },
   };
 }
 
