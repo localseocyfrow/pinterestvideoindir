@@ -1,0 +1,119 @@
+---
+import ToolPageLayout from '../layouts/ToolPageLayout.astro';
+import ShortAnswerBox from '../components/ShortAnswerBox.astro';
+import RelatedGuides from '../components/RelatedGuides.astro';
+import ToolCta from '../components/ToolCta.astro';
+import { ANDROID_FAQ } from '../data/faq';
+
+const path = '/android-pinterest-video-indir/';
+const title = 'Android Pinterest Video İndir – Galeriye Ücretsiz Kaydet';
+const description =
+  'Android’de Pinterest videosu nasıl indirilir? Bağlantıyı yapıştırın, videoyu MP4 olarak doğrudan telefon galerinize kaydedin. Samsung, Xiaomi ve tüm Android cihazlarda ücretsiz, uygulama gerekmez.';
+
+const crumbs = [
+  { name: 'Ana Sayfa', href: '/' },
+  { name: 'Android Pinterest Video İndir', href: path },
+];
+
+const howTo = {
+  name: 'Android’de Pinterest videosu indirme',
+  description:
+    'Android’de Pinterest videosunu tarayıcıdan indirmek için bağlantıyı kopyalayın, araca yapıştırın, kaliteyi seçin ve videoyu galeriye kaydedin.',
+  steps: [
+    { name: 'Bağlantıyı kopyala', text: 'Pinterest uygulamasında videoyu açıp “Paylaş → Bağlantıyı kopyala” deyin.' },
+    { name: 'Tarayıcıda yapıştır', text: 'Chrome veya başka bir tarayıcıda bu sayfayı açın, bağlantıyı yapıştırıp “İndir”e basın.' },
+    { name: 'Kaliteyi seç', text: 'HD, Full HD veya varsa 4K seçeneğini seçin.' },
+    { name: 'Galeriye kaydet', text: 'Video MP4 olarak “İndirilenler” klasörüne ve galeriye kaydedilir.' },
+  ],
+};
+---
+
+<ToolPageLayout
+  title={title}
+  description={description}
+  path={path}
+  eyebrow="Android · Samsung · Xiaomi"
+  h1="Android Pinterest Video İndir"
+  lead="Android telefon ve tabletlerde Pinterest videolarını tarayıcıdan, uygulama kurmadan indirin: bağlantıyı yapıştırın, kaliteyi seçin, video MP4 olarak doğrudan galerinize kaydedilsin."
+  kind="video"
+  placeholder="Pinterest video bağlantısını buraya yapıştırın…"
+  crumbs={crumbs}
+  faq={ANDROID_FAQ}
+  faqTitle="Android’de Pinterest video indirme — SSS"
+  howTo={howTo}
+>
+  <ShortAnswerBox question="Android’de Pinterest videosu nasıl indirilir?">
+    <p class="mt-0" style="margin:0">
+      Pinterest’te videoyu açıp <strong>“Paylaş → Bağlantıyı kopyala”</strong>
+      deyin. Chrome veya başka bir tarayıcıda bu sayfayı açın, bağlantıyı kutuya
+      <strong>yapıştırın</strong> ve <strong>“İndir”</strong>e basın. Kaliteyi
+      seçtiğinizde video <strong>MP4</strong> olarak telefonunuzun galerisine
+      (veya “İndirilenler” klasörüne) kaydedilir. iPhone’un aksine ek bir kaydetme
+      adımı gerekmez.
+    </p>
+  </ShortAnswerBox>
+
+  <h2>Android’de adım adım Pinterest video indirme</h2>
+  <div class="steps" style="margin:20px 0">
+    <div class="step"><h3>Bağlantıyı kopyala</h3><p>Pinterest uygulamasında videoyu açın, “Paylaş → Bağlantıyı kopyala” deyin.</p></div>
+    <div class="step"><h3>Tarayıcıda yapıştır</h3><p>Chrome, Samsung Internet veya Firefox’ta bu sayfayı açıp bağlantıyı yapıştırın.</p></div>
+    <div class="step"><h3>Kaliteyi seç &amp; indir</h3><p>“İndir”e basın, HD/Full HD ya da varsa 4K seçin.</p></div>
+    <div class="step"><h3>Galeride bul</h3><p>Video, Galeri/Fotoğraflar’daki “İndirilenler” albümünde belirir.</p></div>
+  </div>
+
+  <h2>Video galeride görünmüyorsa ne yapmalı?</h2>
+  <p>
+    Bazı Android tarayıcıları dosyaları önce <strong>“İndirilenler”</strong>
+    klasörüne koyar. Videoyu Galeri’de göremiyorsanız <strong>Dosya Yöneticisi →
+    İndirilenler</strong> klasörüne bakın; çoğu galeri uygulaması bu klasörü
+    otomatik tarar. Yine de görünmüyorsa galeri uygulamasını kapatıp açın veya
+    telefonu yeniden başlatın. Kaydetme mantığının cihazlar arası farkları için
+    <a href="/pinterest-video-galeriye-indir/">galeriye indirme rehberimize</a>
+    göz atın.
+  </p>
+
+  <h2>Tüm Android markalarında çalışır</h2>
+  <p>
+    Araç markadan bağımsızdır: <strong>Samsung, Xiaomi, Oppo, Huawei, realme,
+    Vivo</strong> ve diğer tüm Android telefon ve tabletlerde aynı şekilde
+    çalışır. Tek gereken güncel bir tarayıcıdır — <strong>Chrome, Samsung
+    Internet, Firefox veya Opera</strong> fark etmez. Play Store’dan ayrı bir
+    indirme uygulaması kurmanıza gerek yoktur; bu da depolama kazandırır ve
+    gereksiz izin/reklam riskini ortadan kaldırır.
+  </p>
+
+  <h2>Android’de Pinterest videosu indirmenin kullanım alanları</h2>
+  <ul>
+    <li><strong>Çevrimdışı arşiv:</strong> Tarif, egzersiz ve DIY videolarını internetsiz izlemek için galerinize alın.</li>
+    <li><strong>WhatsApp &amp; sosyal paylaşım:</strong> İndirdiğiniz MP4’ü doğrudan galeriden paylaşın.</li>
+    <li><strong>Video düzenleme:</strong> CapCut veya Galeri düzenleyiciyle kırpıp yeniden kullanın.</li>
+    <li><strong>Yedekleme:</strong> Pinterest’e yüklediğiniz kendi videolarınızın kopyasını telefonunuzda tutun.</li>
+  </ul>
+
+  <p class="disclaimer" role="note" style="margin-top:22px">
+    <strong>Sorumlu kullanım — </strong>Yalnızca size ait olan veya indirme
+    iznine sahip olduğunuz içerikleri kaydetmenizi öneririz. Pinterest ile resmi
+    bir bağlantımız yoktur.
+  </p>
+
+  <ToolCta
+    slot="after"
+    title="Android’den hemen indirin"
+    text="Bağlantıyı yapıştırın ve Pinterest videosunu doğrudan galerinize kaydedin."
+    href="/pinterest-video-indir/"
+    label="Pinterest Video İndir"
+  />
+
+  <RelatedGuides
+    slot="after"
+    title="İlgili araçlar ve rehberler"
+    items={[
+      { title: 'Pinterest Video İndir', href: '/pinterest-video-indir/', description: 'Tüm cihazlarda HD, Full HD ve 4K MP4 indirme aracı.' },
+      { title: 'iPhone Pinterest Video İndir', href: '/iphone-pinterest-video-indir/', description: 'iOS’ta Safari ile indirme ve galeriye kaydetme.' },
+      { title: 'Video İndir Galeriye', href: '/pinterest-video-galeriye-indir/', description: 'Videoyu telefon galerinize kaydetme rehberi.' },
+      { title: 'Video Nasıl İndirilir', href: '/pinterest-video-nasil-indirilir/', description: 'Adım adım genel indirme rehberi.' },
+      { title: 'Pinterest 4K Video İndir', href: '/pinterest-4k-video-indir/', description: 'En yüksek çözünürlükte video indirin.' },
+      { title: 'Pinterest Video İndirici', href: '/pinterest-video-indirici/', description: 'Online, kurulumsuz indirme aracı.' },
+    ]}
+  />
+</ToolPageLayout>

@@ -264,6 +264,150 @@ export const WATERMARK_FAQ: QA[] = [
   },
 ];
 
+// Upload / share guide cluster — /pinterest-video-yukleme/.
+export const UPLOAD_FAQ: QA[] = [
+  {
+    q: 'Pinterest’e video nasıl yüklenir?',
+    a: 'Pinterest uygulamasında sağ üstteki artı (+) simgesine dokunun, “Pin oluştur” deyin, galerinizden videoyu seçin; başlık, açıklama ve pano ekleyip “Yayınla”ya basın. Bilgisayarda pinterest.com’da “Oluştur → Pin oluştur” yolundan videoyu sürükleyip bırakarak yükleyebilirsiniz.',
+  },
+  {
+    q: 'Pinterest’e yüklenen videolar hangi formatta ve boyutta olmalı?',
+    a: 'Pinterest MP4, MOV ve M4V formatlarını destekler. Video pinler için önerilen en-boy oranı dikey 9:16 veya kare 1:1’dir; süre 4 saniye ile 15 dakika arasında olabilir. Dosya boyutu için üst sınır uygulamada 2 GB civarındadır.',
+  },
+  {
+    q: 'Telefondan Pinterest’e video yükleyebilir miyim?',
+    a: 'Evet. Android ve iPhone’daki Pinterest uygulamasından artı (+) simgesiyle doğrudan video yükleyebilirsiniz. Video, telefonunuzun galerisinden seçilir; ayrıca uygulama içinde kaydederek de çekim yapabilirsiniz.',
+  },
+  {
+    q: 'Pinterest video yükleme ile video paylaşma arasındaki fark nedir?',
+    a: '“Yükleme”, kendi videonuzu bir pin olarak Pinterest’e eklemektir. “Paylaşma” ise var olan bir pini başkalarına göndermek veya panolarınıza kaydetmektir. Bu sayfa kendi videonuzu yüklemeyi anlatır; başka birinin pinini kaydetmek için indirme araçlarını kullanın.',
+  },
+  {
+    q: 'Yüklediğim video neden yayınlanmıyor veya hata veriyor?',
+    a: 'En sık nedenler: desteklenmeyen format, çok uzun/çok büyük dosya veya zayıf internet bağlantısıdır. Videoyu MP4’e dönüştürün, süresini 15 dakikanın altına indirin ve kararlı bir bağlantıda yeniden deneyin. Telif hakkı ihlali içeren videolar da reddedilebilir.',
+  },
+  {
+    q: 'Pinterest’e yüklediğim videoya bağlantı (link) ekleyebilir miyim?',
+    a: 'Evet. Pin oluştururken “Hedef bağlantısı” alanına kendi web sitenizin veya ürün sayfanızın adresini ekleyebilirsiniz. Böylece pine tıklayan kullanıcılar doğrudan ilgili sayfaya yönlendirilir; bu, trafik çekmek için etkili bir yöntemdir.',
+  },
+  {
+    q: 'Yüklediğim videoyu daha sonra düzenleyebilir veya silebilir miyim?',
+    a: 'Evet. Profilinizdeki pine gidip üç nokta (•••) menüsünden “Pin’i düzenle” ile başlık, açıklama, pano ve bağlantıyı değiştirebilir; “Sil” ile pini tamamen kaldırabilirsiniz. Videonun kendisi değiştirilemez, ancak silip yeniden yükleyebilirsiniz.',
+  },
+  {
+    q: 'Başkasının videosunu Pinterest’e yükleyebilir miyim?',
+    a: 'Yalnızca size ait olan veya paylaşma iznine sahip olduğunuz içerikleri yüklemenizi öneririz. İzinsiz yüklenen telifli videolar kaldırılabilir ve hesabınız kısıtlanabilir. Emin değilseniz içerik sahibinden izin alın veya kaynağı belirtin.',
+  },
+];
+
+// Story / hikaye download cluster — /pinterest-story-indir/.
+export const STORY_FAQ: QA[] = [
+  {
+    q: 'Pinterest story (hikaye) videosu nasıl indirilir?',
+    a: 'Story ya da Idea (fikir) pininin bağlantısını kopyalayın, aracımızdaki kutuya yapıştırın ve “İndir”e basın. Araç, hikayedeki videoyu MP4 olarak, filigransız ve orijinal kalitesinde cihazınıza kaydeder.',
+  },
+  {
+    q: 'Pinterest’te “story” ile “Idea Pin” aynı şey mi?',
+    a: 'Büyük ölçüde evet. Pinterest’in daha önce “Story Pin” dediği içerik türü şimdi “Idea Pin” (Fikir Pini) olarak adlandırılır. Her ikisi de birden fazla video/görsel sayfasından oluşabilen tam ekran içeriklerdir; aracımız bu içerikteki medyayı indirmenizi sağlar.',
+  },
+  {
+    q: 'Story bağlantısını nasıl kopyalarım?',
+    a: 'Hikayeyi açın, üç nokta (•••) veya “Paylaş” simgesine dokunun ve “Bağlantıyı kopyala” deyin. Kopyalanan bağlantı pin.it veya pinterest.com ile başlıyorsa aracımızla çalışır.',
+  },
+  {
+    q: 'Bir Idea Pin’de birden fazla sayfa varsa hepsini indirebilir miyim?',
+    a: 'Evet. Çok sayfalı bir fikir pininde araç, içindeki her video ve görseli ayrı ayrı listeler; istediğiniz sayfayı tek tek veya tümünü sırayla indirebilirsiniz.',
+  },
+  {
+    q: 'İndirilen story videosunda filigran veya kullanıcı adı olur mu?',
+    a: 'Hayır. Video orijinal kaynağından alındığı için üzerine platform filigranı veya kullanıcı adı damgası eklenmez. Ancak içeriği üreten kişinin videonun içine yerleştirdiği yazılar videonun bir parçasıdır ve kaldırılmaz.',
+  },
+  {
+    q: 'Story sadece görsellerden oluşuyorsa ne indirilir?',
+    a: 'Hikaye yalnızca fotoğraflardan oluşuyorsa araç görselleri tam çözünürlükte indirmenizi sağlar. Video içeren sayfalar MP4, görsel sayfalar ise resim olarak kaydedilir.',
+  },
+  {
+    q: 'Pinterest story indirmek ücretsiz mi?',
+    a: 'Evet. Story/Idea Pin indirme de diğer içerikler gibi tamamen ücretsiz ve sınırsızdır; kayıt, üyelik veya uygulama kurulumu gerektirmez.',
+  },
+  {
+    q: 'İndirdiğim story’yi başka yerde paylaşabilir miyim?',
+    a: 'Yalnızca size ait olan veya indirme iznine sahip olduğunuz içerikleri kaydetmenizi öneririz. Başkasının hikayesini yeniden yayınlayacaksanız içerik sahibinden izin alın ve telif haklarına saygı gösterin.',
+  },
+];
+
+// iPhone / iOS device cluster — /iphone-pinterest-video-indir/.
+export const IPHONE_FAQ: QA[] = [
+  {
+    q: 'iPhone’da Pinterest videosu nasıl indirilir?',
+    a: 'Safari’de sitemizi açın, Pinterest’te videonun “Paylaş → Bağlantıyı kopyala” bağlantısını alın, kutuya yapıştırıp “İndir”e basın ve kaliteyi seçin. Video önce “Dosyalar” uygulamasına iner; oradan Fotoğraflar’a kaydedebilirsiniz. Ek uygulama gerekmez.',
+  },
+  {
+    q: 'İndirdiğim video iPhone galerisine (Fotoğraflar) neden doğrudan inmiyor?',
+    a: 'iOS, tarayıcıdan inen dosyaları güvenlik nedeniyle önce “Dosyalar” uygulamasına kaydeder. Dosyalar → İndirilenler klasöründe videoya dokunup “Paylaş → Videoyu Kaydet” dediğinizde video Fotoğraflar (galeri) uygulamasına taşınır.',
+  },
+  {
+    q: 'iPhone’a Pinterest videosu indirmek için uygulama kurmam gerekir mi?',
+    a: 'Hayır. İşlem tamamen Safari (veya Chrome) tarayıcısı üzerinden yapılır. App Store’dan herhangi bir kısayol veya indirme uygulaması kurmanıza gerek yoktur.',
+  },
+  {
+    q: 'iPad’de de aynı yöntem çalışır mı?',
+    a: 'Evet. iPadOS, iPhone ile aynı şekilde çalışır. Safari’de bağlantıyı yapıştırıp indirin; dosya “Dosyalar” uygulamasına iner ve oradan Fotoğraflar’a aktarılabilir.',
+  },
+  {
+    q: 'Kısayollar (Shortcuts) uygulaması olmadan indirebilir miyim?',
+    a: 'Evet. Aracımız tarayıcı tabanlı olduğu için Kısayollar (Shortcuts) tarifine gerek yoktur. Yalnızca bağlantıyı yapıştırıp indirmeniz yeterlidir; bu yöntem daha hızlı ve daha güvenlidir.',
+  },
+  {
+    q: 'iPhone’da “İndirilenler” klasörünü nerede bulurum?',
+    a: '“Dosyalar” uygulamasını açın, “Gözat” sekmesinden “iCloud Drive” veya “Bu iPhone’da” altındaki “İndirilenler” klasörüne girin. Safari ile indirdiğiniz videolar burada listelenir.',
+  },
+  {
+    q: 'Video Safari yerine Chrome’da da indirilebilir mi?',
+    a: 'Evet. iPhone’daki Chrome tarayıcısı da desteklenir; işlem aynıdır. Ancak iOS kısıtlamaları nedeniyle dosya yine “Dosyalar” uygulamasına iner ve oradan galeriye kaydedilir.',
+  },
+  {
+    q: 'iPhone’da Pinterest video indirmek güvenli mi?',
+    a: 'Evet. Yalnızca size ait olan veya indirme iznine sahip olduğunuz içerikleri kaydetmenizi öneririz. Araç giriş bilgisi istemez, bağlantıyı saklamaz ve cihazınıza uygulama kurmaz; işlem tarayıcıda güvenle tamamlanır.',
+  },
+];
+
+// Android device cluster — /android-pinterest-video-indir/.
+export const ANDROID_FAQ: QA[] = [
+  {
+    q: 'Android’de Pinterest videosu nasıl indirilir?',
+    a: 'Chrome (veya herhangi bir tarayıcı) ile sitemizi açın, Pinterest’te videonun “Paylaş → Bağlantıyı kopyala” bağlantısını alın, kutuya yapıştırıp “İndir”e basın ve kaliteyi seçin. Video doğrudan telefonunuzun galerisine veya “İndirilenler” klasörüne MP4 olarak kaydedilir.',
+  },
+  {
+    q: 'İndirdiğim video Android galerisinde görünmüyor, nerede?',
+    a: 'Bazı tarayıcılar dosyaları önce “İndirilenler” klasörüne koyar. Dosya Yöneticisi → İndirilenler klasörüne bakın; çoğu galeri uygulaması bu klasörü otomatik tarar. Görünmüyorsa galeriyi kapatıp açmak veya telefonu yeniden başlatmak yeterli olur.',
+  },
+  {
+    q: 'Android’de Pinterest videosu indirmek için uygulama gerekir mi?',
+    a: 'Hayır. İşlem tarayıcı üzerinden yapılır; Play Store’dan ayrı bir indirme uygulaması kurmanıza gerek yoktur. Bu, depolama kazandırır ve reklam/izin riskini ortadan kaldırır.',
+  },
+  {
+    q: 'Samsung, Xiaomi ve diğer Android markalarında çalışır mı?',
+    a: 'Evet. Araç markadan bağımsız olarak tüm Android telefon ve tabletlerde (Samsung, Xiaomi, Oppo, Huawei, realme vb.) aynı şekilde çalışır; tek gereken güncel bir tarayıcıdır.',
+  },
+  {
+    q: 'Videoyu doğrudan galeriye kaydetmenin yolu nedir?',
+    a: 'İndirme tamamlandığında tarayıcının bildirimi üzerinden dosyayı açıp galeriye taşıyabilirsiniz. Çoğu Android sürümünde video, indirildiği anda otomatik olarak “Galeri/Fotoğraflar” içinde “İndirilenler” albümünde görünür.',
+  },
+  {
+    q: 'Chrome dışında Firefox veya Samsung Internet ile indirebilir miyim?',
+    a: 'Evet. Firefox, Samsung Internet, Opera ve diğer Android tarayıcıları desteklenir. Bağlantıyı yapıştırıp indirme adımları her tarayıcıda aynıdır.',
+  },
+  {
+    q: 'İndirme sırasında “depolama izni” isteniyor, güvenli mi?',
+    a: 'Tarayıcı, dosyayı cihaza kaydedebilmek için depolama iznini isteyebilir; bu normaldir ve yalnızca indirilen videoyu kaydetmek için kullanılır. Araç kişisel bilgi veya Pinterest giriş bilgisi istemez.',
+  },
+  {
+    q: 'Android’de Pinterest video indirmek ücretsiz ve güvenli mi?',
+    a: 'Evet. İndirme tamamen ücretsiz ve sınırsızdır. Yalnızca size ait olan veya indirme iznine sahip olduğunuz içerikleri kaydetmenizi öneririz; araç bağlantıyı saklamaz ve giriş gerektirmez.',
+  },
+];
+
 // Consumed by the dedicated /sss/ page.
 export const ALL_FAQ_GROUPS: FaqGroup[] = [
   { title: 'Genel & Video İndirme', items: HOME_FAQ },

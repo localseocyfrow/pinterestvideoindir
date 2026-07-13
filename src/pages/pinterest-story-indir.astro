@@ -1,0 +1,115 @@
+---
+import ToolPageLayout from '../layouts/ToolPageLayout.astro';
+import ShortAnswerBox from '../components/ShortAnswerBox.astro';
+import RelatedGuides from '../components/RelatedGuides.astro';
+import ToolCta from '../components/ToolCta.astro';
+import { STORY_FAQ } from '../data/faq';
+
+const path = '/pinterest-story-indir/';
+const title = 'Pinterest Story İndir – Hikaye & Idea Pin Video İndirme';
+const description =
+  'Pinterest story (hikaye) ve Idea Pin videolarını filigransız MP4 olarak indirin. Bağlantıyı yapıştırın, çok sayfalı hikayelerdeki tüm video ve görselleri ücretsiz kaydedin.';
+
+const crumbs = [
+  { name: 'Ana Sayfa', href: '/' },
+  { name: 'Pinterest Story İndir', href: path },
+];
+
+const howTo = {
+  name: 'Pinterest story (hikaye) indirme',
+  description:
+    'Pinterest story / Idea Pin videosunu indirmek için hikayenin bağlantısını kopyalayın, araca yapıştırın ve medyayı MP4 veya görsel olarak kaydedin.',
+  steps: [
+    { name: 'Hikayeyi aç', text: 'Pinterest’te indirmek istediğiniz story ya da Idea Pin’i açın.' },
+    { name: 'Bağlantıyı kopyala', text: '“Paylaş → Bağlantıyı kopyala” deyin.' },
+    { name: 'Araca yapıştır', text: 'Bağlantıyı yukarıdaki kutuya yapıştırıp “İndir”e basın.' },
+    { name: 'Medyayı kaydet', text: 'Listelenen video/görselleri MP4 veya resim olarak indirin.' },
+  ],
+};
+---
+
+<ToolPageLayout
+  title={title}
+  description={description}
+  path={path}
+  eyebrow="Story · Hikaye · Idea Pin"
+  h1="Pinterest Story İndir"
+  lead="Pinterest hikayelerini (story) ve Idea Pin’leri filigransız indirin: bağlantıyı yapıştırın, çok sayfalı içeriklerdeki tüm video ve görselleri MP4 ya da resim olarak kaydedin."
+  kind="video"
+  placeholder="Pinterest story / pin bağlantısını buraya yapıştırın…"
+  crumbs={crumbs}
+  faq={STORY_FAQ}
+  faqTitle="Pinterest story indirme — SSS"
+  howTo={howTo}
+>
+  <ShortAnswerBox question="Pinterest story (hikaye) videosu nasıl indirilir?">
+    <p class="mt-0" style="margin:0">
+      Hikayeyi (story / Idea Pin) Pinterest’te açın ve
+      <strong>“Paylaş → Bağlantıyı kopyala”</strong> deyin. Bağlantıyı yukarıdaki
+      kutuya <strong>yapıştırın</strong> ve <strong>“İndir”</strong>e basın. Araç,
+      içerikteki videoyu <strong>MP4</strong>, görselleri ise tam çözünürlükte
+      listeler; istediğinizi filigransız kaydedebilirsiniz. Çok sayfalı fikir
+      pinlerinde her sayfayı ayrı ayrı indirebilirsiniz.
+    </p>
+  </ShortAnswerBox>
+
+  <h2>Story ve Idea Pin nedir?</h2>
+  <p>
+    Pinterest’in daha önce <strong>“Story Pin”</strong> dediği içerik türü bugün
+    <strong>“Idea Pin” (Fikir Pini)</strong> olarak adlandırılır. Bunlar tam
+    ekran, birden fazla sayfadan oluşabilen; video, fotoğraf ve metin
+    içerebilen içeriklerdir — genellikle tarif, adım adım anlatım, ilham ve
+    “nasıl yapılır” içerikleri bu biçimde paylaşılır. Aracımız bu hikayelerin
+    içindeki <strong>video ve görselleri</strong> ayrıştırarak indirmenizi sağlar.
+  </p>
+
+  <h2>Çok sayfalı hikayeleri indirme</h2>
+  <p>
+    Bir Idea Pin birden çok sayfa (video + görsel) içeriyorsa, araç bunları tek
+    tek listeler. Böylece yalnızca ihtiyaç duyduğunuz sayfayı ya da tümünü sırayla
+    indirebilirsiniz. Video sayfaları <strong>MP4</strong>, yalnızca görsel içeren
+    sayfalar ise <strong>tam çözünürlüklü resim</strong> olarak kaydedilir.
+  </p>
+
+  <h2>Öne çıkan özellikler</h2>
+  <ul>
+    <li><strong>Filigransız:</strong> İçerik orijinal kaynağından alınır; platform damgası eklenmez.</li>
+    <li><strong>Karışık medya desteği:</strong> Aynı hikayedeki hem video hem görselleri ayrı ayrı indirin.</li>
+    <li><strong>Tüm cihazlar:</strong> Android, <a href="/iphone-pinterest-video-indir/">iPhone</a> ve masaüstü tarayıcılarında çalışır.</li>
+    <li><strong>Ücretsiz &amp; sınırsız:</strong> Kayıt veya uygulama kurulumu gerektirmez.</li>
+  </ul>
+
+  <h2>Kullanım alanları</h2>
+  <ul>
+    <li><strong>Çevrimdışı ilham:</strong> Tarif ve DIY hikayelerini internetsiz izlemek için kaydedin.</li>
+    <li><strong>İçerik yedeği:</strong> Kendi paylaştığınız Idea Pin’lerin kopyasını saklayın.</li>
+    <li><strong>Moodboard:</strong> Hikaye görsellerini kişisel ilham panolarınızda toplayın.</li>
+  </ul>
+
+  <p class="disclaimer" role="note" style="margin-top:22px">
+    <strong>Sorumlu kullanım — </strong>Yalnızca size ait olan veya indirme
+    iznine sahip olduğunuz içerikleri kaydetmenizi öneririz. Pinterest ile resmi
+    bir bağlantımız yoktur.
+  </p>
+
+  <ToolCta
+    slot="after"
+    title="Hikayeyi hemen indirin"
+    text="Story bağlantısını yapıştırın ve içindeki video ile görselleri saniyeler içinde kaydedin."
+    href="/pinterest-video-indir/"
+    label="Pinterest Video İndir"
+  />
+
+  <RelatedGuides
+    slot="after"
+    title="İlgili araçlar ve rehberler"
+    items={[
+      { title: 'Pinterest Video İndir', href: '/pinterest-video-indir/', description: 'HD, Full HD ve 4K MP4 indirme aracı.' },
+      { title: 'Pinterest Video İndirici', href: '/pinterest-video-indirici/', description: 'Online, kurulumsuz indirme aracı.' },
+      { title: 'Video İndir Galeriye', href: '/pinterest-video-galeriye-indir/', description: 'Videoyu doğrudan telefon galerinize kaydedin.' },
+      { title: 'Video Nasıl İndirilir', href: '/pinterest-video-nasil-indirilir/', description: 'Adım adım genel indirme rehberi.' },
+      { title: 'Pinterest 4K Video İndir', href: '/pinterest-4k-video-indir/', description: 'En yüksek çözünürlükte video indirin.' },
+      { title: 'Video İndir Ücretsiz', href: '/pinterest-video-indir-ucretsiz/', description: 'Sınırsız ve tamamen ücretsiz indirme.' },
+    ]}
+  />
+</ToolPageLayout>

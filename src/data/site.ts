@@ -45,6 +45,7 @@ export const FOOTER_GROUPS: { title: string; links: NavItem[] }[] = [
       { label: 'Video İndir Ücretsiz', href: '/pinterest-video-indir-ucretsiz/' },
       { label: 'Pinterest Pin İndir', href: '/pinterest-pin-indir/' },
       { label: 'Filigransız Video İndir', href: '/pinterest-filigransiz-video-indir/' },
+      { label: 'Pinterest Story İndir', href: '/pinterest-story-indir/' },
       { label: 'Pinterest Resim İndir', href: '/pinterest-resim-indir/' },
       { label: 'Pinterest GIF İndir', href: '/pinterest-gif-indir/' },
       { label: 'Pinterest Karusel İndir', href: '/pinterest-karusel-indir/' },
@@ -54,6 +55,9 @@ export const FOOTER_GROUPS: { title: string; links: NavItem[] }[] = [
     title: 'Rehber',
     links: [
       { label: 'Video Nasıl İndirilir', href: '/pinterest-video-nasil-indirilir/' },
+      { label: 'iPhone’da Video İndir', href: '/iphone-pinterest-video-indir/' },
+      { label: 'Android’de Video İndir', href: '/android-pinterest-video-indir/' },
+      { label: 'Pinterest Video Yükleme', href: '/pinterest-video-yukleme/' },
       { label: 'Nasıl Kullanılır', href: '/nasil-kullanilir/' },
       { label: 'Sıkça Sorulan Sorular', href: '/sss/' },
       { label: 'Hakkında', href: '/hakkinda/' },

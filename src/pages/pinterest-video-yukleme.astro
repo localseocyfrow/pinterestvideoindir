@@ -1,0 +1,174 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Faq from '../components/Faq.astro';
+import ToolCta from '../components/ToolCta.astro';
+import RelatedGuides from '../components/RelatedGuides.astro';
+import { UPLOAD_FAQ } from '../data/faq';
+import {
+  articleSchema,
+  howToSchema,
+  faqSchema,
+  breadcrumbSchema,
+  type Step,
+} from '../lib/schema';
+
+const path = '/pinterest-video-yukleme/';
+const title = 'Pinterest Video Yükleme – Nasıl Yüklenir & Paylaşılır (2026)';
+const description =
+  'Pinterest’e video nasıl yüklenir? Telefon (Android, iPhone) ve bilgisayarda adım adım pin oluşturma, önerilen format/boyut ve video paylaşma ipuçları. Ücretsiz rehber.';
+
+const steps: Step[] = [
+  {
+    name: 'Pin oluşturmayı başlatın',
+    text: 'Uygulamada sağ üstteki artı (+) simgesine, bilgisayarda “Oluştur → Pin oluştur” bağlantısına dokunun.',
+  },
+  {
+    name: 'Videoyu seçin veya sürükleyin',
+    text: 'Telefonda galerinizden videoyu seçin; bilgisayarda MP4/MOV dosyasını yükleme alanına sürükleyip bırakın.',
+  },
+  {
+    name: 'Başlık, açıklama ve pano ekleyin',
+    text: 'Dikkat çekici bir başlık, anahtar kelime içeren açıklama yazın ve videoyu ekleyeceğiniz panoyu seçin.',
+  },
+  {
+    name: 'Hedef bağlantısı ekleyin (isteğe bağlı)',
+    text: 'Trafik çekmek istiyorsanız “Hedef bağlantısı” alanına kendi web sitenizin veya ürün sayfanızın adresini girin.',
+  },
+  {
+    name: 'Yayınlayın',
+    text: '“Yayınla” düğmesine basın. Video pin panonuzda ve profilinizde yayına alınır.',
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  path={path}
+  ogType="article"
+  schemas={[
+    breadcrumbSchema([
+      { name: 'Ana Sayfa', href: '/' },
+      { name: 'Pinterest Video Yükleme', href: path },
+    ]),
+    articleSchema({ title, description, path }),
+    howToSchema({
+      name: 'Pinterest’e video nasıl yüklenir',
+      description:
+        'Pinterest’e video yüklemek için pin oluşturun, videoyu seçin, başlık/açıklama ve pano ekleyip yayınlayın.',
+      steps,
+      totalTime: 'PT3M',
+    }),
+    faqSchema(UPLOAD_FAQ),
+  ]}
+>
+  <article class="section">
+    <div class="container">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <a href="/">Ana Sayfa</a><span>/</span>Pinterest Video Yükleme
+      </nav>
+
+      <div class="prose">
+        <span class="eyebrow">Yükleme &amp; paylaşma rehberi</span>
+        <h1>Pinterest Video Yükleme: Nasıl Yüklenir ve Paylaşılır?</h1>
+        <p class="lead">
+          Kendi videonuzu Pinterest’e yüklemek, ilham verici içeriğinizi milyonlarca
+          kişiye ulaştırmanın en kolay yoludur. Bu rehberde telefon (Android &amp;
+          iPhone) ve bilgisayarda adım adım <strong>pin oluşturmayı</strong>,
+          önerilen video formatını ve <strong>video paylaşma</strong> ipuçlarını
+          bulacaksınız.
+        </p>
+
+        <div class="answer-box" style="margin:26px 0">
+          <p class="q">Kısa cevap: Pinterest’e video nasıl yüklenir?</p>
+          <p class="mt-0" style="margin:0">
+            Uygulamada <strong>artı (+) → “Pin oluştur”</strong> deyin,
+            galerinizden videoyu seçin; <strong>başlık, açıklama ve pano</strong>
+            ekleyip <strong>“Yayınla”</strong>ya basın. Bilgisayarda
+            pinterest.com’da <strong>“Oluştur → Pin oluştur”</strong> yolundan
+            videoyu sürükleyip bırakarak yükleyebilirsiniz. Önerilen format
+            <strong>MP4</strong>, oran <strong>9:16 (dikey)</strong> veya
+            <strong>1:1 (kare)</strong>, süre <strong>4 sn – 15 dk</strong>.
+          </p>
+        </div>
+      </div>
+
+      <div class="prose">
+        <h2>Adım adım: Pinterest’e video yükleme</h2>
+        <div class="steps" style="margin:24px 0">
+          {steps.map((s) => (
+            <div class="step"><h3>{s.name}</h3><p>{s.text}</p></div>
+          ))}
+        </div>
+
+        <h2>Telefondan video yükleme (Android &amp; iPhone)</h2>
+        <p>
+          Hem <strong>Android</strong> hem <strong>iPhone</strong> uygulamasında
+          işlem aynıdır: sağ üstteki <strong>artı (+)</strong> simgesine dokunun,
+          <strong>“Pin”</strong> seçin, galerinizden videoyu ekleyin, ardından
+          başlık/açıklama ve pano belirleyip yayınlayın. Uygulama içinden video
+          çekerek de doğrudan yükleyebilirsiniz. Yüklediğiniz videonun bir
+          kopyasını cihazınızda tutmak isterseniz
+          <a href="/pinterest-video-indir/">Pinterest video indirme aracımızı</a>
+          kullanabilirsiniz.
+        </p>
+
+        <h2>Bilgisayardan video yükleme</h2>
+        <p>
+          pinterest.com’da oturum açın, üst menüden <strong>“Oluştur → Pin
+          oluştur”</strong> deyin ve video dosyanızı yükleme alanına sürükleyip
+          bırakın. Sol tarafta başlık, açıklama, alt yazı ve hedef bağlantısını
+          düzenleyin; sağ üstten panoyu seçip <strong>“Yayınla”</strong>ya basın.
+          Masaüstü, uzun açıklamalar ve toplu yükleme için en rahat yöntemdir.
+        </p>
+
+        <h2>Önerilen video formatı ve boyutu</h2>
+        <ul>
+          <li><strong>Format:</strong> MP4, MOV veya M4V (en uyumlusu MP4).</li>
+          <li><strong>En-boy oranı:</strong> Dikey 9:16 veya kare 1:1 en iyi sonucu verir.</li>
+          <li><strong>Süre:</strong> 4 saniye ile 15 dakika arası.</li>
+          <li><strong>Dosya boyutu:</strong> Uygulamada ~2 GB’a kadar.</li>
+          <li><strong>Kalite:</strong> Netlik için Full HD (1080p) önerilir.</li>
+        </ul>
+
+        <h2>Video paylaşma ve daha fazla erişim ipuçları</h2>
+        <p>
+          Var olan bir pini <strong>paylaşmak</strong> için pinin
+          <strong>“Paylaş”</strong> simgesine dokunup bağlantıyı kopyalayabilir ya
+          da doğrudan WhatsApp, Instagram ve diğer uygulamalara gönderebilirsiniz.
+          Yüklediğiniz videonun daha çok görüntülenmesi için: açıklamada doğru
+          <strong>anahtar kelimeleri</strong> kullanın, ilgili bir panoya ekleyin,
+          ilk 3 saniyede dikkat çekin ve düzenli aralıklarla paylaşım yapın.
+        </p>
+
+        <blockquote>
+          <strong>Sorumlu yükleme — </strong>Yalnızca size ait olan veya paylaşma
+          iznine sahip olduğunuz içerikleri yüklemenizi öneririz. İzinsiz yüklenen
+          telifli videolar kaldırılabilir. <strong>Pinterest ile resmi bir
+          bağlantımız yoktur.</strong>
+        </blockquote>
+      </div>
+    </div>
+  </article>
+
+  <ToolCta
+    title="Başkasının pinini mi kaydetmek istiyorsunuz?"
+    text="Bu sayfa kendi videonuzu yüklemeyi anlatır. Var olan bir Pinterest videosunu indirmek için aracımızı kullanın."
+    href="/pinterest-video-indir/"
+    label="Pinterest Video İndir"
+  />
+
+  <RelatedGuides
+    title="İlgili araçlar ve rehberler"
+    items={[
+      { title: 'Pinterest Video İndir', href: '/pinterest-video-indir/', description: 'HD, Full HD ve 4K MP4 indirme aracı.' },
+      { title: 'Video Nasıl İndirilir', href: '/pinterest-video-nasil-indirilir/', description: 'Adım adım Pinterest video indirme rehberi.' },
+      { title: 'Nasıl Kullanılır', href: '/nasil-kullanilir/', description: 'Sitenin tüm araçları için genel rehber.' },
+      { title: 'Pinterest Story İndir', href: '/pinterest-story-indir/', description: 'Hikaye ve Idea Pin videolarını indirin.' },
+      { title: 'iPhone Pinterest Video İndir', href: '/iphone-pinterest-video-indir/', description: 'iOS’ta Safari ile indirme rehberi.' },
+      { title: 'Android Pinterest Video İndir', href: '/android-pinterest-video-indir/', description: 'Android’de galeriye kaydetme rehberi.' },
+    ]}
+  />
+
+  <Faq items={UPLOAD_FAQ} title="Pinterest video yükleme — Sık sorulanlar" />
+</BaseLayout>

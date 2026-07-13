@@ -101,6 +101,29 @@ export function howToSchema(opts: {
   };
 }
 
+// Article node — used by informational guide pages (e.g. the upload guide)
+// that are NOT a downloader tool, so they signal editorial content rather
+// than a WebApplication.
+export function articleSchema(opts: {
+  title: string;
+  description: string;
+  path: string;
+  datePublished?: string;
+  dateModified?: string;
+}): JsonLd {
+  return {
+    '@type': 'Article',
+    headline: opts.title,
+    description: opts.description,
+    inLanguage: SITE.lang,
+    mainEntityOfPage: { '@type': 'WebPage', '@id': abs(opts.path) },
+    datePublished: opts.datePublished ?? SITE.updated,
+    dateModified: opts.dateModified ?? SITE.updated,
+    author: { '@type': 'Organization', name: SITE.author, url: SITE.url },
+    publisher: { '@id': `${SITE.url}/#organization` },
+  };
+}
+
 export function breadcrumbSchema(
   crumbs: { name: string; href: string }[],
 ): JsonLd {
