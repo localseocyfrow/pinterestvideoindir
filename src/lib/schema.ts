@@ -124,6 +124,33 @@ export function articleSchema(opts: {
   };
 }
 
+// VideoObject node — emitted ONLY for a video that is actually embedded and
+// visible on the page (schema.org + Google video rich-result requirement:
+// structured data must match the on-page media). Thumbnail + embedUrl point at
+// the real YouTube asset behind the youtube-nocookie iframe.
+export function videoObjectSchema(opts: {
+  name: string;
+  description: string;
+  videoId: string; // YouTube video id
+  uploadDate?: string; // ISO date
+  path?: string; // page the video is embedded on
+}): JsonLd {
+  return {
+    '@type': 'VideoObject',
+    name: opts.name,
+    description: opts.description,
+    thumbnailUrl: [`https://i.ytimg.com/vi/${opts.videoId}/hqdefault.jpg`],
+    uploadDate: opts.uploadDate ?? SITE.updated,
+    contentUrl: `https://www.youtube.com/watch?v=${opts.videoId}`,
+    embedUrl: `https://www.youtube-nocookie.com/embed/${opts.videoId}`,
+    publisher: { '@id': `${SITE.url}/#organization` },
+    inLanguage: SITE.lang,
+    ...(opts.path
+      ? { mainEntityOfPage: { '@type': 'WebPage', '@id': abs(opts.path) } }
+      : {}),
+  };
+}
+
 export function breadcrumbSchema(
   crumbs: { name: string; href: string }[],
 ): JsonLd {

@@ -1,0 +1,148 @@
+---
+import ToolPageLayout from '../layouts/ToolPageLayout.astro';
+import ShortAnswerBox from '../components/ShortAnswerBox.astro';
+import RelatedGuides from '../components/RelatedGuides.astro';
+import ToolCta from '../components/ToolCta.astro';
+import VideoTutorial from '../components/VideoTutorial.astro';
+import { MAC_FAQ } from '../data/faq';
+import { TUTORIALS } from '../data/videos';
+import { videoObjectSchema } from '../lib/schema';
+
+const path = '/mac-pinterest-video-indir/';
+const title = 'Mac Pinterest Video İndir – macOS için Ücretsiz (Safari/Chrome)';
+const description =
+  'Mac’te Pinterest videosu nasıl indirilir? Safari veya Chrome ile bağlantıyı yapıştırın, videoyu MP4 olarak “İndirilenler” klasörüne kaydedin. macOS için ücretsiz, program gerekmez.';
+
+const video = TUTORIALS.macos;
+
+const crumbs = [
+  { name: 'Ana Sayfa', href: '/' },
+  { name: 'Mac Pinterest Video İndir', href: path },
+];
+
+const howTo = {
+  name: 'Mac’te Pinterest videosu indirme',
+  description:
+    'macOS’ta Pinterest videosunu Safari veya Chrome üzerinden indirmek için bağlantıyı kopyalayın, araca yapıştırın, kaliteyi seçin ve videoyu MP4 olarak İndirilenler klasörüne kaydedin.',
+  steps: [
+    { name: 'Bağlantıyı kopyala', text: 'Pinterest’te videoyu açıp “Paylaş → Bağlantıyı kopyala” deyin ya da adres çubuğundaki URL’yi kopyalayın.' },
+    { name: 'Tarayıcıda yapıştır', text: 'Safari, Chrome veya Firefox’ta bu sayfayı açın, bağlantıyı kutuya yapıştırıp “İndir”e basın.' },
+    { name: 'Kaliteyi seç', text: 'HD, Full HD veya varsa 4K seçeneğini seçin.' },
+    { name: 'İndirilenler’den aç', text: 'Video MP4 olarak “İndirilenler” klasörüne iner; Dock’taki İndirilenler yığınından açabilirsiniz.' },
+  ],
+};
+---
+
+<ToolPageLayout
+  title={title}
+  description={description}
+  path={path}
+  eyebrow="Mac · macOS · MacBook"
+  h1="Mac Pinterest Video İndir"
+  lead="Mac ve MacBook’ta Pinterest videolarını Safari veya Chrome üzerinden, program kurmadan indirin: bağlantıyı yapıştırın, kaliteyi seçin, video MP4 olarak “İndirilenler” klasörünüze kaydedilsin."
+  kind="video"
+  placeholder="Pinterest video bağlantısını buraya yapıştırın…"
+  crumbs={crumbs}
+  faq={MAC_FAQ}
+  faqTitle="Mac’te Pinterest video indirme — SSS"
+  howTo={howTo}
+  extraSchemas={[
+    videoObjectSchema({
+      name: video.title,
+      description: video.description,
+      videoId: video.id,
+      path,
+    }),
+  ]}
+>
+  <ShortAnswerBox question="Mac’te Pinterest videosu nasıl indirilir?">
+    <p class="mt-0" style="margin:0">
+      Pinterest’te videoyu açıp <strong>“Paylaş → Bağlantıyı kopyala”</strong>
+      deyin. Mac’te Safari veya Chrome ile bu sayfayı açın, bağlantıyı kutuya
+      <strong>yapıştırın</strong> ve <strong>“İndir”</strong>e basın. Video
+      <strong>MP4</strong> olarak “İndirilenler” klasörüne iner ve Dock’taki
+      İndirilenler yığınında görünür. Ek program veya eklenti gerekmez.
+    </p>
+  </ShortAnswerBox>
+
+  <h2>Mac’te adım adım Pinterest video indirme</h2>
+  <div class="steps" style="margin:20px 0">
+    <div class="step"><h3>Bağlantıyı kopyala</h3><p>Pinterest’te videoyu açın, “Paylaş → Bağlantıyı kopyala” deyin veya tarayıcının adres çubuğundaki URL’yi alın.</p></div>
+    <div class="step"><h3>Tarayıcıda yapıştır</h3><p>Safari, Chrome veya Firefox’ta bu sayfayı açıp bağlantıyı indirme kutusuna yapıştırın.</p></div>
+    <div class="step"><h3>Kaliteyi seç &amp; indir</h3><p>“İndir”e basın; HD, Full HD ya da varsa 4K seçeneğini seçin.</p></div>
+    <div class="step"><h3>İndirilenler’de bul</h3><p>Video, kullanıcı klasörünüzdeki “İndirilenler” (Downloads) klasörüne MP4 olarak kaydedilir.</p></div>
+  </div>
+
+  <h2>Video anlatım: Mac’te Pinterest videosu indirme</h2>
+  <p>
+    Adımları izlemeyi kolaylaştırmak için kısa bir video hazırladık. Aşağıdaki
+    anlatımda bağlantıyı kopyalamaktan videoyu “İndirilenler” klasöründe
+    bulmaya kadar tüm süreci Mac ekranında görebilirsiniz.
+  </p>
+  <VideoTutorial
+    id={video.id}
+    title={video.iframeTitle}
+    caption="Mac’te Pinterest videosu nasıl indirilir — adım adım anlatım."
+  />
+
+  <h2>Safari mi, Chrome mu? Mac’te hangi tarayıcı?</h2>
+  <p>
+    macOS’ta hem <strong>Safari</strong> hem <strong>Chrome</strong> hem de
+    <strong>Firefox</strong> ile indirme yapabilirsiniz; adımlar birebir aynıdır.
+    Safari, macOS ile tam entegre olduğu için en akıcı ve pil dostu deneyimi
+    sunar ve dosyayı doğrudan “İndirilenler” klasörüne kaydeder. Chrome
+    kullanıyorsanız indirmeler sağ üstteki indirme çubuğunda listelenir. Hangi
+    tarayıcıyı seçerseniz seçin videoyu <strong>MP4</strong> olarak, filigransız
+    kaydedersiniz.
+  </p>
+
+  <h2>İndirilen videoyu Mac’te açma, düzenleme ve aktarma</h2>
+  <p>
+    İndirdiğiniz MP4 dosyası Mac’te <strong>QuickTime Player</strong> ile
+    doğrudan açılır. Videoyu kırpmak veya birleştirmek isterseniz dosyayı
+    <strong>iMovie</strong>’ye sürükleyip düzenleyebilir, ardından yeniden dışa
+    aktarabilirsiniz. Videoyu telefonunuzda çevrimdışı izlemek için
+    <strong>AirDrop</strong> ile iPhone veya iPad’inize saniyeler içinde
+    gönderebilir; iCloud Drive üzerinden de eşitleyebilirsiniz. Aynı içeriği
+    telefonda indirmek isterseniz
+    <a href="/iphone-pinterest-video-indir/">iPhone rehberimize</a> ya da
+    <a href="/android-pinterest-video-indir/">Android rehberimize</a> göz atın.
+  </p>
+
+  <h2>Mac’te Pinterest videosu indirmenin kullanım alanları</h2>
+  <ul>
+    <li><strong>Çevrimdışı izleme:</strong> Tarif, DIY ve ilham videolarını internetsiz izlemek için bilgisayarınıza kaydedin.</li>
+    <li><strong>Moodboard &amp; sunum:</strong> Tasarım ve dekorasyon fikirlerini Keynote veya sunumlarınızda referans olarak kullanın.</li>
+    <li><strong>Video düzenleme:</strong> iMovie veya Final Cut ile kırpıp yeniden paylaşın (telif haklarına saygı göstererek).</li>
+    <li><strong>Yedekleme:</strong> Pinterest’e yüklediğiniz kendi videolarınızın kopyasını Mac’inizde saklayın.</li>
+  </ul>
+
+  <p class="disclaimer" role="note" style="margin-top:22px">
+    <strong>Sorumlu kullanım — </strong>Yalnızca size ait olan veya indirme
+    iznine sahip olduğunuz içerikleri kaydetmenizi öneririz. Pinterest ile resmi
+    bir bağlantımız yoktur.
+  </p>
+
+  <ToolCta
+    slot="after"
+    title="Mac’ten hemen indirin"
+    text="Bağlantıyı Safari veya Chrome’da yapıştırın ve Pinterest videosunu saniyeler içinde MP4 olarak kaydedin."
+    href="/pinterest-video-indir/"
+    label="Pinterest Video İndir"
+  />
+
+  <RelatedGuides
+    slot="after"
+    title="İlgili araçlar ve rehberler"
+    items={[
+      { title: 'Pinterest Video İndir', href: '/pinterest-video-indir/', description: 'Tüm cihazlarda HD, Full HD ve 4K MP4 indirme aracı.' },
+      { title: 'Windows Pinterest Video İndir', href: '/windows-pinterest-video-indir/', description: 'Windows bilgisayarda tarayıcıyla indirme rehberi.' },
+      { title: 'iPhone Pinterest Video İndir', href: '/iphone-pinterest-video-indir/', description: 'iOS’ta Safari ile indirme ve galeriye kaydetme.' },
+      { title: 'Android Pinterest Video İndir', href: '/android-pinterest-video-indir/', description: 'Android telefonlarda galeriye doğrudan kaydetme.' },
+      { title: 'Video Nasıl İndirilir', href: '/pinterest-video-nasil-indirilir/', description: 'Adım adım genel indirme rehberi.' },
+      { title: 'Pinterest 4K Video İndir', href: '/pinterest-4k-video-indir/', description: 'En yüksek çözünürlükte video indirin.' },
+      { title: 'Video İndir Galeriye', href: '/pinterest-video-galeriye-indir/', description: 'Videoyu telefon galerinize kaydetme rehberi.' },
+      { title: 'Sıkça Sorulan Sorular', href: '/sss/', description: 'Pinterest indirme hakkında tüm yanıtlar.' },
+    ]}
+  />
+</ToolPageLayout>

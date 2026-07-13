@@ -57,6 +57,8 @@ export const FOOTER_GROUPS: { title: string; links: NavItem[] }[] = [
       { label: 'Video Nasıl İndirilir', href: '/pinterest-video-nasil-indirilir/' },
       { label: 'iPhone’da Video İndir', href: '/iphone-pinterest-video-indir/' },
       { label: 'Android’de Video İndir', href: '/android-pinterest-video-indir/' },
+      { label: 'Mac’te Video İndir', href: '/mac-pinterest-video-indir/' },
+      { label: 'Windows’ta Video İndir', href: '/windows-pinterest-video-indir/' },
       { label: 'Pinterest Video Yükleme', href: '/pinterest-video-yukleme/' },
       { label: 'Nasıl Kullanılır', href: '/nasil-kullanilir/' },
       { label: 'Sıkça Sorulan Sorular', href: '/sss/' },

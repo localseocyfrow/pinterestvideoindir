@@ -6,12 +6,15 @@ import DeviceExperience from '../components/DeviceExperience.astro';
 import SystemCompatibility from '../components/SystemCompatibility.astro';
 import AboutSection from '../components/AboutSection.astro';
 import Faq from '../components/Faq.astro';
+import VideoTutorial from '../components/VideoTutorial.astro';
 import { SITE } from '../data/site';
 import { HOME_FAQ } from '../data/faq';
+import { HOME_TUTORIALS } from '../data/videos';
 import {
   webAppSchema,
   faqSchema,
   howToSchema,
+  videoObjectSchema,
   type Step,
 } from '../lib/schema';
 
@@ -96,6 +99,14 @@ const compareRows = [
       steps,
     }),
     faqSchema(HOME_FAQ),
+    ...HOME_TUTORIALS.map((v) =>
+      videoObjectSchema({
+        name: v.title,
+        description: v.description,
+        videoId: v.id,
+        path: '/',
+      }),
+    ),
   ]}
 >
   <!-- Hero + tool -->
@@ -293,6 +304,33 @@ const compareRows = [
   <!-- OS compatibility -->
   <SystemCompatibility />
 
+  <!-- Video tutorials (per device) -->
+  <section class="section section-soft" id="video-anlatim">
+    <div class="container">
+      <div class="center" style="margin-bottom:44px">
+        <span class="eyebrow">Video anlatım</span>
+        <h2>Cihazınıza göre video ile anlatım</h2>
+        <p class="lead" style="margin-inline:auto">
+          Pinterest videosu indirmeyi adım adım ekranda görün. iPhone, Android,
+          Mac ve Windows için kısa anlatım videoları.
+        </p>
+      </div>
+      <div class="video-grid">
+        {
+          HOME_TUTORIALS.map((v) => (
+            <article class="video-grid__item">
+              <VideoTutorial id={v.id} title={v.iframeTitle} />
+              <h3>
+                <a href={v.path}>{v.device}</a>
+              </h3>
+              <p>{v.title}</p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
   <!-- About us -->
   <AboutSection />
 
@@ -314,3 +352,28 @@ const compareRows = [
     </div>
   </section>
 </BaseLayout>
+
+<style>
+  .video-grid {
+    display: grid;
+    gap: 28px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  .video-grid__item h3 {
+    margin: 14px 0 4px;
+    font-size: 1.05rem;
+  }
+  .video-grid__item h3 a {
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .video-grid__item h3 a:hover {
+    color: var(--brand);
+    text-decoration: underline;
+  }
+  .video-grid__item p {
+    margin: 0;
+    color: var(--ink-2);
+    font-size: 0.94rem;
+  }
+</style>

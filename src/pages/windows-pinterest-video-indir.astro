@@ -1,0 +1,145 @@
+---
+import ToolPageLayout from '../layouts/ToolPageLayout.astro';
+import ShortAnswerBox from '../components/ShortAnswerBox.astro';
+import RelatedGuides from '../components/RelatedGuides.astro';
+import ToolCta from '../components/ToolCta.astro';
+import VideoTutorial from '../components/VideoTutorial.astro';
+import { WINDOWS_FAQ } from '../data/faq';
+import { TUTORIALS } from '../data/videos';
+import { videoObjectSchema } from '../lib/schema';
+
+const path = '/windows-pinterest-video-indir/';
+const title = 'Windows Pinterest Video İndir – Bilgisayara Ücretsiz (PC)';
+const description =
+  'Windows’ta Pinterest videosu nasıl indirilir? Chrome, Edge veya Firefox ile bağlantıyı yapıştırın, videoyu MP4 olarak “İndirilenler” klasörüne kaydedin. PC için ücretsiz, program gerekmez.';
+
+const video = TUTORIALS.windows;
+
+const crumbs = [
+  { name: 'Ana Sayfa', href: '/' },
+  { name: 'Windows Pinterest Video İndir', href: path },
+];
+
+const howTo = {
+  name: 'Windows’ta Pinterest videosu indirme',
+  description:
+    'Windows bilgisayarda Pinterest videosunu Chrome, Edge veya Firefox üzerinden indirmek için bağlantıyı kopyalayın, araca yapıştırın, kaliteyi seçin ve videoyu MP4 olarak İndirilenler klasörüne kaydedin.',
+  steps: [
+    { name: 'Bağlantıyı kopyala', text: 'Pinterest’te videoyu açıp “Paylaş → Bağlantıyı kopyala” deyin ya da adres çubuğundaki URL’yi kopyalayın.' },
+    { name: 'Tarayıcıda yapıştır', text: 'Chrome, Edge veya Firefox’ta bu sayfayı açın, bağlantıyı kutuya yapıştırıp “İndir”e basın.' },
+    { name: 'Kaliteyi seç', text: 'HD, Full HD veya varsa 4K seçeneğini seçin.' },
+    { name: 'İndirilenler’den aç', text: 'Video MP4 olarak “İndirilenler” klasörüne iner; tarayıcının indirme simgesinden “Klasörde göster” diyebilirsiniz.' },
+  ],
+};
+---
+
+<ToolPageLayout
+  title={title}
+  description={description}
+  path={path}
+  eyebrow="Windows · PC · Bilgisayar"
+  h1="Windows Pinterest Video İndir"
+  lead="Windows bilgisayarda Pinterest videolarını Chrome, Edge veya Firefox üzerinden, program kurmadan indirin: bağlantıyı yapıştırın, kaliteyi seçin, video MP4 olarak “İndirilenler” klasörünüze kaydedilsin."
+  kind="video"
+  placeholder="Pinterest video bağlantısını buraya yapıştırın…"
+  crumbs={crumbs}
+  faq={WINDOWS_FAQ}
+  faqTitle="Windows’ta Pinterest video indirme — SSS"
+  howTo={howTo}
+  extraSchemas={[
+    videoObjectSchema({
+      name: video.title,
+      description: video.description,
+      videoId: video.id,
+      path,
+    }),
+  ]}
+>
+  <ShortAnswerBox question="Windows’ta Pinterest videosu nasıl indirilir?">
+    <p class="mt-0" style="margin:0">
+      Pinterest’te videoyu açıp <strong>“Paylaş → Bağlantıyı kopyala”</strong>
+      deyin. Windows bilgisayarda Chrome, Edge veya Firefox ile bu sayfayı açın,
+      bağlantıyı kutuya <strong>yapıştırın</strong> ve <strong>“İndir”</strong>e
+      basın. Video <strong>MP4</strong> olarak “İndirilenler” klasörüne iner ve
+      tarayıcının indirme listesinde görünür. Program veya eklenti gerekmez.
+    </p>
+  </ShortAnswerBox>
+
+  <h2>Windows’ta adım adım Pinterest video indirme</h2>
+  <div class="steps" style="margin:20px 0">
+    <div class="step"><h3>Bağlantıyı kopyala</h3><p>Pinterest’te videoyu açın, “Paylaş → Bağlantıyı kopyala” deyin veya adres çubuğundaki URL’yi alın.</p></div>
+    <div class="step"><h3>Tarayıcıda yapıştır</h3><p>Chrome, Microsoft Edge veya Firefox’ta bu sayfayı açıp bağlantıyı indirme kutusuna yapıştırın.</p></div>
+    <div class="step"><h3>Kaliteyi seç &amp; indir</h3><p>“İndir”e basın; HD, Full HD ya da varsa 4K seçeneğini seçin.</p></div>
+    <div class="step"><h3>İndirilenler’de bul</h3><p>Video, Dosya Gezgini’ndeki “İndirilenler” (Downloads) klasörüne MP4 olarak kaydedilir.</p></div>
+  </div>
+
+  <h2>Video anlatım: Windows’ta Pinterest videosu indirme</h2>
+  <p>
+    Adımları ekranda görmek için kısa bir video hazırladık. Aşağıdaki anlatımda
+    bağlantıyı kopyalamaktan videoyu “İndirilenler” klasöründe bulmaya kadar tüm
+    süreci Windows bilgisayarda izleyebilirsiniz.
+  </p>
+  <VideoTutorial
+    id={video.id}
+    title={video.iframeTitle}
+    caption="Windows’ta Pinterest videosu nasıl indirilir — adım adım anlatım."
+  />
+
+  <h2>Chrome, Edge yoksa Firefox mu? Windows’ta hangi tarayıcı?</h2>
+  <p>
+    Windows’ta <strong>Chrome</strong>, <strong>Microsoft Edge</strong> ve
+    <strong>Firefox</strong> ile indirme yapabilirsiniz; adımlar birebir aynıdır.
+    Edge ve Chrome çoğu bilgisayarda hazır gelir ve indirmeleri sağ üstteki
+    indirme simgesinde listeler; oradan <strong>“Klasörde göster”</strong> ile
+    dosyaya hızlıca ulaşırsınız. Hangi tarayıcıyı kullanırsanız kullanın videoyu
+    <strong>MP4</strong> olarak, filigransız kaydedersiniz.
+  </p>
+
+  <h2>İndirilen videoyu Windows’ta açma ve oynatma</h2>
+  <p>
+    İndirdiğiniz MP4 dosyası Windows’un yerleşik <strong>Medya Yürütücüsü</strong>
+    (Media Player) ile doğrudan açılır. Daha fazla format desteği isterseniz
+    ücretsiz <strong>VLC</strong> oynatıcısını kullanabilirsiniz; genellikle ek
+    codec kurmaya gerek kalmaz. Windows 10 ve Windows 11’de yöntem tamamen
+    aynıdır — tek gereken güncel bir web tarayıcısıdır. Videoyu telefonunuzda
+    izlemek isterseniz dosyayı bulut (OneDrive, Google Drive) üzerinden
+    eşitleyebilir veya USB ile aktarabilirsiniz.
+  </p>
+
+  <h2>Windows’ta Pinterest videosu indirmenin kullanım alanları</h2>
+  <ul>
+    <li><strong>Çevrimdışı izleme:</strong> Tarif, eğitim ve ilham videolarını internetsiz izlemek için PC’nize kaydedin.</li>
+    <li><strong>Sunum &amp; ödev:</strong> Videoları PowerPoint sunumlarında veya projelerde referans olarak kullanın.</li>
+    <li><strong>Video düzenleme:</strong> Clipchamp, Shotcut veya benzeri düzenleyicilerle kırpıp yeniden kullanın (telife saygı göstererek).</li>
+    <li><strong>Yedekleme:</strong> Pinterest’e yüklediğiniz kendi videolarınızın kopyasını bilgisayarınızda tutun.</li>
+  </ul>
+
+  <p class="disclaimer" role="note" style="margin-top:22px">
+    <strong>Sorumlu kullanım — </strong>Yalnızca size ait olan veya indirme
+    iznine sahip olduğunuz içerikleri kaydetmenizi öneririz. Pinterest ile resmi
+    bir bağlantımız yoktur.
+  </p>
+
+  <ToolCta
+    slot="after"
+    title="Bilgisayardan hemen indirin"
+    text="Bağlantıyı Chrome, Edge veya Firefox’ta yapıştırın ve Pinterest videosunu saniyeler içinde MP4 olarak kaydedin."
+    href="/pinterest-video-indir/"
+    label="Pinterest Video İndir"
+  />
+
+  <RelatedGuides
+    slot="after"
+    title="İlgili araçlar ve rehberler"
+    items={[
+      { title: 'Pinterest Video İndir', href: '/pinterest-video-indir/', description: 'Tüm cihazlarda HD, Full HD ve 4K MP4 indirme aracı.' },
+      { title: 'Mac Pinterest Video İndir', href: '/mac-pinterest-video-indir/', description: 'macOS’ta Safari veya Chrome ile indirme rehberi.' },
+      { title: 'iPhone Pinterest Video İndir', href: '/iphone-pinterest-video-indir/', description: 'iOS’ta Safari ile indirme ve galeriye kaydetme.' },
+      { title: 'Android Pinterest Video İndir', href: '/android-pinterest-video-indir/', description: 'Android telefonlarda galeriye doğrudan kaydetme.' },
+      { title: 'Video Nasıl İndirilir', href: '/pinterest-video-nasil-indirilir/', description: 'Adım adım genel indirme rehberi.' },
+      { title: 'Pinterest 4K Video İndir', href: '/pinterest-4k-video-indir/', description: 'En yüksek çözünürlükte video indirin.' },
+      { title: 'Video İndir Galeriye', href: '/pinterest-video-galeriye-indir/', description: 'Videoyu telefon galerinize kaydetme rehberi.' },
+      { title: 'Sıkça Sorulan Sorular', href: '/sss/', description: 'Pinterest indirme hakkında tüm yanıtlar.' },
+    ]}
+  />
+</ToolPageLayout>

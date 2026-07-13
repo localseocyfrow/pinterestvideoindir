@@ -3,7 +3,12 @@ import ToolPageLayout from '../layouts/ToolPageLayout.astro';
 import ShortAnswerBox from '../components/ShortAnswerBox.astro';
 import RelatedGuides from '../components/RelatedGuides.astro';
 import ToolCta from '../components/ToolCta.astro';
+import VideoTutorial from '../components/VideoTutorial.astro';
 import { IPHONE_FAQ } from '../data/faq';
+import { TUTORIALS } from '../data/videos';
+import { videoObjectSchema } from '../lib/schema';
+
+const video = TUTORIALS.ios;
 
 const path = '/iphone-pinterest-video-indir/';
 const title = 'iPhone Pinterest Video İndir – iOS için Ücretsiz (Safari)';
@@ -41,6 +46,14 @@ const howTo = {
   faq={IPHONE_FAQ}
   faqTitle="iPhone’da Pinterest video indirme — SSS"
   howTo={howTo}
+  extraSchemas={[
+    videoObjectSchema({
+      name: video.title,
+      description: video.description,
+      videoId: video.id,
+      path,
+    }),
+  ]}
 >
   <ShortAnswerBox question="iPhone’da Pinterest videosu nasıl indirilir?">
     <p class="mt-0" style="margin:0">
@@ -60,6 +73,18 @@ const howTo = {
     <div class="step"><h3>Kaliteyi seç &amp; indir</h3><p>“İndir”e basıp HD, Full HD veya varsa 4K seçin; video “Dosyalar”a iner.</p></div>
     <div class="step"><h3>Fotoğraflar’a kaydet</h3><p>Dosyalar → İndirilenler’de videoya dokunun, “Paylaş → Videoyu Kaydet” deyin.</p></div>
   </div>
+
+  <h2>Video anlatım: iPhone’da Pinterest videosu indirme</h2>
+  <p>
+    Adımları ekranda görmek isterseniz kısa bir video hazırladık. Aşağıdaki
+    anlatımda bağlantıyı kopyalamaktan videoyu Fotoğraflar’a (galeriye)
+    kaydetmeye kadar tüm süreci iPhone ekranında izleyebilirsiniz.
+  </p>
+  <VideoTutorial
+    id={video.id}
+    title={video.iframeTitle}
+    caption="iPhone’da Pinterest videosu nasıl indirilir — adım adım anlatım."
+  />
 
   <h2>iOS neden videoyu doğrudan galeriye indirmiyor?</h2>
   <p>
@@ -111,6 +136,8 @@ const howTo = {
     items={[
       { title: 'Pinterest Video İndir', href: '/pinterest-video-indir/', description: 'Tüm cihazlarda HD, Full HD ve 4K MP4 indirme aracı.' },
       { title: 'Android Pinterest Video İndir', href: '/android-pinterest-video-indir/', description: 'Android telefonlarda galeriye doğrudan kaydetme.' },
+      { title: 'Mac Pinterest Video İndir', href: '/mac-pinterest-video-indir/', description: 'macOS’ta Safari veya Chrome ile bilgisayara indirme.' },
+      { title: 'Windows Pinterest Video İndir', href: '/windows-pinterest-video-indir/', description: 'Windows PC’de tarayıcıyla indirme rehberi.' },
       { title: 'Video İndir Galeriye', href: '/pinterest-video-galeriye-indir/', description: 'Videoyu telefon galerinize kaydetme rehberi.' },
       { title: 'Video Nasıl İndirilir', href: '/pinterest-video-nasil-indirilir/', description: 'Adım adım genel indirme rehberi.' },
       { title: 'Pinterest 4K Video İndir', href: '/pinterest-4k-video-indir/', description: 'En yüksek çözünürlükte video indirin.' },

@@ -408,6 +408,78 @@ export const ANDROID_FAQ: QA[] = [
   },
 ];
 
+// macOS / Mac desktop cluster — /mac-pinterest-video-indir/.
+export const MAC_FAQ: QA[] = [
+  {
+    q: 'Mac’te Pinterest videosu nasıl indirilir?',
+    a: 'Mac’te Safari, Chrome veya Firefox ile sitemizi açın. Pinterest’te videoyu açıp “Paylaş → Bağlantıyı kopyala” deyin (ya da adres çubuğundaki URL’yi alın), bağlantıyı kutuya yapıştırıp “İndir”e basın ve kaliteyi seçin. Video MP4 olarak “İndirilenler” klasörüne kaydedilir; uygulama kurmanıza gerek yoktur.',
+  },
+  {
+    q: 'macOS’ta indirdiğim video nereye kaydedilir?',
+    a: 'Varsayılan olarak video, kullanıcı klasörünüzdeki “İndirilenler” (Downloads) klasörüne iner ve Dock’taki İndirilenler yığınında görünür. Safari’de indirme konumunu “Ayarlar → Genel → Dosya indirme konumu” bölümünden değiştirebilirsiniz.',
+  },
+  {
+    q: 'Mac’te Safari mi yoksa Chrome mu kullanmalıyım?',
+    a: 'İkisi de sorunsuz çalışır ve adımlar aynıdır. Safari, macOS ile tam entegre olduğu için en akıcı ve pil dostu deneyimi sunar; Chrome veya Firefox kullanıyorsanız da videoyu aynı şekilde MP4 olarak indirebilirsiniz.',
+  },
+  {
+    q: 'Mac’e Pinterest videosu indirmek için uygulama veya eklenti gerekir mi?',
+    a: 'Hayır. İşlem tamamen tarayıcı üzerinden yapılır. App Store’dan uygulama ya da tarayıcıya eklenti kurmanıza gerek yoktur; bu, disk alanı kazandırır ve gereksiz izin/reklam riskini ortadan kaldırır.',
+  },
+  {
+    q: 'İndirdiğim videoyu Mac’te nasıl açar veya düzenlerim?',
+    a: 'MP4 dosyaları Mac’te QuickTime Player ile doğrudan açılır. Düzenlemek isterseniz iMovie’ye sürükleyip kırpabilir, ardından yeniden dışa aktarabilirsiniz. Format evrensel olduğu için ek kod çözücü (codec) gerekmez.',
+  },
+  {
+    q: 'Mac’ten indirdiğim videoyu iPhone’a aktarabilir miyim?',
+    a: 'Evet. İndirilen MP4’ü AirDrop ile iPhone veya iPad’inize saniyeler içinde gönderebilir, iCloud Drive ya da Fotoğraflar üzerinden eşitleyebilirsiniz. Böylece bilgisayarda indirip telefonda çevrimdışı izleyebilirsiniz.',
+  },
+  {
+    q: 'Video 4K veya Full HD olarak Mac’e iniyor mu?',
+    a: 'Evet. Kaynak video hangi çözünürlükte yüklendiyse (HD 720p, Full HD 1080p ve mümkünse 4K) onu seçenek olarak sunarız. Retina ekranlı Mac’lerde yüksek çözünürlüklü indirme daha net görüntü sağlar.',
+  },
+  {
+    q: 'Mac’te Pinterest video indirmek ücretsiz ve güvenli mi?',
+    a: 'Evet. İndirme tamamen ücretsiz ve sınırsızdır. Araç Pinterest giriş bilgisi istemez, yapıştırdığınız bağlantıyı saklamaz ve Mac’inize hiçbir dosya kurmaz. Yalnızca size ait olan veya izniniz olan içerikleri indirmenizi öneririz.',
+  },
+];
+
+// Windows desktop cluster — /windows-pinterest-video-indir/.
+export const WINDOWS_FAQ: QA[] = [
+  {
+    q: 'Windows’ta Pinterest videosu nasıl indirilir?',
+    a: 'Windows bilgisayarda Chrome, Edge veya Firefox ile sitemizi açın. Pinterest’te videoyu açıp “Paylaş → Bağlantıyı kopyala” deyin (ya da adres çubuğundaki URL’yi kopyalayın), bağlantıyı kutuya yapıştırıp “İndir”e basın ve kaliteyi seçin. Video MP4 olarak “İndirilenler” klasörüne kaydedilir.',
+  },
+  {
+    q: 'Bilgisayara inen video hangi klasöre kaydedilir?',
+    a: 'Varsayılan olarak video, Dosya Gezgini’ndeki “İndirilenler” (Downloads) klasörüne iner. Tarayıcının sağ üstündeki indirme simgesine tıklayıp “Klasörde göster” diyerek dosyaya hızlıca ulaşabilirsiniz.',
+  },
+  {
+    q: 'Windows’ta hangi tarayıcı en iyisi: Chrome, Edge yoksa Firefox mu?',
+    a: 'Üçü de sorunsuz çalışır ve adımlar aynıdır. Chrome ve Edge çoğu Windows bilgisayarında hazır gelir; Firefox da desteklenir. Tarayıcı fark etmeksizin video MP4 olarak İndirilenler klasörüne kaydedilir.',
+  },
+  {
+    q: 'Windows’a Pinterest videosu indirmek için program kurmam gerekir mi?',
+    a: 'Hayır. İşlem tamamen tarayıcı tabanlıdır; masaüstü programı, eklenti veya Microsoft Store uygulaması kurmanıza gerek yoktur. Bu, kurulum derdini ve olası reklam yazılımı riskini ortadan kaldırır.',
+  },
+  {
+    q: 'İndirdiğim MP4’ü Windows’ta hangi oynatıcıyla açarım?',
+    a: 'MP4 dosyaları Windows’un yerleşik “Medya Yürütücüsü” (Films & TV / Media Player) ile doğrudan açılır. Dilerseniz VLC gibi ücretsiz bir oynatıcı da kullanabilirsiniz; ek codec kurulumu genellikle gerekmez.',
+  },
+  {
+    q: 'Windows 10 ve Windows 11’de yöntem aynı mı?',
+    a: 'Evet. Araç tarayıcı üzerinden çalıştığı için Windows 10, Windows 11 ve daha eski sürümlerde tamamen aynı şekilde kullanılır. Tek gereken güncel bir web tarayıcısıdır.',
+  },
+  {
+    q: 'Bilgisayardan Full HD veya 4K Pinterest videosu indirebilir miyim?',
+    a: 'Evet. Kaynak videonun yüklendiği çözünürlüğe göre HD 720p, Full HD 1080p ve mümkünse 4K seçeneği sunarız. Büyük monitörlerde izlemek veya düzenlemek için en yüksek kaliteyi seçebilirsiniz.',
+  },
+  {
+    q: 'Windows’ta Pinterest video indirmek ücretsiz ve güvenli mi?',
+    a: 'Evet. İndirme tamamen ücretsiz ve sınırsızdır. Araç giriş bilgisi istemez, yapıştırdığınız bağlantıyı saklamaz ve bilgisayarınıza hiçbir program kurmaz. Yalnızca size ait olan veya indirme iznine sahip olduğunuz içerikleri kaydetmenizi öneririz.',
+  },
+];
+
 // Consumed by the dedicated /sss/ page.
 export const ALL_FAQ_GROUPS: FaqGroup[] = [
   { title: 'Genel & Video İndirme', items: HOME_FAQ },

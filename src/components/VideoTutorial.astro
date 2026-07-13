@@ -1,0 +1,60 @@
+---
+// Responsive, privacy-friendly YouTube tutorial embed.
+// - Uses youtube-nocookie.com (no cookies until the user plays).
+// - loading="lazy" so it never blocks initial render (matters on the homepage
+//   where several embeds share the page).
+// - 16:9 responsive frame via aspect-ratio; accessible <iframe> title.
+// Pair with videoObjectSchema() so the structured data matches this embed.
+interface Props {
+  /** YouTube video id. */
+  id: string;
+  /** Accessible iframe title (Turkish). */
+  title: string;
+  /** Optional visible caption under the video. */
+  caption?: string;
+}
+const { id, title, caption } = Astro.props;
+const src = `https://www.youtube-nocookie.com/embed/${id}`;
+---
+
+<figure class="video-embed">
+  <div class="video-embed__frame">
+    <iframe
+      src={src}
+      title={title}
+      loading="lazy"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen></iframe>
+  </div>
+  {caption && <figcaption>{caption}</figcaption>}
+</figure>
+
+<style>
+  .video-embed {
+    margin: 0;
+  }
+  .video-embed__frame {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #000;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.14);
+  }
+  .video-embed__frame iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+  }
+  .video-embed figcaption {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: var(--ink-2);
+    text-align: center;
+  }
+</style>
