@@ -1,0 +1,123 @@
+---
+import ToolPageLayout from '../layouts/ToolPageLayout.astro';
+import ShortAnswerBox from '../components/ShortAnswerBox.astro';
+import RelatedGuides from '../components/RelatedGuides.astro';
+import ToolCta from '../components/ToolCta.astro';
+import { LINK_FAQ } from '../data/faq';
+
+const path = '/pinterest-video-link-indir/';
+const title = 'Pinterest Video Link İndir – Bağlantı Yapıştır & İndir';
+const description =
+  'Pinterest video linkini (bağlantısını) yapıştırarak videoyu MP4 olarak indirin. pin.it kısa linki ve pinterest.com URL’si desteklenir. Ücretsiz, filigransız, kurulumsuz.';
+
+const crumbs = [
+  { name: 'Ana Sayfa', href: '/' },
+  { name: 'Video Link İndir', href: path },
+];
+
+const howTo = {
+  name: 'Pinterest video linki ile indirme',
+  description:
+    'Pinterest videosunu linkiyle indirmek için bağlantıyı kopyalayın, araca yapıştırın, kaliteyi seçin ve MP4 olarak kaydedin.',
+  steps: [
+    { name: 'Linki kopyala', text: 'Pinterest’te “Paylaş → Bağlantıyı kopyala” deyin ya da adres çubuğundaki URL’yi alın.' },
+    { name: 'Linki yapıştır', text: 'Kopyaladığınız bağlantıyı yukarıdaki kutuya yapıştırın.' },
+    { name: 'İndir’e bas', text: 'Araç linkteki videoyu analiz eder ve kalite seçeneklerini gösterir.' },
+    { name: 'MP4 olarak kaydet', text: 'İstediğiniz kaliteyi seçip videoyu MP4 olarak indirin.' },
+  ],
+};
+---
+
+<ToolPageLayout
+  title={title}
+  description={description}
+  path={path}
+  eyebrow="Link · Bağlantı · URL"
+  h1="Pinterest Video Link İndir"
+  lead="Pinterest video linkini (bağlantısını) yapıştırın, videoyu filigransız MP4 olarak indirin. Hem pin.it kısa bağlantıları hem de pinterest.com adres çubuğu URL’si desteklenir."
+  kind="video"
+  placeholder="Pinterest video linkini buraya yapıştırın…"
+  crumbs={crumbs}
+  faq={LINK_FAQ}
+  faqTitle="Pinterest link ile indirme — SSS"
+  howTo={howTo}
+>
+  <ShortAnswerBox question="Pinterest video linki ile nasıl indirilir?">
+    <p class="mt-0" style="margin:0">
+      Videonun <strong>linkini (bağlantısını)</strong> kopyalayın, yukarıdaki
+      kutuya <strong>yapıştırın</strong> ve <strong>“İndir”</strong>e basın.
+      Araç, linkteki videoyu analiz edip kalite seçeneklerini gösterir; birini
+      seçip videoyu <strong>MP4</strong> olarak kaydedersiniz. Hem
+      <strong>pin.it</strong> kısa bağlantısı hem de tarayıcının adres
+      çubuğundaki <strong>pinterest.com/pin/…</strong> URL’si çalışır.
+    </p>
+  </ShortAnswerBox>
+
+  <h2>Pin bağlantısını (linkini) nasıl kopyalarım?</h2>
+  <p>
+    İki yol vardır. Birincisi: pini açıp <strong>“Paylaş → Bağlantıyı
+    kopyala”</strong> demek; bu, kısa bir <strong>pin.it</strong> linki verir.
+    İkincisi: videoyu tarayıcıda açıp adres çubuğundaki
+    <strong>pinterest.com/pin/…</strong> URL’sini kopyalamak. Her iki bağlantı da
+    aracımızla çalışır; kısa linkleri otomatik olarak asıl pin adresine
+    çözümleriz. Adım adım anlatım için
+    <a href="/pinterest-video-nasil-indirilir/">video nasıl indirilir
+    rehberimize</a> veya genel
+    <a href="/nasil-kullanilir/">nasıl kullanılır sayfamıza</a> göz atın.
+  </p>
+
+  <h2>Neden link ile indirme en pratik yöntem?</h2>
+  <p>
+    Pinterest uygulaması videoları doğrudan cihaza kaydetme seçeneği sunmaz;
+    yalnızca uygulama içinde saklar. Bu yüzden videoyu gerçekten indirmenin en
+    hızlı yolu, <strong>bağlantısını kopyalayıp</strong> bir indiriciye
+    yapıştırmaktır. Link tabanlı yöntem kurulum gerektirmez, her cihaz ve her
+    tarayıcıda aynı şekilde çalışır ve saniyeler sürer. Aracın tüm özelliklerini
+    <a href="/pinterest-video-indirici/">Pinterest video indirici sayfamızda</a>
+    inceleyebilirsiniz.
+  </p>
+
+  <h2>Desteklenen bağlantı türleri</h2>
+  <ul>
+    <li><strong>pin.it kısa linki:</strong> Paylaş menüsünden gelen kısa bağlantılar otomatik çözümlenir.</li>
+    <li><strong>pinterest.com/pin/… URL’si:</strong> Adres çubuğundan kopyalanan tam bağlantılar.</li>
+    <li><strong>Ülke alan adları:</strong> tr.pinterest.com gibi bölgesel adresler de desteklenir.</li>
+    <li><strong>Herkese açık pinler:</strong> Link, herkese açık bir pine ait olmalıdır; gizli pano linkleri indirilemez.</li>
+  </ul>
+
+  <h2>Link ile indirmenin adımları</h2>
+  <div class="steps" style="margin:20px 0">
+    <div class="step"><h3>Linki kopyala</h3><p>“Paylaş → Bağlantıyı kopyala” deyin veya adres çubuğundaki URL’yi alın.</p></div>
+    <div class="step"><h3>Linki yapıştır</h3><p>Bağlantıyı yukarıdaki kutuya yapıştırın.</p></div>
+    <div class="step"><h3>İndir’e bas</h3><p>Araç videoyu analiz eder ve kalite seçeneklerini listeler.</p></div>
+    <div class="step"><h3>MP4 olarak kaydet</h3><p>İstediğiniz kaliteyi seçip videoyu indirin.</p></div>
+  </div>
+
+  <p class="disclaimer" role="note" style="margin-top:22px">
+    <strong>Sorumlu kullanım — </strong>Yalnızca size ait olan veya indirme
+    iznine sahip olduğunuz içerikleri kaydetmenizi öneririz. Pinterest ile resmi
+    bir bağlantımız yoktur.
+  </p>
+
+  <ToolCta
+    slot="after"
+    title="Linki yapıştırın, hemen indirin"
+    text="Pinterest video bağlantısını kutuya yapıştırın ve videoyu saniyeler içinde MP4 olarak kaydedin."
+    href="/pinterest-video-indir/"
+    label="Pinterest Video İndir"
+  />
+
+  <RelatedGuides
+    slot="after"
+    title="İlgili araçlar ve rehberler"
+    items={[
+      { title: 'Pinterest Video İndir', href: '/pinterest-video-indir/', description: 'Tüm cihazlarda HD, Full HD ve 4K MP4 indirme aracı.' },
+      { title: 'Pinterest Video İndirici', href: '/pinterest-video-indirici/', description: 'Online, kurulumsuz indirme aracının tüm özellikleri.' },
+      { title: 'Pinterest HD Video İndir', href: '/pinterest-hd-video-indir/', description: 'Full HD (1080p) kalitede indirme.' },
+      { title: 'Video Nasıl İndirilir', href: '/pinterest-video-nasil-indirilir/', description: 'Adım adım Pinterest video indirme rehberi.' },
+      { title: 'Pinterest Video Kalitesi', href: '/pinterest-video-kalitesi/', description: 'Video neden bulanık iniyor ve nasıl HD indirilir?' },
+      { title: 'Nasıl Kullanılır', href: '/nasil-kullanilir/', description: 'Sitenin tüm araçları için genel rehber.' },
+      { title: 'Sıkça Sorulan Sorular', href: '/sss/', description: 'Pinterest indirme hakkında tüm yanıtlar.' },
+    ]}
+  />
+</ToolPageLayout>

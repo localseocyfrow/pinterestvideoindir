@@ -1,0 +1,122 @@
+---
+import ToolPageLayout from '../layouts/ToolPageLayout.astro';
+import ShortAnswerBox from '../components/ShortAnswerBox.astro';
+import RelatedGuides from '../components/RelatedGuides.astro';
+import ToolCta from '../components/ToolCta.astro';
+import { HD_FAQ } from '../data/faq';
+
+const path = '/pinterest-hd-video-indir/';
+const title = 'Pinterest HD Video İndir – Full HD (1080p) MP4 (Ücretsiz)';
+const description =
+  'Pinterest videosunu HD ve Full HD (1080p) kalitede indirin: bağlantıyı yapıştırın, en yüksek çözünürlüğü seçin, filigransız MP4 olarak kaydedin. Tüm cihazlarda ücretsiz.';
+
+const crumbs = [
+  { name: 'Ana Sayfa', href: '/' },
+  { name: 'HD Video İndir', href: path },
+];
+
+const howTo = {
+  name: 'Pinterest videosunu HD kalitede indirme',
+  description:
+    'Pinterest videosunu HD veya Full HD indirmek için bağlantıyı kopyalayın, araca yapıştırın ve en yüksek kaliteyi seçin.',
+  steps: [
+    { name: 'Bağlantıyı kopyala', text: 'Videoyu Pinterest’te açıp “Paylaş → Bağlantıyı kopyala” deyin.' },
+    { name: 'Araca yapıştır', text: 'Bağlantıyı yukarıdaki kutuya yapıştırıp “İndir”e basın.' },
+    { name: 'HD kaliteyi seç', text: 'HD (720p) veya Full HD (1080p) seçeneğini seçin.' },
+    { name: 'MP4 olarak kaydet', text: 'Videoyu filigransız MP4 olarak cihazınıza indirin.' },
+  ],
+};
+---
+
+<ToolPageLayout
+  title={title}
+  description={description}
+  path={path}
+  eyebrow="HD · Full HD · 1080p"
+  h1="Pinterest HD Video İndir"
+  lead="Pinterest videolarını HD ve Full HD (1080p) kalitede, filigransız MP4 olarak indirin: bağlantıyı yapıştırın, en yüksek çözünürlüğü seçin, videoyu net ve keskin biçimde kaydedin."
+  kind="video"
+  placeholder="Pinterest video bağlantısını buraya yapıştırın…"
+  crumbs={crumbs}
+  faq={HD_FAQ}
+  faqTitle="Pinterest HD video indirme — SSS"
+  howTo={howTo}
+>
+  <ShortAnswerBox question="Pinterest videosu HD kalitede nasıl indirilir?">
+    <p class="mt-0" style="margin:0">
+      Videonun bağlantısını <strong>kopyalayın</strong>, kutuya
+      <strong>yapıştırın</strong> ve <strong>“İndir”</strong>e basın. İndirme
+      seçenekleri arasından <strong>HD (720p)</strong> veya
+      <strong>Full HD (1080p)</strong> kaliteyi seçip videoyu filigransız
+      <strong>MP4</strong> olarak kaydedin. İndirilebilen en yüksek kalite,
+      videonun Pinterest’e yüklendiği çözünürlükle sınırlıdır.
+    </p>
+  </ShortAnswerBox>
+
+  <h2>HD ve Full HD: aradaki fark</h2>
+  <p>
+    <strong>HD (720p)</strong> 1280×720 piksel çözünürlük sunar; dosya boyutu
+    küçüktür ve sosyal paylaşım için yeterlidir. <strong>Full HD (1080p)</strong>
+    ise 1920×1080 pikselle daha keskin, daha net bir görüntü verir ve çoğu ekran
+    için ideal dengedir. Aracımız bu iki kaliteyi — ve kaynakta varsa daha
+    yükseğini — otomatik olarak listeler; siz yalnızca istediğinizi seçersiniz.
+    Daha da yüksek çözünürlük için
+    <a href="/pinterest-4k-video-indir/">4K video indirme sayfamıza</a>
+    göz atabilirsiniz.
+  </p>
+
+  <h2>Gerçek HD: yapay büyütme yok</h2>
+  <p>
+    İndirilebilecek en yüksek kalite tamamen içeriği <strong>yükleyen kişinin
+    seçtiği çözünürlüğe</strong> bağlıdır. Bir video Pinterest’e 480p yüklendiyse
+    hiçbir araç onu gerçek HD’ye “yükseltemez”; yapay büyütme yalnızca dosya
+    boyutunu artırır, netliği değil. Bu yüzden yalnızca kaynakta gerçekten var
+    olan kaliteleri gösteririz. Videonuz beklediğinizden bulanık iniyorsa
+    nedenlerini ve çözümünü
+    <a href="/pinterest-video-kalitesi/">video kalitesi rehberimizde</a>
+    bulabilirsiniz.
+  </p>
+
+  <h2>HD indirmenin avantajları</h2>
+  <ul>
+    <li><strong>Net görüntü:</strong> Full HD 1080p, büyük telefon ve bilgisayar ekranlarında keskin ayrıntı sunar.</li>
+    <li><strong>MP4 uyumluluğu:</strong> HD video, tüm cihaz ve oynatıcılarda ek codec olmadan açılır.</li>
+    <li><strong>Filigransız:</strong> Logo veya damga olmadan temiz, orijinal HD kalite.</li>
+    <li><strong>Ücretsiz &amp; sınırsız:</strong> HD ve Full HD indirme kayıt ve limit olmadan.</li>
+  </ul>
+
+  <h2>HD video indirmenin adımları</h2>
+  <div class="steps" style="margin:20px 0">
+    <div class="step"><h3>Bağlantıyı kopyala</h3><p>Pinterest’te videoyu açın, “Paylaş → Bağlantıyı kopyala” deyin.</p></div>
+    <div class="step"><h3>Araca yapıştır</h3><p>Bağlantıyı yukarıdaki kutuya yapıştırıp “İndir”e basın.</p></div>
+    <div class="step"><h3>HD kaliteyi seç</h3><p>720p veya Full HD 1080p seçeneğini seçin.</p></div>
+    <div class="step"><h3>MP4 olarak kaydet</h3><p>Videoyu filigransız MP4 olarak cihazınıza indirin.</p></div>
+  </div>
+
+  <p class="disclaimer" role="note" style="margin-top:22px">
+    <strong>Sorumlu kullanım — </strong>Yalnızca size ait olan veya indirme
+    iznine sahip olduğunuz içerikleri kaydetmenizi öneririz. Pinterest ile resmi
+    bir bağlantımız yoktur.
+  </p>
+
+  <ToolCta
+    slot="after"
+    title="Videoyu hemen HD indirin"
+    text="Bağlantıyı yapıştırın, Full HD (1080p) seçin ve videoyu saniyeler içinde net biçimde kaydedin."
+    href="/pinterest-video-indir/"
+    label="Pinterest Video İndir"
+  />
+
+  <RelatedGuides
+    slot="after"
+    title="İlgili araçlar ve rehberler"
+    items={[
+      { title: 'Pinterest Video İndir', href: '/pinterest-video-indir/', description: 'Tüm cihazlarda HD, Full HD ve 4K MP4 indirme aracı.' },
+      { title: 'Pinterest 4K Video İndir', href: '/pinterest-4k-video-indir/', description: 'En yüksek çözünürlükte Ultra HD MP4 indirin.' },
+      { title: 'Pinterest MP4 İndir', href: '/pinterest-mp4-indir/', description: 'Videoyu doğrudan HD MP4 olarak, dönüştürücüsüz kaydedin.' },
+      { title: 'Pinterest Video Kalitesi', href: '/pinterest-video-kalitesi/', description: 'Video neden bulanık iniyor ve nasıl HD indirilir?' },
+      { title: 'Pinterest Video Link İndir', href: '/pinterest-video-link-indir/', description: 'Pin bağlantısını yapıştırarak indirme.' },
+      { title: 'Video İndir Galeriye', href: '/pinterest-video-galeriye-indir/', description: 'Videoyu telefon galerinize kaydedin.' },
+    ]}
+  />
+</ToolPageLayout>

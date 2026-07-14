@@ -532,6 +532,62 @@ export const QUALITY_FAQ: QA[] = [
   },
 ];
 
+// HD / Full HD download cluster — /pinterest-hd-video-indir/.
+export const HD_FAQ: QA[] = [
+  {
+    q: 'Pinterest videosunu HD olarak nasıl indiririm?',
+    a: 'Pinterest’te videoyu açıp “Paylaş → Bağlantıyı kopyala” deyin, bağlantıyı aracımızdaki kutuya yapıştırın ve “İndir”e basın. İndirme seçenekleri arasından HD (720p) veya Full HD (1080p) kaliteyi seçtiğinizde video, filigransız MP4 olarak cihazınıza kaydedilir.',
+  },
+  {
+    q: 'Full HD (1080p) Pinterest videosu indirebilir miyim?',
+    a: 'Evet. Kaynak video Full HD yüklendiyse 1080p seçeneğini sunarız. Aracımız yalnızca kaynakta gerçekten var olan çözünürlükleri listeler; böylece net ve keskin bir HD video indirirsiniz.',
+  },
+  {
+    q: 'Video neden HD yerine daha düşük çözünürlükte iniyor?',
+    a: 'İndirilebilecek en yüksek kalite, videonun Pinterest’e yüklendiği çözünürlükle sınırlıdır. İçerik üreticisi videoyu 480p yüklediyse HD seçeneği çıkmaz. Ayrıntılı nedenler ve çözümü için video kalitesi rehberimize bakabilirsiniz.',
+  },
+  {
+    q: 'HD video hangi formatta indirilir?',
+    a: 'HD videolar evrensel olarak uyumlu MP4 formatında indirilir ve telefon, tablet, bilgisayar ile akıllı TV’lerde ek uygulama gerekmeden oynatılır.',
+  },
+  {
+    q: 'HD Pinterest videosu indirmek ücretsiz mi?',
+    a: 'Evet. HD ve Full HD dahil tüm kalite seçenekleri tamamen ücretsiz ve sınırsızdır; kayıt, ödeme veya günlük indirme limiti yoktur.',
+  },
+  {
+    q: 'İndirdiğim HD videoda filigran olur mu?',
+    a: 'Hayır. Video orijinal kaynağından alındığı için üzerinde logo veya filigran bulunmaz; HD kaliteyi temiz ve orijinal haliyle kaydedersiniz.',
+  },
+];
+
+// Link / URL-based download cluster — /pinterest-video-link-indir/.
+export const LINK_FAQ: QA[] = [
+  {
+    q: 'Pinterest video linki (bağlantısı) ile nasıl indirilir?',
+    a: 'Videonun bağlantısını (linkini) kopyalayın, aracımızdaki kutuya yapıştırın ve “İndir”e basın. Araç, linkteki videoyu analiz edip MP4 olarak filigransız indirmenizi sağlar; başka bir program gerekmez.',
+  },
+  {
+    q: 'Pin bağlantısını (linkini) nereden kopyalarım?',
+    a: 'Pini açın, “Paylaş” simgesine dokunun ve “Bağlantıyı kopyala” deyin. Tarayıcıda ise adres çubuğundaki URL’yi de kopyalayabilirsiniz. Link pin.it veya pinterest.com ile başlıyorsa araçla çalışır.',
+  },
+  {
+    q: 'pin.it kısa linki ile de çalışır mı?',
+    a: 'Evet. Pinterest’in paylaşım menüsünden gelen kısa “pin.it” bağlantıları da desteklenir. Aracımız kısa linki otomatik olarak asıl pin adresine çözümleyip videoyu indirir.',
+  },
+  {
+    q: 'Adres çubuğundaki URL’yi doğrudan kullanabilir miyim?',
+    a: 'Evet. Videoyu tarayıcıda açtığınızda adres çubuğunda görünen pinterest.com/pin/... bağlantısını kopyalayıp kutuya yapıştırmanız yeterlidir; “Paylaş” menüsünü kullanmak zorunda değilsiniz.',
+  },
+  {
+    q: 'Linki yapıştırdım ama video inmiyor, ne yapmalıyım?',
+    a: 'Bağlantının herkese açık bir pine ait olduğundan ve pinterest.com veya pin.it ile başladığından emin olun. Özel (gizli) panolardaki veya silinmiş pinlerin linkleri indirilemez. Farklı, herkese açık bir pin bağlantısı deneyin.',
+  },
+  {
+    q: 'Link ile Pinterest videosu indirmek ücretsiz mi?',
+    a: 'Evet. Bağlantı yapıştırarak indirme tamamen ücretsiz ve sınırsızdır; kayıt gerektirmez ve yapıştırdığınız link saklanmaz.',
+  },
+];
+
 // Consumed by the dedicated /sss/ page.
 export const ALL_FAQ_GROUPS: FaqGroup[] = [
   { title: 'Genel & Video İndirme', items: HOME_FAQ },
