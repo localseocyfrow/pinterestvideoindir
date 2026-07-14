@@ -1,0 +1,162 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Faq from '../components/Faq.astro';
+import ToolCta from '../components/ToolCta.astro';
+import RelatedGuides from '../components/RelatedGuides.astro';
+import { QUALITY_FAQ } from '../data/faq';
+import {
+  articleSchema,
+  howToSchema,
+  faqSchema,
+  breadcrumbSchema,
+  type Step,
+} from '../lib/schema';
+
+const path = '/pinterest-video-kalitesi/';
+const title = 'Pinterest Video Kalitesi Düşük mü? Neden Bulanık + Çözümü';
+const description =
+  'İndirdiğiniz Pinterest videosu neden düşük kaliteli veya bulanık? Video kalitesini etkileyen nedenler ve en yüksek HD/4K kalitede indirme çözümü. Ücretsiz rehber.';
+
+const steps: Step[] = [
+  {
+    name: 'Doğru aracı kullanın',
+    text: 'Yalnızca önizleme (düşük çözünürlük) yakalayan araçlar yerine, pinin en yüksek çözünürlüklü kaynağını hedefleyen bir indirici kullanın.',
+  },
+  {
+    name: 'Bağlantıyı yapıştırın',
+    text: 'Videonun “Paylaş → Bağlantıyı kopyala” bağlantısını alıp indirme kutusuna yapıştırın.',
+  },
+  {
+    name: 'En yüksek kaliteyi seçin',
+    text: 'Listelenen seçenekler arasından mümkünse Full HD (1080p) veya 4K çözünürlüğü seçin.',
+  },
+  {
+    name: 'MP4 olarak kaydedin',
+    text: 'Videoyu yeniden sıkıştırmadan, kaynaktaki netlikte MP4 olarak cihazınıza indirin.',
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  path={path}
+  ogType="article"
+  schemas={[
+    breadcrumbSchema([
+      { name: 'Ana Sayfa', href: '/' },
+      { name: 'Pinterest Video Kalitesi', href: path },
+    ]),
+    articleSchema({ title, description, path }),
+    howToSchema({
+      name: 'Pinterest videosunu en yüksek kalitede indirme',
+      description:
+        'Bulanık veya düşük kaliteli indirmeleri önlemek için doğru aracı kullanın, bağlantıyı yapıştırın, en yüksek çözünürlüğü seçin ve MP4 olarak kaydedin.',
+      steps,
+      totalTime: 'PT1M',
+    }),
+    faqSchema(QUALITY_FAQ),
+  ]}
+>
+  <article class="section">
+    <div class="container">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <a href="/">Ana Sayfa</a><span>/</span>Pinterest Video Kalitesi
+      </nav>
+
+      <div class="prose">
+        <span class="eyebrow">Kalite &amp; sorun giderme rehberi</span>
+        <h1>Pinterest Video Kalitesi Düşük mü? Neden Bulanık İniyor?</h1>
+        <p class="lead">
+          İndirdiğiniz Pinterest videosu bulanık ya da beklediğinizden düşük
+          çözünürlükte mi geldi? Bunun tek bir “ayar” sorunu olmadığını,
+          çoğunlukla <strong>kaynak videonun çözünürlüğüne</strong> ve
+          kullandığınız araca bağlı olduğunu bu rehberde adım adım açıklıyoruz —
+          ve en yüksek <strong>HD/4K</strong> kalitede nasıl indireceğinizi
+          gösteriyoruz.
+        </p>
+
+        <div class="answer-box" style="margin:26px 0">
+          <p class="q">Kısa cevap: Video neden düşük kaliteli iniyor?</p>
+          <p class="mt-0" style="margin:0">
+            İndirilebilecek en yüksek kalite, videonun Pinterest’e
+            <strong>yüklendiği çözünürlükle sınırlıdır</strong>. Kaynak 1080p
+            ise 4K indiremezsiniz; ayrıca bazı araçlar yalnızca düşük çözünürlüklü
+            <strong>önizlemeyi</strong> yakalar. Çözüm: kaynağın en yüksek
+            sürümünü hedefleyen bir araç kullanıp indirme sırasında
+            <strong>Full HD (1080p)</strong> veya <strong>4K</strong> seçmektir.
+          </p>
+        </div>
+      </div>
+
+      <div class="prose">
+        <h2>Video kalitesini etkileyen başlıca nedenler</h2>
+        <ul>
+          <li><strong>Kaynak çözünürlüğü:</strong> İçerik üreticisi videoyu 480p veya 720p yüklediyse, hiçbir araç onu gerçek HD’ye çıkaramaz.</li>
+          <li><strong>Önizleme yakalama:</strong> Bazı indiriciler pinin küçük önizleme videosunu alır; bu sürüm doğal olarak bulanıktır.</li>
+          <li><strong>Yanlış kalite seçimi:</strong> İndirirken listeden düşük bir seçenek (ör. 360p/480p) seçmek net olmayan sonuç verir.</li>
+          <li><strong>Yeniden sıkıştırma:</strong> Videoyu yeniden kodlayan araçlar kalite kaybına yol açar; kaynağı olduğu gibi veren araçlar netliği korur.</li>
+        </ul>
+
+        <h2>En yüksek kalitede indirme adımları</h2>
+        <div class="steps" style="margin:24px 0">
+          {steps.map((s) => (
+            <div class="step"><h3>{s.name}</h3><p>{s.text}</p></div>
+          ))}
+        </div>
+
+        <h2>Düşük çözünürlüklü videoyu HD’ye “yükseltmek” mümkün mü?</h2>
+        <p>
+          Kısaca hayır. Düşük çözünürlüklü bir kaynağı yapay olarak büyütmek
+          (upscale) yalnızca dosya boyutunu artırır, gerçek ayrıntı eklemez;
+          görüntü yine yumuşak ve bulanık kalır. Gerçek yüksek kalite ancak
+          videonun kaynağı yüksek çözünürlükteyse elde edilir. Bu yüzden aracımız
+          şişirilmiş sahte çözünürlükler yerine yalnızca
+          <strong>kaynakta gerçekten var olan</strong> kaliteleri gösterir.
+          Çözünürlük seçenekleri hakkında daha fazla bilgi için
+          <a href="/pinterest-4k-video-indir/">4K video indirme sayfamıza</a>,
+          videoyu doğrudan MP4 olarak almak için
+          <a href="/pinterest-mp4-indir/">MP4 indirme sayfamıza</a> bakın.
+        </p>
+
+        <h2>MP4 formatı kaliteyi düşürür mü?</h2>
+        <p>
+          Hayır. <strong>MP4</strong> yalnızca videoyu saran bir kapsayıcı
+          formattır; kaliteyi belirleyen, videonun çözünürlüğü ve bit hızıdır.
+          Kaynaktaki MP4 videoyu yeniden sıkıştırmadan indirdiğimiz için ek bir
+          kalite kaybı oluşmaz — indirdiğiniz dosya, Pinterest’teki orijinaliyle
+          aynı netliktedir.
+        </p>
+
+        <blockquote>
+          <strong>İpucu — </strong>Aynı pini farklı araçlarda denediğinizde
+          kalite değişiyorsa, sorun videoda değil araçtadır. Kaynağın en yüksek
+          sürümünü hedefleyen
+          <a href="/pinterest-video-indir/">indirme aracımızı</a> kullanarak
+          videoyu her zaman en net haliyle kaydedebilirsiniz.
+        </blockquote>
+      </div>
+    </div>
+  </article>
+
+  <ToolCta
+    title="Videoyu en yüksek kalitede indirin"
+    text="Bağlantıyı yapıştırın, Full HD veya 4K seçin ve videoyu kaynaktaki netlikte MP4 olarak kaydedin."
+    href="/pinterest-video-indir/"
+    label="Pinterest Video İndir"
+  />
+
+  <RelatedGuides
+    title="İlgili araçlar ve rehberler"
+    items={[
+      { title: 'Pinterest 4K Video İndir', href: '/pinterest-4k-video-indir/', description: 'En yüksek çözünürlükte Ultra HD MP4 indirin.' },
+      { title: 'Pinterest MP4 İndir', href: '/pinterest-mp4-indir/', description: 'Videoyu doğrudan HD MP4 olarak kaydedin.' },
+      { title: 'Pinterest Video İndir', href: '/pinterest-video-indir/', description: 'Tüm cihazlarda HD, Full HD ve 4K indirme aracı.' },
+      { title: 'Filigransız Video İndir', href: '/pinterest-filigransiz-video-indir/', description: 'Logosuz, temiz ve net video indirme.' },
+      { title: 'Video Nasıl İndirilir', href: '/pinterest-video-nasil-indirilir/', description: 'Adım adım Pinterest video indirme rehberi.' },
+      { title: 'Nasıl Kullanılır', href: '/nasil-kullanilir/', description: 'Sitenin tüm araçları için genel rehber.' },
+    ]}
+  />
+
+  <Faq items={QUALITY_FAQ} title="Pinterest video kalitesi — Sık sorulanlar" />
+</BaseLayout>

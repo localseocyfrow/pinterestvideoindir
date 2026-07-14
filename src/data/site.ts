@@ -42,6 +42,7 @@ export const FOOTER_GROUPS: { title: string; links: NavItem[] }[] = [
       { label: 'Pinterest Video İndirici', href: '/pinterest-video-indirici/' },
       { label: 'Video İndir Galeriye', href: '/pinterest-video-galeriye-indir/' },
       { label: 'Pinterest 4K Video İndir', href: '/pinterest-4k-video-indir/' },
+      { label: 'Pinterest MP4 İndir', href: '/pinterest-mp4-indir/' },
       { label: 'Video İndir Ücretsiz', href: '/pinterest-video-indir-ucretsiz/' },
       { label: 'Pinterest Pin İndir', href: '/pinterest-pin-indir/' },
       { label: 'Filigransız Video İndir', href: '/pinterest-filigransiz-video-indir/' },
@@ -55,6 +56,7 @@ export const FOOTER_GROUPS: { title: string; links: NavItem[] }[] = [
     title: 'Rehber',
     links: [
       { label: 'Video Nasıl İndirilir', href: '/pinterest-video-nasil-indirilir/' },
+      { label: 'Video Kalitesi (Neden Bulanık?)', href: '/pinterest-video-kalitesi/' },
       { label: 'iPhone’da Video İndir', href: '/iphone-pinterest-video-indir/' },
       { label: 'Android’de Video İndir', href: '/android-pinterest-video-indir/' },
       { label: 'Mac’te Video İndir', href: '/mac-pinterest-video-indir/' },

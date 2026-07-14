@@ -480,6 +480,58 @@ export const WINDOWS_FAQ: QA[] = [
   },
 ];
 
+// MP4 / HD direct-link cluster — /pinterest-mp4-indir/.
+export const MP4_FAQ: QA[] = [
+  {
+    q: 'Pinterest videosunu MP4 olarak nasıl indiririm?',
+    a: 'Pinterest’te videoyu açıp “Paylaş → Bağlantıyı kopyala” deyin, bağlantıyı aracımızdaki kutuya yapıştırın ve “İndir”e basın. Video, ek dönüştürme yapmanıza gerek kalmadan doğrudan MP4 formatında cihazınıza kaydedilir.',
+  },
+  {
+    q: 'Pinterest videosunu ayrı bir MP4 dönüştürücüye ihtiyaç duymadan indirebilir miyim?',
+    a: 'Evet. Pinterest videoları zaten MP4 tabanlı sunulduğu için aracımız videoyu doğrudan MP4 olarak verir; ayrı bir “MP4 dönüştürücü” programına veya çevrimiçi dönüştürme adımına gerek yoktur. Bağlantıyı yapıştırıp indirmeniz yeterlidir.',
+  },
+  {
+    q: 'HD (1080p) MP4 indirebilir miyim?',
+    a: 'Evet. Kaynak video hangi çözünürlükte yüklendiyse (HD 720p, Full HD 1080p ve mümkünse 4K) o kaliteyi MP4 olarak sunarız. İndirme seçenekleri arasından en yüksek HD kaliteyi seçebilirsiniz.',
+  },
+  {
+    q: 'MP4 dosyasının doğrudan bağlantısını (link) alabilir miyim?',
+    a: 'Aracımız videoyu analiz ettikten sonra indirilebilir MP4 bağlantısını size sunar; bağlantıya dokunarak videoyu MP4 olarak kaydeder veya tarayıcıda açabilirsiniz. Bu bağlantı geçicidir ve yalnızca indirme için kullanılır.',
+  },
+  {
+    q: 'İndirilen MP4 hangi cihaz ve oynatıcılarda çalışır?',
+    a: 'MP4 evrensel bir formattır; Android, iPhone, Windows, Mac, tablet ve akıllı TV’lerde ek codec veya uygulama gerekmeden oynatılır. WhatsApp, Instagram ve video düzenleyicilerle de sorunsuz uyumludur.',
+  },
+  {
+    q: 'Pinterest MP4 indirme ücretsiz mi?',
+    a: 'Evet. MP4 (HD dahil) indirme tamamen ücretsiz ve sınırsızdır; kayıt, ödeme veya günlük indirme limiti yoktur.',
+  },
+];
+
+// Video quality troubleshooting cluster — /pinterest-video-kalitesi/.
+export const QUALITY_FAQ: QA[] = [
+  {
+    q: 'İndirdiğim Pinterest videosu neden düşük kaliteli veya bulanık?',
+    a: 'İndirilebilecek en yüksek kalite, videonun Pinterest’e yüklendiği çözünürlükle sınırlıdır. İçerik üreticisi videoyu düşük çözünürlükte yüklediyse indirilen dosya da o netlikte olur. Ayrıca yanlışlıkla düşük bir kalite seçeneği (ör. 480p) seçmek de bulanık sonuç verebilir.',
+  },
+  {
+    q: 'Pinterest videosunu en yüksek kalitede nasıl indiririm?',
+    a: 'Bağlantıyı aracımıza yapıştırdıktan sonra listelenen kalite seçenekleri arasından en yükseğini — mümkünse Full HD (1080p) veya 4K — seçin. Aracımız yalnızca kaynakta gerçekten var olan çözünürlükleri gösterir, böylece şişirilmiş değil gerçek kaliteli bir video indirirsiniz.',
+  },
+  {
+    q: 'Düşük çözünürlüklü bir videoyu 1080p veya 4K’ya yükseltebilir miyim?',
+    a: 'Hayır. Hiçbir araç düşük çözünürlüklü bir kaynağı gerçek anlamda HD veya 4K’ya “yükseltemez”; yapay büyütme yalnızca dosya boyutunu artırır, netliği değil. Gerçek yüksek kalite ancak videonun kaynağı yüksek çözünürlükteyse mümkündür.',
+  },
+  {
+    q: 'Aynı videoyu farklı araçlarda indirince kalite neden değişiyor?',
+    a: 'Bazı araçlar yalnızca önizleme (düşük çözünürlüklü) sürümü yakalar. Aracımız pinin en yüksek çözünürlüklü kaynağını hedefler; bu yüzden doğru aracı kullanmak indirilen videonun netliğini doğrudan etkiler.',
+  },
+  {
+    q: 'MP4 formatı video kalitesini düşürür mü?',
+    a: 'Hayır. MP4 yalnızca bir kapsayıcı formattır; kaliteyi belirleyen, videonun çözünürlüğü ve bit hızıdır. Kaynaktaki MP4 videoyu yeniden sıkıştırmadan indirdiğimiz için kalite kaybı yaşanmaz.',
+  },
+];
+
 // Consumed by the dedicated /sss/ page.
 export const ALL_FAQ_GROUPS: FaqGroup[] = [
   { title: 'Genel & Video İndirme', items: HOME_FAQ },
