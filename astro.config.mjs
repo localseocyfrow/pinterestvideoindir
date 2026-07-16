@@ -34,6 +34,19 @@ export default defineConfig({
       status: 301,
       destination: '/sss',
     },
+    // Exact legacy 404s from Search Console → closest live pages.
+    '/resim-indir': {
+      status: 301,
+      destination: '/pinterest-resim-indir',
+    },
+    '/bize-ulasin': {
+      status: 301,
+      destination: '/iletisim',
+    },
+    '/pinterest-gif-indirici': {
+      status: 301,
+      destination: '/pinterest-gif-indir',
+    },
   },
   // Pages stay static (prerendered) for SEO. Only /api/* routes opt into
   // on-demand rendering via `export const prerender = false`, so an adapter
