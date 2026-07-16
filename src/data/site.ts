@@ -59,7 +59,7 @@ export const FOOTER_GROUPS: { title: string; links: NavItem[] }[] = [
     links: [
       { label: 'Video Nasıl İndirilir', href: '/pinterest-video-nasil-indirilir/' },
       { label: 'Video Kalitesi (Neden Bulanık?)', href: '/pinterest-video-kalitesi/' },
-      { label: 'Video İndirilmiyor mu?', href: '/pinterest-video-indirilmiyor/' },
+      { label: 'Video İndirilemiyor mu?', href: '/pinterest-video-indirilemiyor/' },
       { label: 'Pinterest Açılmıyor mu?', href: '/pinterest-acilmiyor/' },
       { label: 'Video Açılmıyor / Oynatılmıyor mu?', href: '/pinterest-video-acilmiyor/' },
       { label: 'Pinterest Linki Çalışmıyor mu?', href: '/pinterest-link-calismiyor/' },

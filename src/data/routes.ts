@@ -21,7 +21,7 @@ export const ROUTES: Route[] = [
   { path: '/pinterest-filigransiz-video-indir/', title: 'Pinterest Filigransız Video İndir — logosuz MP4', changefreq: 'weekly', priority: 0.7 },
   { path: '/pinterest-video-nasil-indirilir/', title: 'Pinterest Video Nasıl İndirilir — adım adım rehber', changefreq: 'monthly', priority: 0.7 },
   { path: '/pinterest-video-kalitesi/', title: 'Pinterest Video Kalitesi — neden bulanık & HD indirme', changefreq: 'monthly', priority: 0.6 },
-  { path: '/pinterest-video-indirilmiyor/', title: 'Pinterest Videosu İndirilmiyor mu? — nedenleri & çözümü', changefreq: 'monthly', priority: 0.6 },
+  { path: '/pinterest-video-indirilemiyor/', title: 'Pinterest Videosu İndirilemiyor mu? — nedenleri & çözümü', changefreq: 'monthly', priority: 0.6 },
   { path: '/pinterest-acilmiyor/', title: 'Pinterest Neden Açılmıyor? — nedenleri & çözümü', changefreq: 'monthly', priority: 0.6 },
   { path: '/pinterest-video-acilmiyor/', title: 'Pinterest Videosu Açılmıyor / Oynatılmıyor mu? — çözümü', changefreq: 'monthly', priority: 0.55 },
   { path: '/pinterest-link-calismiyor/', title: 'Pinterest Linki Çalışmıyor mu? — nedenleri & çözümü', changefreq: 'monthly', priority: 0.55 },

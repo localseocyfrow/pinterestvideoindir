@@ -624,7 +624,7 @@ export const ACILMIYOR_FAQ: QA[] = [
   },
 ];
 
-// Download/save failure troubleshooting cluster — /pinterest-video-indirilmiyor/.
+// Download/save failure troubleshooting cluster — /pinterest-video-indirilemiyor/.
 export const INDIRILMIYOR_FAQ: QA[] = [
   {
     q: 'Pinterest videosu neden indirilmiyor?',
