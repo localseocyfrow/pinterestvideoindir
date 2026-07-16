@@ -39,6 +39,10 @@ export default defineConfig({
       status: 301,
       destination: '/pinterest-resim-indir',
     },
+    '/pinterest-fotograf-indirici': {
+      status: 301,
+      destination: '/pinterest-resim-indir',
+    },
     '/bize-ulasin': {
       status: 301,
       destination: '/iletisim',
