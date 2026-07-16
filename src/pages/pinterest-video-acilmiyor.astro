@@ -1,0 +1,169 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Faq from '../components/Faq.astro';
+import ToolCta from '../components/ToolCta.astro';
+import RelatedGuides from '../components/RelatedGuides.astro';
+import { VIDEO_ACILMIYOR_FAQ } from '../data/faq';
+import {
+  articleSchema,
+  howToSchema,
+  faqSchema,
+  breadcrumbSchema,
+  type Step,
+} from '../lib/schema';
+
+const path = '/pinterest-video-acilmiyor/';
+const title = 'Pinterest Videosu Açılmıyor / Oynatılmıyor mu? Çözümü';
+const description =
+  'Pinterest videoları açılmıyor, oynatılmıyor, siyah ekranda kalıyor veya sürekli mi yükleniyor? Video oynatma sorunlarının nedenleri ve adım adım çözümü. Videoyu indirip çevrimdışı sorunsuz izleyin.';
+
+const steps: Step[] = [
+  {
+    name: 'İnternet bağlantısını kontrol edin',
+    text: 'Video sürekli yükleniyorsa Wi‑Fi ile mobil veri arasında geçiş yapın ve sinyalin güçlü olduğundan emin olun.',
+  },
+  {
+    name: 'Uygulamayı yeniden başlatın',
+    text: 'Pinterest’i tamamen kapatıp açın; siyah ekran ve takılan oynatıcı sorunlarının çoğu böyle düzelir.',
+  },
+  {
+    name: 'Önbelleği temizleyip güncelleyin',
+    text: 'Android’de Pinterest önbelleğini temizleyin ve uygulamayı en son sürüme güncelleyin; iPhone’da uygulamayı silip yeniden kurun.',
+  },
+  {
+    name: 'İndirip çevrimdışı izleyin',
+    text: 'Video yine oynamıyorsa bağlantısını kopyalayıp aracımızla MP4 olarak indirin ve cihazınızın oynatıcısında kesintisiz izleyin.',
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  path={path}
+  ogType="article"
+  schemas={[
+    breadcrumbSchema([
+      { name: 'Ana Sayfa', href: '/' },
+      { name: 'Pinterest Videosu Açılmıyor', href: path },
+    ]),
+    articleSchema({ title, description, path }),
+    howToSchema({
+      name: 'Pinterest videosu açılmıyorsa nasıl düzeltilir',
+      description:
+        'İnternet bağlantısını kontrol edin, uygulamayı yeniden başlatın, önbelleği temizleyip güncelleyin; sorun sürerse videoyu indirip çevrimdışı izleyin.',
+      steps,
+      totalTime: 'PT5M',
+    }),
+    faqSchema(VIDEO_ACILMIYOR_FAQ),
+  ]}
+>
+  <article class="section">
+    <div class="container">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <a href="/">Ana Sayfa</a><span>/</span>Pinterest Videosu Açılmıyor
+      </nav>
+
+      <div class="prose">
+        <span class="eyebrow">Sorun giderme rehberi</span>
+        <h1>Pinterest Videosu Açılmıyor / Oynatılmıyor mu?</h1>
+        <p class="lead">
+          Pinterest’te videolar <strong>açılmıyor</strong>, oynat düğmesine
+          basınca <strong>siyah ekranda</strong> mı kalıyor ya da sürekli mi
+          yükleniyor? Bu genellikle bağlantı, önbellek veya uygulama sürümüyle
+          ilgili geçici bir sorundur. Aşağıda video oynatma sorunlarının
+          nedenlerini ve telefon/bilgisayarda adım adım çözümünü bulacaksınız.
+        </p>
+
+        <div class="answer-box" style="margin:26px 0">
+          <p class="q">Kısa cevap: Video neden açılmıyor?</p>
+          <p class="mt-0" style="margin:0">
+            Videoların oynatılmaması çoğunlukla <strong>zayıf internet</strong>,
+            <strong>dolan önbellek</strong> veya <strong>güncel olmayan
+            uygulama</strong> yüzündendir. Bağlantınızı kontrol edin, uygulamayı
+            yeniden başlatın, önbelleği temizleyip güncelleyin. Belirli bir videoyu
+            kesintisiz izlemek isterseniz bağlantısını
+            <a href="/pinterest-video-indir/">indirme aracımıza</a> yapıştırıp MP4
+            olarak kaydedin ve çevrimdışı oynatın.
+          </p>
+        </div>
+      </div>
+
+      <div class="prose">
+        <h2>Videoların açılmamasının başlıca nedenleri</h2>
+        <ul>
+          <li><strong>Zayıf/kararsız internet:</strong> Yavaş bağlantı videonun yüklenmesini durdurur; video döner veya siyah kalır.</li>
+          <li><strong>Dolu önbellek (cache):</strong> Bozuk önbellek verisi oynatıcının takılmasına yol açar.</li>
+          <li><strong>Eski uygulama/tarayıcı:</strong> Güncellenmemiş sürüm yeni video formatlarıyla uyumsuz olabilir.</li>
+          <li><strong>Veri tasarrufu modu:</strong> Mobil veride tasarruf modu otomatik oynatmayı ve yüklemeyi engelleyebilir.</li>
+          <li><strong>Sunucu kesintisi:</strong> Pinterest tarafındaki geçici arızalarda videolar herkeste yüklenmez.</li>
+        </ul>
+
+        <h2>Adım adım çözüm</h2>
+        <div class="steps" style="margin:24px 0">
+          {steps.map((s) => (
+            <div class="step"><h3>{s.name}</h3><p>{s.text}</p></div>
+          ))}
+        </div>
+
+        <h2>Telefonda (Android / iPhone) çözüm</h2>
+        <p>
+          Önce videoya dokunup <strong>ses simgesini</strong> açın; Pinterest
+          videoları çoğu zaman sessiz başlar. Video hâlâ açılmıyorsa uygulamayı
+          tamamen kapatıp açın, <strong>Android’de</strong> Ayarlar → Uygulamalar →
+          Pinterest → Depolama → “Önbelleği temizle” yapın ve uygulamayı
+          güncelleyin; <strong>iPhone’da</strong> uygulamayı silip App Store’dan
+          yeniden kurun. Mobil veride oynamıyorsa Pinterest için
+          <strong>veri tasarrufu</strong> modunu kapatın.
+        </p>
+
+        <h2>Bilgisayarda (tarayıcıda) çözüm</h2>
+        <p>
+          Videolar pinterest.com’da oynamıyorsa sayfayı yenileyin, tarayıcının
+          <strong>önbelleğini ve çerezlerini</strong> temizleyin ve
+          <strong>gizli sekmede</strong> ya da farklı bir tarayıcıda (Chrome, Edge,
+          Firefox) deneyin. Bir reklam/izleme engelleyici eklenti oynatmayı
+          durduruyorsa gizli sekmede çalışması bunu doğrular; o eklentiyi bu site
+          için devre dışı bırakın.
+        </p>
+
+        <blockquote>
+          <strong>İpucu — </strong>Sık izlediğiniz videoların açılmama sorununu
+          tamamen bitirmenin yolu onları indirmektir. Bağlantıyı
+          <a href="/pinterest-video-indir/">indirme aracımıza</a> yapıştırıp videoyu
+          <a href="/pinterest-mp4-indir/">MP4</a> veya
+          <a href="/pinterest-hd-video-indir/">HD</a> olarak kaydedin; internet
+          olmadan da kesintisiz izlersiniz. Uygulamanın tamamı açılmıyorsa
+          <a href="/pinterest-acilmiyor/">Pinterest açılmıyor</a> rehberimize bakın.
+        </blockquote>
+
+        <p class="disclaimer" role="note" style="margin-top:22px">
+          <strong>Sorumlu kullanım — </strong>Yalnızca size ait olan veya indirme
+          iznine sahip olduğunuz içerikleri kaydetmenizi öneririz. Bu site
+          Pinterest ile resmi olarak bağlantılı değildir.
+        </p>
+      </div>
+    </div>
+  </article>
+
+  <ToolCta
+    title="Açılmayan videoyu indirip izleyin"
+    text="Bağlantıyı yapıştırın, videoyu HD MP4 olarak kaydedin ve internet olmadan kesintisiz oynatın."
+    href="/pinterest-video-indir/"
+    label="Pinterest Video İndir"
+  />
+
+  <RelatedGuides
+    title="İlgili rehberler ve araçlar"
+    items={[
+      { title: 'Pinterest Açılmıyor', href: '/pinterest-acilmiyor/', description: 'Uygulama veya site hiç açılmıyorsa çözümü.' },
+      { title: 'Pinterest Videosu İndirilmiyor', href: '/pinterest-video-indirilmiyor/', description: 'Video inmiyorsa nedenleri ve adım adım çözümü.' },
+      { title: 'Pinterest Video Kalitesi', href: '/pinterest-video-kalitesi/', description: 'Video neden bulanık iniyor ve HD nasıl indirilir.' },
+      { title: 'Pinterest MP4 İndir', href: '/pinterest-mp4-indir/', description: 'Videoyu doğrudan HD MP4 olarak kaydedin.' },
+      { title: 'Video Nasıl İndirilir', href: '/pinterest-video-nasil-indirilir/', description: 'Adım adım Pinterest video indirme rehberi.' },
+      { title: 'Sıkça Sorulan Sorular', href: '/sss/', description: 'Pinterest indirme hakkında tüm yanıtlar.' },
+    ]}
+  />
+
+  <Faq items={VIDEO_ACILMIYOR_FAQ} title="Pinterest videosu açılmıyor — Sık sorulanlar" />
+</BaseLayout>

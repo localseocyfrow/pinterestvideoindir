@@ -1,0 +1,170 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Faq from '../components/Faq.astro';
+import ToolCta from '../components/ToolCta.astro';
+import RelatedGuides from '../components/RelatedGuides.astro';
+import { LINK_CALISMIYOR_FAQ } from '../data/faq';
+import {
+  articleSchema,
+  howToSchema,
+  faqSchema,
+  breadcrumbSchema,
+  type Step,
+} from '../lib/schema';
+
+const path = '/pinterest-link-calismiyor/';
+const title = 'Pinterest Linki Çalışmıyor mu? Nedenleri ve Çözümü';
+const description =
+  'Pinterest linki (bağlantısı) çalışmıyor, pin.it açılmıyor veya yapıştırdığınız link video getirmiyor mu? Bağlantının neden çalışmadığını ve adım adım çözümünü anlatıyoruz. Doğru linki kopyalayıp videoyu indirin.';
+
+const steps: Step[] = [
+  {
+    name: 'Bağlantıyı doğru kopyalayın',
+    text: 'Pinin “Paylaş → Bağlantıyı kopyala” seçeneğini kullanın veya tarayıcıda adres çubuğundaki pinterest.com/pin/... adresini alın.',
+  },
+  {
+    name: 'Linkin biçimini kontrol edin',
+    text: 'Bağlantı pinterest.com/pin/... ya da pin.it ile başlamalı; başında/sonunda boşluk veya fazla karakter kalmamalıdır.',
+  },
+  {
+    name: 'Herkese açık olduğundan emin olun',
+    text: 'Özel (gizli) panolardaki ya da silinmiş pinler açılmaz. Herkese açık bir pinin bağlantısını kullanın.',
+  },
+  {
+    name: 'Araca yapıştırıp indirin',
+    text: 'Doğrulanan bağlantıyı indirme kutusuna yapıştırın; aracımız pin.it kısa linkini de çözer ve videoyu MP4 olarak indirir.',
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  path={path}
+  ogType="article"
+  schemas={[
+    breadcrumbSchema([
+      { name: 'Ana Sayfa', href: '/' },
+      { name: 'Pinterest Linki Çalışmıyor', href: path },
+    ]),
+    articleSchema({ title, description, path }),
+    howToSchema({
+      name: 'Pinterest linki çalışmıyorsa nasıl düzeltilir',
+      description:
+        'Bağlantıyı doğru kopyalayın, biçimini ve herkese açık olduğunu kontrol edin, ardından araca yapıştırıp videoyu indirin.',
+      steps,
+      totalTime: 'PT2M',
+    }),
+    faqSchema(LINK_CALISMIYOR_FAQ),
+  ]}
+>
+  <article class="section">
+    <div class="container">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <a href="/">Ana Sayfa</a><span>/</span>Pinterest Linki Çalışmıyor
+      </nav>
+
+      <div class="prose">
+        <span class="eyebrow">Sorun giderme rehberi</span>
+        <h1>Pinterest Linki Çalışmıyor mu? Nedenleri ve Çözümü</h1>
+        <p class="lead">
+          Kopyaladığınız Pinterest <strong>bağlantısı açılmıyor</strong>,
+          <strong>pin.it linki çalışmıyor</strong> ya da yapıştırdığınız link
+          videoyu getirmiyor mu? Sorun çoğunlukla videoda değil,
+          <strong>eksik/yanlış kopyalanan bağlantıda</strong> veya pinin özel
+          olmasındadır. Aşağıda nedenleri ve telefon/bilgisayarda adım adım
+          çözümünü bulacaksınız.
+        </p>
+
+        <div class="answer-box" style="margin:26px 0">
+          <p class="q">Kısa cevap: Link neden çalışmıyor?</p>
+          <p class="mt-0" style="margin:0">
+            Bir Pinterest linki genelde şu üç nedenden çalışmaz:
+            <strong>eksik/yanlış kopyalanmıştır</strong>, <strong>özel veya
+            silinmiş</strong> bir pine aittir ya da <strong>pin.it kısa
+            bağlantısı</strong> doğru çözülememiştir. Çözüm: pinin “Paylaş →
+            Bağlantıyı kopyala” bağlantısını eksiksiz alıp
+            <a href="/pinterest-video-link-indir/">link ile indirme aracımıza</a>
+            yapıştırmaktır; aracımız pin.it linkini otomatik çözer.
+          </p>
+        </div>
+      </div>
+
+      <div class="prose">
+        <h2>Bağlantının çalışmamasının başlıca nedenleri</h2>
+        <ul>
+          <li><strong>Eksik/yanlış kopyalama:</strong> Linkin tamamı alınmamış ya da başına/sonuna boşluk veya fazla karakter karışmıştır.</li>
+          <li><strong>Özel veya silinmiş pin:</strong> Gizli panolardaki ya da kaldırılmış pinlerin bağlantıları dışarıdan açılmaz.</li>
+          <li><strong>pin.it çözümlenememesi:</strong> Kısa bağlantı asıl pinterest.com/pin/... adresine yönlenemiyordur.</li>
+          <li><strong>Uygulama/derin bağlantı sorunu:</strong> Eski uygulama sürümü veya bozuk önbellek, linkin uygulamada açılmasını engeller.</li>
+          <li><strong>Yanlış bağlantı türü:</strong> Profil, pano veya arama bağlantısı tek bir videoya ait değildir; indirme için pin bağlantısı gerekir.</li>
+        </ul>
+
+        <h2>Adım adım çözüm</h2>
+        <div class="steps" style="margin:24px 0">
+          {steps.map((s) => (
+            <div class="step"><h3>{s.name}</h3><p>{s.text}</p></div>
+          ))}
+        </div>
+
+        <h2>Telefonda (Android / iPhone) çözüm</h2>
+        <p>
+          Pinterest uygulamasında videoyu açın, <strong>üç nokta (•••)</strong>
+          veya “Paylaş” simgesine dokunup <strong>“Bağlantıyı kopyala”</strong>
+          deyin. Link açılmıyorsa uygulamayı güncelleyin ve önbelleği temizleyin
+          (Android’de Ayarlar → Uygulamalar → Pinterest → Depolama → “Önbelleği
+          temizle”). Bağlantıyı doğrudan tarayıcıdaki
+          <a href="/pinterest-video-link-indir/">indirme aracımıza</a> yapıştırarak
+          uygulamaya hiç girmeden de videoyu indirebilirsiniz.
+        </p>
+
+        <h2>Bilgisayarda (tarayıcıda) çözüm</h2>
+        <p>
+          Videoyu pinterest.com’da açıp <strong>adres çubuğundaki</strong>
+          pinterest.com/pin/... adresini kopyalayın; “Paylaş” menüsünü kullanmak
+          zorunda değilsiniz. Link açılmıyorsa sayfayı yenileyin, çerez/önbelleği
+          temizleyin veya <strong>gizli sekmede</strong> deneyin. Kopyaladığınız
+          bağlantının yalnızca pin adresini içerdiğinden, fazladan metin
+          içermediğinden emin olun.
+        </p>
+
+        <blockquote>
+          <strong>İpucu — </strong>Link çalışsa bile Pinterest uygulaması videoyu
+          cihaza indirme seçeneği sunmaz. Bağlantıyı
+          <a href="/pinterest-video-indir/">indirme aracımıza</a> yapıştırıp
+          videoyu MP4 olarak kaydedin. Video hiç inmiyorsa
+          <a href="/pinterest-video-indirilmiyor/">videosu indirilmiyor</a>
+          rehberimize, düşük kalite için
+          <a href="/pinterest-video-kalitesi/">video kalitesi rehberimize</a> bakın.
+        </blockquote>
+
+        <p class="disclaimer" role="note" style="margin-top:22px">
+          <strong>Sorumlu kullanım — </strong>Yalnızca size ait olan veya indirme
+          iznine sahip olduğunuz içerikleri kaydetmenizi öneririz. Bu site
+          Pinterest ile resmi olarak bağlantılı değildir.
+        </p>
+      </div>
+    </div>
+  </article>
+
+  <ToolCta
+    title="Çalışan bağlantıyla videoyu indirin"
+    text="Doğru pin bağlantısını yapıştırın; pin.it dahil tüm linkleri çözüp videoyu HD MP4 olarak kaydedelim."
+    href="/pinterest-video-link-indir/"
+    label="Link ile İndir"
+  />
+
+  <RelatedGuides
+    title="İlgili rehberler ve araçlar"
+    items={[
+      { title: 'Pinterest Video Link İndir', href: '/pinterest-video-link-indir/', description: 'Bağlantı yapıştırarak videoyu doğrudan indirin.' },
+      { title: 'Pinterest Videosu İndirilmiyor', href: '/pinterest-video-indirilmiyor/', description: 'Video inmiyorsa nedenleri ve adım adım çözümü.' },
+      { title: 'Video Nasıl İndirilir', href: '/pinterest-video-nasil-indirilir/', description: 'Adım adım Pinterest video indirme rehberi.' },
+      { title: 'Pinterest MP4 İndir', href: '/pinterest-mp4-indir/', description: 'Videoyu doğrudan HD MP4 olarak kaydedin.' },
+      { title: 'Pinterest HD Video İndir', href: '/pinterest-hd-video-indir/', description: 'Full HD 1080p Pinterest videosu indirin.' },
+      { title: 'Nasıl Kullanılır', href: '/nasil-kullanilir/', description: 'Sitenin tüm araçları için genel rehber.' },
+    ]}
+  />
+
+  <Faq items={LINK_CALISMIYOR_FAQ} title="Pinterest linki çalışmıyor — Sık sorulanlar" />
+</BaseLayout>

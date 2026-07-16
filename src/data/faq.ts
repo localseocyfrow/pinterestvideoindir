@@ -652,6 +652,78 @@ export const INDIRILMIYOR_FAQ: QA[] = [
   },
 ];
 
+// "Pinterest linki çalışmıyor" troubleshooting cluster — /pinterest-link-calismiyor/.
+export const LINK_CALISMIYOR_FAQ: QA[] = [
+  {
+    q: 'Pinterest linki neden çalışmıyor?',
+    a: 'En sık nedenler: bağlantının eksik/yanlış kopyalanması, linkin özel (gizli) ya da silinmiş bir pine ait olması, pin.it kısa bağlantısının doğru çözülememesi veya bağlantının başında/sonunda fazladan boşluk kalmasıdır. Bağlantının pinterest.com/pin/... ya da pin.it ile başladığından ve herkese açık bir pine ait olduğundan emin olun.',
+  },
+  {
+    q: 'pin.it bağlantısı açılmıyor, ne yapmalıyım?',
+    a: 'Önce linki bir tarayıcıda açıp asıl pinterest.com/pin/... adresine yönlenip yönlenmediğine bakın. Açılmıyorsa pini yeniden paylaşıp yeni bir pin.it linki oluşturun. İndirmek için kısa linki doğrudan aracımıza da yapıştırabilirsiniz; aracımız pin.it bağlantısını otomatik olarak asıl pin adresine çözer.',
+  },
+  {
+    q: 'Pinterest bağlantısını nasıl doğru kopyalarım?',
+    a: 'Pini açın, üç nokta (•••) veya “Paylaş” simgesine dokunun ve “Bağlantıyı kopyala” deyin. Tarayıcıda ise videoyu açıp adres çubuğundaki pinterest.com/pin/... adresini kopyalayabilirsiniz. Kopyaladıktan sonra bağlantının tamamının alındığından ve başında/sonunda boşluk kalmadığından emin olun.',
+  },
+  {
+    q: 'Linki yapıştırdım ama araç videoyu bulamıyor?',
+    a: 'Bağlantının herkese açık bir pine ait olduğundan emin olun; özel panolardaki veya silinmiş pinler indirilemez. Linki baştan, eksiksiz kopyalayıp yeniden yapıştırın. Sorun sürerse aynı içeriğin farklı, herkese açık bir pin bağlantısını deneyin.',
+  },
+  {
+    q: 'Özel (gizli) pano bağlantısı çalışır mı?',
+    a: 'Hayır. Gizli panolardaki veya yalnızca sizin görebildiğiniz pinlerin bağlantıları dışarıdan açılamaz ve indirilemez. Yalnızca herkese açık pinlerin bağlantıları hem tarayıcıda açılır hem de indirme aracıyla çalışır.',
+  },
+  {
+    q: 'Link tarayıcıda açılıyor ama uygulamada açılmıyor (veya tersi), neden?',
+    a: 'Bu genellikle uygulamanın güncel olmaması, dolan önbellek veya derin bağlantı (deep link) ayarlarından kaynaklanır. Uygulamayı güncelleyip önbelleği temizleyin. İndirmek istiyorsanız uygulamaya hiç ihtiyaç yoktur; bağlantıyı tarayıcıdaki aracımıza yapıştırmanız yeterlidir.',
+  },
+  {
+    q: 'Kopyaladığım linkin başında/sonunda fazladan karakter olabilir mi?',
+    a: 'Evet. Bazen kopyalama sırasında bağlantının başına veya sonuna boşluk, tırnak ya da metin karışır ve link çalışmaz. Yapıştırdıktan sonra yalnızca pinterest.com/pin/... veya pin.it ile başlayıp biten kısmı bırakın; fazlalıkları silin.',
+  },
+  {
+    q: 'Link ile Pinterest videosu indirmek ücretsiz ve güvenli mi?',
+    a: 'Evet. Bağlantı yapıştırarak indirme tamamen ücretsiz ve sınırsızdır; kayıt gerektirmez. Yapıştırdığınız bağlantı yalnızca indirme işlemi için kullanılır, saklanmaz. Yalnızca size ait olan veya indirme iznine sahip olduğunuz içerikleri kaydetmenizi öneririz.',
+  },
+];
+
+// "Pinterest videosu açılmıyor / oynatılmıyor" troubleshooting cluster — /pinterest-video-acilmiyor/.
+export const VIDEO_ACILMIYOR_FAQ: QA[] = [
+  {
+    q: 'Pinterest videosu neden açılmıyor veya oynatılmıyor?',
+    a: 'En sık nedenler: zayıf veya kararsız internet bağlantısı, dolan uygulama önbelleği, güncel olmayan uygulama/tarayıcı ve zaman zaman Pinterest sunucularındaki geçici sorunlardır. Önce bağlantınızı kontrol edin, uygulamayı yeniden başlatın, önbelleği temizleyip güncelleyin.',
+  },
+  {
+    q: 'Video siyah/boş ekranda kalıyor, nasıl düzeltirim?',
+    a: 'Siyah ekran genellikle önbellek veya oynatıcı sorunudur. Uygulamayı tamamen kapatıp açın, önbelleği temizleyin ve gerekirse cihazı yeniden başlatın. Tarayıcıda ise sayfayı yenileyin, farklı bir tarayıcı veya normal (gizli olmayan) sekme deneyin.',
+  },
+  {
+    q: 'Videonun sesi gelmiyor, sorun nedir?',
+    a: 'Önce cihaz sesinin açık ve videonun sessize alınmamış olduğundan emin olun; Pinterest videoları çoğu zaman sessiz başlar, videoya dokunup ses simgesini açmanız gerekir. Sorun sürerse uygulamayı güncelleyin. Videoyu indirip oynatıcınızda açtığınızda ses de dosyayla birlikte gelir.',
+  },
+  {
+    q: 'Videolar sürekli yükleniyor / dönüp duruyor, ne yapmalıyım?',
+    a: 'Bu neredeyse her zaman bağlantı hızıyla ilgilidir. Wi‑Fi ile mobil veri arasında geçiş yapın, sinyalin güçlü olduğu bir yere geçin ve arka planda indirme yapan uygulamaları kapatın. Videoyu kesintisiz izlemek isterseniz bağlantısını kopyalayıp aracımızla MP4 olarak indirip çevrimdışı oynatabilirsiniz.',
+  },
+  {
+    q: 'Video uygulamada oynamıyor ama tarayıcıda oynuyor (veya tersi), neden?',
+    a: 'Bu, uygulamanın eski sürümü veya bozuk önbelleğiyken sık görülür. Uygulamayı güncelleyip önbelleği temizleyin; gerekiyorsa uygulamayı kaldırıp yeniden kurun. Tarayıcıda sorun varsa çerez/önbellek temizleyip farklı bir tarayıcı deneyin.',
+  },
+  {
+    q: 'Video Wi‑Fi’de oynuyor ama mobil veride oynamıyor, çözümü?',
+    a: 'Mobil veride veri tasarrufu modu veya zayıf sinyal videoların yüklenmesini engelleyebilir. Telefon ayarlarından Pinterest için veri tasarrufunu kapatın ve arka plan verisine izin verin. Sık izlediğiniz videoları Wi‑Fi’deyken indirip çevrimdışı saklamak da veri sorununu tamamen ortadan kaldırır.',
+  },
+  {
+    q: 'Açılmayan videoyu izlemek için indirebilir miyim?',
+    a: 'Evet. Videonun bağlantısına (pinterest.com/pin/... veya pin.it) sahipseniz, video uygulamada düzgün oynamasa bile bağlantıyı indirme aracımıza yapıştırıp videoyu MP4 olarak kaydedebilir ve cihazınızın oynatıcısında sorunsuz izleyebilirsiniz.',
+  },
+  {
+    q: 'Pinterest videosu açılmıyorken indirmek ücretsiz mi?',
+    a: 'Evet. İndirme tamamen ücretsiz ve sınırsızdır; kayıt, uygulama veya ödeme gerektirmez. Yalnızca size ait olan veya indirme iznine sahip olduğunuz içerikleri kaydetmenizi öneririz; bu site Pinterest ile resmi olarak bağlantılı değildir.',
+  },
+];
+
 // Consumed by the dedicated /sss/ page.
 export const ALL_FAQ_GROUPS: FaqGroup[] = [
   { title: 'Genel & Video İndirme', items: HOME_FAQ },
