@@ -618,6 +618,10 @@ export const ACILMIYOR_FAQ: QA[] = [
     q: 'Pinterest açılmıyorken beğendiğim videoyu yine de indirebilir miyim?',
     a: 'Videonun bağlantısına (pinterest.com/pin/... veya pin.it linki) sahipseniz, uygulama sizde açılmasa bile bağlantıyı indirme aracımıza yapıştırarak videoyu MP4 olarak kaydedebilirsiniz. Böylece içeriği çevrimdışı arşivleyip erişim geri geldiğinde de saklamış olursunuz.',
   },
+  {
+    q: 'Pinterest açılır açılmaz kapanıyor (çöküyor), nasıl düzeltirim?',
+    a: 'Uygulamanın açılır açılmaz kapanması genellikle yetersiz boş depolama/bellek ya da bozuk bir kurulumdan kaynaklanır. Uygulamayı arka plandan tamamen kapatın, cihazınızda birkaç yüz MB boş alan açın ve telefonu yeniden başlatın. Sorun sürerse Pinterest’i kaldırıp mağazadan (Play Store / App Store) yeniden kurun; bu, güncel ve temiz bir sürüm yükleyerek çökme sorununu çoğu zaman giderir.',
+  },
 ];
 
 // Download/save failure troubleshooting cluster — /pinterest-video-indirilmiyor/.
@@ -649,6 +653,10 @@ export const INDIRILMIYOR_FAQ: QA[] = [
   {
     q: 'Hangi cihaz ve tarayıcılarda indirme sorunsuz çalışır?',
     a: 'Araç tarayıcı tabanlıdır; Android, iPhone (iOS), tablet ve bilgisayarda Chrome, Safari, Edge, Firefox ve Samsung Internet gibi güncel tarayıcılarla çalışır. En sağlıklı sonuç için tarayıcınızı güncel tutun ve gizli/özel sekme yerine normal sekmede indirmeyi deneyin.',
+  },
+  {
+    q: '“İndir” düğmesine basınca hiçbir şey olmuyor, sorun nedir?',
+    a: 'Genellikle bir reklam engelleyici veya tarayıcının açılır pencere (pop‑up) engeli, indirmenin başlamasını durdurur. Reklam engelleyiciyi bu site için kapatın, tarayıcının açılır pencere iznini verin ve sayfayı yenileyip normal (gizli olmayan) sekmede yeniden deneyin. Ayrıca tarayıcıda JavaScript’in etkin olduğundan emin olun; araç, videoyu çözümlemek için JavaScript kullanır.',
   },
 ];
 
