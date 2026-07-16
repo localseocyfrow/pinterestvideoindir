@@ -13,9 +13,9 @@ import {
 } from '../lib/schema';
 
 const path = '/pinterest-video-indirilemiyor/';
-const title = 'Pinterest Videosu İndirilmiyor mu? Nedenleri ve Çözümü';
+const title = 'Pinterest Videosu İndirilemiyor mu? Nedenleri ve Çözümü';
 const description =
-  'Pinterest videosu indirilmiyor veya kaydedilmiyor mu? Video inmeme nedenleri (uygulama sınırı, özel pin, yanlış bağlantı, tarayıcı engeli) ve adım adım çözümü. Bağlantıyı yapıştırın, videoyu MP4 olarak indirin.';
+  'Pinterest videosu indirilemiyor veya kaydedilemiyor mu? Video inmeme nedenleri (uygulama sınırı, özel pin, yanlış bağlantı, tarayıcı engeli) ve adım adım çözümü. Bağlantıyı yapıştırın, videoyu MP4 olarak indirin.';
 
 const steps: Step[] = [
   {
@@ -45,11 +45,11 @@ const steps: Step[] = [
   schemas={[
     breadcrumbSchema([
       { name: 'Ana Sayfa', href: '/' },
-      { name: 'Pinterest Videosu İndirilmiyor', href: path },
+      { name: 'Pinterest Videosu İndirilemiyor', href: path },
     ]),
     articleSchema({ title, description, path }),
     howToSchema({
-      name: 'Pinterest videosu indirilmiyorsa nasıl indirilir',
+      name: 'Pinterest videosu indirilemiyorsa nasıl indirilir',
       description:
         'Video inmediğinde doğru bağlantıyı kopyalayın, araca yapıştırın, kaliteyi seçip MP4 olarak indirin; sorun sürerse ağ ve tarayıcı kontrolü yapın.',
       steps,
@@ -61,12 +61,12 @@ const steps: Step[] = [
   <article class="section">
     <div class="container">
       <nav class="crumbs" aria-label="Breadcrumb">
-        <a href="/">Ana Sayfa</a><span>/</span>Pinterest Videosu İndirilmiyor
+        <a href="/">Ana Sayfa</a><span>/</span>Pinterest Videosu İndirilemiyor
       </nav>
 
       <div class="prose">
         <span class="eyebrow">Sorun giderme rehberi</span>
-        <h1>Pinterest Videosu İndirilmiyor mu? Nedenleri ve Çözümü</h1>
+        <h1>Pinterest Videosu İndirilemiyor mu? Nedenleri ve Çözümü</h1>
         <p class="lead">
           Pinterest videosunu indirmeye çalışıyor ama bir türlü
           <strong>kaydedemiyor</strong> musunuz? Çoğu zaman sorun videoda değil,
@@ -76,7 +76,7 @@ const steps: Step[] = [
         </p>
 
         <div class="answer-box" style="margin:26px 0">
-          <p class="q">Kısa cevap: Video neden indirilmiyor?</p>
+          <p class="q">Kısa cevap: Video neden indirilemiyor?</p>
           <p class="mt-0" style="margin:0">
             Pinterest uygulaması videoları <strong>cihaza indirme seçeneği
             sunmaz</strong>; yalnızca uygulama içinde saklar. Ayrıca özel/silinmiş
@@ -175,5 +175,5 @@ const steps: Step[] = [
     ]}
   />
 
-  <Faq items={INDIRILMIYOR_FAQ} title="Pinterest videosu indirilmiyor — Sık sorulanlar" />
+  <Faq items={INDIRILMIYOR_FAQ} title="Pinterest videosu indirilemiyor — Sık sorulanlar" />
 </BaseLayout>
