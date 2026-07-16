@@ -21,6 +21,19 @@ export default defineConfig({
       status: 301,
       destination: '/hakkinda',
     },
+    // Legacy corporate/legal URL variants → closest live pages.
+    '/gizlilik': {
+      status: 301,
+      destination: '/gizlilik-politikasi',
+    },
+    '/kullanim-kosullari': {
+      status: 301,
+      destination: '/kullanim-sartlari',
+    },
+    '/sikca-sorulan-sorular': {
+      status: 301,
+      destination: '/sss',
+    },
   },
   // Pages stay static (prerendered) for SEO. Only /api/* routes opt into
   // on-demand rendering via `export const prerender = false`, so an adapter
