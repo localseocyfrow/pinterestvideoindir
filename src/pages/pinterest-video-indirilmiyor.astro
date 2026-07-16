@@ -1,0 +1,179 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Faq from '../components/Faq.astro';
+import ToolCta from '../components/ToolCta.astro';
+import RelatedGuides from '../components/RelatedGuides.astro';
+import { INDIRILMIYOR_FAQ } from '../data/faq';
+import {
+  articleSchema,
+  howToSchema,
+  faqSchema,
+  breadcrumbSchema,
+  type Step,
+} from '../lib/schema';
+
+const path = '/pinterest-video-indirilmiyor/';
+const title = 'Pinterest Videosu İndirilmiyor mu? Nedenleri ve Çözümü';
+const description =
+  'Pinterest videosu indirilmiyor veya kaydedilmiyor mu? Video inmeme nedenleri (uygulama sınırı, özel pin, yanlış bağlantı, tarayıcı engeli) ve adım adım çözümü. Bağlantıyı yapıştırın, videoyu MP4 olarak indirin.';
+
+const steps: Step[] = [
+  {
+    name: 'Doğru bağlantıyı kopyalayın',
+    text: 'Pinin “Paylaş → Bağlantıyı kopyala” bağlantısını alın. Link pinterest.com/pin/... veya pin.it ile başlamalı ve herkese açık bir pine ait olmalıdır.',
+  },
+  {
+    name: 'Bağlantıyı araca yapıştırın',
+    text: 'Kopyaladığınız bağlantıyı indirme kutusuna yapıştırın; başında/sonunda boşluk kalmadığından emin olun ve “İndir”e basın.',
+  },
+  {
+    name: 'Kaliteyi seçip indirin',
+    text: 'Listelenen seçenekler arasından istediğiniz kaliteyi (mümkünse Full HD) seçin ve videoyu MP4 olarak kaydedin.',
+  },
+  {
+    name: 'İnmezse bağlantı/ağ kontrolü yapın',
+    text: 'Video inmiyorsa kararlı bir Wi‑Fi’ye geçin, farklı bir tarayıcı deneyin veya başka bir herkese açık pin bağlantısıyla yeniden deneyin.',
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  path={path}
+  ogType="article"
+  schemas={[
+    breadcrumbSchema([
+      { name: 'Ana Sayfa', href: '/' },
+      { name: 'Pinterest Videosu İndirilmiyor', href: path },
+    ]),
+    articleSchema({ title, description, path }),
+    howToSchema({
+      name: 'Pinterest videosu indirilmiyorsa nasıl indirilir',
+      description:
+        'Video inmediğinde doğru bağlantıyı kopyalayın, araca yapıştırın, kaliteyi seçip MP4 olarak indirin; sorun sürerse ağ ve tarayıcı kontrolü yapın.',
+      steps,
+      totalTime: 'PT2M',
+    }),
+    faqSchema(INDIRILMIYOR_FAQ),
+  ]}
+>
+  <article class="section">
+    <div class="container">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <a href="/">Ana Sayfa</a><span>/</span>Pinterest Videosu İndirilmiyor
+      </nav>
+
+      <div class="prose">
+        <span class="eyebrow">Sorun giderme rehberi</span>
+        <h1>Pinterest Videosu İndirilmiyor mu? Nedenleri ve Çözümü</h1>
+        <p class="lead">
+          Pinterest videosunu indirmeye çalışıyor ama bir türlü
+          <strong>kaydedemiyor</strong> musunuz? Çoğu zaman sorun videoda değil,
+          <strong>yanlış bağlantıda</strong> ya da Pinterest uygulamasının indirme
+          seçeneği sunmamasındadır. Aşağıda videonun neden inmediğini ve
+          telefon/bilgisayarda adım adım çözümünü bulacaksınız.
+        </p>
+
+        <div class="answer-box" style="margin:26px 0">
+          <p class="q">Kısa cevap: Video neden indirilmiyor?</p>
+          <p class="mt-0" style="margin:0">
+            Pinterest uygulaması videoları <strong>cihaza indirme seçeneği
+            sunmaz</strong>; yalnızca uygulama içinde saklar. Ayrıca özel/silinmiş
+            pinler, yanlış kopyalanmış bağlantılar veya zayıf internet indirmeyi
+            engeller. Çözüm: pinin <strong>herkese açık bağlantısını</strong>
+            kopyalayıp <a href="/pinterest-video-indir/">indirme aracımıza</a>
+            yapıştırmak ve videoyu MP4 olarak kaydetmektir.
+          </p>
+        </div>
+      </div>
+
+      <div class="prose">
+        <h2>Videonun indirilmemesinin başlıca nedenleri</h2>
+        <ul>
+          <li><strong>Uygulamada indirme yok:</strong> Pinterest, videoyu galeriye kaydetme düğmesi sunmaz; bu yüzden “indir” göremezsiniz.</li>
+          <li><strong>Özel veya silinmiş pin:</strong> Gizli panolardaki ya da kaldırılmış pinlerin bağlantıları indirilemez.</li>
+          <li><strong>Yanlış/eksik bağlantı:</strong> Kopyalanan link pinterest.com/pin/... veya pin.it ile başlamıyorsa araç videoyu bulamaz.</li>
+          <li><strong>Tarayıcı engeli:</strong> Bazı tarayıcılar veya gizli sekme, indirmeyi ya da açılır dosyayı engelleyebilir.</li>
+          <li><strong>Zayıf internet:</strong> Kararsız bağlantı indirmeyi yarıda keser veya “başarısız oldu” hatası verdirir.</li>
+          <li><strong>Depolama/izin:</strong> Dolu depolama ya da tarayıcıya verilmeyen kaydetme izni dosyanın inmesini durdurur.</li>
+        </ul>
+
+        <h2>Adım adım çözüm</h2>
+        <div class="steps" style="margin:24px 0">
+          {steps.map((s) => (
+            <div class="step"><h3>{s.name}</h3><p>{s.text}</p></div>
+          ))}
+        </div>
+
+        <h2>Bağlantıyı kopyalayamıyorsanız</h2>
+        <p>
+          Pinin <strong>üç nokta (•••)</strong> veya “Paylaş” menüsünden
+          “Bağlantıyı kopyala” deyin. Bu çalışmıyorsa videoyu tarayıcıda açıp
+          <strong>adres çubuğundaki</strong> pinterest.com/pin/... adresini elle
+          kopyalayın. Kısa <strong>pin.it</strong> bağlantıları da desteklenir;
+          aracımız kısa linki otomatik olarak asıl pin adresine çözer. Ayrıntı için
+          <a href="/pinterest-video-link-indir/">link ile indirme rehberimize</a>
+          bakabilirsiniz.
+        </p>
+
+        <h2>İndi ama telefonda galeriye kaydedilmiyorsa</h2>
+        <p>
+          <strong>Android’de</strong> bazı tarayıcılar dosyayı önce “İndirilenler”
+          klasörüne koyar; Dosya Yöneticisi → İndirilenler klasörüne bakın, çoğu
+          galeri uygulaması bu klasörü otomatik tarar. <strong>iPhone’da</strong>
+          video önce “Dosyalar” uygulamasına iner; oradan videoya dokunup
+          <strong>“Paylaş → Videoyu Kaydet”</strong> diyerek Fotoğraflar’a
+          taşıyabilirsiniz. Videoyu doğrudan galeriye almak için
+          <a href="/pinterest-video-galeriye-indir/">galeriye indirme rehberimizi</a>
+          izleyin.
+        </p>
+
+        <h2>İndirme yarıda kesiliyor veya hata veriyorsa</h2>
+        <p>
+          Bu genellikle bağlantı kopması veya kararsız internetten kaynaklanır.
+          Kararlı bir Wi‑Fi’ye geçin, tarayıcının indirilenler listesinden
+          indirmeyi yeniden başlatın ve gerekirse bağlantıyı araca tekrar
+          yapıştırın. İndirilen dosya bulanık geliyorsa sorun kaynağın
+          çözünürlüğündedir;
+          <a href="/pinterest-video-kalitesi/">video kalitesi rehberimizde</a>
+          nedenini ve en yüksek kalitede indirmenin yolunu açıklıyoruz.
+        </p>
+
+        <blockquote>
+          <strong>İpucu — </strong>Aynı pini farklı bir tarayıcıda ya da normal
+          (gizli olmayan) sekmede denemek çoğu indirme sorununu çözer. Sorun tek
+          bir pinde ise büyük olasılıkla o pin özeldir veya silinmiştir; herkese
+          açık başka bir videoyla test edin.
+        </blockquote>
+
+        <p class="disclaimer" role="note" style="margin-top:22px">
+          <strong>Sorumlu kullanım — </strong>Yalnızca size ait olan veya indirme
+          iznine sahip olduğunuz içerikleri kaydetmenizi öneririz. Bu site Pinterest
+          ile resmi olarak bağlantılı değildir.
+        </p>
+      </div>
+    </div>
+  </article>
+
+  <ToolCta
+    title="Videoyu şimdi indirin"
+    text="Herkese açık pin bağlantısını yapıştırın, kaliteyi seçin ve videoyu filigransız MP4 olarak kaydedin."
+    href="/pinterest-video-indir/"
+    label="Pinterest Video İndir"
+  />
+
+  <RelatedGuides
+    title="İlgili rehberler ve araçlar"
+    items={[
+      { title: 'Pinterest Video Link İndir', href: '/pinterest-video-link-indir/', description: 'Bağlantı yapıştırarak videoyu doğrudan indirin.' },
+      { title: 'Video İndir Galeriye', href: '/pinterest-video-galeriye-indir/', description: 'Videoyu telefonun galerisine kaydetme rehberi.' },
+      { title: 'Pinterest Video Kalitesi', href: '/pinterest-video-kalitesi/', description: 'Video neden bulanık iniyor ve HD nasıl indirilir.' },
+      { title: 'Pinterest Açılmıyor', href: '/pinterest-acilmiyor/', description: 'Pinterest açılmıyor veya çalışmıyorsa çözümü.' },
+      { title: 'Video Nasıl İndirilir', href: '/pinterest-video-nasil-indirilir/', description: 'Adım adım Pinterest video indirme rehberi.' },
+      { title: 'Pinterest Video İndir', href: '/pinterest-video-indir/', description: 'Tüm cihazlarda HD, Full HD ve 4K indirme aracı.' },
+    ]}
+  />
+
+  <Faq items={INDIRILMIYOR_FAQ} title="Pinterest videosu indirilmiyor — Sık sorulanlar" />
+</BaseLayout>

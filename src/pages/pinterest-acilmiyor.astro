@@ -1,0 +1,179 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Faq from '../components/Faq.astro';
+import ToolCta from '../components/ToolCta.astro';
+import RelatedGuides from '../components/RelatedGuides.astro';
+import { ACILMIYOR_FAQ } from '../data/faq';
+import {
+  articleSchema,
+  howToSchema,
+  faqSchema,
+  breadcrumbSchema,
+  type Step,
+} from '../lib/schema';
+
+const path = '/pinterest-acilmiyor/';
+const title = 'Pinterest Neden Açılmıyor? Nedenleri ve Çözümü (2026)';
+const description =
+  'Pinterest açılmıyor veya çalışmıyor mu? Uygulama ve tarayıcıda Pinterest’in neden açılmadığını ve adım adım çözümünü anlatıyoruz. Sunucu kesintisi, önbellek, güncelleme ve bağlantı sorunları için pratik rehber.';
+
+const steps: Step[] = [
+  {
+    name: 'İnternet bağlantısını kontrol edin',
+    text: 'Başka bir site veya uygulama açılıyor mu bakın. Sorun yalnızca Pinterest’teyse Wi‑Fi ile mobil veri arasında geçiş yapın.',
+  },
+  {
+    name: 'Uygulamayı kapatıp yeniden açın',
+    text: 'Pinterest’i tamamen kapatın (arka plandan kaldırın) ve yeniden başlatın; geçici takılmaların çoğu böyle çözülür.',
+  },
+  {
+    name: 'Önbelleği temizleyin veya güncelleyin',
+    text: 'Android’de Ayarlar → Uygulamalar → Pinterest → Depolama → “Önbelleği temizle” yapın; ardından uygulamayı en son sürüme güncelleyin.',
+  },
+  {
+    name: 'Tarayıcıda veya farklı cihazda deneyin',
+    text: 'pinterest.com’u tarayıcıda ya da başka bir cihazda açın. Her yerde açılmıyorsa sorun Pinterest sunucularındadır; bir süre sonra tekrar deneyin.',
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  path={path}
+  ogType="article"
+  schemas={[
+    breadcrumbSchema([
+      { name: 'Ana Sayfa', href: '/' },
+      { name: 'Pinterest Açılmıyor', href: path },
+    ]),
+    articleSchema({ title, description, path }),
+    howToSchema({
+      name: 'Pinterest açılmıyorsa nasıl düzeltilir',
+      description:
+        'Pinterest açılmadığında internet bağlantısını kontrol edin, uygulamayı yeniden başlatın, önbelleği temizleyip güncelleyin ve tarayıcıda deneyin.',
+      steps,
+      totalTime: 'PT5M',
+    }),
+    faqSchema(ACILMIYOR_FAQ),
+  ]}
+>
+  <article class="section">
+    <div class="container">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <a href="/">Ana Sayfa</a><span>/</span>Pinterest Açılmıyor
+      </nav>
+
+      <div class="prose">
+        <span class="eyebrow">Sorun giderme rehberi</span>
+        <h1>Pinterest Neden Açılmıyor? Nedenleri ve Çözümü</h1>
+        <p class="lead">
+          Pinterest bir anda <strong>açılmıyor</strong>, boş/beyaz ekranda mı
+          kalıyor ya da sürekli yükleniyor mu? Bu genellikle kalıcı bir arıza
+          değildir. Aşağıda sorunun <strong>sizde mi yoksa Pinterest’te mi</strong>
+          olduğunu nasıl anlayacağınızı ve telefon ile bilgisayarda adım adım
+          çözümünü bulacaksınız.
+        </p>
+
+        <div class="answer-box" style="margin:26px 0">
+          <p class="q">Kısa cevap: Pinterest neden açılmıyor?</p>
+          <p class="mt-0" style="margin:0">
+            En sık nedenler <strong>Pinterest sunucularındaki geçici kesinti</strong>,
+            zayıf internet, uygulamanın <strong>güncel olmaması</strong> ve dolan
+            <strong>önbellektir</strong>. Önce başka siteler açılıyor mu bakın;
+            açılıyorsa uygulamayı yeniden başlatın, önbelleği temizleyin ve
+            güncelleyin. Her yerde açılmıyorsa sorun Pinterest tarafındadır ve
+            kısa süre içinde düzelir.
+          </p>
+        </div>
+      </div>
+
+      <div class="prose">
+        <h2>Pinterest’in açılmamasının başlıca nedenleri</h2>
+        <ul>
+          <li><strong>Sunucu kesintisi:</strong> Pinterest’te geçici bir arıza varsa hiçbir ayar sorunu çözmez; beklemek gerekir.</li>
+          <li><strong>İnternet bağlantısı:</strong> Zayıf Wi‑Fi veya kararsız mobil veri, sayfanın yüklenmesini engeller.</li>
+          <li><strong>Eski uygulama sürümü:</strong> Güncellenmemiş uygulama, yeni sunucu değişiklikleriyle uyumsuz kalıp açılmayabilir.</li>
+          <li><strong>Dolu önbellek (cache):</strong> Bozuk veya şişmiş önbellek verisi uygulamanın takılmasına yol açar.</li>
+          <li><strong>Bölgesel/operatör erişimi:</strong> Zaman zaman erişim sorunları yaşanabilir; ağ değiştirmek çözebilir.</li>
+          <li><strong>Hesap veya yaş doğrulaması:</strong> Nadiren, hesapla ilgili bir kısıtlama giriş sonrası açılmayı engeller.</li>
+        </ul>
+
+        <h2>Adım adım çözüm</h2>
+        <div class="steps" style="margin:24px 0">
+          {steps.map((s) => (
+            <div class="step"><h3>{s.name}</h3><p>{s.text}</p></div>
+          ))}
+        </div>
+
+        <h2>Telefonda (Android / iPhone) ek çözümler</h2>
+        <p>
+          Android’de <strong>Ayarlar → Uygulamalar → Pinterest → Depolama →
+          “Önbelleği temizle”</strong> adımını uygulayın; sorun sürerse uygulamayı
+          kaldırıp Play Store’dan yeniden kurun. iPhone’da doğrudan önbellek
+          temizleme yoktur, bu yüzden uygulamayı silip <strong>App Store</strong>’dan
+          tekrar yüklemek aynı işi görür. Her iki platformda da uygulamayı güncel
+          tutmak ve telefonu bir kez yeniden başlatmak çoğu takılmayı giderir.
+        </p>
+
+        <h2>Bilgisayarda (tarayıcıda) açılmıyorsa</h2>
+        <p>
+          pinterest.com açılmıyorsa önce sayfayı yenileyin, ardından tarayıcının
+          <strong>önbelleğini ve çerezlerini</strong> temizleyip yeniden deneyin.
+          Sorun sürerse <strong>gizli (incognito) sekmede</strong> veya farklı bir
+          tarayıcıda (Chrome, Edge, Firefox) açın; bir eklenti engelliyorsa gizli
+          sekmede çalışması bunu doğrular. Hâlâ açılmıyorsa büyük olasılıkla
+          Pinterest tarafında geçici bir sorun vardır.
+        </p>
+
+        <h2>Sorun bende mi, Pinterest’te mi?</h2>
+        <p>
+          Pinterest’i aynı anda hem uygulamada hem tarayıcıda, hem Wi‑Fi hem mobil
+          veriyle deneyin. Başka siteler normal açılıyor ama Pinterest her yolla
+          açılmıyorsa sorun <strong>Pinterest sunucularındadır</strong> ve yapılacak
+          tek şey kısa bir süre bekleyip yeniden denemektir. Yalnızca tek bir
+          cihazda açılmıyorsa sorun o cihazdaki uygulama/tarayıcıdadır ve yukarıdaki
+          adımlar işe yarar.
+        </p>
+
+        <blockquote>
+          <strong>İpucu — </strong>Pinterest sizde açılmasa bile, beğendiğiniz bir
+          videonun bağlantısına sahipseniz onu çevrimdışı saklayabilirsiniz.
+          Bağlantıyı <a href="/pinterest-video-indir/">indirme aracımıza</a>
+          yapıştırıp videoyu MP4 olarak kaydedin; erişim geri geldiğinde de içerik
+          sizde kalır. Videoyu indiremiyorsanız
+          <a href="/pinterest-video-indirilmiyor/">Pinterest videosu indirilmiyor</a>
+          rehberimize, düşük kalite sorunları için
+          <a href="/pinterest-video-kalitesi/">video kalitesi rehberimize</a> bakın.
+        </blockquote>
+
+        <p class="disclaimer" role="note" style="margin-top:22px">
+          <strong>Not — </strong>Bu site Pinterest ile resmi olarak bağlantılı
+          değildir. Yalnızca size ait olan veya indirme iznine sahip olduğunuz
+          içerikleri kaydetmenizi öneririz.
+        </p>
+      </div>
+    </div>
+  </article>
+
+  <ToolCta
+    title="Erişemediğiniz videoyu yine de indirin"
+    text="Pinterest açılmasa bile bağlantıyı yapıştırın, videoyu HD MP4 olarak çevrimdışı kaydedin."
+    href="/pinterest-video-indir/"
+    label="Pinterest Video İndir"
+  />
+
+  <RelatedGuides
+    title="İlgili rehberler ve araçlar"
+    items={[
+      { title: 'Pinterest Videosu İndirilmiyor', href: '/pinterest-video-indirilmiyor/', description: 'Video inmiyorsa nedenleri ve adım adım çözümü.' },
+      { title: 'Pinterest Video Kalitesi', href: '/pinterest-video-kalitesi/', description: 'Video neden bulanık iniyor ve HD nasıl indirilir.' },
+      { title: 'Video Nasıl İndirilir', href: '/pinterest-video-nasil-indirilir/', description: 'Adım adım Pinterest video indirme rehberi.' },
+      { title: 'Pinterest Video İndir', href: '/pinterest-video-indir/', description: 'Tüm cihazlarda HD, Full HD ve 4K indirme aracı.' },
+      { title: 'Pinterest Video Link İndir', href: '/pinterest-video-link-indir/', description: 'Bağlantı yapıştırarak videoyu doğrudan indirin.' },
+      { title: 'Nasıl Kullanılır', href: '/nasil-kullanilir/', description: 'Sitenin tüm araçları için genel rehber.' },
+    ]}
+  />
+
+  <Faq items={ACILMIYOR_FAQ} title="Pinterest açılmıyor — Sık sorulanlar" />
+</BaseLayout>

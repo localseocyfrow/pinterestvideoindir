@@ -588,6 +588,70 @@ export const LINK_FAQ: QA[] = [
   },
 ];
 
+// "Pinterest açılmıyor / çalışmıyor" troubleshooting cluster — /pinterest-acilmiyor/.
+export const ACILMIYOR_FAQ: QA[] = [
+  {
+    q: 'Pinterest neden açılmıyor?',
+    a: 'En sık nedenler: Pinterest sunucularında geçici bir kesinti, zayıf veya kararsız internet bağlantısı, uygulamanın güncel olmaması, dolan önbellek (cache) ve nadiren hesap/yaş doğrulama sorunudur. Önce başka bir site açılıyor mu diye bakın; açılıyorsa sorun büyük olasılıkla Pinterest tarafında ya da uygulamadadır.',
+  },
+  {
+    q: 'Pinterest açılmıyorsa ilk ne yapmalıyım?',
+    a: 'Sırasıyla şunları deneyin: (1) internet bağlantınızı kontrol edin veya Wi‑Fi ile mobil veri arasında geçiş yapın, (2) uygulamayı tamamen kapatıp yeniden açın, (3) telefonu yeniden başlatın, (4) uygulama önbelleğini temizleyin, (5) Pinterest’i güncelleyin. Sorun tarayıcıdaysa farklı bir tarayıcı veya gizli sekme deneyin.',
+  },
+  {
+    q: 'Sorun bende mi yoksa Pinterest’te mi, nasıl anlarım?',
+    a: 'Aynı anda başka uygulama ve siteler normal çalışıyor, yalnızca Pinterest açılmıyorsa sorun büyük ihtimalle Pinterest sunucularında veya uygulamadadır. Bunu, Pinterest’i hem uygulamada hem tarayıcıda (pinterest.com) hem de mobil veriyle deneyerek doğrulayabilirsiniz; hepsinde açılmıyorsa beklemek dışında yapılacak bir şey yoktur.',
+  },
+  {
+    q: 'Pinterest önbelleğini (cache) nasıl temizlerim?',
+    a: 'Android’de Ayarlar → Uygulamalar → Pinterest → Depolama → “Önbelleği temizle” yolunu izleyin. iPhone’da doğrudan önbellek temizleme yoktur; uygulamayı silip App Store’dan yeniden kurmak aynı işi görür. Tarayıcıda ise tarayıcı ayarlarından site verilerini/çerezleri temizleyip sayfayı yenileyin.',
+  },
+  {
+    q: 'Pinterest sadece Türkiye’de mi açılmıyor?',
+    a: 'Zaman zaman bölgesel erişim sorunları veya operatör kaynaklı kesintiler yaşanabilir. Böyle bir durumda mobil veri ile Wi‑Fi arasında geçiş yapmak veya güvenilir bir bağlantı kullanmak sorunu çözebilir. Erişim yeniden sağlandığında beğendiğiniz videoları çevrimdışı saklamak için bağlantıyı kopyalayıp indirme aracımızı kullanabilirsiniz.',
+  },
+  {
+    q: 'Pinterest açılıyor ama videolar oynamıyor/yüklenmiyor, neden?',
+    a: 'Bu genelde yavaş bağlantı, dolu önbellek veya eski uygulama sürümünden kaynaklanır. Bağlantınızı kontrol edin, önbelleği temizleyin ve uygulamayı güncelleyin. Belirli bir videoyu sorunsuz izlemek isterseniz bağlantısını kopyalayıp aracımızla MP4 olarak indirip çevrimdışı oynatabilirsiniz.',
+  },
+  {
+    q: 'Pinterest açılmıyorken beğendiğim videoyu yine de indirebilir miyim?',
+    a: 'Videonun bağlantısına (pinterest.com/pin/... veya pin.it linki) sahipseniz, uygulama sizde açılmasa bile bağlantıyı indirme aracımıza yapıştırarak videoyu MP4 olarak kaydedebilirsiniz. Böylece içeriği çevrimdışı arşivleyip erişim geri geldiğinde de saklamış olursunuz.',
+  },
+];
+
+// Download/save failure troubleshooting cluster — /pinterest-video-indirilmiyor/.
+export const INDIRILMIYOR_FAQ: QA[] = [
+  {
+    q: 'Pinterest videosu neden indirilmiyor?',
+    a: 'En yaygın nedenler: Pinterest uygulamasının cihaza indirme seçeneği sunmaması, bağlantının özel/silinmiş bir pine ait olması, yanlış veya eksik kopyalanmış link, tarayıcının indirmeyi engellemesi ya da zayıf internet bağlantısıdır. Çoğu durumda doğru bağlantıyı kopyalayıp indirme aracımıza yapıştırmak sorunu çözer.',
+  },
+  {
+    q: 'Pinterest uygulamasında “videoyu indir” seçeneği neden yok?',
+    a: 'Pinterest uygulaması videoları yalnızca uygulama içinde kaydeder; cihazınızın galerisine indirme seçeneği sunmaz. Videoyu gerçekten indirmek için pinin “Paylaş → Bağlantıyı kopyala” bağlantısını alıp aracımıza yapıştırmanız ve videoyu MP4 olarak kaydetmeniz gerekir.',
+  },
+  {
+    q: 'Bağlantıyı yapıştırdım ama video inmiyor, ne yapmalıyım?',
+    a: 'Bağlantının herkese açık bir pine ait olduğundan ve pinterest.com/pin/... ya da pin.it ile başladığından emin olun. Özel (gizli) panolardaki veya silinmiş pinlerin bağlantıları indirilemez. Linki baştan kopyalayıp yeniden deneyin; sorun sürerse farklı, herkese açık bir pin bağlantısı kullanın.',
+  },
+  {
+    q: 'Bağlantı (link) kopyalanmıyor veya yanlış kopyalanıyor, çözümü nedir?',
+    a: 'Pinin üç nokta (•••) veya “Paylaş” menüsünden “Bağlantıyı kopyala” deyin. Bu çalışmazsa videoyu tarayıcıda açıp adres çubuğundaki pinterest.com/pin/... adresini elle kopyalayabilirsiniz. Kopyaladığınız metnin başında/sonunda boşluk kalmadığından emin olun.',
+  },
+  {
+    q: 'İndirdiğim video telefonda galeriye/fotoğraflara kaydedilmiyor, neden?',
+    a: 'Android’de bazı tarayıcılar dosyayı önce “İndirilenler” klasörüne koyar; Dosya Yöneticisi → İndirilenler klasörüne bakın. iPhone’da video önce “Dosyalar” uygulamasına iner, oradan videoya dokunup “Paylaş → Videoyu Kaydet” diyerek Fotoğraflar’a taşıyabilirsiniz.',
+  },
+  {
+    q: 'Video indirme yarıda kesiliyor veya “başarısız oldu” hatası veriyor, ne yapmalıyım?',
+    a: 'Bu genellikle bağlantı kopması veya kararsız internetten kaynaklanır. Kararlı bir Wi‑Fi’ye geçin, tarayıcının indirilenler listesinden indirmeyi yeniden başlatın ve gerekirse bağlantıyı aracımıza tekrar yapıştırın. Depolama alanınızın dolu olmadığından da emin olun.',
+  },
+  {
+    q: 'Hangi cihaz ve tarayıcılarda indirme sorunsuz çalışır?',
+    a: 'Araç tarayıcı tabanlıdır; Android, iPhone (iOS), tablet ve bilgisayarda Chrome, Safari, Edge, Firefox ve Samsung Internet gibi güncel tarayıcılarla çalışır. En sağlıklı sonuç için tarayıcınızı güncel tutun ve gizli/özel sekme yerine normal sekmede indirmeyi deneyin.',
+  },
+];
+
 // Consumed by the dedicated /sss/ page.
 export const ALL_FAQ_GROUPS: FaqGroup[] = [
   { title: 'Genel & Video İndirme', items: HOME_FAQ },
