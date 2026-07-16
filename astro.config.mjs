@@ -6,13 +6,20 @@ import cloudflare from '@astrojs/cloudflare';
 export default defineConfig({
   site: 'https://pinterestvideoindirme.tr',
   trailingSlash: 'ignore',
-  // 301: legacy troubleshooting slug renamed to the intended keyword spelling
-  // ("indirilemiyor" = cannot be downloaded). Old URL is a redirect only and is
-  // not listed in sitemap.xml / llms.txt (those derive from src/data/routes.ts).
+  // 301s for legacy / renamed URLs. Targets are the closest live page. These
+  // old URLs are redirect-only and are NOT listed in sitemap.xml / llms.txt
+  // (those derive from src/data/routes.ts).
   redirects: {
+    // Renamed troubleshooting slug → intended keyword spelling
+    // ("indirilemiyor" = cannot be downloaded).
     '/pinterest-video-indirilmiyor': {
       status: 301,
       destination: '/pinterest-video-indirilemiyor',
+    },
+    // Legacy "About" URL variant → live About page.
+    '/hakkimizda': {
+      status: 301,
+      destination: '/hakkinda',
     },
   },
   // Pages stay static (prerendered) for SEO. Only /api/* routes opt into
