@@ -627,7 +627,7 @@ export const ACILMIYOR_FAQ: QA[] = [
 // Download/save failure troubleshooting cluster — /pinterest-video-indirilemiyor/.
 export const INDIRILMIYOR_FAQ: QA[] = [
   {
-    q: 'Pinterest videosu neden indirilmiyor?',
+    q: 'Pinterest videosu neden indirilemiyor?',
     a: 'En yaygın nedenler: Pinterest uygulamasının cihaza indirme seçeneği sunmaması, bağlantının özel/silinmiş bir pine ait olması, yanlış veya eksik kopyalanmış link, tarayıcının indirmeyi engellemesi ya da zayıf internet bağlantısıdır. Çoğu durumda doğru bağlantıyı kopyalayıp indirme aracımıza yapıştırmak sorunu çözer.',
   },
   {
@@ -635,7 +635,7 @@ export const INDIRILMIYOR_FAQ: QA[] = [
     a: 'Pinterest uygulaması videoları yalnızca uygulama içinde kaydeder; cihazınızın galerisine indirme seçeneği sunmaz. Videoyu gerçekten indirmek için pinin “Paylaş → Bağlantıyı kopyala” bağlantısını alıp aracımıza yapıştırmanız ve videoyu MP4 olarak kaydetmeniz gerekir.',
   },
   {
-    q: 'Bağlantıyı yapıştırdım ama video inmiyor, ne yapmalıyım?',
+    q: 'Bağlantıyı yapıştırdım ama video indirilemiyor, ne yapmalıyım?',
     a: 'Bağlantının herkese açık bir pine ait olduğundan ve pinterest.com/pin/... ya da pin.it ile başladığından emin olun. Özel (gizli) panolardaki veya silinmiş pinlerin bağlantıları indirilemez. Linki baştan kopyalayıp yeniden deneyin; sorun sürerse farklı, herkese açık bir pin bağlantısı kullanın.',
   },
   {
