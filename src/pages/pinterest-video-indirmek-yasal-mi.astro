@@ -1,0 +1,150 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Faq from '../components/Faq.astro';
+import ToolCta from '../components/ToolCta.astro';
+import RelatedGuides from '../components/RelatedGuides.astro';
+import { LEGAL_FAQ } from '../data/faq';
+import {
+  articleSchema,
+  faqSchema,
+  breadcrumbSchema,
+} from '../lib/schema';
+
+const path = '/pinterest-video-indirmek-yasal-mi/';
+const title = 'Pinterest Video İndirmek Yasal mı? Telif Hakkı Rehberi';
+const description =
+  'Pinterest video indirmek yasal mı, telif hakkı var mı? Kişisel kullanım, izin, paylaşım ve ticari kullanım kurallarını sade bir dille açıklayan ücretsiz rehber.';
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  path={path}
+  ogType="article"
+  schemas={[
+    breadcrumbSchema([
+      { name: 'Ana Sayfa', href: '/' },
+      { name: 'Pinterest Video İndirmek Yasal mı?', href: path },
+    ]),
+    articleSchema({ title, description, path }),
+    faqSchema(LEGAL_FAQ),
+  ]}
+>
+  <article class="section">
+    <div class="container">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <a href="/">Ana Sayfa</a><span>/</span>Pinterest Video İndirmek Yasal mı?
+      </nav>
+
+      <div class="prose">
+        <span class="eyebrow">Yasal &amp; telif hakkı rehberi</span>
+        <h1>Pinterest Video İndirmek Yasal mı?</h1>
+        <p class="lead">
+          Bir Pinterest videosunu indirmenin yasal olup olmadığı en çok merak
+          edilen konulardan biri. Kısa cevap: sorun <strong>indirmenin
+          kendisinde değil</strong>, videoyu <strong>nasıl kullandığınızda</strong>.
+          Bu rehberde kişisel kullanım, telif hakkı, paylaşım ve ticari kullanım
+          arasındaki farkı sade bir dille açıklıyoruz.
+        </p>
+
+        <div class="answer-box" style="margin:26px 0">
+          <p class="q">Kısa cevap: Pinterest video indirmek yasal mı?</p>
+          <p class="mt-0" style="margin:0">
+            Bir videoyu yalnızca <strong>kişisel kullanım</strong> — çevrimdışı
+            izleme, ilham panosu ya da arşiv — için indirmek çoğu durumda
+            sorun oluşturmaz. Yasal risk, telif hakkıyla korunan içeriği
+            <strong>hak sahibinin izni olmadan yeniden yayımladığınızda</strong>
+            ya da <strong>ticari olarak kullandığınızda</strong> ortaya çıkar.
+          </p>
+        </div>
+      </div>
+
+      <div class="prose">
+        <h2>Telif hakkı: Pinterest içerikleri kime ait?</h2>
+        <p>
+          Pinterest’teki videolar, görseller ve GIF’ler onları oluşturan kişiye
+          veya markaya aittir ve genellikle <strong>telif hakkıyla korunur</strong>.
+          İçeriğin herkese açık olması, onu istediğiniz gibi kullanabileceğiniz
+          anlamına gelmez. En güvenlisi, indirdiğiniz her içeriğin haklarının
+          <strong>kaynak sahibine ait olduğunu</strong> varsaymaktır.
+        </p>
+
+        <h2>Kişisel kullanım vs. yeniden yayımlama</h2>
+        <p>
+          Yasal açıdan en önemli ayrım kullanım amacınızdır:
+        </p>
+        <ul>
+          <li><strong>Genellikle uygun (kişisel kullanım):</strong> Videoyu kendi cihazınızda izlemek, çevrimdışı saklamak, ilham amacıyla arşivlemek.</li>
+          <li><strong>İzin gerektirir (yeniden yayımlama):</strong> Videoyu başka bir platformda paylaşmak, kendi içeriğinizmiş gibi göstermek, bir projede kullanmak.</li>
+          <li><strong>Açık lisans/izin şart (ticari kullanım):</strong> Reklam, ürün tanıtımı, para kazandıran kanal ya da müşteri işinde kullanmak.</li>
+        </ul>
+
+        <h2>İndirdiğim videoyu paylaşabilir veya satabilir miyim?</h2>
+        <p>
+          Başkasına ait bir videoyu izinsiz olarak Instagram, TikTok veya YouTube
+          gibi platformlarda yeniden paylaşmak telif hakkı ihlali sayılabilir;
+          içeriğin kaldırılmasına ya da hesabınızın kısıtlanmasına yol açabilir.
+          Ticari kullanımda ise mutlaka <strong>lisans veya yazılı izin</strong>
+          almanız gerekir — izinsiz ticari kullanım, tazminat talepleri dahil
+          ciddi sonuçlar doğurabilir.
+        </p>
+
+        <h2>Filigransız indirmek telif ihlali mi?</h2>
+        <p>
+          Hayır — ama koruma da sağlamaz. İndirme sırasında platform filigranının
+          bulunmaması, içeriğin size ait olduğu anlamına gelmez. Belirleyici olan
+          yine kullanım amacınızdır: kişisel kullanım genellikle uygundur,
+          izinsiz yeniden yayımlama ise <strong>filigran olsun olmasın</strong>
+          ihlal sayılabilir. Konunun teknik tarafı için
+          <a href="/pinterest-filigransiz-video-indir/">filigransız video indirme</a>
+          sayfamıza bakabilirsiniz.
+        </p>
+
+        <h2>İçerik sahibinden nasıl izin alınır?</h2>
+        <p>
+          Pinin sahibinin profiline gidip Pinterest üzerinden mesaj gönderebilir,
+          profilde bağlı bir web sitesi veya sosyal hesap varsa oradan iletişime
+          geçebilirsiniz. İzin isterken videoyu <strong>nerede ve nasıl</strong>
+          kullanacağınızı net biçimde belirtin; <strong>yazılı bir onay</strong>
+          almanız ileride olası anlaşmazlıklara karşı sizi korur.
+        </p>
+
+        <blockquote>
+          <strong>Özetle — </strong>Kendiniz için indirin, gönül rahatlığıyla
+          izleyin. Ama başkasının emeğini paylaşacak ya da para kazandıracaksanız
+          önce izin alın ve kaynağı belirtin. Bu, hem yasal hem de etik açıdan
+          en doğru yaklaşımdır.
+        </blockquote>
+
+        <p class="disclaimer" role="note" style="margin-top:22px">
+          <strong>Sorumluluk reddi — </strong>Bu sayfa genel bilgilendirme
+          amaçlıdır, hukuki tavsiye değildir. İndirdiğiniz içeriğin kullanımına
+          dair sorumluluk kullanıcıya aittir. Ayrıntılar için
+          <a href="/kullanim-sartlari/">Kullanım Şartları</a> sayfamızı okuyun.
+          Bu site Pinterest, Inc. ile bağlantılı değildir.
+        </p>
+      </div>
+    </div>
+  </article>
+
+  <ToolCta
+    title="Kendi içeriğinizi güvenle indirin"
+    text="Bağlantıyı yapıştırın, videoyu kişisel kullanım için HD/4K kalitede, filigransız MP4 olarak kaydedin."
+    href="/pinterest-video-indir/"
+    label="Pinterest Video İndir"
+  />
+
+  <RelatedGuides
+    title="İlgili rehberler ve araçlar"
+    items={[
+      { title: 'Pinterest Video İndirmek Güvenli mi?', href: '/pinterest-video-indirmek-guvenli-mi/', description: 'Güvenlik, gizlilik ve zararlı yazılım riskleri hakkında rehber.' },
+      { title: 'Filigransız Video İndir', href: '/pinterest-filigransiz-video-indir/', description: 'Logosuz, temiz video indirme ve telif notları.' },
+      { title: 'Kullanım Şartları', href: '/kullanim-sartlari/', description: 'Hizmetin kapsamı, telif ve kullanıcı sorumlulukları.' },
+      { title: 'Gizlilik Politikası', href: '/gizlilik-politikasi/', description: 'Verilerinizin nasıl işlendiğini öğrenin.' },
+      { title: 'Pinterest Video İndir', href: '/pinterest-video-indir/', description: 'Tüm cihazlarda HD, Full HD ve 4K indirme aracı.' },
+      { title: 'Video Nasıl İndirilir', href: '/pinterest-video-nasil-indirilir/', description: 'Adım adım Pinterest video indirme rehberi.' },
+    ]}
+  />
+
+  <Faq items={LEGAL_FAQ} title="Yasallık &amp; telif hakkı — Sık sorulanlar" />
+</BaseLayout>

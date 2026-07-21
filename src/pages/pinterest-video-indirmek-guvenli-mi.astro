@@ -1,0 +1,136 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Faq from '../components/Faq.astro';
+import ToolCta from '../components/ToolCta.astro';
+import RelatedGuides from '../components/RelatedGuides.astro';
+import { SAFETY_FAQ } from '../data/faq';
+import {
+  articleSchema,
+  faqSchema,
+  breadcrumbSchema,
+} from '../lib/schema';
+
+const path = '/pinterest-video-indirmek-guvenli-mi/';
+const title = 'Pinterest Video İndirmek Güvenli mi? Güvenlik Rehberi';
+const description =
+  'Pinterest video indirmek güvenli mi, Pinterest güvenilir mi? Virüs, giriş bilgisi ve gizlilik risklerini ve güvenli indirme yöntemini açıklayan ücretsiz rehber.';
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  path={path}
+  ogType="article"
+  schemas={[
+    breadcrumbSchema([
+      { name: 'Ana Sayfa', href: '/' },
+      { name: 'Pinterest Video İndirmek Güvenli mi?', href: path },
+    ]),
+    articleSchema({ title, description, path }),
+    faqSchema(SAFETY_FAQ),
+  ]}
+>
+  <article class="section">
+    <div class="container">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <a href="/">Ana Sayfa</a><span>/</span>Pinterest Video İndirmek Güvenli mi?
+      </nav>
+
+      <div class="prose">
+        <span class="eyebrow">Güvenlik &amp; gizlilik rehberi</span>
+        <h1>Pinterest Video İndirmek Güvenli mi?</h1>
+        <p class="lead">
+          Pinterest videosu indirmek, <strong>doğru bir araç</strong>
+          kullandığınız sürece güvenlidir. Riskler indirmenin kendisinden değil,
+          şüpheli sitelerin gösterdiği sahte “indir” reklamlarından, giriş bilgisi
+          isteyen sayfalardan ve “önce uygulama kur” tuzaklarından doğar. Bu
+          rehberde nelere dikkat etmeniz gerektiğini tek tek açıklıyoruz.
+        </p>
+
+        <div class="answer-box" style="margin:26px 0">
+          <p class="q">Kısa cevap: Güvenli mi?</p>
+          <p class="mt-0" style="margin:0">
+            Aracımız tamamen <strong>tarayıcı üzerinden</strong> çalışır;
+            cihazınıza hiçbir dosya veya uygulama kurmaz, Pinterest
+            <strong>giriş bilgilerinizi istemez</strong> ve yapıştırdığınız
+            bağlantıyı yalnızca indirme işlemi için kullanır. Videoyu doğrudan
+            <strong>MP4</strong> olarak alırsınız — kurulum dosyası (.apk/.exe)
+            değil.
+          </p>
+        </div>
+      </div>
+
+      <div class="prose">
+        <h2>Pinterest güvenilir mi?</h2>
+        <p>
+          Pinterest, milyonlarca kişinin kullandığı, bağlantıları HTTPS ile
+          şifrelenen köklü bir görsel keşif platformudur ve genel olarak
+          güvenilirdir. Yine de her platformda olduğu gibi <strong>güçlü bir
+          parola</strong> ve <strong>iki adımlı doğrulama</strong> kullanmanız,
+          tanımadığınız bağlantılara temkinli yaklaşmanız önerilir.
+        </p>
+
+        <h2>İndirme sırasındaki başlıca riskler</h2>
+        <ul>
+          <li><strong>Sahte “indir” reklamları:</strong> Bazı siteler asıl indirme yerine reklam veya başka bir siteye yönlendiren düğmeler gösterir. Yalnızca beklediğiniz sonucu veren düğmeye tıklayın.</li>
+          <li><strong>Giriş bilgisi tuzağı (phishing):</strong> Sizden Pinterest kullanıcı adı/şifresi isteyen hiçbir siteye bu bilgileri girmeyin — güvenilir bir indirici bunu asla istemez.</li>
+          <li><strong>“Önce uygulama kur” yönlendirmesi:</strong> Kurulum dosyası (.apk/.exe) indirtmeye çalışan sayfalar reklam veya casus yazılım riski taşır.</li>
+          <li><strong>Aşırı açılır pencere:</strong> Sürekli pop-up ve yönlendirme gösteren siteler genelde güvenli değildir.</li>
+        </ul>
+
+        <h2>Bu araç güvenliğinizi nasıl korur?</h2>
+        <ul>
+          <li><strong>Giriş gerektirmez:</strong> Yalnızca herkese açık pin bağlantısına ihtiyaç duyar; hesabınıza girmezsiniz.</li>
+          <li><strong>Kurulum yok:</strong> Tarayıcıdan çalışır; cihazınıza uygulama, eklenti veya kurulum dosyası inmez.</li>
+          <li><strong>Veri saklanmaz:</strong> Yapıştırdığınız bağlantı ve işlenen video sunucularımızda kalıcı olarak tutulmaz; işlem sonrası geçici veriler temizlenir.</li>
+          <li><strong>Üyelik/e-posta istenmez:</strong> Kişisel profil oluşturmaz, ne indirdiğinizi izlemeyiz.</li>
+        </ul>
+
+        <h2>Uygulama kurmadan indirmek neden daha güvenli?</h2>
+        <p>
+          Bilinmeyen kaynaklardan kurulan indirme uygulamaları çoğu zaman gereksiz
+          izinler ister ve <strong>reklam yazılımı veya casus yazılım</strong>
+          riski taşır. Tarayıcı tabanlı bir araçla hiçbir uygulama kurmadan,
+          depolama alanı harcamadan ve ek izin vermeden indirme yapabilirsiniz.
+          Cihaz ve tarayıcınızı güncel tutmak da güvenliği artırır.
+        </p>
+
+        <blockquote>
+          <strong>Güvenli indirme kuralı — </strong>Yalnızca beklediğiniz MP4
+          dosyasını indirin; sizden Pinterest şifresi isteyen ya da “önce uygulama
+          kur” diyen bir sayfa görürseniz o siteyi kapatın. İndirmenin kendisi
+          değil, bu tuzaklar risklidir.
+        </blockquote>
+
+        <p class="disclaimer" role="note" style="margin-top:22px">
+          <strong>Not — </strong>Yalnızca size ait olan veya indirme iznine
+          sahip olduğunuz içerikleri kaydetmenizi öneririz. Yasal tarafı için
+          <a href="/pinterest-video-indirmek-yasal-mi/">Pinterest video indirmek
+          yasal mı?</a> rehberimize, veri işleme için
+          <a href="/gizlilik-politikasi/">Gizlilik Politikası</a> sayfamıza bakın.
+        </p>
+      </div>
+    </div>
+  </article>
+
+  <ToolCta
+    title="Güvenle, kurulum olmadan indirin"
+    text="Bağlantıyı yapıştırın; giriş, uygulama ve reklam tuzağı olmadan videoyu MP4 olarak kaydedin."
+    href="/pinterest-video-indir/"
+    label="Pinterest Video İndir"
+  />
+
+  <RelatedGuides
+    title="İlgili rehberler ve araçlar"
+    items={[
+      { title: 'Pinterest Video İndirmek Yasal mı?', href: '/pinterest-video-indirmek-yasal-mi/', description: 'Telif hakkı, kişisel kullanım ve izin kuralları.' },
+      { title: 'Gizlilik Politikası', href: '/gizlilik-politikasi/', description: 'Verilerinizin nasıl işlendiğini öğrenin.' },
+      { title: 'Pinterest Video İndirici', href: '/pinterest-video-indirici/', description: 'Kurulumsuz, tarayıcı tabanlı online indirme aracı.' },
+      { title: 'Video İndirilemiyor mu?', href: '/pinterest-video-indirilemiyor/', description: 'İndirme sorunlarının nedenleri ve çözümü.' },
+      { title: 'Pinterest Video İndir', href: '/pinterest-video-indir/', description: 'Tüm cihazlarda HD, Full HD ve 4K indirme aracı.' },
+      { title: 'Nasıl Kullanılır', href: '/nasil-kullanilir/', description: 'Sitenin tüm araçları için genel rehber.' },
+    ]}
+  />
+
+  <Faq items={SAFETY_FAQ} title="Güvenlik &amp; gizlilik — Sık sorulanlar" />
+</BaseLayout>

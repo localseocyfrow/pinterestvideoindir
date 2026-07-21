@@ -732,6 +732,78 @@ export const VIDEO_ACILMIYOR_FAQ: QA[] = [
   },
 ];
 
+// Legality / copyright cluster — /pinterest-video-indirmek-yasal-mi/.
+export const LEGAL_FAQ: QA[] = [
+  {
+    q: 'Pinterest video indirmek yasal mı?',
+    a: 'Bir Pinterest videosunu yalnızca kendiniz için, çevrimdışı izlemek veya arşivlemek amacıyla indirmek çoğu durumda sorun oluşturmaz. Yasal risk, indirmenin kendisinden değil, videoyu nasıl kullandığınızdan doğar: telif hakkıyla korunan bir içeriği hak sahibinin izni olmadan yeniden yayımlamak, kendi içeriğinizmiş gibi paylaşmak veya ticari olarak kullanmak telif haklarını ihlal edebilir.',
+  },
+  {
+    q: 'Pinterest videolarının telif hakkı var mı?',
+    a: 'Evet. Pinterest’teki videolar, görseller ve GIF’ler onları oluşturan kişi veya markaya aittir ve genellikle telif hakkıyla korunur. İçeriğin herkese açık olması, onu izinsiz kullanabileceğiniz anlamına gelmez. İndirdiğiniz içeriğin haklarının kaynak sahibine ait olduğunu varsaymanız en güvenlisidir.',
+  },
+  {
+    q: 'İndirdiğim Pinterest videosunu nerede kullanabilirim?',
+    a: 'Kişisel kullanım — videoyu kendi cihazınızda izlemek, ilham panosu olarak saklamak veya çevrimdışı arşivlemek — genellikle güvenli kabul edilir. Videoyu başka bir platformda paylaşacak, bir projede kullanacak ya da gelir elde edeceğiniz bir işte kullanacaksanız önce içerik sahibinden izin almanız gerekir.',
+  },
+  {
+    q: 'İndirdiğim videoyu sosyal medyada paylaşabilir miyim?',
+    a: 'Başkasına ait bir videoyu izinsiz olarak Instagram, TikTok, YouTube gibi platformlarda yeniden paylaşmak telif hakkı ihlali sayılabilir ve içeriğin kaldırılmasına ya da hesabınızın kısıtlanmasına yol açabilir. Paylaşmak istiyorsanız içerik sahibinden izin alın veya orijinal kaynağı açıkça belirterek etiketleyin.',
+  },
+  {
+    q: 'Telif hakkıyla korunan bir videoyu ticari amaçla kullanabilir miyim?',
+    a: 'Hayır — hak sahibinin açık izni olmadan olmaz. Reklam, ürün tanıtımı, para kazandıran bir kanal ya da müşteri işi gibi ticari kullanımlar için mutlaka lisans veya yazılı izin almanız gerekir. İzinsiz ticari kullanım, tazminat talepleri dahil ciddi hukuki sonuçlar doğurabilir.',
+  },
+  {
+    q: 'Filigransız (logosuz) indirmek telif hakkını ihlal eder mi?',
+    a: 'İndirme sırasında platform filigranının bulunmaması, içeriğin size ait olduğu anlamına gelmez ve tek başına ihlali önlemez ya da doğurmaz. Belirleyici olan kullanım amacınızdır: kişisel kullanım genellikle uygundur, izinsiz yeniden yayımlama veya ticari kullanım ise filigran olsun olmasın telif ihlali sayılabilir.',
+  },
+  {
+    q: 'İçerik sahibinden nasıl izin alırım?',
+    a: 'Pinin sahibinin profiline gidip Pinterest üzerinden mesaj gönderebilir, profilde bağlı web sitesi veya diğer sosyal hesaplar varsa oradan iletişime geçebilirsiniz. İzin isterken videoyu nerede ve nasıl kullanacağınızı net biçimde belirtin; yazılı bir onay almanız ileride olası anlaşmazlıklara karşı sizi korur.',
+  },
+  {
+    q: 'Bu site Pinterest ile bağlantılı mı ve içerikten sorumlu mu?',
+    a: 'Hayır. Bu araç Pinterest, Inc. ile bağlantılı, onun tarafından desteklenen veya onaylanan bir hizmet değildir; “Pinterest” markası sahibine aittir. Araç yalnızca herkese açık içeriklerin indirilmesini kolaylaştırır. İndirdiğiniz içeriğin nasıl kullanılacağına dair sorumluluk tümüyle kullanıcıya aittir.',
+  },
+];
+
+// Safety / trust cluster — /pinterest-video-indirmek-guvenli-mi/.
+export const SAFETY_FAQ: QA[] = [
+  {
+    q: 'Pinterest video indirmek güvenli mi?',
+    a: 'Evet — doğru bir araç kullandığınız sürece güvenlidir. Aracımız tamamen tarayıcı üzerinden çalışır; cihazınıza hiçbir dosya veya uygulama kurmaz, Pinterest giriş bilgilerinizi istemez ve yapıştırdığınız bağlantıyı yalnızca indirme işlemi için kullanır. Riskler genelde şüpheli sitelerin gösterdiği sahte “indir” reklamlarından doğar; bunlara tıklamaktan kaçının.',
+  },
+  {
+    q: 'Pinterest güvenilir mi?',
+    a: 'Pinterest, milyonlarca kişinin kullandığı, HTTPS ile şifrelenen köklü bir görsel keşif platformudur ve genel olarak güvenilirdir. Yine de her platformda olduğu gibi güçlü bir parola ve iki adımlı doğrulama kullanmanız, tanımadığınız bağlantılara temkinli yaklaşmanız önerilir. Videoları çevrimdışı saklamak için ise bağlantıyı kopyalayıp güvenli bir indirme aracı kullanmanız yeterlidir.',
+  },
+  {
+    q: 'İndirme sırasında cihazıma virüs veya zararlı yazılım bulaşır mı?',
+    a: 'Aracımız videoyu doğrudan MP4 dosyası olarak sunar; herhangi bir kurulum dosyası (.apk, .exe) veya eklenti indirtmez. Zararlı yazılım riski genellikle “önce şu uygulamayı kurun” diyen veya sürekli açılır pencere/yönlendirme gösteren sitelerden gelir. Yalnızca beklenen MP4 dosyasını indirin; farklı bir dosya türü sunuluyorsa indirmeyin.',
+  },
+  {
+    q: 'Pinterest video indirici siteleri Pinterest şifremi ister mi?',
+    a: 'Güvenilir bir indirici asla Pinterest kullanıcı adınızı veya şifrenizi istemez. Aracımız yalnızca herkese açık pin bağlantısına ihtiyaç duyar; hesabınıza giriş yapmanızı ya da kişisel bilgi vermenizi gerektirmez. Sizden Pinterest giriş bilgisi isteyen hiçbir siteye bu bilgileri girmeyin — bu, hesap çalma (phishing) girişimi olabilir.',
+  },
+  {
+    q: 'İndirdiğim videolar sunucularınızda saklanıyor mu?',
+    a: 'Hayır. Yapıştırdığınız bağlantılar ve işlenen videolar sunucularımızda kalıcı olarak saklanmaz; işlem tamamlandıktan sonra geçici veriler temizlenir. Ne indirdiğinizi izlemez, kişisel profilinizi oluşturmayız. Gizliliğinizin korunması için ayrıca üyelik veya e-posta da istemeyiz.',
+  },
+  {
+    q: 'Video indirmek için uygulama kurmak güvenli mi, gerekli mi?',
+    a: 'Gerekli değildir ve tarayıcı yöntemi daha güvenlidir. Bilinmeyen kaynaklardan kurulan indirme uygulamaları, gereksiz izinler isteyerek reklam yazılımı veya casus yazılım riski taşıyabilir. Araç tarayıcı tabanlı olduğu için hiçbir uygulama kurmadan, depolama alanı harcamadan ve ek izin vermeden indirme yapabilirsiniz.',
+  },
+  {
+    q: 'Güvenli indirme için nelere dikkat etmeliyim?',
+    a: 'Şu ipuçlarına uyun: (1) yalnızca beklediğiniz MP4 dosyasını indirin, (2) Pinterest şifresi isteyen sitelere bilgi girmeyin, (3) “önce uygulama kur” diyen sayfalardan uzak durun, (4) cihazınızı ve tarayıcınızı güncel tutun, (5) çok sayıda açılır pencere/yönlendirme gösteren sitelerden kaçının. Aracımız bu risklerin hiçbirini içermez.',
+  },
+  {
+    q: 'Pinterest video indirmek yasal ve etik açıdan uygun mu?',
+    a: 'Kişisel kullanım için indirmek genellikle hem güvenli hem uygundur. Etik ve yasal sınır, içeriği nasıl kullandığınızdır: başkasının videosunu izinsiz yeniden yayımlamak veya ticari olarak kullanmak telif haklarını ihlal edebilir. Ayrıntılar için Pinterest video indirmenin yasal olup olmadığını anlatan rehberimize bakın.',
+  },
+];
+
 // Consumed by the dedicated /sss/ page.
 export const ALL_FAQ_GROUPS: FaqGroup[] = [
   { title: 'Genel & Video İndirme', items: HOME_FAQ },

@@ -68,6 +68,8 @@ export const FOOTER_GROUPS: { title: string; links: NavItem[] }[] = [
       { label: 'Mac’te Video İndir', href: '/mac-pinterest-video-indir/' },
       { label: 'Windows’ta Video İndir', href: '/windows-pinterest-video-indir/' },
       { label: 'Pinterest Video Yükleme', href: '/pinterest-video-yukleme/' },
+      { label: 'Video İndirmek Yasal mı?', href: '/pinterest-video-indirmek-yasal-mi/' },
+      { label: 'Video İndirmek Güvenli mi?', href: '/pinterest-video-indirmek-guvenli-mi/' },
       { label: 'Nasıl Kullanılır', href: '/nasil-kullanilir/' },
       { label: 'Sıkça Sorulan Sorular', href: '/sss/' },
       { label: 'Hakkında', href: '/hakkinda/' },
