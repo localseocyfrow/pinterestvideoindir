@@ -36,6 +36,7 @@ export const ROUTES: Route[] = [
   { path: '/pinterest-karusel-indir/', title: 'Pinterest Karusel İndir — çoklu görsel', changefreq: 'weekly', priority: 0.7 },
   { path: '/pinterest-video-indirmek-yasal-mi/', title: 'Pinterest Video İndirmek Yasal mı? — telif hakkı rehberi', changefreq: 'monthly', priority: 0.6 },
   { path: '/pinterest-video-indirmek-guvenli-mi/', title: 'Pinterest Video İndirmek Güvenli mi? — güvenlik rehberi', changefreq: 'monthly', priority: 0.6 },
+  { path: '/telif-hakki-ve-pinterest-indirme/', title: 'Telif Hakkı ve Pinterest İndirme — genel rehber', changefreq: 'monthly', priority: 0.5 },
   { path: '/nasil-kullanilir/', title: 'Nasıl Kullanılır — Pinterest indirme rehberi', changefreq: 'monthly', priority: 0.7 },
   { path: '/sss/', title: 'Sıkça Sorulan Sorular', changefreq: 'monthly', priority: 0.6 },
   { path: '/hakkinda/', title: 'Hakkında', changefreq: 'monthly', priority: 0.4 },

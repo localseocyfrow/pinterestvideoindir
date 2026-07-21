@@ -1,0 +1,165 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Faq from '../components/Faq.astro';
+import ToolCta from '../components/ToolCta.astro';
+import RelatedGuides from '../components/RelatedGuides.astro';
+import { COPYRIGHT_FAQ } from '../data/faq';
+import {
+  articleSchema,
+  faqSchema,
+  breadcrumbSchema,
+} from '../lib/schema';
+
+const path = '/telif-hakki-ve-pinterest-indirme/';
+const title = 'Telif Hakkı ve Pinterest İndirme — Genel Rehber';
+const description =
+  'Pinterest görsel ve videolarında telif hakkı nasıl işler? Güvenli kullanım, riskli kullanım ve sorumlu indirme hakkında sade, genel bir bilgilendirme rehberi.';
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  path={path}
+  ogType="article"
+  schemas={[
+    breadcrumbSchema([
+      { name: 'Ana Sayfa', href: '/' },
+      { name: 'Telif Hakkı ve Pinterest İndirme', href: path },
+    ]),
+    articleSchema({ title, description, path }),
+    faqSchema(COPYRIGHT_FAQ),
+  ]}
+>
+  <article class="section">
+    <div class="container">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <a href="/">Ana Sayfa</a><span>/</span>Telif Hakkı ve Pinterest İndirme
+      </nav>
+
+      <div class="prose">
+        <span class="eyebrow">Telif hakkı — genel bilgilendirme</span>
+        <h1>Telif Hakkı ve Pinterest İndirme</h1>
+        <p class="lead">
+          Pinterest’teki görseller ve videolar birer <strong>eserdir</strong> ve
+          çoğu zaman <strong>telif hakkıyla korunur</strong>. Bu rehberde, telif
+          hakkının Pinterest içerikleri için ne anlama geldiğini, hangi
+          kullanımların genellikle güvenli, hangilerinin riskli sayıldığını ve
+          sorumlu indirmenin ne demek olduğunu sade bir dille anlatıyoruz.
+        </p>
+
+        <div class="answer-box" style="margin:26px 0">
+          <p class="q">Kısa cevap: Pinterest içeriklerinde telif hakkı nasıl işler?</p>
+          <p class="mt-0" style="margin:0">
+            Pinterest’teki görsel ve videoların hakları, aksi belirtilmedikçe
+            onları <strong>oluşturan kişiye veya markaya</strong> aittir. İçeriği
+            <strong>kişisel kullanım</strong> için indirmek genellikle sorun
+            oluşturmaz; asıl telif riski, içeriği <strong>izinsiz yeniden
+            yayımladığınızda</strong> veya <strong>ticari olarak
+            kullandığınızda</strong> doğar.
+          </p>
+        </div>
+      </div>
+
+      <div class="prose">
+        <h2>Telif hakkı nedir?</h2>
+        <p>
+          Telif hakkı, bir eseri — fotoğraf, video, tasarım veya metni —
+          oluşturan kişiye o eser üzerinde <strong>otomatik olarak</strong>
+          tanınan haklardır. Eserin kaydedilmesi için ayrı bir başvuru gerekmez;
+          hak, içerik üretildiği anda doğar. Pinterest’teki bir pin de bu anlamda
+          bir eserdir ve bir içeriğin herkese açık görünmesi, onun
+          <strong>telifsiz olduğu anlamına gelmez</strong>.
+        </p>
+
+        <h2>Pinterest içeriklerinin hakları kime aittir?</h2>
+        <p>
+          Pinterest, içeriklerin paylaşıldığı bir platformdur; kural olarak
+          bu içeriklerin <strong>haklarına sahip değildir</strong> ve size
+          kullanım hakkı devretmez. Bir pinin hakları, aksi açıkça belirtilmedikçe
+          onu yükleyen içerik üreticisine veya markaya aittir. Bu yüzden bir
+          içeriği kullanmadan önce <strong>kaynağını</strong> ve
+          <strong>iznini</strong> değerlendirmek gerekir.
+        </p>
+
+        <h2>Genellikle güvenli kabul edilen kullanımlar</h2>
+        <ul>
+          <li><strong>Kişisel görüntüleme:</strong> İçeriği yalnızca kendi cihazınızda izlemek.</li>
+          <li><strong>Özel arşiv / ilham panosu:</strong> Yalnızca kendinizin göreceği bir koleksiyon oluşturmak.</li>
+          <li><strong>Çevrimdışı saklama:</strong> Beğendiğiniz bir videoyu internetsiz izlemek için kaydetmek.</li>
+        </ul>
+        <p>
+          Bu kullanımların ortak noktası, içeriği <strong>kamuya yeniden
+          dağıtmamalarıdır</strong>; bu nedenle çoğunlukla düşük riskli sayılır.
+        </p>
+
+        <h2>Riskli sayılan kullanımlar</h2>
+        <ul>
+          <li><strong>İzinsiz yeniden yayımlama:</strong> Başkasının içeriğini başka platformlarda paylaşmak.</li>
+          <li><strong>Sahiplenme:</strong> İçeriği kendi eserinizmiş gibi göstermek.</li>
+          <li><strong>Ticari kullanım:</strong> Reklam, ürün tanıtımı veya gelir getiren bir işte kullanmak.</li>
+          <li><strong>Değiştirip paylaşma:</strong> İçeriği düzenleyip izinsiz dağıtmak.</li>
+        </ul>
+        <p>
+          Bu kullanımlar telif hakkı ihlali sayılabilir; içeriğin
+          <strong>kaldırılmasına</strong> veya hesabınızın kısıtlanmasına yol
+          açabilir. Kaynak göstermek veya etiketlemek nazik bir davranıştır ancak
+          <strong>izin yerine geçmez</strong>.
+        </p>
+
+        <h2>Sorumlu indirme ne demek?</h2>
+        <p>
+          Sorumlu indirme; içeriği kişisel sınırlar içinde kullanmak, başkasının
+          emeğini izinsiz paylaşmamak ve emin olmadığınızda hak sahibinden
+          <strong>izin istemektir</strong>. Bir içeriğin serbestçe kullanılabildiğini
+          yalnızca hak sahibinin açık izni, içeriğe eklenmiş bir lisans bilgisi
+          (örneğin Creative Commons) ya da içeriğin telifsiz olduğunu belirten bir
+          kaynak gösterir. Konuyu daha ayrıntılı ele alan
+          <a href="/pinterest-video-indirmek-yasal-mi/">Pinterest video indirmek
+          yasal mı?</a> ve
+          <a href="/pinterest-video-indirmek-guvenli-mi/">Pinterest video indirmek
+          güvenli mi?</a> rehberlerimize de göz atabilirsiniz.
+        </p>
+
+        <blockquote>
+          <strong>Özetle — </strong>Kendiniz için indirin ve saklayın; ama
+          başkasının içeriğini yayımlayacak veya para kazandıracaksanız önce
+          izin alın. Bu, hem içerik üreticilerine saygının hem de sorunsuz
+          kullanımın en basit yoludur.
+        </blockquote>
+
+        <p class="disclaimer" role="note" style="margin-top:22px">
+          <strong>Sorumluluk reddi — </strong>Bu sayfa genel bir bilgilendirmedir;
+          hukuki tavsiye niteliği taşımaz. Somut durumunuz için yetkili bir uzmana
+          danışın. Yalnızca size ait olan veya indirme/kullanma iznine sahip
+          olduğunuz içerikleri kaydetmenizi öneririz. Ayrıntılar için
+          <a href="/kullanim-sartlari/">Kullanım Şartları</a> ve
+          <a href="/gizlilik-politikasi/">Gizlilik Politikası</a> sayfalarımıza
+          bakın; sorularınız için
+          <a href="/iletisim/">iletişim</a> sayfamızdan bize ulaşın.
+          <strong>Pinterest ile resmi bir bağlantımız yoktur.</strong>
+        </p>
+      </div>
+    </div>
+  </article>
+
+  <ToolCta
+    title="İçeriğinizi sorumlu biçimde indirin"
+    text="Bağlantıyı yapıştırın, kişisel kullanım için videoyu HD/4K kalitede, filigransız MP4 olarak kaydedin."
+    href="/pinterest-video-indir/"
+    label="Pinterest Video İndir"
+  />
+
+  <RelatedGuides
+    title="İlgili rehberler ve araçlar"
+    items={[
+      { title: 'Pinterest Video İndirmek Yasal mı?', href: '/pinterest-video-indirmek-yasal-mi/', description: 'İndirmenin yasallığı, kişisel kullanım ve izin kuralları.' },
+      { title: 'Pinterest Video İndirmek Güvenli mi?', href: '/pinterest-video-indirmek-guvenli-mi/', description: 'Güvenlik, gizlilik ve zararlı yazılım riskleri.' },
+      { title: 'Kullanım Şartları', href: '/kullanim-sartlari/', description: 'Hizmetin kapsamı, telif ve kullanıcı sorumlulukları.' },
+      { title: 'Gizlilik Politikası', href: '/gizlilik-politikasi/', description: 'Verilerinizin nasıl işlendiğini öğrenin.' },
+      { title: 'Sıkça Sorulan Sorular', href: '/sss/', description: 'Pinterest indirme hakkında tüm sorular ve yanıtlar.' },
+      { title: 'Pinterest Video İndir', href: '/pinterest-video-indir/', description: 'Tüm cihazlarda HD, Full HD ve 4K indirme aracı.' },
+    ]}
+  />
+
+  <Faq items={COPYRIGHT_FAQ} title="Telif hakkı &amp; Pinterest — Sık sorulanlar" />
+</BaseLayout>

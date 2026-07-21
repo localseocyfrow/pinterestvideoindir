@@ -804,6 +804,42 @@ export const SAFETY_FAQ: QA[] = [
   },
 ];
 
+// Copyright explainer cluster — /telif-hakki-ve-pinterest-indirme/.
+export const COPYRIGHT_FAQ: QA[] = [
+  {
+    q: 'Telif hakkı nedir ve Pinterest içerikleri için neden önemli?',
+    a: 'Telif hakkı, bir eseri (fotoğraf, video, tasarım, metin) oluşturan kişiye o eser üzerinde otomatik olarak tanınan haklardır. Pinterest’teki görseller ve videolar da birer eserdir; bu yüzden onları kopyalamak, yeniden yayımlamak veya ticari olarak kullanmak, kural olarak hak sahibinin iznine tabidir. Bir içeriğin herkese açık görünmesi, telifsiz olduğu anlamına gelmez.',
+  },
+  {
+    q: 'Pinterest görsellerinin ve videolarının telif hakkı var mı?',
+    a: 'Çoğunlukla evet. Pinterest’e yüklenen içeriklerin telif hakkı, aksi belirtilmedikçe onları oluşturan kişiye veya markaya aittir. Pinterest yalnızca bu içeriklerin paylaşıldığı bir platformdur; içeriklerin haklarına sahip değildir ve size kullanım hakkı devretmez. Bu nedenle bir pini kullanmadan önce kaynağını ve iznini değerlendirmek gerekir.',
+  },
+  {
+    q: 'Pinterest’teki bir içeriği indirmek telif hakkını ihlal eder mi?',
+    a: 'İçeriği yalnızca kendiniz için, çevrimdışı görüntülemek veya ilham amacıyla saklamak genellikle bir sorun oluşturmaz. Telif hakkı açısından belirleyici olan indirmenin kendisi değil, sonrasında yaptığınız kullanımdır: yeniden yayımlama, dağıtma veya ticari kullanım hak sahibinin iznini gerektirir.',
+  },
+  {
+    q: 'Hangi kullanımlar genellikle güvenli kabul edilir?',
+    a: 'Kişisel ve özel nitelikteki kullanımlar düşük risklidir: içeriği kendi cihazınızda görüntülemek, özel bir ilham panosunda saklamak, çevrimdışı arşivlemek veya yalnızca kendinizin göreceği bir koleksiyon oluşturmak. Bu kullanımlar içeriği kamuya yeniden dağıtmadığı için çoğunlukla güvenli sayılır.',
+  },
+  {
+    q: 'Hangi kullanımlar risklidir?',
+    a: 'Başkasına ait içeriği izinsiz olarak başka platformlarda yeniden yayımlamak, kendi içeriğinizmiş gibi göstermek, üzerinde değişiklik yapıp paylaşmak, bir ürün/hizmet tanıtımında ya da gelir elde eden bir işte kullanmak yüksek risklidir. Bu tür kullanımlar telif hakkı ihlali sayılabilir ve içeriğin kaldırılmasına yol açabilir.',
+  },
+  {
+    q: 'Kaynak göstermek (etiketlemek) izin yerine geçer mi?',
+    a: 'Hayır. Orijinal içerik sahibini etiketlemek veya bağlantı vermek nazik bir davranıştır ancak kullanım iznini yerine koymaz. Telif hakkıyla korunan bir içeriği yeniden yayımlamak veya ticari kullanmak için, kaynağı göstermiş olsanız bile hak sahibinden ayrıca izin almanız gerekir.',
+  },
+  {
+    q: 'İçeriğin izinli kullanılabildiğini nasıl anlarım?',
+    a: 'Bir içeriğin serbest kullanılabildiğini yalnızca hak sahibinin açık izni, içeriğe eklenmiş bir lisans bilgisi (örneğin Creative Commons) veya içeriğin telifsiz olduğunu belirten bir kaynak gösterir. Emin değilseniz, içeriği izinli varsaymak yerine hak sahibiyle iletişime geçip yazılı onay almak en doğrusudur.',
+  },
+  {
+    q: 'Kendi içeriğim izinsiz kullanılırsa ne yapabilirim?',
+    a: 'Size ait bir içerik izniniz olmadan paylaşıldıysa, önce içeriği paylaşan kişiyle iletişime geçip kaldırılmasını isteyebilirsiniz. Pinterest gibi platformlar, hak sahiplerinin telif ihlali bildirimi (kaldırma talebi) gönderebileceği resmi kanallar sunar. Bu, platformun kendi süreci üzerinden yürüyen genel bir yoldur.',
+  },
+];
+
 // Consumed by the dedicated /sss/ page.
 export const ALL_FAQ_GROUPS: FaqGroup[] = [
   { title: 'Genel & Video İndirme', items: HOME_FAQ },
