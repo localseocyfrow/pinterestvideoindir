@@ -145,10 +145,13 @@ export const VIDEO_4K_FAQ: QA[] = [
 ];
 
 // "Video indirici" (downloader tool) cluster — /pinterest-video-indirici/.
+// NOTE: the "…indirici nedir?" definition question deliberately lives on
+// /pinterest-video-indirici-nedir/ instead, so the two pages don't emit
+// competing FAQPage answers for the same query. Keep this set tool-focused.
 export const DOWNLOADER_FAQ: QA[] = [
   {
-    q: 'Pinterest video indirici nedir?',
-    a: 'Pinterest video indirici, bir pinin bağlantısını yapıştırdığınızda videoyu MP4 olarak cihazınıza kaydetmenizi sağlayan çevrimiçi bir araçtır. Tarayıcı üzerinden çalışır; ayrı bir uygulama veya eklenti kurmanız gerekmez.',
+    q: 'Bu indirici hangi Pinterest bağlantılarıyla çalışır?',
+    a: 'pinterest.com, tr.pinterest.com ve kısaltılmış pin.it adresleriyle çalışır; bağlantının herkese açık bir pine ait olması yeterlidir. Gizli panolardaki, silinmiş veya kısıtlanmış pinler indirilemez. İndirici kavramının tanımını, türlerini ve sınırlarını “Pinterest video indirici nedir?” rehberimizde ayrıntılı olarak açıklıyoruz.',
   },
   {
     q: 'İndiriciyi kullanmak için uygulama kurmam gerekir mi?',
