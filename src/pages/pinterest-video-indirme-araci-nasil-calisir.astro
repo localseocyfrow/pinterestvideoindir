@@ -1,0 +1,270 @@
+---
+import ToolPageLayout from '../layouts/ToolPageLayout.astro';
+import ShortAnswerBox from '../components/ShortAnswerBox.astro';
+import RelatedGuides from '../components/RelatedGuides.astro';
+import ToolCta from '../components/ToolCta.astro';
+import { HOW_TOOL_WORKS_FAQ } from '../data/faq';
+import { articleSchema } from '../lib/schema';
+
+const path = '/pinterest-video-indirme-araci-nasil-calisir/';
+const title = 'Pinterest Video İndirme Aracı Nasıl Çalışır? Adım Adım Açıklama';
+const description =
+  'Pinterest video indirici nasıl çalışır, link ile video indirme nasıl olur? Bağlantıyı yapıştırdıktan sonra arka planda işleyen adımları, kalite seçeneklerini ve gizlilik tarafını açıklıyoruz.';
+
+const crumbs = [
+  { name: 'Ana Sayfa', href: '/' },
+  { name: 'İndirme Aracı Nasıl Çalışır?', href: path },
+];
+
+// Bağlantıdan dosyaya giden sürecin aşamaları.
+const stages = [
+  {
+    asama: '1. Bağlantı doğrulama',
+    olan: 'Yapıştırdığınız adresin geçerli bir Pinterest bağlantısı olup olmadığı kontrol edilir; pin kimliği ayrıştırılır.',
+    sure: 'Anlık',
+  },
+  {
+    asama: '2. Pin çözümleme',
+    olan: 'Pinin herkese açık verisi okunur ve içeriğin türü (video, görsel, GIF, karusel) belirlenir.',
+    sure: '< 1 saniye',
+  },
+  {
+    asama: '3. Kalite varyantlarını listeleme',
+    olan: 'Videonun kaynakta gerçekten bulunan çözünürlükleri tespit edilip size seçenek olarak sunulur.',
+    sure: '< 1 saniye',
+  },
+  {
+    asama: '4. Dosya aktarımı',
+    olan: 'Seçtiğiniz kalite MP4 olarak cihazınıza aktarılır; işlem bitince geçici veriler temizlenir.',
+    sure: 'Dosya boyutuna bağlı',
+  },
+];
+
+// Sık karşılaşılan hata nedenleri ve çözümleri.
+const errors = [
+  { neden: 'Pin gizli bir panoda', sonuc: 'İçerik herkese açık değil', cozum: 'Yalnızca herkese açık pinler indirilebilir' },
+  { neden: 'Pin silinmiş veya kısıtlanmış', sonuc: 'Bağlantı boş sayfaya çıkar', cozum: 'Pinin hâlâ yayında olduğunu doğrulayın' },
+  { neden: 'Bağlantı eksik kopyalanmış', sonuc: 'Adres ayrıştırılamaz', cozum: 'Bağlantıyı pin sayfasından yeniden kopyalayın' },
+  { neden: 'Pinde video yok', sonuc: 'Yalnızca görsel bulunur', cozum: 'Görsel için resim indirme aracını kullanın' },
+  { neden: 'Bağlantı dış siteye çıkıyor', sonuc: 'Kaynak Pinterest’te değil', cozum: 'Pinin kendi sayfasındaki adresi kullanın' },
+];
+
+const howTo = {
+  name: 'Pinterest link ile video indirme',
+  description:
+    'Pinterest videosunu bağlantı yapıştırarak indirmek için üç adım yeterlidir: bağlantıyı kopyalayın, araca yapıştırın ve kaliteyi seçip MP4 olarak kaydedin.',
+  totalTime: 'PT1M',
+  steps: [
+    {
+      name: 'Pin bağlantısını kopyalayın',
+      text: 'Videoyu Pinterest’te açın, “Paylaş → Bağlantıyı kopyala” deyin veya tarayıcıdaki adres çubuğundaki URL’yi alın.',
+    },
+    {
+      name: 'Bağlantıyı araca yapıştırın',
+      text: 'Kopyaladığınız adresi sayfanın üstündeki kutuya yapıştırıp “İndir” düğmesine basın; araç pini çözümler.',
+    },
+    {
+      name: 'Kaliteyi seçip kaydedin',
+      text: 'Listelenen çözünürlüklerden birini seçin ve videoyu MP4 olarak cihazınıza kaydedin.',
+    },
+  ],
+};
+---
+
+<ToolPageLayout
+  title={title}
+  description={description}
+  path={path}
+  eyebrow="Nasıl çalışır · Teknik açıklama"
+  h1="Pinterest Video İndirme Aracı Nasıl Çalışır?"
+  lead="Bir bağlantı yapıştırıyorsunuz ve saniyeler sonra elinizde MP4 dosyası oluyor. Arada tam olarak ne oluyor? Bu sayfada süreci dört aşamada, gizlilik tarafıyla birlikte açıklıyoruz."
+  kind="video"
+  placeholder="Pinterest video bağlantısını buraya yapıştırın…"
+  crumbs={crumbs}
+  faq={HOW_TOOL_WORKS_FAQ}
+  faqTitle="Nasıl çalışır — sık sorulanlar"
+  howTo={howTo}
+  extraSchemas={[articleSchema({ title, description, path })]}
+>
+  <ShortAnswerBox question="Kısa cevap: Pinterest video indirici nasıl çalışır?">
+    <p class="mt-0" style="margin:0">
+      Araç, yapıştırdığınız <strong>bağlantıyı çözümleyerek</strong> pine bağlı
+      gerçek video dosyasının adresini ve mevcut çözünürlükleri bulur, bu
+      seçenekleri size listeler ve seçtiğiniz kaliteyi
+      <strong>MP4 olarak cihazınıza aktarır</strong>. Tüm süreç genellikle
+      birkaç saniye sürer; Pinterest hesabınıza giriş yapılmaz, video bir
+      arşive alınmaz ve işlem bitince geçici veriler temizlenir.
+    </p>
+  </ShortAnswerBox>
+
+  <h2>Neden bir bağlantı gerekiyor?</h2>
+  <p>
+    Pinterest’te izlediğiniz video, sayfanın içine gömülü bir
+    <strong>akış (stream)</strong> olarak gelir; dosyanın adresi doğrudan
+    görünmez. Aracın yapması gereken ilk şey, o pini benzersiz şekilde
+    tanımlayan adresi almaktır. Bağlantı, pinin kimliğidir: onsuz hangi videodan
+    söz ettiğinizi belirlemenin bir yolu yoktur. Bu nedenle ekran görüntüsü,
+    video başlığı veya pin adı yeterli olmaz —
+    <strong>pin.it</strong> veya <strong>pinterest.com</strong> ile başlayan
+    bağlantının kendisi gerekir. Yalnızca bağlantıyla indirmeye odaklanan
+    kısayolu <a href="/pinterest-video-link-indir/">Pinterest video link indir</a>
+    sayfasında bulabilirsiniz.
+  </p>
+
+  <h2>Bağlantıdan dosyaya: dört aşama</h2>
+  <div class="table-wrap" style="margin:18px 0 8px">
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align:right">Aşama</th>
+          <th>Ne oluyor?</th>
+          <th>Süre</th>
+        </tr>
+      </thead>
+      <tbody>
+        {stages.map((s) => (
+          <tr>
+            <td style="font-weight:700;color:var(--ink)">{s.asama}</td>
+            <td>{s.olan}</td>
+            <td>{s.sure}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+  <p>
+    Bu dört aşamanın hiçbirinde Pinterest hesabınıza girilmez, parolanız
+    istenmez ve hesabınızda herhangi bir işlem yapılmaz. Araç yalnızca
+    <strong>zaten herkese açık olan</strong> bir pinin verisiyle çalışır.
+  </p>
+
+  <h2>Kalite seçenekleri nereden geliyor?</h2>
+  <p>
+    Pinterest, aynı videoyu farklı çözünürlüklerde saklar; böylece yavaş
+    bağlantılarda daha küçük dosya oynatılabilir. Araç, üçüncü aşamada bu
+    <strong>varyantların gerçekte var olanlarını</strong> tespit edip listeler.
+    Bu yüzden bazı videolarda 4K seçeneği çıkarken bazılarında yalnızca 720p
+    görünür: tavanı belirleyen, videoyu yükleyen kişinin seçtiği çözünürlüktür.
+    Kaynakta olmayan bir çözünürlük yapay olarak üretilmez — büyütülmüş görüntü
+    gerçek netlik vermez, yalnızca dosyayı şişirir. Kalite konusunu
+    <a href="/pinterest-video-kalitesi/">Pinterest video kalitesi</a> sayfasında,
+    en yüksek çözünürlükte indirmeyi ise
+    <a href="/pinterest-hd-video-indir/">HD video indirme</a> sayfasında ele
+    alıyoruz.
+  </p>
+
+  <h2>Video sunucuda saklanıyor mu?</h2>
+  <p>
+    Hayır. İşlem, dosyayı size ulaştırmak için gereken süre boyunca
+    <strong>geçicidir</strong>: yapıştırdığınız bağlantı ve indirdiğiniz dosya
+    kalıcı olarak tutulmaz, işlem tamamlandığında geçici veriler temizlenir.
+    İndirme geçmişinizi tutan bir kullanıcı profili oluşturulmaz, e-posta
+    istenmez ve cihazınıza herhangi bir kurulum dosyası inmez —
+    indirdiğiniz tek şey videonun kendisidir. Veri işleme ayrıntıları için
+    <a href="/gizlilik-politikasi/">Gizlilik Politikası</a> sayfamıza
+    bakabilirsiniz.
+  </p>
+
+  <h2>Kurulum gerektiren araçlardan farkı</h2>
+  <p>
+    Tarayıcı tabanlı bir araçta tüm işlem, siz bağlantıyı yapıştırdığınız anda
+    başlar ve dosya indiğinde biter; geride çalışan bir yazılım kalmaz.
+    Eklentiler ve uygulamalar ise <strong>sürekli cihazınızda durur</strong>,
+    izin ister ve Pinterest tarafındaki her değişiklikte güncelleme bekler.
+    İndirici türlerinin ayrıntılı karşılaştırmasını
+    <a href="/pinterest-video-indirici-nedir/">Pinterest video indirici nedir?</a>
+    sayfasındaki tabloda bulabilirsiniz.
+  </p>
+
+  <h2>Bu çalışma biçiminin artıları</h2>
+  <ul>
+    <li><strong>Hesap bağımsızlığı:</strong> Giriş yapılmadığı için hesabınız süreçte hiç yer almaz.</li>
+    <li><strong>Cihaz bağımsızlığı:</strong> Aynı adımlar Android, iPhone, Windows ve macOS’ta çalışır.</li>
+    <li><strong>Gerçek kalite:</strong> Yalnızca kaynakta var olan çözünürlükler sunulur.</li>
+    <li><strong>İz bırakmaz:</strong> Bağlantı ve dosya kalıcı olarak saklanmaz.</li>
+    <li><strong>Kurulum yok:</strong> Cihazınıza uygulama, eklenti veya .apk/.exe inmez.</li>
+  </ul>
+
+  <h2>Sınırları</h2>
+  <ul>
+    <li><strong>Herkese açık pin şartı:</strong> Gizli panolardaki içerikler çözümlenemez.</li>
+    <li><strong>Kaynak kalitesi tavandır:</strong> Düşük çözünürlükte yüklenen video yükseltilemez.</li>
+    <li><strong>Bağlantı zorunludur:</strong> Görsel veya başlıkla arama yapılamaz.</li>
+    <li><strong>Bağlantı hızına duyarlıdır:</strong> Büyük dosyalarda aktarım süresi uzayabilir.</li>
+  </ul>
+
+  <h2>Hata alıyorsanız: nedenler ve çözümleri</h2>
+  <div class="table-wrap" style="margin:18px 0 8px">
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align:right">Neden</th>
+          <th>Ne olur?</th>
+          <th>Çözüm</th>
+        </tr>
+      </thead>
+      <tbody>
+        {errors.map((e) => (
+          <tr>
+            <td style="font-weight:700;color:var(--ink)">{e.neden}</td>
+            <td>{e.sonuc}</td>
+            <td>{e.cozum}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+  <p>
+    Sorun devam ediyorsa
+    <a href="/pinterest-video-indirilemiyor/">Pinterest videosu indirilemiyor mu?</a>
+    ve <a href="/pinterest-link-calismiyor/">Pinterest linki çalışmıyor mu?</a>
+    rehberlerinde ayrıntılı çözüm adımları var.
+  </p>
+
+  <h2>Kaydetmekle karıştırmayın</h2>
+  <p>
+    Buradaki süreç, Pinterest’in kendi “Kaydet” düğmesinden tamamen farklıdır:
+    kaydetme pini panonuza ekler ve dosya cihazınıza inmez. İkisinin sonuçlarını
+    <a href="/pinterest-video-indirme-vs-kaydetme/">indirme ile kaydetme
+    karşılaştırmasında</a> tablo hâlinde görebilirsiniz. Terimlerin karşılığı
+    için <a href="/pinterest-downloader-nedir/">Pinterest downloader nedir?</a>
+    sayfasına da bakabilirsiniz.
+  </p>
+
+  <p class="disclaimer" role="note" style="margin-top:22px">
+    <strong>Sorumlu kullanım — </strong>Yalnızca size ait olan veya
+    indirme/kullanma iznine sahip olduğunuz içerikleri kaydetmenizi öneririz.
+    Güvenlik için
+    <a href="/pinterest-video-indirmek-guvenli-mi/">Pinterest video indirmek
+    güvenli mi?</a>, telif için
+    <a href="/telif-hakki-ve-pinterest-indirme/">telif hakkı rehberimize</a>
+    bakın. Pinterest ile resmi bir bağlantımız yoktur.
+  </p>
+
+  <ToolCta
+    slot="after"
+    title="Süreci gördünüz — şimdi deneyin"
+    text="Bir pin bağlantısı yapıştırın; dört aşama saniyeler içinde tamamlansın, video MP4 olarak insin."
+    href="/pinterest-video-indir/"
+    label="Pinterest Video İndir"
+  />
+
+  <RelatedGuides
+    slot="after"
+    title="İlgili rehberler ve araçlar"
+    items={[
+      { title: 'Pinterest Video İndirici Nedir?', href: '/pinterest-video-indirici-nedir/', description: 'Kavramın tanımı, türleri ve sınırları.' },
+      { title: 'Pinterest Downloader Nedir?', href: '/pinterest-downloader-nedir/', description: 'Terimin Türkçe karşılığı ve kapsamı.' },
+      { title: 'İndirme mi, Kaydetme mi?', href: '/pinterest-video-indirme-vs-kaydetme/', description: 'Panoya kaydetmekle indirmenin farkı.' },
+      { title: 'Pinterest Video İndir', href: '/pinterest-video-indir/', description: 'HD, Full HD ve 4K MP4 indirme aracı.' },
+      { title: 'Pinterest Video İndirici', href: '/pinterest-video-indirici/', description: 'Kurulumsuz, tarayıcı tabanlı online araç.' },
+      { title: 'Pinterest Video Link İndir', href: '/pinterest-video-link-indir/', description: 'Yalnızca bağlantıyla indirmeye odaklı sayfa.' },
+      { title: 'Pinterest MP4 İndir', href: '/pinterest-mp4-indir/', description: 'Dönüştürücüsüz, doğrudan MP4 kaydetme.' },
+      { title: 'Pinterest HD Video İndir', href: '/pinterest-hd-video-indir/', description: 'Full HD 1080p kalitede indirme.' },
+      { title: 'Pinterest Video Nasıl İndirilir', href: '/pinterest-video-nasil-indirilir/', description: 'Cihaz cihaz, adım adım rehber.' },
+      { title: 'Video İndirmek Güvenli mi?', href: '/pinterest-video-indirmek-guvenli-mi/', description: 'Güvenli indirme kuralları ve tuzaklar.' },
+      { title: 'Telif Hakkı ve Pinterest İndirme', href: '/telif-hakki-ve-pinterest-indirme/', description: 'İzin, kişisel kullanım ve riskli kullanımlar.' },
+      { title: 'Sıkça Sorulan Sorular', href: '/sss/', description: 'Tüm araçlar için toplu soru-cevap.' },
+    ]}
+  />
+</ToolPageLayout>

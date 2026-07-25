@@ -1,0 +1,239 @@
+---
+import ToolPageLayout from '../layouts/ToolPageLayout.astro';
+import ShortAnswerBox from '../components/ShortAnswerBox.astro';
+import RelatedGuides from '../components/RelatedGuides.astro';
+import ToolCta from '../components/ToolCta.astro';
+import { INDIRICI_NEDIR_FAQ } from '../data/faq';
+import { articleSchema } from '../lib/schema';
+
+const path = '/pinterest-video-indirici-nedir/';
+const title = 'Pinterest Video İndirici Nedir? Tanımı, Türleri ve Sınırları';
+const description =
+  'Pinterest video indirici nedir, ne işe yarar ve hangi türleri var? Pinterest video indirme aracının tanımını, çalışma mantığını, artılarını ve sınırlarını açıklayan Türkçe rehber.';
+
+const crumbs = [
+  { name: 'Ana Sayfa', href: '/' },
+  { name: 'Pinterest Video İndirici Nedir?', href: path },
+];
+
+// Tür karşılaştırması — indiricinin dört ana biçimi.
+const types = [
+  {
+    tur: 'Çevrimiçi araç (web)',
+    kurulum: 'Yok — tarayıcıda açılır',
+    cihaz: 'Android, iPhone, tablet, Windows, macOS',
+    izin: 'Ek izin istemez',
+    not: 'En düşük risk; güncelleme gerektirmez',
+  },
+  {
+    tur: 'Tarayıcı eklentisi',
+    kurulum: 'Eklenti kurulumu gerekir',
+    cihaz: 'Yalnızca masaüstü tarayıcılar',
+    izin: '“Site verilerini okuma” izni ister',
+    not: 'Telefonda çalışmaz; izin kapsamı geniştir',
+  },
+  {
+    tur: 'Mobil uygulama',
+    kurulum: 'Uygulama kurulumu gerekir',
+    cihaz: 'Yalnızca kurulduğu telefon',
+    izin: 'Depolama ve çoğu zaman fazladan izin',
+    not: 'Depolama harcar; mağaza dışı kurulum riskli',
+  },
+  {
+    tur: 'Masaüstü program',
+    kurulum: '.exe / .dmg kurulumu gerekir',
+    cihaz: 'Yalnızca kurulduğu bilgisayar',
+    izin: 'Sistem düzeyinde izin',
+    not: 'En ağır seçenek; telefonda kullanılamaz',
+  },
+];
+---
+
+<ToolPageLayout
+  title={title}
+  description={description}
+  path={path}
+  eyebrow="Tanım · Kavram rehberi"
+  h1="Pinterest Video İndirici Nedir?"
+  lead="Pinterest video indirici, bir pinin bağlantısını verdiğinizde o videoyu cihazınıza MP4 olarak kaydeden araçtır. Aşağıda tanımını, türlerini, ne yapıp ne yapamadığını ve hangi durumda hangisinin doğru seçim olduğunu açıklıyoruz."
+  kind="video"
+  placeholder="Pinterest video bağlantısını buraya yapıştırın…"
+  crumbs={crumbs}
+  faq={INDIRICI_NEDIR_FAQ}
+  faqTitle="Pinterest video indirici — sık sorulanlar"
+  extraSchemas={[articleSchema({ title, description, path })]}
+>
+  <ShortAnswerBox question="Kısa cevap: Pinterest video indirici nedir?">
+    <p class="mt-0" style="margin:0">
+      <strong>Pinterest video indirici</strong>, herkese açık bir pinin
+      bağlantısını çözerek o pine bağlı video dosyasını cihazınıza
+      <strong>MP4</strong> olarak kaydetmenizi sağlayan çevrimiçi bir araçtır.
+      Pinterest uygulamasının sunmadığı tek şeyi yapar: videoyu
+      <strong>uygulamanın dışına, kendi cihazınıza</strong> taşır. Hesap, giriş
+      veya kurulum gerektirmez ve videoyu yeniden sıkıştırmadan, kaynaktaki
+      kalitesiyle aktarır.
+    </p>
+  </ShortAnswerBox>
+
+  <h2>Tanım: “indirici” sözcüğü burada tam olarak neyi anlatıyor?</h2>
+  <p>
+    Pinterest’te bir videoyu izlediğinizde dosya cihazınıza inmez; her oynatışta
+    Pinterest’in sunucularından <strong>akış (streaming)</strong> olarak gelir.
+    Uygulamayı kapattığınızda, bağlantınız koptuğunda veya içerik yayından
+    kaldırıldığında o videoya erişiminiz de biter. <strong>Pinterest video
+    indirme aracı</strong>, bu akışın arkasındaki gerçek dosyanın adresini
+    çözerek dosyayı cihazınızın depolama alanına yazar. İşlem tamamlandığında
+    elinizde Pinterest’ten bağımsız, çevrimdışı açılabilen bir MP4 dosyası olur.
+  </p>
+  <p>
+    Bu yüzden “indirici” sözcüğü mecazi değil, teknik olarak birebir doğrudur:
+    araç içeriği <em>kopyalamaz</em>, <em>yeniden üretmez</em> ve
+    <em>değiştirmez</em>; yalnızca zaten herkese açık olarak yayımlanmış bir
+    dosyayı size ulaştırır.
+  </p>
+
+  <h3>Bir indirici ne yapar?</h3>
+  <ul>
+    <li>Yapıştırdığınız pin bağlantısını doğrular ve pini tanır.</li>
+    <li>Videonun kaynakta gerçekten var olan kalite seçeneklerini listeler.</li>
+    <li>Seçtiğiniz kaliteyi MP4 olarak cihazınıza aktarır.</li>
+    <li>Görsel, GIF veya karusel pinlerinde ilgili dosya türünü sunar.</li>
+  </ul>
+
+  <h3>Bir indirici ne yapmaz?</h3>
+  <ul>
+    <li>Pinterest hesabınıza girmez, parolanızı istemez, hesabınızda işlem yapmaz.</li>
+    <li>Gizli panolardaki veya silinmiş pinlere erişemez.</li>
+    <li>Videonun çözünürlüğünü yapay olarak yükseltemez.</li>
+    <li>İçeriğin telif hakkını size devretmez.</li>
+  </ul>
+
+  <h2>Pinterest video indirme aracı ne işe yarar?</h2>
+  <p>
+    En sık karşılaşılan ihtiyaçlar şunlardır:
+    <strong>çevrimdışı izleme</strong> (uçakta, metroda veya çekimin olmadığı
+    yerlerde), <strong>kalıcı arşivleme</strong> (beğendiğiniz bir tarif, egzersiz
+    ya da tasarım videosu yayından kalkarsa kaybolmasın diye),
+    <strong>düzenleme</strong> (videoyu kesmek, birleştirmek veya bir sunuma
+    eklemek için dosyaya ihtiyaç duyulur) ve <strong>cihazlar arası aktarım</strong>
+    (telefondan bilgisayara ya da TV’ye taşımak). Bunların hiçbiri pini panoya
+    kaydetmekle mümkün değildir.
+  </p>
+
+  <h2>Pinterest video indirici türleri ve farkları</h2>
+  <p>
+    Pratikte dört tür indirici vardır. Aralarındaki asıl fark hızda değil,
+    <strong>kurulum yükü, çalıştığı cihaz sayısı ve istediği izinlerdedir</strong>:
+  </p>
+  <div class="table-wrap" style="margin:18px 0 8px">
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align:right">Tür</th>
+          <th>Kurulum</th>
+          <th>Çalıştığı cihazlar</th>
+          <th>İzin ihtiyacı</th>
+          <th>Not</th>
+        </tr>
+      </thead>
+      <tbody>
+        {types.map((t) => (
+          <tr>
+            <td style="font-weight:700;color:var(--ink)">{t.tur}</td>
+            <td>{t.kurulum}</td>
+            <td>{t.cihaz}</td>
+            <td>{t.izin}</td>
+            <td>{t.not}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+  <p>
+    Tablodan çıkan sonuç nettir: aynı işi yapan dört yöntemden yalnızca biri
+    hem telefonda hem bilgisayarda, kurulum ve ek izin olmadan çalışır. Bu
+    sitedeki <a href="/pinterest-video-indirici/">Pinterest video indirici</a>
+    de bu nedenle tamamen tarayıcı tabanlıdır.
+  </p>
+
+  <h2>Nasıl çalışır? (özet)</h2>
+  <ol>
+    <li><strong>Bağlantıyı kopyalayın:</strong> Pinterest’te videoyu açıp “Paylaş → Bağlantıyı kopyala” deyin.</li>
+    <li><strong>Yapıştırın:</strong> Bağlantıyı yukarıdaki kutuya yapıştırıp “İndir”e basın.</li>
+    <li><strong>Kaliteyi seçin:</strong> Listelenen çözünürlüklerden birini seçip videoyu MP4 olarak kaydedin.</li>
+  </ol>
+  <p>
+    Arka planda hangi adımların işlediğini merak ediyorsanız,
+    <a href="/pinterest-video-indirme-araci-nasil-calisir/">Pinterest video
+    indirme aracı nasıl çalışır?</a> sayfasında süreci adım adım açıklıyoruz.
+    Cihaza özel anlatım için
+    <a href="/pinterest-video-nasil-indirilir/">Pinterest video nasıl indirilir</a>
+    rehberine bakabilirsiniz.
+  </p>
+
+  <h2>Artıları ve sınırları</h2>
+  <h3>Artıları</h3>
+  <ul>
+    <li><strong>Çevrimdışı erişim:</strong> Dosya cihazınızda olduğu için internete ihtiyaç duymaz.</li>
+    <li><strong>Kalıcılık:</strong> Kaynak pin silinse bile dosyanız kalır.</li>
+    <li><strong>Kurulumsuz:</strong> Uygulama, eklenti veya kayıt gerekmez.</li>
+    <li><strong>Gerçek kalite:</strong> Kaynakta ne varsa o indirilir; yeniden sıkıştırma yapılmaz.</li>
+    <li><strong>Filigransız:</strong> İndirilen dosyaya logo veya damga eklenmez.</li>
+    <li><strong>Cihaz bağımsız:</strong> Aynı araç telefonda ve bilgisayarda çalışır.</li>
+  </ul>
+  <h3>Sınırları</h3>
+  <ul>
+    <li><strong>Yalnızca herkese açık pinler:</strong> Gizli panolar ve silinmiş içerikler indirilemez.</li>
+    <li><strong>Kaynak kalitesi tavandır:</strong> 720p yüklenmiş bir video 4K olarak indirilemez.</li>
+    <li><strong>Bağlantı gerekir:</strong> Ekran görüntüsünden veya video adından indirme yapılamaz.</li>
+    <li><strong>Telif devri yoktur:</strong> İndirmek, içeriği istediğiniz gibi yayımlama hakkı vermez.</li>
+    <li><strong>Bazı pinlerde video yoktur:</strong> Bağlantı yalnızca bir görsele veya dış siteye çıkabilir.</li>
+  </ul>
+
+  <h2>İndirici mi, Pinterest’in “Kaydet” düğmesi mi?</h2>
+  <p>
+    Bu iki işlem sık karıştırılır ama sonuçları tamamen farklıdır: “Kaydet”
+    pini panonuza ekler ve içerik Pinterest’te kalır; indirici ise dosyayı
+    cihazınıza yazar. Hangi durumda hangisinin doğru olduğunu
+    <a href="/pinterest-video-indirme-vs-kaydetme/">indirme ile kaydetme farkını</a>
+    anlattığımız karşılaştırmada tablo hâlinde bulabilirsiniz.
+  </p>
+
+  <p class="disclaimer" role="note" style="margin-top:22px">
+    <strong>Sorumlu kullanım — </strong>Yalnızca size ait olan veya
+    indirme/kullanma iznine sahip olduğunuz içerikleri kaydetmenizi öneririz.
+    Güvenlik tarafı için
+    <a href="/pinterest-video-indirmek-guvenli-mi/">Pinterest video indirmek
+    güvenli mi?</a>, telif tarafı için
+    <a href="/telif-hakki-ve-pinterest-indirme/">telif hakkı ve Pinterest
+    indirme</a> rehberimize bakabilirsiniz. Pinterest ile resmi bir
+    bağlantımız yoktur.
+  </p>
+
+  <ToolCta
+    slot="after"
+    title="Tanımı okudunuz, şimdi deneyin"
+    text="Bir pin bağlantısı yapıştırın; videoyu kurulum ve kayıt olmadan MP4 olarak indirin."
+    href="/pinterest-video-indir/"
+    label="Pinterest Video İndir"
+  />
+
+  <RelatedGuides
+    slot="after"
+    title="İlgili tanımlar, araçlar ve rehberler"
+    items={[
+      { title: 'Pinterest Downloader Nedir?', href: '/pinterest-downloader-nedir/', description: 'İngilizce terimin karşılığı ve kapsadığı içerik türleri.' },
+      { title: 'İndirme mi, Kaydetme mi?', href: '/pinterest-video-indirme-vs-kaydetme/', description: 'İki işlemin farkı, tablo hâlinde karşılaştırma.' },
+      { title: 'İndirme Aracı Nasıl Çalışır?', href: '/pinterest-video-indirme-araci-nasil-calisir/', description: 'Bağlantıdan dosyaya giden yolun adım adım açıklaması.' },
+      { title: 'Pinterest Video İndirici', href: '/pinterest-video-indirici/', description: 'Kurulumsuz, tarayıcı tabanlı online indirme aracı.' },
+      { title: 'Pinterest Video İndir', href: '/pinterest-video-indir/', description: 'Tüm cihazlarda HD, Full HD ve 4K MP4 indirme.' },
+      { title: 'Pinterest Video Link İndir', href: '/pinterest-video-link-indir/', description: 'Bağlantı yapıştırarak doğrudan indirme.' },
+      { title: 'Pinterest MP4 İndir', href: '/pinterest-mp4-indir/', description: 'Videoyu dönüştürücüsüz, doğrudan MP4 olarak kaydedin.' },
+      { title: 'Pinterest HD Video İndir', href: '/pinterest-hd-video-indir/', description: 'Full HD 1080p kalitede net indirme.' },
+      { title: 'Pinterest Video Nasıl İndirilir', href: '/pinterest-video-nasil-indirilir/', description: 'Cihaz cihaz, adım adım indirme rehberi.' },
+      { title: 'Video İndirmek Güvenli mi?', href: '/pinterest-video-indirmek-guvenli-mi/', description: 'Riskler, tuzaklar ve güvenli indirme kuralları.' },
+      { title: 'Telif Hakkı ve Pinterest İndirme', href: '/telif-hakki-ve-pinterest-indirme/', description: 'Hangi kullanım güvenli, hangisi riskli?' },
+      { title: 'Sıkça Sorulan Sorular', href: '/sss/', description: 'Tüm araçlar için toplu soru-cevap.' },
+    ]}
+  />
+</ToolPageLayout>

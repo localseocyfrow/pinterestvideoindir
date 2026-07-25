@@ -840,6 +840,152 @@ export const COPYRIGHT_FAQ: QA[] = [
   },
 ];
 
+// Definition cluster — /pinterest-video-indirici-nedir/.
+// Kept deliberately distinct from DOWNLOADER_FAQ (the tool page): these answers
+// explain the concept, its variants and its limits rather than selling the tool.
+export const INDIRICI_NEDIR_FAQ: QA[] = [
+  {
+    q: 'Pinterest video indirici tam olarak ne işe yarar?',
+    a: 'Bir pinin herkese açık bağlantısını alıp o pine bağlı video dosyasının adresini çözer ve videoyu MP4 olarak cihazınıza kaydetmenizi sağlar. Tek işlevi budur: Pinterest’te zaten yayımlanmış bir videoyu, uygulamanın dışına, kendi cihazınıza taşımak. Yeni içerik üretmez, videoyu değiştirmez ve Pinterest hesabınızda hiçbir işlem yapmaz.',
+  },
+  {
+    q: 'Pinterest video indirici ile Pinterest’in “Kaydet” düğmesi aynı şey mi?',
+    a: 'Hayır. Pinterest’teki “Kaydet”, pini yalnızca hesabınızdaki bir panoya ekler; video internetten gelmeye devam eder ve cihazınıza inmez. İndirici ise videonun dosyasını cihazınızın depolama alanına yazar. Bu ayrımı ayrıntılı olarak kaydetme ile indirme farkını anlattığımız rehberde bulabilirsiniz.',
+  },
+  {
+    q: 'Kaç tür Pinterest video indirici var?',
+    a: 'Pratikte dört tür vardır: tarayıcıdan çalışan çevrimiçi araçlar, masaüstü tarayıcılara kurulan eklentiler, telefona kurulan mobil uygulamalar ve bilgisayara kurulan masaüstü programlar. Çevrimiçi araçlar kurulum ve izin gerektirmediği, her işletim sisteminde aynı çalıştığı için en düşük riskli seçenektir; diğer üçü cihaza yazılım kurmayı ve ek izin vermeyi gerektirir.',
+  },
+  {
+    q: 'İndirici kullanmak için Pinterest hesabı veya giriş gerekir mi?',
+    a: 'Düzgün çalışan bir indirici için gerekmez. Araç yalnızca herkese açık bir pin bağlantısıyla çalışır; kullanıcı adı, parola veya hesap erişimi istemez. Sizden Pinterest giriş bilgisi isteyen bir site varsa bu bir kimlik avı (phishing) işaretidir ve o siteyi kapatmanız gerekir.',
+  },
+  {
+    q: 'Her Pinterest videosu indirilebilir mi?',
+    a: 'Hayır. Yalnızca herkese açık pinler indirilebilir. Gizli panolardaki, silinmiş, bölgesel olarak kısıtlanmış veya yalnızca belirli kişilerle paylaşılmış pinlere hiçbir araç erişemez. Ayrıca bazı pinlerde video yoktur; bağlantı yalnızca bir görsele ya da dış siteye çıkıyor olabilir.',
+  },
+  {
+    q: 'İndirici videoyu yeniden sıkıştırıp kalitesini düşürür mü?',
+    a: 'İyi bir indirici düşürmez. Videoyu kaynaktaki hâliyle, yeniden kodlamadan aktarır; dolayısıyla indirdiğiniz dosya Pinterest’te izlediğinizle aynı çözünürlüktedir. Kalite tavanını belirleyen tek şey, videoyu yükleyen kişinin seçtiği çözünürlüktür — 720p yüklenmiş bir video hiçbir araçla 4K’ya çıkarılamaz.',
+  },
+  {
+    q: 'İndirilen dosya hangi formatta olur?',
+    a: 'Videolar MP4 (H.264) olarak iner; bu format Android, iPhone, Windows, macOS ve neredeyse tüm oynatıcılarla ek kod paketi gerektirmeden uyumludur. Hareketli içerikler duruma göre GIF veya MP4, görseller ise JPG/PNG olarak kaydedilir.',
+  },
+  {
+    q: 'İyi bir Pinterest video indiricisinde hangi özellikler bulunmalı?',
+    a: 'Kurulum ve kayıt istememesi, giriş bilgisi sormaması, kaynaktaki gerçek çözünürlükleri sunması, filigran eklememesi, yapıştırdığınız bağlantıyı ve indirilen dosyayı kalıcı olarak saklamaması ve sizi kurulum dosyası (.apk/.exe) indirmeye yönlendirmemesi gerekir. Bu maddelerden biri bile eksikse başka bir araç tercih edin.',
+  },
+];
+
+// Terminology / umbrella-definition cluster — /pinterest-downloader-nedir/.
+export const DOWNLOADER_NEDIR_FAQ: QA[] = [
+  {
+    q: 'Pinterest downloader ne demek?',
+    a: '“Downloader” İngilizce “indirici” demektir; “Pinterest downloader” da Türkçedeki “Pinterest indirici” ifadesinin birebir karşılığıdır. Aynı aracı anlatan iki addır: pin bağlantısını yapıştırdığınızda içeriği cihazınıza kaydeden çevrimiçi araç. Türkiye’de her iki terim de yaygın olarak aranır.',
+  },
+  {
+    q: 'Pinterest downloader ile Pinterest indirici arasında bir fark var mı?',
+    a: 'İşlev olarak fark yoktur, yalnızca dil farkıdır. Uygulamada küçük bir vurgu farkı görülür: “downloader” genellikle video, görsel, GIF ve karusel dahil tüm içerik türlerini kapsayan şemsiye bir terim olarak, “video indirici” ise özellikle video için kullanılır.',
+  },
+  {
+    q: 'Bir Pinterest downloader sadece video mu indirir?',
+    a: 'Hayır. Kapsamlı bir downloader pinin türünü tanır: video pinlerinde MP4, görsel pinlerinde tam çözünürlüklü fotoğraf, hareketli pinlerde GIF/MP4, çoklu görsel (karusel) pinlerinde ise kareleri tek tek verir. Hangi türü indirmek istediğinize göre ilgili araç sayfasını kullanmanız en hızlı yoldur.',
+  },
+  {
+    q: 'Pinterest downloader bir uygulama mı, yoksa web sitesi mi?',
+    a: 'İkisi de olabilir, ancak web tabanlı olanı belirgin şekilde daha pratiktir: tarayıcıda açılır, güncelleme istemez, depolama alanı kaplamaz ve kamera/rehber gibi gereksiz izinler talep etmez. Mağaza dışından kurulan “downloader” uygulamaları ise reklam ve casus yazılım riski taşıdığı için önerilmez.',
+  },
+  {
+    q: 'Pinterest’in kendi resmî downloader’ı var mı?',
+    a: 'Hayır. Pinterest, videoyu cihaza indiren resmî bir özellik sunmaz; uygulamadaki seçenekler pini panoya kaydetmek, paylaşmak veya bağlantısını kopyalamakla sınırlıdır. Bu boşluk, üçüncü taraf indiricilerin neden var olduğunu açıklar. Bizim de Pinterest ile resmî bir bağlantımız yoktur.',
+  },
+  {
+    q: 'Downloader kullanmak hesabımı riske atar mı?',
+    a: 'Hesabınıza dokunmayan, giriş istemeyen ve yalnızca herkese açık bağlantıyla çalışan bir araçta hesap riski oluşmaz — çünkü araç hesabınızla hiçbir bağlantı kurmaz. Risk, sizden Pinterest parolası isteyen ya da hesabınıza “erişim izni” vermenizi isteyen sitelerdedir; bu tür sayfalara asla bilgi girmeyin.',
+  },
+  {
+    q: 'İngilizce “download” ve Türkçe “indir” aramaları aynı araca mı çıkar?',
+    a: 'Genellikle evet. “Pinterest video download”, “pinterest downloader” ve “pinterest video indir” aramaları aynı ihtiyacı tanımlar ve aynı türde araçlara ulaştırır. Bu sitede arayüz ve tüm rehberler Türkçedir; İngilizce terimle geldiyseniz de aynı aracı kullanırsınız.',
+  },
+  {
+    q: 'Bir Pinterest downloader seçerken nelere bakmalıyım?',
+    a: 'Beş ölçüte bakın: kurulum istemiyor mu, giriş bilgisi sormuyor mu, kaynaktaki gerçek kaliteyi sunuyor mu, filigran eklemiyor mu ve verilerinizi saklamadığını açıkça belirtiyor mu. Ayrıca sürekli açılır pencere gösteren, indirme yerine başka sayfalara yönlendiren siteler baştan elenmelidir.',
+  },
+];
+
+// Comparison cluster — /pinterest-video-indirme-vs-kaydetme/.
+export const SAVE_VS_DOWNLOAD_FAQ: QA[] = [
+  {
+    q: 'Pinterest’te kaydetmek ile indirmek arasındaki fark nedir?',
+    a: 'Kaydetmek, pini Pinterest hesabınızdaki bir panoya eklemektir; içerik Pinterest’te kalır ve görüntülemek için her seferinde internet gerekir. İndirmek ise videonun dosyasını cihazınızın depolamasına yazmaktır; dosya artık sizindir, internet olmadan da açılır ve Pinterest’ten bağımsızdır.',
+  },
+  {
+    q: 'Pinterest’te kaydettiğim videoyu internetsiz izleyebilir miyim?',
+    a: 'Hayır. Kaydedilen pin yalnızca bir kısayoldur; video her açılışta Pinterest sunucularından akış olarak gelir. Uçakta, metroda veya çekim olmayan bir yerde bu videolar açılmaz. Çevrimdışı izlemek istiyorsanız videoyu gerçekten indirmeniz gerekir.',
+  },
+  {
+    q: 'Kaydettiğim pinler telefonumun galerisine gider mi?',
+    a: 'Gitmez. Kaydedilen pinler yalnızca Pinterest uygulaması içindeki panolarda görünür; telefonun galerisinde, Fotoğraflar uygulamasında veya dosya yöneticisinde yer almaz. Videonun galeride görünmesi ancak indirme ile mümkündür.',
+  },
+  {
+    q: 'Pin silinirse panoma kaydettiğim video ne olur?',
+    a: 'Kaybolur. İçeriği yükleyen kişi pini silerse ya da hesabını kapatırsa, panonuzdaki kayıt boş bir yere işaret eder ve video artık açılmaz. İndirilmiş bir dosya ise bundan etkilenmez; kaynak silinse bile cihazınızda kalmaya devam eder.',
+  },
+  {
+    q: 'Videoyu kaydetmek mi indirmek mi daha iyi?',
+    a: 'İhtiyaca göre değişir. Fikir biriktiriyor, koleksiyon yapıyor ve Pinterest’in önerilerinden yararlanmak istiyorsanız kaydetmek yeterlidir. Çevrimdışı izleyecek, videoyu düzenleyecek, başka bir cihaza aktaracak veya kalıcı olarak arşivleyecekseniz indirmek gerekir. İkisi birbirinin alternatifi değil, tamamlayıcısıdır.',
+  },
+  {
+    q: 'Bir pini kaydettiğimde içerik sahibi bunu görür mü?',
+    a: 'Pinterest kaydetme sayısını genel bir istatistik olarak gösterir, ancak kaydetme işlemi kişisel bir bildirim değildir. Kayıtlarınızın başkalarına görünmesini istemiyorsanız pini gizli panoya ekleyebilirsiniz. İndirme ise tamamen cihazınızda gerçekleşen bir işlemdir ve Pinterest tarafında bir iz bırakmaz.',
+  },
+  {
+    q: 'İndirdiğim video telefonumda nereye kaydedilir?',
+    a: 'Android’de dosya genellikle “İndirilenler” klasörüne iner ve galeride görünür. iPhone’da önce Dosyalar uygulamasına iner; oradan videoya dokunup “Videoyu Kaydet” dediğinizde Fotoğraflar’a eklenir. Bilgisayarda ise tarayıcınızın İndirilenler klasörüne kaydedilir.',
+  },
+  {
+    q: 'Telif hakkı açısından kaydetmek ile indirmek arasında fark var mı?',
+    a: 'İkisi de içeriğin sahipliğini size geçirmez. Belirleyici olan işlemin adı değil, sonrasındaki kullanımdır: kişisel arşiv ve çevrimdışı izleme genellikle sorun oluşturmazken, başkasına ait bir videoyu izinsiz yeniden yayımlamak veya ticari olarak kullanmak her iki durumda da telif hakkı ihlali sayılabilir.',
+  },
+];
+
+// Mechanism / explainer cluster — /pinterest-video-indirme-araci-nasil-calisir/.
+export const HOW_TOOL_WORKS_FAQ: QA[] = [
+  {
+    q: 'Pinterest video indirme aracı nasıl çalışır?',
+    a: 'Yapıştırdığınız bağlantıyı okur, pinin herkese açık sayfasını çözümler, o pine bağlı gerçek video dosyasının adresini ve mevcut çözünürlükleri bulur, ardından bu seçenekleri size listeler. Bir kaliteyi seçtiğinizde dosya doğrudan cihazınıza aktarılır. Tüm süreç genellikle birkaç saniye sürer.',
+  },
+  {
+    q: 'Araç videoyu tam olarak nereden alıyor?',
+    a: 'Videoyu Pinterest’in kendi genel altyapısındaki, pinin zaten yayımlandığı kaynaktan alır. Yeni bir kopya oluşturmaz, başka bir kullanıcının arşivinden çekmez ve gizli bir alana erişmez; yalnızca herkese açık pinin bağlı olduğu dosyayı hedefler.',
+  },
+  {
+    q: 'Bağlantıyı yapıştırdıktan sonra arka planda neler oluyor?',
+    a: 'Dört adım işler: (1) bağlantı doğrulanır ve pin kimliği ayrıştırılır, (2) pinin herkese açık verisi çözümlenir, (3) videonun kalite varyantları listelenir, (4) seçtiğiniz varyant indirme bağlantısı olarak size sunulur. Bu adımların hiçbirinde hesabınıza giriş yapılmaz.',
+  },
+  {
+    q: 'Video sizin sunucunuza mı yükleniyor?',
+    a: 'Hayır, video bir arşive alınmaz. İşlem yalnızca dosyayı size ulaştırmak için gereken süre boyunca geçicidir; yapıştırdığınız bağlantı ve indirdiğiniz dosya kalıcı olarak saklanmaz, işlem bitince geçici veriler temizlenir. İndirme geçmişinizi tutan bir profil de oluşturulmaz.',
+  },
+  {
+    q: 'İndirme neden bazen birkaç saniye sürüyor?',
+    a: 'Süre üç şeye bağlıdır: pinin çözümlenme hızı, videonun boyutu ve internet bağlantınızın hızı. 4K veya uzun bir video, kısa bir HD videodan doğal olarak daha uzun sürer. Bekleme genellikle birkaç saniyeyi geçmez; çok uzarsa bağlantıyı yeniden kopyalayıp denemek çoğu zaman yeterlidir.',
+  },
+  {
+    q: 'Araç neden bazen birden fazla kalite seçeneği gösteriyor?',
+    a: 'Pinterest aynı videoyu farklı çözünürlüklerde saklar; böylece yavaş bağlantılarda daha küçük dosya oynatılabilir. Araç bu varyantların gerçekte var olanlarını listeler. Listede 4K yoksa, video Pinterest’e o çözünürlükte yüklenmemiş demektir — yapay büyütme uygulanmaz.',
+  },
+  {
+    q: 'Kısaltılmış pin.it bağlantıları da çalışır mı?',
+    a: 'Evet. pin.it ile başlayan kısa bağlantılar, pinterest.com veya tr.pinterest.com adresleriyle aynı şekilde işlenir; araç kısaltmayı çözüp asıl pine ulaşır. Bağlantının sonundaki takip parametreleri de sonucu etkilemez.',
+  },
+  {
+    q: 'Araç neden bazı bağlantılarda hata veriyor?',
+    a: 'En sık nedenler: pinin gizli bir panoda olması, silinmiş ya da kısıtlanmış olması, bağlantının eksik kopyalanması veya pinin video değil yalnızca görsel içermesi. Bağlantıyı doğrudan pin sayfasından yeniden kopyalamak çoğu durumu çözer; devam ederse indirme sorunlarını anlattığımız rehbere bakabilirsiniz.',
+  },
+];
+
 // Consumed by the dedicated /sss/ page.
 export const ALL_FAQ_GROUPS: FaqGroup[] = [
   { title: 'Genel & Video İndirme', items: HOME_FAQ },

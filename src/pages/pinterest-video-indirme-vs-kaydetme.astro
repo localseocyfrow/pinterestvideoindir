@@ -1,0 +1,255 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import ShortAnswerBox from '../components/ShortAnswerBox.astro';
+import Faq from '../components/Faq.astro';
+import ToolCta from '../components/ToolCta.astro';
+import RelatedGuides from '../components/RelatedGuides.astro';
+import { SAVE_VS_DOWNLOAD_FAQ } from '../data/faq';
+import { articleSchema, faqSchema, breadcrumbSchema } from '../lib/schema';
+
+const path = '/pinterest-video-indirme-vs-kaydetme/';
+const title = 'Pinterest Video İndirme ve Kaydetme Farkı — Hangisi Ne Yapar?';
+const description =
+  'Pinterest’te videoyu kaydetmek mi indirmek mi? Panoya kaydetme ile cihaza indirme arasındaki farkı, çevrimdışı erişimi, kalıcılığı ve telif tarafını karşılaştıran Türkçe rehber.';
+
+const crumbs = [
+  { name: 'Ana Sayfa', href: '/' },
+  { name: 'İndirme ve Kaydetme Farkı', href: path },
+];
+
+// Ana karşılaştırma — her satır kullanıcı için somut bir sonuç farkı.
+const comparison = [
+  { olcut: 'Dosya nereye gider?', kaydet: 'Hiçbir yere — pin panonuza eklenir', indir: 'Cihazınızın depolama alanına yazılır' },
+  { olcut: 'İnternetsiz açılır mı?', kaydet: 'Hayır, her açılışta bağlantı gerekir', indir: 'Evet, tamamen çevrimdışı izlenir' },
+  { olcut: 'Galeride / dosyalarda görünür mü?', kaydet: 'Hayır, yalnızca Pinterest içinde', indir: 'Evet, galeri veya İndirilenler klasöründe' },
+  { olcut: 'Pin silinirse ne olur?', kaydet: 'Erişim kaybolur, içerik açılmaz', indir: 'Dosya cihazınızda kalmaya devam eder' },
+  { olcut: 'Pinterest hesabı gerekir mi?', kaydet: 'Evet, giriş yapmış olmalısınız', indir: 'Hayır, hesap ve giriş gerekmez' },
+  { olcut: 'Düzenleme / kesme yapılabilir mi?', kaydet: 'Hayır, dosyaya erişemezsiniz', indir: 'Evet, MP4 dosyası üzerinde çalışılır' },
+  { olcut: 'Başka cihaza aktarılır mı?', kaydet: 'Yalnızca aynı hesapla görüntülenir', indir: 'Evet, dosya olarak paylaşılabilir' },
+  { olcut: 'Kalite seçimi var mı?', kaydet: 'Hayır, bağlantı hızına göre değişir', indir: 'Evet, HD / Full HD / 4K seçilir' },
+  { olcut: 'Depolama alanı harcar mı?', kaydet: 'Hayır', indir: 'Evet, dosya boyutu kadar' },
+];
+
+// Senaryo bazlı karar tablosu.
+const scenarios = [
+  { durum: 'Fikir biriktirmek, ilham panosu yapmak', secim: 'Kaydetme', neden: 'Pinterest’in öneri akışından yararlanırsınız' },
+  { durum: 'Uçakta / metroda izlemek', secim: 'İndirme', neden: 'Çevrimdışı erişim yalnızca dosyayla mümkün' },
+  { durum: 'Videoyu kesmek, montajda kullanmak', secim: 'İndirme', neden: 'Düzenleme için MP4 dosyası gerekir' },
+  { durum: 'Tarifi haftaya tekrar bakmak', secim: 'Kaydetme', neden: 'Kısa vadeli erişim için yeterli' },
+  { durum: 'Yayından kalkma ihtimali olan içerik', secim: 'İndirme', neden: 'Kaynak silinse bile dosya kalır' },
+  { durum: 'Videoyu telefondan bilgisayara taşımak', secim: 'İndirme', neden: 'Pano cihazlar arası dosya aktarmaz' },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  path={path}
+  ogType="article"
+  schemas={[
+    breadcrumbSchema(crumbs),
+    articleSchema({ title, description, path }),
+    faqSchema(SAVE_VS_DOWNLOAD_FAQ),
+  ]}
+>
+  <article class="section">
+    <div class="container">
+      <Breadcrumb crumbs={crumbs} />
+
+      <div class="prose">
+        <span class="eyebrow">Karşılaştırma rehberi</span>
+        <h1>Pinterest Video İndirme ve Kaydetme Farkı</h1>
+        <p class="lead">
+          Pinterest’te bir videonun altında “Kaydet” düğmesi vardır, ama
+          kaydettiğiniz video telefonunuzun galerisinde görünmez. Bunun nedeni
+          basit: <strong>kaydetmek ile indirmek aynı şey değildir</strong>.
+          Biri içeriği Pinterest’in içinde işaretler, diğeri dosyayı cihazınıza
+          taşır. Aşağıda iki işlemin farkını, hangi durumda hangisinin doğru
+          olduğunu ve telif açısından ne anlama geldiklerini karşılaştırıyoruz.
+        </p>
+
+        <ShortAnswerBox question="Kısa cevap: Kaydetmek mi, indirmek mi?">
+          <p class="mt-0" style="margin:0">
+            <strong>Kaydetmek</strong>, pini Pinterest hesabınızdaki bir panoya
+            eklemektir; video Pinterest’te kalır ve izlemek için her seferinde
+            <strong>internet gerekir</strong>. <strong>İndirmek</strong> ise
+            videonun MP4 dosyasını cihazınızın depolamasına yazmaktır; dosya
+            <strong>çevrimdışı açılır</strong>, galeride görünür ve kaynak pin
+            silinse bile kalır. Koleksiyon yapıyorsanız kaydetmek, çevrimdışı
+            izleyecek veya düzenleyecekseniz indirmek doğru seçimdir.
+          </p>
+        </ShortAnswerBox>
+      </div>
+
+      <div class="prose">
+        <h2>Pinterest’te “kaydetmek” ne demek?</h2>
+        <p>
+          Kaydetme, Pinterest’in kendi özelliğidir: bir pini seçtiğiniz panoya
+          eklersiniz ve pin, hesabınızda bir <strong>yer imi</strong> gibi durur.
+          Video dosyası hiçbir zaman cihazınıza inmez; panodaki pine her
+          dokunduğunuzda içerik yeniden Pinterest sunucularından akış olarak
+          gelir. Bu yüzden kaydedilen videolar telefonun galerisinde,
+          Fotoğraflar uygulamasında veya dosya yöneticisinde görünmez.
+        </p>
+        <p>
+          Kaydetmenin avantajı, Pinterest’in ekosisteminde kalmanızdır:
+          panolarınız düzenlenebilir, aranabilir ve Pinterest kaydettiklerinize
+          bakarak size benzer içerikler önerir. Dezavantajı ise
+          <strong>kalıcılığının size bağlı olmamasıdır</strong> — içeriği
+          yükleyen kişi pini silerse veya hesabını kapatırsa, panonuzdaki kayıt
+          da işlevsiz hâle gelir.
+        </p>
+
+        <h2>Pinterest’te “indirmek” ne demek?</h2>
+        <p>
+          İndirme, videonun arkasındaki gerçek dosyanın cihazınızın depolama
+          alanına yazılmasıdır. Pinterest uygulaması bu özelliği sunmadığı için
+          işlem, pinin bağlantısını
+          <a href="/pinterest-video-indirici/">bir Pinterest video indiricisine</a>
+          yapıştırarak yapılır. Sonuçta elinizde, Pinterest’ten tamamen bağımsız
+          bir <strong>MP4 dosyası</strong> olur: internetsiz açılır, başka bir
+          cihaza gönderilebilir, bir videoya eklenebilir ve kaynak içerik
+          kaldırılsa bile kaybolmaz. Kavramın tanımı için
+          <a href="/pinterest-video-indirici-nedir/">Pinterest video indirici
+          nedir?</a> sayfasına bakabilirsiniz.
+        </p>
+
+        <h2>Kaydetme ve indirme: madde madde karşılaştırma</h2>
+        <div class="table-wrap" style="margin:18px 0 8px">
+          <table>
+            <thead>
+              <tr>
+                <th style="text-align:right">Ölçüt</th>
+                <th>Panoya kaydetme</th>
+                <th>Cihaza indirme</th>
+              </tr>
+            </thead>
+            <tbody>
+              {comparison.map((row) => (
+                <tr>
+                  <td style="font-weight:700;color:var(--ink)">{row.olcut}</td>
+                  <td>{row.kaydet}</td>
+                  <td>{row.indir}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p>
+          Tablodaki en belirleyici üç satır şunlardır: <strong>internetsiz
+          erişim</strong>, <strong>kaynak silinince ne olduğu</strong> ve
+          <strong>dosyaya erişip erişemediğiniz</strong>. Bu üç ihtiyaçtan biri
+          bile varsa kaydetme yetmez.
+        </p>
+
+        <h2>Hangi durumda hangisi? (karar tablosu)</h2>
+        <div class="table-wrap" style="margin:18px 0 8px">
+          <table>
+            <thead>
+              <tr>
+                <th style="text-align:right">Durum</th>
+                <th>Doğru seçim</th>
+                <th>Neden</th>
+              </tr>
+            </thead>
+            <tbody>
+              {scenarios.map((s) => (
+                <tr>
+                  <td style="font-weight:700;color:var(--ink)">{s.durum}</td>
+                  <td>{s.secim}</td>
+                  <td>{s.neden}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Kaydetmenin artıları ve sınırları</h2>
+        <ul>
+          <li><strong>Artı:</strong> Tek dokunuşla, uygulamadan çıkmadan yapılır.</li>
+          <li><strong>Artı:</strong> Panolarla düzenli koleksiyon oluşturursunuz.</li>
+          <li><strong>Artı:</strong> Cihazınızda yer kaplamaz.</li>
+          <li><strong>Sınır:</strong> Çevrimdışı çalışmaz; her açılışta internet ister.</li>
+          <li><strong>Sınır:</strong> İçerik yayından kalkarsa erişim biter.</li>
+          <li><strong>Sınır:</strong> Dosyaya ulaşamaz, düzenleyemez, paylaşamazsınız.</li>
+          <li><strong>Sınır:</strong> Pinterest hesabı ve giriş zorunludur.</li>
+        </ul>
+
+        <h2>İndirmenin artıları ve sınırları</h2>
+        <ul>
+          <li><strong>Artı:</strong> Çevrimdışı izlenir, galeride görünür.</li>
+          <li><strong>Artı:</strong> Kaynak silinse bile dosya sizde kalır.</li>
+          <li><strong>Artı:</strong> Kalite seçilebilir; <a href="/pinterest-hd-video-indir/">HD</a> veya <a href="/pinterest-mp4-indir/">MP4</a> olarak kaydedilir.</li>
+          <li><strong>Artı:</strong> Hesap, giriş ve kurulum gerektirmez.</li>
+          <li><strong>Sınır:</strong> Depolama alanı harcar.</li>
+          <li><strong>Sınır:</strong> Yalnızca herkese açık pinlerde çalışır.</li>
+          <li><strong>Sınır:</strong> Kalite tavanı, videonun yüklendiği çözünürlükle sınırlıdır.</li>
+        </ul>
+
+        <h2>İkisini birlikte kullanmak</h2>
+        <p>
+          Bu iki işlem birbirinin rakibi değildir. Pratikte en verimli yöntem
+          şudur: ilginizi çeken içerikleri Pinterest’te
+          <strong>kaydedip biriktirin</strong>, gerçekten saklamak veya
+          çevrimdışı izlemek istediklerinizi ise
+          <strong>ayrıca indirin</strong>. Böylece hem Pinterest’in keşif
+          gücünden yararlanır hem de önemsediğiniz içerikleri kaybetme riskini
+          ortadan kaldırırsınız. İndirme adımlarını
+          <a href="/pinterest-video-nasil-indirilir/">Pinterest video nasıl
+          indirilir</a> rehberinde, sürecin arka planını ise
+          <a href="/pinterest-video-indirme-araci-nasil-calisir/">indirme aracı
+          nasıl çalışır?</a> sayfasında bulabilirsiniz.
+        </p>
+
+        <h2>Telif hakkı açısından fark var mı?</h2>
+        <p>
+          Hayır — ne kaydetmek ne de indirmek içeriğin haklarını size geçirir.
+          Belirleyici olan işlemin adı değil, <strong>sonrasında yaptığınız
+          kullanımdır</strong>. Kişisel arşiv ve çevrimdışı izleme genellikle
+          sorun oluşturmaz; başkasına ait bir videoyu izinsiz yeniden yayımlamak
+          veya ticari amaçla kullanmak ise her iki durumda da telif hakkı
+          ihlali sayılabilir. Ayrıntı için
+          <a href="/telif-hakki-ve-pinterest-indirme/">telif hakkı ve Pinterest
+          indirme</a> ile
+          <a href="/pinterest-video-indirmek-guvenli-mi/">Pinterest video
+          indirmek güvenli mi?</a> rehberlerimize bakın.
+        </p>
+
+        <p class="disclaimer" role="note" style="margin-top:22px">
+          <strong>Sorumlu kullanım — </strong>Yalnızca size ait olan veya
+          indirme/kullanma iznine sahip olduğunuz içerikleri kaydetmenizi
+          öneririz. Bu sayfa genel bilgilendirme amaçlıdır ve hukuki tavsiye
+          değildir. Pinterest ile resmi bir bağlantımız yoktur.
+        </p>
+      </div>
+    </div>
+  </article>
+
+  <ToolCta
+    title="Kaydetmek yetmiyorsa indirin"
+    text="Bağlantıyı yapıştırın; videoyu çevrimdışı izleyebileceğiniz MP4 dosyası olarak kaydedin."
+    href="/pinterest-video-indir/"
+    label="Pinterest Video İndir"
+  />
+
+  <RelatedGuides
+    title="İlgili rehberler ve araçlar"
+    items={[
+      { title: 'Pinterest Video İndirici Nedir?', href: '/pinterest-video-indirici-nedir/', description: 'İndiricinin tanımı, türleri ve sınırları.' },
+      { title: 'Pinterest Downloader Nedir?', href: '/pinterest-downloader-nedir/', description: 'Terimin Türkçe karşılığı ve kapsamı.' },
+      { title: 'İndirme Aracı Nasıl Çalışır?', href: '/pinterest-video-indirme-araci-nasil-calisir/', description: 'Bağlantıdan dosyaya giden sürecin açıklaması.' },
+      { title: 'Pinterest Video İndir', href: '/pinterest-video-indir/', description: 'HD, Full HD ve 4K MP4 indirme aracı.' },
+      { title: 'Pinterest Video İndirici', href: '/pinterest-video-indirici/', description: 'Kurulumsuz, tarayıcı tabanlı online araç.' },
+      { title: 'Pinterest Video Link İndir', href: '/pinterest-video-link-indir/', description: 'Bağlantıyı yapıştırıp doğrudan indirin.' },
+      { title: 'Pinterest MP4 İndir', href: '/pinterest-mp4-indir/', description: 'Dönüştürücüsüz, doğrudan MP4 kaydetme.' },
+      { title: 'Pinterest HD Video İndir', href: '/pinterest-hd-video-indir/', description: 'Full HD 1080p kalitede indirme.' },
+      { title: 'Pinterest Video Nasıl İndirilir', href: '/pinterest-video-nasil-indirilir/', description: 'Adım adım, cihaz cihaz rehber.' },
+      { title: 'Video İndirmek Güvenli mi?', href: '/pinterest-video-indirmek-guvenli-mi/', description: 'Güvenli indirme kuralları ve tuzaklar.' },
+      { title: 'Telif Hakkı ve Pinterest İndirme', href: '/telif-hakki-ve-pinterest-indirme/', description: 'İzin, kişisel kullanım ve riskli kullanımlar.' },
+      { title: 'Sıkça Sorulan Sorular', href: '/sss/', description: 'Tüm araçlar için toplu soru-cevap.' },
+    ]}
+  />
+
+  <Faq items={SAVE_VS_DOWNLOAD_FAQ} title="İndirme ve kaydetme — sık sorulanlar" />
+</BaseLayout>

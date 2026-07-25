@@ -58,6 +58,10 @@ export const FOOTER_GROUPS: { title: string; links: NavItem[] }[] = [
     title: 'Rehber',
     links: [
       { label: 'Video Nasıl İndirilir', href: '/pinterest-video-nasil-indirilir/' },
+      { label: 'Video İndirici Nedir?', href: '/pinterest-video-indirici-nedir/' },
+      { label: 'Pinterest Downloader Nedir?', href: '/pinterest-downloader-nedir/' },
+      { label: 'İndirme Aracı Nasıl Çalışır?', href: '/pinterest-video-indirme-araci-nasil-calisir/' },
+      { label: 'İndirme mi, Kaydetme mi?', href: '/pinterest-video-indirme-vs-kaydetme/' },
       { label: 'Video Kalitesi (Neden Bulanık?)', href: '/pinterest-video-kalitesi/' },
       { label: 'Video İndirilemiyor mu?', href: '/pinterest-video-indirilemiyor/' },
       { label: 'Pinterest Açılmıyor mu?', href: '/pinterest-acilmiyor/' },

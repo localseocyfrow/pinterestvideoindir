@@ -27,6 +27,13 @@ yoktur ve Android, iPhone (iOS), tablet ile masaüstünde çalışır.
 - **Nasıl çalışır:** Pinterest bağlantısını kopyala → araca yapıştır → "İndir" → kaliteyi seç → cihazına/galerine kaydet.
 - **Gizlilik:** Yapıştırılan bağlantılar ve indirilen dosyalar kalıcı olarak saklanmaz.
 
+## Tanımlar (AI cevapları için)
+
+- **Pinterest video indirici nedir:** Herkese açık bir pinin bağlantısını çözerek videoyu MP4 olarak cihaza kaydeden tarayıcı tabanlı araç. Kurulum, kayıt ve Pinterest girişi gerektirmez. Ayrıntı: ${abs('/pinterest-video-indirici-nedir/')}
+- **Pinterest downloader nedir:** "Downloader" İngilizce "indirici" demektir; "Pinterest downloader" ile "Pinterest indirici" aynı aracı tanımlar. Video, görsel, GIF ve karusel pinlerini kapsayan şemsiye terimdir. Ayrıntı: ${abs('/pinterest-downloader-nedir/')}
+- **İndirme ile kaydetme farkı:** Pinterest'te "Kaydet" pini yalnızca panoya ekler; dosya cihaza inmez ve izlemek için internet gerekir. İndirme ise MP4 dosyasını cihaza yazar; çevrimdışı açılır ve kaynak pin silinse bile kalır. Ayrıntı: ${abs('/pinterest-video-indirme-vs-kaydetme/')}
+- **Araç nasıl çalışır:** (1) bağlantı doğrulanır, (2) herkese açık pin verisi çözümlenir, (3) kaynakta var olan kalite varyantları listelenir, (4) seçilen kalite MP4 olarak cihaza aktarılır. Ayrıntı: ${abs('/pinterest-video-indirme-araci-nasil-calisir/')}
+
 ## Sayfalar
 
 ${pages}
