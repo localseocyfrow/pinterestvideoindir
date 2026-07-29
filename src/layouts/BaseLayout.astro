@@ -8,7 +8,7 @@ import { organizationSchema, websiteSchema, graph } from '../lib/schema';
 interface Props {
   title: string;
   description: string;
-  path?: string;           // canonical path, e.g. "/pinterest-gif-indir"
+  path?: string;           // canonical path, e.g. "/pinterest-gif-indir/" (abs() normalises the trailing slash)
   /** Extra JSON-LD nodes to merge into the site-wide @graph. */
   schemas?: Record<string, unknown>[];
   ogType?: string;

@@ -13,7 +13,7 @@ export function organizationSchema(): JsonLd {
     '@id': `${SITE.url}/#organization`,
     name: SITE.name,
     alternateName: 'pinterestvideoindirme',
-    url: SITE.url,
+    url: abs('/'),
     email: SITE.email,
     foundingDate: SITE.founded,
     logo: {
@@ -29,7 +29,7 @@ export function websiteSchema(): JsonLd {
     '@type': 'WebSite',
     '@id': `${SITE.url}/#website`,
     name: SITE.name,
-    url: SITE.url,
+    url: abs('/'),
     inLanguage: SITE.lang,
     publisher: { '@id': `${SITE.url}/#organization` },
   };
@@ -41,7 +41,7 @@ export function webAppSchema(): JsonLd {
     '@type': 'WebApplication',
     '@id': `${SITE.url}/#webapp`,
     name: SITE.name,
-    url: SITE.url,
+    url: abs('/'),
     applicationCategory: 'MultimediaApplication',
     operatingSystem: 'Web (Android, iOS, Windows, macOS)',
     inLanguage: SITE.lang,
@@ -119,7 +119,7 @@ export function articleSchema(opts: {
     mainEntityOfPage: { '@type': 'WebPage', '@id': abs(opts.path) },
     datePublished: opts.datePublished ?? SITE.updated,
     dateModified: opts.dateModified ?? SITE.updated,
-    author: { '@type': 'Organization', name: SITE.author, url: SITE.url },
+    author: { '@type': 'Organization', name: SITE.author, url: abs('/') },
     publisher: { '@id': `${SITE.url}/#organization` },
   };
 }

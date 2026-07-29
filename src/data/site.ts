@@ -90,8 +90,30 @@ export const FOOTER_GROUPS: { title: string; links: NavItem[] }[] = [
   },
 ];
 
-// Absolute URL helper — keeps canonical/OG/sitemap consistent.
+// Absolute URL helper — single source for canonical, OG, JSON-LD, sitemap and
+// llms.txt URLs, so they can never drift apart.
+//
+// Trailing-slash policy (must match how the pages are actually served):
+// the build emits directory-style routes (`/slug/index.html`), so every content
+// page is live at `/slug/` and MUST canonicalise to that exact form — otherwise
+// audit tools report the page as canonicalised-away instead of self-referencing.
+//   - homepage      -> https://domain/           (slash)
+//   - content page  -> https://domain/slug/      (slash)
+//   - asset / file  -> https://domain/file.ext   (NO slash — would 404)
+//   - /api/* route  -> https://domain/api/x      (NO slash — endpoint, not a page)
 export function abs(path = '/'): string {
   const clean = path.startsWith('/') ? path : `/${path}`;
-  return clean === '/' ? SITE.url : `${SITE.url}${clean.replace(/\/$/, '')}`;
+  if (clean === '/') return `${SITE.url}/`;
+
+  // Anything ending in a file extension (.svg, .xml, .txt, .png…) is a real
+  // file, not a page route; likewise /api/* endpoints. Both stay slash-free.
+  const isFile = /\.[a-z0-9]+$/i.test(clean);
+  const isApi = clean === '/api' || clean.startsWith('/api/');
+
+  const normalized =
+    isFile || isApi
+      ? clean.replace(/\/+$/, '')
+      : `${clean.replace(/\/+$/, '')}/`;
+
+  return `${SITE.url}${normalized}`;
 }
