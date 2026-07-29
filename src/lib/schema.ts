@@ -63,15 +63,31 @@ export function webAppSchema(): JsonLd {
   };
 }
 
+// Answers may carry inline links for the visible accordion; the JSON-LD wants
+// plain prose. Stripping here (rather than storing two copies of every answer)
+// guarantees the schema text and the rendered text always say the same thing.
+function stripHtml(value: string): string {
+  return value
+    .replace(/<[^>]+>/g, '')
+    .replace(/&amp;/g, '&')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&nbsp;/g, ' ')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
 export function faqSchema(items: QA[]): JsonLd {
   return {
     '@type': 'FAQPage',
     mainEntity: items.map((item) => ({
       '@type': 'Question',
-      name: item.q,
+      name: stripHtml(item.q),
       acceptedAnswer: {
         '@type': 'Answer',
-        text: item.a,
+        text: stripHtml(item.a),
       },
     })),
   };

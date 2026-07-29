@@ -1,52 +1,87 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
 import Downloader from '../components/Downloader.astro';
-import { ALL_FAQ_GROUPS } from '../data/faq';
-import { faqSchema, breadcrumbSchema } from '../lib/schema';
+import { HUB_FAQ_GROUPS } from '../data/faq';
+import { faqSchema, breadcrumbSchema, articleSchema } from '../lib/schema';
 
 const path = '/sss/';
-const title = 'Sıkça Sorulan Sorular (SSS) – Pinterest Video İndir';
+const title = 'Sıkça Sorulan Sorular (SSS) — Pinterest İndirme Yardım Merkezi';
 const description =
-  'Pinterest video, resim, GIF ve karusel indirme hakkında sıkça sorulan sorular. Ücretsiz mi, filigran var mı, nasıl indirilir? Tüm yanıtlar tek sayfada.';
+  'Pinterest video, görsel, GIF ve karusel indirme hakkında 54 soru ve kısa yanıt: kalite, cihazlar, link ile indirme, sorun giderme, güvenlik ve telif hakkı. Türkçe yardım merkezi.';
 
-const allItems = ALL_FAQ_GROUPS.flatMap((g) => g.items);
+const crumbs = [
+  { name: 'Ana Sayfa', href: '/' },
+  { name: 'SSS', href: path },
+];
+
+// One flat list feeds the FAQPage JSON-LD; the visible accordion renders the
+// same entries group by group, so schema and page stay identical in wording.
+const allItems = HUB_FAQ_GROUPS.flatMap((g) => g.items);
+const totalCount = allItems.length;
 ---
 
 <BaseLayout
   title={title}
   description={description}
   path={path}
+  ogType="article"
   schemas={[
-    breadcrumbSchema([
-      { name: 'Ana Sayfa', href: '/' },
-      { name: 'SSS', href: path },
-    ]),
+    breadcrumbSchema(crumbs),
+    articleSchema({ title, description, path }),
     faqSchema(allItems),
   ]}
 >
   <article class="section">
     <div class="container">
-      <nav class="crumbs" aria-label="Breadcrumb">
-        <a href="/">Ana Sayfa</a><span>/</span>SSS
-      </nav>
+      <Breadcrumb crumbs={crumbs} />
 
       <div class="center section-head">
-        <span class="eyebrow">Yardım Merkezi</span>
-        <h1>Sıkça Sorulan Sorular</h1>
+        <span class="eyebrow">Yardım merkezi</span>
+        <h1>Pinterest İndirme Hakkında Sıkça Sorulan Sorular</h1>
         <p class="lead" style="margin-inline:auto">
-          Pinterest içeriklerini indirme hakkında en çok merak edilenler.
+          Bu sayfa sitenin ana SSS merkezidir: Pinterest içeriklerini indirmeyle
+          ilgili {totalCount} soruyu {HUB_FAQ_GROUPS.length} kategoriye ayırıp
+          kısa ve doğrudan yanıtladık.
         </p>
       </div>
 
+      <div class="prose" style="margin-inline:auto">
+        <p>
+          Yanıtların çoğu tek başına yeterlidir; konuyu daha ayrıntılı görmek
+          isterseniz her yanıtın içindeki bağlantı sizi o konunun kendi
+          sayfasına götürür. Aradığınız başlığa doğrudan gitmek için aşağıdaki
+          kategori listesini kullanabilirsiniz.
+        </p>
+      </div>
+
+      <!-- Table of contents — anchors map to each category section below. -->
+      <nav class="faq-toc" aria-label="SSS kategorileri">
+        <p class="faq-toc-title">Kategoriler</p>
+        <ol>
+          {
+            HUB_FAQ_GROUPS.map((g) => (
+              <li>
+                <a href={`#${g.id}`}>{g.title}</a>
+                <span class="faq-toc-count">{g.items.length} soru</span>
+              </li>
+            ))
+          }
+        </ol>
+      </nav>
+
       <div class="faq">
         {
-          ALL_FAQ_GROUPS.map((group) => (
-            <section style="margin-bottom:34px">
-              <h2 style="font-size:1.35rem;margin-bottom:16px">{group.title}</h2>
+          HUB_FAQ_GROUPS.map((group, gi) => (
+            <section id={group.id} style="margin-bottom:38px">
+              <h2 style="font-size:1.35rem;margin-bottom:8px">{group.title}</h2>
+              {group.intro && (
+                <p style="color:var(--ink-2);margin-bottom:16px">{group.intro}</p>
+              )}
               {group.items.map((item, i) => (
-                <details open={i === 0}>
+                <details open={gi === 0 && i === 0}>
                   <summary>{item.q}</summary>
-                  <div class="faq-a"><p>{item.a}</p></div>
+                  <div class="faq-a"><p set:html={item.a} /></div>
                 </details>
               ))}
             </section>
@@ -54,12 +89,18 @@ const allItems = ALL_FAQ_GROUPS.flatMap((g) => g.items);
         }
       </div>
 
-      <div class="prose" style="max-width:760px;margin:36px auto 0">
-        <h2>İlgili araçlar ve rehber</h2>
+      <div class="prose" style="margin:36px auto 0">
+        <h2>İlgili araçlar ve rehberler</h2>
         <p>
-          Ne indirmek istediğinize göre aracı seçin: <a href="/pinterest-video-indir/">Pinterest video indir</a>,
-          <a href="/pinterest-resim-indir/">resim indir</a>,
-          <a href="/pinterest-gif-indir/">GIF indir</a> ve <a href="/pinterest-karusel-indir/">karusel indir</a>. Adım adım anlatım için <a href="/nasil-kullanilir/">nasıl kullanılır rehberimize</a> göz atabilirsiniz.
+          Ne indirmek istediğinize göre araca geçebilirsiniz: <a href="/pinterest-video-indir/">Pinterest video indir</a>, <a href="/pinterest-video-indirici/">Pinterest video indirici</a>, <a href="/pinterest-resim-indir/">resim indir</a>, <a href="/pinterest-gif-indir/">GIF indir</a> ve <a href="/pinterest-karusel-indir/">karusel indir</a>. Tüm araçlar için genel anlatımı <a href="/nasil-kullanilir/">nasıl kullanılır</a> rehberinde bulabilirsiniz.
+        </p>
+
+        <p class="disclaimer" role="note" style="margin-top:22px">
+          <strong>Sorumlu kullanım — </strong>Yalnızca size ait olan veya
+          indirme/kullanma iznine sahip olduğunuz içerikleri kaydetmenizi
+          öneririz. Bu sayfadaki güvenlik ve telif yanıtları genel
+          bilgilendirme amaçlıdır ve hukuki tavsiye niteliği taşımaz. Pinterest
+          ile resmi bir bağlantımız yoktur.
         </p>
       </div>
 
@@ -69,3 +110,37 @@ const allItems = ALL_FAQ_GROUPS.flatMap((g) => g.items);
     </div>
   </article>
 </BaseLayout>
+
+<style>
+  /* Category table of contents — reuses the site's card/border tokens. */
+  .faq-toc {
+    max-width: 760px;
+    margin: 28px auto 34px;
+    padding: 20px 22px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--bg-soft);
+  }
+  .faq-toc-title {
+    font-weight: 800;
+    color: var(--ink);
+    margin: 0 0 12px;
+  }
+  .faq-toc ol {
+    margin: 0;
+    padding-left: 1.2em;
+    color: var(--ink-2);
+  }
+  .faq-toc li {
+    margin-bottom: 6px;
+  }
+  .faq-toc a {
+    font-weight: 600;
+  }
+  .faq-toc-count {
+    color: var(--ink-2);
+    opacity: 0.75;
+    font-size: 0.9rem;
+    margin-left: 8px;
+  }
+</style>
