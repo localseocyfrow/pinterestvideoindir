@@ -9,47 +9,52 @@ export default defineConfig({
   // 301s for legacy / renamed URLs. Targets are the closest live page. These
   // old URLs are redirect-only and are NOT listed in sitemap.xml / llms.txt
   // (those derive from src/data/routes.ts).
+  //
+  // Destinations MUST carry the trailing slash, matching the canonical form
+  // produced by abs() in src/data/site.ts. Pages are built directory-style, so
+  // a slash-less destination costs an extra hop (301 → /x → 307 → /x/) and
+  // lands the crawler on a non-canonical URL first.
   redirects: {
     // Renamed troubleshooting slug → intended keyword spelling
     // ("indirilemiyor" = cannot be downloaded).
     '/pinterest-video-indirilmiyor': {
       status: 301,
-      destination: '/pinterest-video-indirilemiyor',
+      destination: '/pinterest-video-indirilemiyor/',
     },
     // Legacy "About" URL variant → live About page.
     '/hakkimizda': {
       status: 301,
-      destination: '/hakkinda',
+      destination: '/hakkinda/',
     },
     // Legacy corporate/legal URL variants → closest live pages.
     '/gizlilik': {
       status: 301,
-      destination: '/gizlilik-politikasi',
+      destination: '/gizlilik-politikasi/',
     },
     '/kullanim-kosullari': {
       status: 301,
-      destination: '/kullanim-sartlari',
+      destination: '/kullanim-sartlari/',
     },
     '/sikca-sorulan-sorular': {
       status: 301,
-      destination: '/sss',
+      destination: '/sss/',
     },
     // Exact legacy 404s from Search Console → closest live pages.
     '/resim-indir': {
       status: 301,
-      destination: '/pinterest-resim-indir',
+      destination: '/pinterest-resim-indir/',
     },
     '/pinterest-fotograf-indirici': {
       status: 301,
-      destination: '/pinterest-resim-indir',
+      destination: '/pinterest-resim-indir/',
     },
     '/bize-ulasin': {
       status: 301,
-      destination: '/iletisim',
+      destination: '/iletisim/',
     },
     '/pinterest-gif-indirici': {
       status: 301,
-      destination: '/pinterest-gif-indir',
+      destination: '/pinterest-gif-indir/',
     },
   },
   // Pages stay static (prerendered) for SEO. Only /api/* routes opt into
