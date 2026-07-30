@@ -13,14 +13,18 @@ export type QA = { q: string; a: string };
 // the on-page table of contents.
 export type FaqGroup = { title: string; items: QA[]; id?: string; intro?: string };
 
+// Homepage FAQ — deliberately BROAD, landing-page level. Two entries are
+// worded so that the deeper pages own the exact head queries instead:
+// "Pinterest videosu nasıl indirilir?" belongs to /pinterest-video-nasil-indirilir/
+// and "Pinterest video indirmek yasal mı?" to /pinterest-video-indirmek-yasal-mi/.
 export const HOME_FAQ: QA[] = [
   {
     q: 'Pinterest video indirme ücretsiz mi?',
     a: 'Evet. Pinterest Video İndir tamamen ücretsizdir. Video indirmek için üyelik, ödeme veya uygulama kurulumu gerekmez. İstediğiniz kadar video indirebilirsiniz.',
   },
   {
-    q: 'Pinterest videosu nasıl indirilir?',
-    a: 'Pinterest uygulamasında videoyu açın, “Paylaş” düğmesine dokunun ve “Bağlantıyı kopyala” seçeneğini seçin. Kopyaladığınız bağlantıyı sitemizdeki kutuya yapıştırıp “İndir” düğmesine basın; ardından HD veya standart kaliteyi seçerek videoyu kaydedin.',
+    q: 'Siteyi ilk kez kullanıyorum, nereden başlamalıyım?',
+    a: 'Pinterest’te videoyu açıp “Paylaş → Bağlantıyı kopyala” deyin, bağlantıyı bu sayfadaki kutuya yapıştırın ve “İndir”e basın; ardından kaliteyi seçip kaydedin. Adım adım, cihaza göre anlatım için “Pinterest video nasıl indirilir” rehberimize bakabilirsiniz. Tüm araçların genel kullanımı ise “Nasıl Kullanılır” sayfasında anlatılıyor.',
   },
   {
     q: 'İndirilen Pinterest videolarında filigran olur mu?',
@@ -35,8 +39,8 @@ export const HOME_FAQ: QA[] = [
     a: 'Evet. Kaynak video hangi çözünürlükte yüklendiyse, o kaliteyi (HD 720p, Full HD 1080p ve mümkünse 4K) indirme seçeneği olarak sunarız.',
   },
   {
-    q: 'Pinterest video indirmek yasal mı?',
-    a: 'Kişisel kullanım, çevrimdışı izleme ve arşivleme amacıyla video indirmek genellikle uygundur. Ancak içerik telif hakkıyla korunuyorsa, videoyu izinsiz yeniden yayınlamak veya ticari amaçla kullanmak telif haklarını ihlal edebilir. İçerik sahibinin haklarına saygı gösterin.',
+    q: 'İndirdiğim videoları nasıl kullanmam gerekir?',
+    a: 'Kişisel kullanım, çevrimdışı izleme ve arşivleme genellikle sorun oluşturmaz. Başkasına ait bir videoyu izinsiz yeniden yayımlamak veya ticari bir işte kullanmak ise içerik sahibinin haklarını ihlal edebilir. Yalnızca size ait olan veya izne sahip olduğunuz içerikleri kaydetmenizi öneririz; konunun ayrıntısı “Pinterest video indirmek yasal mı?” rehberimizde.',
   },
   {
     q: 'Kayıt olmam veya uygulama indirmem gerekiyor mu?',
@@ -45,6 +49,45 @@ export const HOME_FAQ: QA[] = [
   {
     q: 'Videolarınızı sunucularınızda saklıyor musunuz?',
     a: 'Hayır. İndirdiğiniz videolar sunucularımızda kalıcı olarak saklanmaz; işlem tamamlandıktan sonra geçici veriler temizlenir. Gizliliğiniz korunur.',
+  },
+];
+
+// Pillar tool page FAQ — /pinterest-video-indir/.
+// Kept separate from HOME_FAQ (which is broad) so the two pages never publish
+// the same question. These answers are practical, about USING the tool:
+// what to pick, what the file looks like, what happens mid-download.
+export const PILLAR_FAQ: QA[] = [
+  {
+    q: 'Bu araç video dışında görsel ve GIF pinlerini de işliyor mu?',
+    a: 'Bu sayfa videoya odaklanır, ancak yapıştırdığınız pin görsel veya hareketli içerik barındırıyorsa uygun dosyalar da listelenir. Yalnızca görsel indirecekseniz “Pinterest resim indir”, hareketli içerik için “Pinterest GIF indir” sayfası daha doğrudan sonuç verir. Çoklu görsel içeren pinler için karusel aracını kullanın.',
+  },
+  {
+    q: 'Listelenen çözünürlüklerden hangisini seçmeliyim?',
+    a: 'Telefonda izleyecekseniz 720p çoğu durumda yeterlidir ve dosya küçük kalır. Bilgisayar, tablet veya televizyon ekranında izleyecek ya da videoyu düzenleyecekseniz listedeki en yüksek çözünürlüğü seçin. Listede yalnızca kaynakta gerçekten var olan seçenekler görünür.',
+  },
+  {
+    q: 'İndirilen dosya hangi adla kaydediliyor, adını değiştirebilir miyim?',
+    a: 'Dosyalar “pin-video-1.mp4” biçiminde otomatik bir adla iner. Tarayıcınız her indirmede kaydetme yerini sormaya ayarlıysa adı o sırada değiştirebilirsiniz; aksi hâlde dosyayı kaydettikten sonra cihazınızdan yeniden adlandırmanız yeterlidir. Dosya adının video kalitesiyle bir ilgisi yoktur.',
+  },
+  {
+    q: 'İndirme başladıktan sonra sekmeyi kapatırsam ne olur?',
+    a: 'Dosya aktarımı başladıysa işlem tarayıcınızın indirme yöneticisine geçmiş olur ve sekmeyi kapatsanız da genellikle tamamlanır. Ancak bağlantı henüz çözümlenirken sayfayı kapatırsanız işlem iptal olur ve baştan başlamanız gerekir. Büyük dosyalarda sekmeyi indirme bitene kadar açık tutmak en güvenlisidir.',
+  },
+  {
+    q: 'Mobil veriyle indirirken nelere dikkat etmeliyim?',
+    a: 'Yüksek çözünürlüklü videolar birkaç yüz megabayta ulaşabilir, bu yüzden sınırlı bir veri paketiniz varsa daha düşük bir çözünürlük seçmek mantıklıdır. Uzun videolarda bağlantının kopmaması için kararlı bir sinyal önemlidir. Mümkünse büyük dosyaları Wi‑Fi bağlantısında indirin.',
+  },
+  {
+    q: 'Doğru pini yapıştırdığımı indirmeden önce nasıl anlarım?',
+    a: 'Bağlantı çözümlendikten sonra araç, bulduğu dosyaları tür ve kalite etiketleriyle listeler; beklediğiniz içerik türü görünmüyorsa yanlış bağlantı kopyalanmış olabilir. Böyle bir durumda pini Pinterest’te yeniden açıp bağlantıyı baştan kopyalayın. Bağlantının herkese açık bir pine ait olması da gerekir.',
+  },
+  {
+    q: 'Aracı kullanırken reklam veya başka siteye yönlendirme çıkıyor mu?',
+    a: 'Hayır. Sayfada açılır pencere, sahte “indir” düğmesi veya başka bir siteye yönlendirme bulunmaz; tıkladığınız düğme yalnızca beklediğiniz dosyayı indirir. Bu tür yönlendirmeler gösteren siteler konusunda temkinli olmanızı öneririz.',
+  },
+  {
+    q: 'Bu sayfa ile sitedeki diğer indirme araçları arasında ne fark var?',
+    a: 'Buradaki araç genel amaçlıdır ve çoğu video için tek başına yeterlidir. Diğer sayfalar aynı motoru belirli bir ihtiyaç etrafında sunar: en yüksek çözünürlük için HD, dosya biçimi için MP4, yalnızca bağlantıyla indirme için link sayfası, telefona kaydetme için galeriye indirme sayfası. Hangisini kullanırsanız kullanın sonuç aynı kalitede olur.',
   },
 ];
 

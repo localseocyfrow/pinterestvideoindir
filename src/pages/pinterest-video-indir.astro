@@ -3,7 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Downloader from '../components/Downloader.astro';
 import Faq from '../components/Faq.astro';
 import { SITE } from '../data/site';
-import { HOME_FAQ } from '../data/faq';
+import { PILLAR_FAQ } from '../data/faq';
 import {
   webAppSchema,
   faqSchema,
@@ -33,7 +33,7 @@ const qualities = [
       { name: 'Ana Sayfa', href: '/' },
       { name: 'Video İndir', href: path },
     ]),
-    faqSchema(HOME_FAQ),
+    faqSchema(PILLAR_FAQ),
   ]}
 >
   <section class="hero">
@@ -132,5 +132,5 @@ const qualities = [
     </div>
   </section>
 
-  <Faq items={HOME_FAQ} title="Pinterest video indirme — SSS" />
+  <Faq items={PILLAR_FAQ} title="Pinterest video indirme — SSS" />
 </BaseLayout>
