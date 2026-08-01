@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
+import ShortAnswerBox from '../components/ShortAnswerBox.astro';
 import Downloader from '../components/Downloader.astro';
 import { HUB_FAQ_GROUPS } from '../data/faq';
 import { faqSchema, breadcrumbSchema, articleSchema } from '../lib/schema';
@@ -47,6 +48,16 @@ const totalCount = allItems.length;
       </div>
 
       <div class="prose" style="margin-inline:auto">
+        <ShortAnswerBox question="Kısa cevap: Pinterest içerikleri nasıl indirilir?">
+          <p class="mt-0" style="margin:0">
+            Pinin bağlantısını kopyalayın, indirme kutusuna yapıştırın ve
+            kaliteyi seçip kaydedin. Video pinleri <strong>MP4</strong>, görseller JPG/PNG, hareketli pinler <strong>GIF</strong> veya MP4 olarak iner;
+            karusel pinlerinde kareler tek tek listelenir. İşlem tarayıcıdan
+            yapılır, Pinterest hesabı ya da uygulama kurulumu gerektirmez.
+            Aşağıdaki {totalCount} soru bu sürecin tüm ayrıntılarını kapsıyor.
+          </p>
+        </ShortAnswerBox>
+
         <p>
           Yanıtların çoğu tek başına yeterlidir; konuyu daha ayrıntılı görmek
           isterseniz her yanıtın içindeki bağlantı sizi o konunun kendi
