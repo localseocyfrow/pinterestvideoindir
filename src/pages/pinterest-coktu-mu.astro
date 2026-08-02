@@ -1,0 +1,205 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import ShortAnswerBox from '../components/ShortAnswerBox.astro';
+import Faq from '../components/Faq.astro';
+import ToolCta from '../components/ToolCta.astro';
+import RelatedGuides from '../components/RelatedGuides.astro';
+import { PINTEREST_COKTU_FAQ } from '../data/faq';
+import { articleSchema, faqSchema, breadcrumbSchema } from '../lib/schema';
+
+const path = '/pinterest-coktu-mu/';
+const title = 'Pinterest Çöktü mü? Kesinti Nasıl Kontrol Edilir';
+const description =
+  'Pinterest çöktü mü, sorun herkeste mi yoksa sadece sizde mi? Kesintiyi doğrulamanın güvenilir yolları, kontrol listesi ve Pinterest açılmıyorsa yapılacaklar.';
+
+const crumbs = [
+  { name: 'Ana Sayfa', href: '/' },
+  { name: 'Pinterest Çöktü mü?', href: path },
+];
+
+// Kesintiyi doğrulamak için sırayla denenecek kontroller.
+const checks = [
+  {
+    yer: 'Kesinti bildiren siteler',
+    nasil: 'Downdetector benzeri servislerde “Pinterest” sayfasını açın; son saatlerdeki bildirim grafiğine bakın.',
+    yorum: 'Ani ve keskin bir artış genel kesinti işaretidir',
+  },
+  {
+    yer: 'X / sosyal ağ araması',
+    nasil: '“Pinterest” aramasını en yeni gönderimlere göre sıralayın.',
+    yorum: 'Aynı anda çok sayıda kullanıcı yazıyorsa sorun yaygındır',
+  },
+  {
+    yer: 'Farklı cihaz',
+    nasil: 'Telefon yerine bilgisayardan ya da tersi yönde deneyin.',
+    yorum: 'Diğer cihazda açılıyorsa sorun cihaza özeldir',
+  },
+  {
+    yer: 'Farklı bağlantı',
+    nasil: 'Wi‑Fi yerine mobil veriye (veya tersine) geçip yeniden deneyin.',
+    yorum: 'Yalnızca bir bağlantıda sorun varsa ağ kaynaklıdır',
+  },
+  {
+    yer: 'Farklı tarayıcı / gizli sekme',
+    nasil: 'Başka bir tarayıcıda veya gizli sekmede pinterest.com adresini açın.',
+    yorum: 'Gizli sekmede çalışıyorsa önbellek ya da eklenti sorunudur',
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  path={path}
+  ogType="article"
+  schemas={[
+    breadcrumbSchema(crumbs),
+    articleSchema({ title, description, path }),
+    faqSchema(PINTEREST_COKTU_FAQ),
+  ]}
+>
+  <article class="section">
+    <div class="container">
+      <Breadcrumb crumbs={crumbs} />
+
+      <div class="prose">
+        <span class="eyebrow">Kesinti kontrol rehberi</span>
+        <h1>Pinterest Çöktü mü?</h1>
+        <p class="lead">
+          Pinterest bir anda açılmayı bıraktığında akla gelen ilk soru şudur:
+          sorun herkeste mi, yoksa yalnızca bende mi? Bu sayfa canlı kesinti
+          verisi yayımlamaz — bunun yerine durumu kendiniz güvenilir biçimde
+          nasıl doğrulayacağınızı ve sonucuna göre ne yapmanız gerektiğini
+          anlatır.
+        </p>
+
+        <ShortAnswerBox question="Kısa cevap: Pinterest çöktü mü, nasıl anlaşılır?">
+          <p class="mt-0" style="margin:0">
+            Üç kontrolü sırayla yapın: kesinti bildiren bir siteye bakın,
+            sosyal ağda “Pinterest” aramasını <strong>en yeni</strong> gönderilere göre sıralayın ve platformu <strong>farklı bir cihaz ile farklı bir bağlantıda</strong> deneyin.
+            Üçü de aynı sonucu veriyorsa kesinti geneldir ve yapılacak tek şey
+            beklemektir. Yalnızca sizde sorun varsa çözüm cihazınızdadır.
+          </p>
+        </ShortAnswerBox>
+      </div>
+
+      <div class="prose">
+        <h2>Pinterest çöktü mü, nasıl anlaşılır?</h2>
+        <p>
+          Kesinti tespiti tek bir kaynağa bakarak yapılmaz. Kesinti bildiren
+          siteler resmî ölçüm yapmaz; kullanıcıların bildirimlerini sayar. Bu
+          nedenle bir <strong>bildirim artışı güçlü bir işarettir ama tek başına kanıt değildir</strong>. Doğru yöntem, birbirinden bağımsız iki veya üç
+          göstergeyi yan yana koymaktır: dış bildirimler, sosyal ağdaki canlı
+          şikâyet akışı ve kendi ikinci denemeniz.
+        </p>
+
+        <h2>Herkeste mi sorun var, yoksa sadece bende mi?</h2>
+        <p>
+          Bu ayrımı yapmanın en pratik yolu, <strong>koşulları değiştirerek</strong> denemektir. Aynı cihazda, aynı ağda ve aynı
+          tarayıcıda tekrar denemek yeni bilgi vermez. Cihazı, bağlantıyı veya
+          tarayıcıyı değiştirdiğinizde Pinterest açılıyorsa kesinti genel
+          değildir; sorun sizin ortamınızdadır ve çözülebilir.
+        </p>
+
+        <h2>Kontrol edilecek yerler</h2>
+        <div class="table-wrap" style="margin:18px 0 8px">
+          <table>
+            <thead>
+              <tr>
+                <th style="text-align:right">Nereye bakılır</th>
+                <th>Nasıl yapılır</th>
+                <th>Ne anlama gelir</th>
+              </tr>
+            </thead>
+            <tbody>
+              {checks.map((c) => (
+                <tr>
+                  <td style="font-weight:700;color:var(--ink)">{c.yer}</td>
+                  <td>{c.nasil}</td>
+                  <td>{c.yorum}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p>
+          En güvenilir bilgi kaynağı, platformun kendi resmî duyurularıdır.
+          Üçüncü taraf kesinti siteleri yalnızca destekleyici bir göstergedir.
+        </p>
+
+        <h2>Bu sayfa neden canlı durum göstermiyor?</h2>
+        <p>
+          Çünkü doğrulayamayacağımız bir veriyi yayımlamak yanıltıcı olur. Bu
+          sayfa statiktir; Pinterest’in o anki durumunu ölçmez, kesinti sayısı
+          ya da “şu anda çalışıyor / çalışmıyor” bilgisi üretmez. Böyle bir
+          gösterge sunan sayfaların çoğu da aslında kullanıcı bildirimlerini
+          yansıtır. Bizim yaklaşımımız, size <strong>doğru kontrol yöntemini</strong> vermek ve sonucu kendinizin
+          değerlendirmesini sağlamaktır.
+        </p>
+
+        <h2>Pinterest açılmıyorsa ne yapılır?</h2>
+        <p>
+          Kesinti genel değilse sırayla şunları deneyin: uygulamayı tamamen
+          kapatıp yeniden açın, cihazı yeniden başlatın, uygulama veya tarayıcı
+          önbelleğini temizleyin, uygulamanın güncel sürümde olduğundan emin
+          olun ve varsa VPN’i kapatın. Adım adım çözüm listesini <a href="/pinterest-acilmiyor/">Pinterest açılmıyor</a> rehberimizde bulabilirsiniz.
+        </p>
+
+        <h2>Pinterest videosu açılmıyorsa ne yapılır?</h2>
+        <p>
+          Uygulama açılıyor ama yalnızca videolar oynamıyorsa sorun genellikle
+          bağlantı hızı, önbellek ya da bir reklam engelleyici eklentidir.
+          Videoya özel çözümleri <a href="/pinterest-video-acilmiyor/">videolar açılmıyor</a> sayfasında, indirme adımında takılıyorsanız <a href="/pinterest-video-indirilemiyor/">video indirilemiyor</a> sayfasında ele alıyoruz.
+        </p>
+
+        <h2>Link çalışmıyorsa ne yapılır?</h2>
+        <p>
+          Elinizdeki pin bağlantısı açılmıyorsa adresin eksik kopyalanmış
+          olabileceğini, pinin silinmiş ya da gizli bir panoda olabileceğini
+          göz önünde bulundurun. Bağlantıya özgü nedenleri ve çözümleri <a href="/pinterest-link-calismiyor/">Pinterest linki çalışmıyor</a> rehberinde topladık. Elinizde herkese açık bir bağlantı varsa,
+          platform sizde açılmasa bile içeriği <a href="/pinterest-video-link-indir/">bağlantıyla indirme sayfası</a> üzerinden kaydetmeyi deneyebilirsiniz.
+        </p>
+
+        <h2>Kesinti sırasında yapılmaması gerekenler</h2>
+        <ul>
+          <li><strong>Uygulamayı silip yeniden kurmayın:</strong> Sorun sizde değilse bir şeyi düzeltmez, oturumunuzu kaybettirir.</li>
+          <li><strong>Parolanızı arka arkaya değiştirmeyin:</strong> Erişim sorununu çözmez, hesabınıza girişi zorlaştırabilir.</li>
+          <li><strong>Giriş bilgisi isteyen üçüncü taraf sayfalara bilgi girmeyin:</strong> Kesinti dönemleri kimlik avı girişimlerinin arttığı zamanlardır.</li>
+          <li><strong>“Kesintiyi çözen” uygulama indirmeyin:</strong> Kurulum dosyası indirtmeye çalışan sayfalardan uzak durun.</li>
+        </ul>
+
+        <p class="disclaimer" role="note" style="margin-top:22px">
+          <strong>Sorumlu kullanım — </strong>Yalnızca size ait olan veya
+          indirme/kullanma iznine sahip olduğunuz içerikleri kaydetmenizi
+          öneririz. Bu sayfa canlı kesinti verisi sunmaz ve genel bilgilendirme
+          amaçlıdır. Sorun devam ederse <a href="/iletisim/">iletişim</a> sayfamızdan bize yazabilirsiniz. Pinterest ile resmi bir
+          bağlantımız yoktur.
+        </p>
+      </div>
+    </div>
+  </article>
+
+  <ToolCta
+    title="Bağlantınız varsa içerik hâlâ indirilebilir"
+    text="Pinterest sizde açılmasa bile, elinizdeki herkese açık pin bağlantısını yapıştırıp videoyu kaydetmeyi deneyebilirsiniz."
+    href="/pinterest-video-indir/"
+    label="Pinterest Video İndir"
+  />
+
+  <RelatedGuides
+    title="İlgili sorun giderme rehberleri"
+    items={[
+      { title: 'Pinterest Açılmıyor mu?', href: '/pinterest-acilmiyor/', description: 'Uygulama veya site hiç açılmıyorsa adım adım çözüm.' },
+      { title: 'Videolar Açılmıyor / Oynatılmıyor', href: '/pinterest-video-acilmiyor/', description: 'Video siyah ekranda kalıyor veya yüklenmiyorsa.' },
+      { title: 'Pinterest Linki Çalışmıyor', href: '/pinterest-link-calismiyor/', description: 'Bağlantı açılmıyor veya pin.it çözülmüyorsa.' },
+      { title: 'Video İndirilemiyor mu?', href: '/pinterest-video-indirilemiyor/', description: 'İndirme başlamıyorsa nedenleri ve çözümü.' },
+      { title: 'Pinterest Video Link İndir', href: '/pinterest-video-link-indir/', description: 'Yalnızca bağlantıyla indirmeye odaklı sayfa.' },
+      { title: 'Pinterest Video İndir', href: '/pinterest-video-indir/', description: 'HD, Full HD ve 4K MP4 indirme aracı.' },
+      { title: 'Sıkça Sorulan Sorular', href: '/sss/', description: 'Tüm araçlar için toplu soru-cevap.' },
+      { title: 'İletişim', href: '/iletisim/', description: 'Sorun devam ederse bize ulaşın.' },
+    ]}
+  />
+
+  <Faq items={PINTEREST_COKTU_FAQ} title="Pinterest kesintisi — sık sorulanlar" />
+</BaseLayout>

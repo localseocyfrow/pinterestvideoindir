@@ -26,6 +26,8 @@ export const ROUTES: Route[] = [
   { path: '/pinterest-video-indirme-vs-kaydetme/', title: 'Pinterest Video İndirme ve Kaydetme Farkı — karşılaştırma', changefreq: 'monthly', priority: 0.6 },
   { path: '/pinterest-video-kalitesi/', title: 'Pinterest Video Kalitesi — neden bulanık & HD indirme', changefreq: 'monthly', priority: 0.6 },
   { path: '/pinterest-video-indirilemiyor/', title: 'Pinterest Videosu İndirilemiyor mu? — nedenleri & çözümü', changefreq: 'monthly', priority: 0.6 },
+  { path: '/pinterest-nedir/', title: 'Pinterest Nedir — ne işe yarar & nasıl kullanılır', changefreq: 'monthly', priority: 0.7 },
+  { path: '/pinterest-coktu-mu/', title: 'Pinterest Çöktü mü — kesinti nasıl kontrol edilir', changefreq: 'weekly', priority: 0.6 },
   { path: '/pinterest-acilmiyor/', title: 'Pinterest Neden Açılmıyor? — nedenleri & çözümü', changefreq: 'monthly', priority: 0.6 },
   { path: '/pinterest-video-acilmiyor/', title: 'Pinterest Videosu Açılmıyor / Oynatılmıyor mu? — çözümü', changefreq: 'monthly', priority: 0.55 },
   { path: '/pinterest-link-calismiyor/', title: 'Pinterest Linki Çalışmıyor mu? — nedenleri & çözümü', changefreq: 'monthly', priority: 0.55 },

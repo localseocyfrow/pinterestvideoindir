@@ -1037,6 +1037,83 @@ export const HOW_TOOL_WORKS_FAQ: QA[] = [
   },
 ];
 
+// Platform-definition cluster — /pinterest-nedir/.
+// About Pinterest the PLATFORM, not about our downloader: kept deliberately
+// separate from the "…indirici nedir" / "downloader nedir" sets so the two
+// topics never compete for the same query.
+export const PINTEREST_NEDIR_FAQ: QA[] = [
+  {
+    q: 'Pinterest tam olarak ne demek?',
+    a: 'Pinterest, İngilizce “pin” (iğnelemek) ve “interest” (ilgi alanı) sözcüklerinin birleşiminden gelir. Adı, beğendiğiniz görselleri bir mantar panoya iğnelemek fikrine dayanır: platformda da içerikleri “pin” olarak kaydeder ve konu konu panolarda toplarsınız.',
+  },
+  {
+    q: 'Pinterest hangi amaçla kullanılır?',
+    a: 'En yaygın kullanım, bir şey planlarken görsel fikir toplamaktır: ev dekorasyonu, kıyafet kombinleri, yemek tarifleri, düğün hazırlığı, saç modeli, tasarım ve “nasıl yapılır” içerikleri. Kullanıcılar ilgilerini çeken görsel ve videoları panolara kaydedip daha sonra bu koleksiyona geri döner.',
+  },
+  {
+    q: 'Pinterest bir sosyal medya uygulaması mı?',
+    a: 'Kısmen. Hesap açar, başkalarını takip edebilir ve içerik paylaşabilirsiniz; bu yönüyle sosyal bir platformdur. Ancak odağı sohbet, gönderi akışı veya arkadaş çevresi değil, arama yoluyla görsel keşiftir. Bu nedenle çoğu zaman “görsel keşif ve arama motoru” olarak da tanımlanır.',
+  },
+  {
+    q: 'Pinterest kullanmak için hesap açmak zorunlu mu?',
+    a: 'İçeriklere göz atmak ve arama yapmak için çoğu zaman hesap gerekmez; herkese açık pinleri tarayıcıdan görüntüleyebilirsiniz. Ancak pin kaydetmek, pano oluşturmak, takip etmek veya içerik paylaşmak için ücretsiz bir hesap açmanız gerekir.',
+  },
+  {
+    q: 'Pinterest ile Instagram arasındaki temel fark nedir?',
+    a: 'Instagram büyük ölçüde kişileri ve güncel paylaşımları takip etmek üzerine kuruludur. Pinterest’te ise kimin paylaştığından çok içeriğin kendisi öne çıkar ve içerikler zamanla eskimez; aylar önce kaydedilmiş bir tarif ya da tasarım aramalarda görünmeye devam eder.',
+  },
+  {
+    q: 'Pinterest’te “pin” ve “pano” ne anlama gelir?',
+    a: '“Pin”, platformdaki tek bir içerik kartıdır: bir görsel, video veya çoklu görsel. “Pano” ise bu pinleri konusuna göre topladığınız koleksiyondur — örneğin “mutfak fikirleri” ya da “kış kombinleri”. Panolarınızı herkese açık veya gizli tutabilirsiniz.',
+  },
+  {
+    q: 'Pinterest’te bulduğum içerikleri cihazıma kaydedebilir miyim?',
+    a: 'Pinterest’in “Kaydet” düğmesi içeriği yalnızca hesabınızdaki panoya ekler; dosya cihazınıza inmez ve görüntülemek için internet gerekir. İçeriği cihazınızda dosya olarak saklamak istiyorsanız bağlantısını kopyalayıp bir indirme aracı kullanmanız gerekir.',
+  },
+  {
+    q: 'Pinterest Türkiye’de kullanılabiliyor mu?',
+    a: 'Evet, platform Türkiye’den erişilebilir ve arayüzü Türkçe kullanılabilir. Zaman zaman yaşanan erişim sorunları genellikle geçici kesintilerden, bağlantı ayarlarından ya da uygulama önbelleğinden kaynaklanır; kalıcı bir engel anlamına gelmez.',
+  },
+];
+
+// Outage-verification cluster — /pinterest-coktu-mu/.
+// Deliberately about CONFIRMING an outage (is it everyone or just me), which is
+// a different intent from ACILMIYOR_FAQ (fixing it on your own device).
+export const PINTEREST_COKTU_FAQ: QA[] = [
+  {
+    q: 'Pinterest’in çöküp çökmediğini nasıl anlarım?',
+    a: 'En hızlı yol, sorunun başkalarında da olup olmadığına bakmaktır: kesinti bildiren siteleri açın, sosyal ağlarda “Pinterest” aramasını son dakika sıralamasıyla kontrol edin ve platformu farklı bir cihaz ile bağlantı üzerinden deneyin. Üçü de aynı sonucu veriyorsa sorun büyük olasılıkla sizde değildir.',
+  },
+  {
+    q: 'Bu sayfa Pinterest’in anlık durumunu gösteriyor mu?',
+    a: 'Hayır. Bu sayfa canlı kesinti verisi yayımlamaz ve Pinterest’in o anki durumunu ölçmez; böyle bir veriyi doğrulayamayacağımız için göstermeyi de doğru bulmuyoruz. Bunun yerine durumu kendiniz güvenilir biçimde nasıl kontrol edebileceğinizi adım adım anlatıyoruz.',
+  },
+  {
+    q: 'Kesinti bildiren siteler ne kadar güvenilir?',
+    a: 'Bu siteler resmî ölçüm yapmaz; kullanıcı bildirimlerine dayanır. Bu yüzden ani bir bildirim artışı güçlü bir işaret sayılır, ancak tek başına kesin kanıt değildir. Sonucu her zaman ikinci bir yöntemle — farklı bir cihaz veya bağlantı denemesiyle — doğrulamak gerekir.',
+  },
+  {
+    q: 'Yalnızca benim cihazımda sorun olduğunu nasıl doğrularım?',
+    a: 'Aynı hesabı ve aynı bağlantıyı kullanmayan bir ortamda deneyin: mobil veriye geçin, farklı bir tarayıcı açın ya da başka bir cihaz kullanın. Pinterest bu ortamların birinde sorunsuz açılıyorsa kesinti genel değildir ve çözüm kendi cihazınızdadır.',
+  },
+  {
+    q: 'Pinterest çökmüşse ne kadar sürede düzelir?',
+    a: 'Bunun önceden kestirilebilir bir süresi yoktur; geniş çaplı kesintiler genellikle kısa sürede giderilir, ancak kesin bir süre vermek mümkün değildir. Bu tür durumlarda yapılacak en doğru şey beklemek ve platformun resmî duyurularını izlemektir.',
+  },
+  {
+    q: 'Kesinti sırasında yapmamam gereken şeyler neler?',
+    a: 'Uygulamayı silip yeniden kurmak, parolanızı arka arkaya değiştirmek veya hesabınızı kapatmaya çalışmak gereksizdir; sorun sizde değilse bunlar hiçbir şeyi düzeltmez ve hesabınıza erişimi zorlaştırabilir. Kesinti sırasında giriş bilgisi isteyen üçüncü taraf sayfalara da bilgi girmeyin.',
+  },
+  {
+    q: 'Pinterest çalışmıyorken daha önce kopyaladığım bağlantıyı kullanabilir miyim?',
+    a: 'Elinizde herkese açık bir pinin bağlantısı varsa, platform sizde açılmasa bile bu bağlantıyı bir indirme aracına yapıştırıp içeriği kaydetmeyi deneyebilirsiniz. Ancak kesinti Pinterest’in içerik sunucularını da etkiliyorsa bu işlem de geçici olarak başarısız olabilir.',
+  },
+  {
+    q: 'Pinterest’in resmî bir durum sayfası var mı?',
+    a: 'Pinterest, yaygın kesintilerde açıklamalarını genellikle kendi yardım kaynakları ve resmî sosyal medya hesapları üzerinden duyurur. En güvenilir bilgi bu resmî kanallardır; üçüncü taraf kesinti siteleri yalnızca destekleyici bir gösterge olarak değerlendirilmelidir.',
+  },
+];
+
 // ---------------------------------------------------------------------------
 // /sss/ — the FAQ hub.
 //

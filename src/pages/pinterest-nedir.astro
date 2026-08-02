@@ -1,0 +1,225 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import ShortAnswerBox from '../components/ShortAnswerBox.astro';
+import Faq from '../components/Faq.astro';
+import ToolCta from '../components/ToolCta.astro';
+import RelatedGuides from '../components/RelatedGuides.astro';
+import { PINTEREST_NEDIR_FAQ } from '../data/faq';
+import { articleSchema, faqSchema, breadcrumbSchema } from '../lib/schema';
+
+const path = '/pinterest-nedir/';
+const title = 'Pinterest Nedir? Ne İşe Yarar, Nasıl Kullanılır (2026)';
+const description =
+  'Pinterest nedir, ne demek ve ne işe yarar? Görsel keşif platformunu, pin ve pano mantığını, sosyal medyadan farkını ve içerik kaydetmenin nasıl çalıştığını sade bir dille anlatıyoruz.';
+
+const crumbs = [
+  { name: 'Ana Sayfa', href: '/' },
+  { name: 'Pinterest Nedir?', href: path },
+];
+
+// Pinterest'i benzer platformlardan ayıran noktalar.
+const comparison = [
+  {
+    olcut: 'Temel amaç',
+    pinterest: 'Fikir aramak ve biriktirmek',
+    diger: 'Kişileri ve güncel paylaşımları takip etmek',
+  },
+  {
+    olcut: 'İçeriği bulma yolu',
+    pinterest: 'Arama ve öneri akışı',
+    diger: 'Takip edilen hesapların akışı',
+  },
+  {
+    olcut: 'İçeriğin ömrü',
+    pinterest: 'Aylar sonra da aramalarda görünür',
+    diger: 'Genellikle paylaşımdan kısa süre sonra geri planda kalır',
+  },
+  {
+    olcut: 'Saklama biçimi',
+    pinterest: 'Konu konu panolar',
+    diger: 'Beğeni veya kaydedilenler listesi',
+  },
+  {
+    olcut: 'Öne çıkan içerik türü',
+    pinterest: 'Görsel, video ve çoklu görsel',
+    diger: 'Metin, fotoğraf ve kısa video karışık',
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  path={path}
+  ogType="article"
+  schemas={[
+    breadcrumbSchema(crumbs),
+    articleSchema({ title, description, path }),
+    faqSchema(PINTEREST_NEDIR_FAQ),
+  ]}
+>
+  <article class="section">
+    <div class="container">
+      <Breadcrumb crumbs={crumbs} />
+
+      <div class="prose">
+        <span class="eyebrow">Platform rehberi</span>
+        <h1>Pinterest Nedir?</h1>
+        <p class="lead">
+          Pinterest, insanların bir şey planlarken fikir aradığı görsel bir
+          keşif platformudur. Beğendiğiniz görselleri ve videoları “pin” olarak
+          kaydeder, konularına göre panolarda toplarsınız. Bu sayfada
+          platformun ne olduğunu, ne işe yaradığını ve içerik kaydetmenin nasıl
+          çalıştığını anlatıyoruz.
+        </p>
+
+        <ShortAnswerBox question="Kısa cevap: Pinterest nedir?">
+          <p class="mt-0" style="margin:0">
+            <strong>Pinterest</strong>, görsel içerik üzerinden fikir bulmaya ve
+            biriktirmeye yarayan bir <strong>keşif platformudur</strong>. Adı
+            “pin” (iğnelemek) ve “interest” (ilgi alanı) sözcüklerinden gelir:
+            beğendiğiniz görsel, video veya çoklu görsel içerikleri pin olarak
+            kaydeder, bunları <strong>pano</strong> adı verilen koleksiyonlarda
+            toplarsınız. Yemek tarifi, dekorasyon, kombin, tasarım ve “nasıl
+            yapılır” içerikleri en çok aranan konulardır.
+          </p>
+        </ShortAnswerBox>
+      </div>
+
+      <div class="prose">
+        <h2>Pinterest ne işe yarar?</h2>
+        <p>
+          Pinterest’in asıl işlevi, bir karar vermeden önce <strong>görsel fikir toplamaktır</strong>. Mutfağını yenilemek isteyen biri “mutfak
+          dekorasyon” aramasıyla yüzlerce örneği tek yerde inceleyebilir; bir
+          düğün hazırlığında davetiye, çiçek ve mekân fikirleri aynı panoda
+          birikir. Platform, aradığınız konuya benzer içerikleri de önerdiği
+          için tek bir aramadan yola çıkarak geniş bir fikir havuzuna
+          ulaşırsınız.
+        </p>
+        <p>
+          İkinci işlevi <strong>arşivlemektir</strong>. Beğendiğiniz bir içeriği
+          panoya kaydettiğinizde onu daha sonra kolayca bulursunuz; bu yönüyle
+          Pinterest, dağınık ekran görüntüleri yerine düzenli bir fikir
+          defteri gibi çalışır.
+        </p>
+
+        <h2>Pinterest nasıl kullanılır?</h2>
+        <p>
+          Kullanım üç adımda özetlenebilir: <strong>arayın</strong> — merak
+          ettiğiniz konuyu arama kutusuna yazın; <strong>kaydedin</strong> —
+          beğendiğiniz pini bir panoya ekleyin; <strong>geri dönün</strong> —
+          panolarınızı zaman içinde düzenleyip karşılaştırma yapın. İçeriklere
+          göz atmak için çoğu zaman hesap gerekmez, ancak pin kaydetmek ve pano
+          oluşturmak için ücretsiz bir hesap açmanız gerekir.
+        </p>
+
+        <h2>Pinterest sosyal medya mı?</h2>
+        <p>
+          Tam olarak değil. Hesap açma, takip etme ve paylaşma özellikleri
+          bulunduğu için sosyal bir yanı vardır; fakat merkezinde sohbet ya da
+          arkadaş çevresi değil <strong>arama</strong> vardır. Bu yüzden
+          Pinterest çoğu zaman “sosyal ağ”dan çok <strong>görsel arama ve keşif motoru</strong> olarak tanımlanır. Aşağıdaki tablo bu farkı
+          somutlaştırıyor:
+        </p>
+        <div class="table-wrap" style="margin:18px 0 8px">
+          <table>
+            <thead>
+              <tr>
+                <th style="text-align:right">Ölçüt</th>
+                <th>Pinterest</th>
+                <th>Klasik sosyal ağ</th>
+              </tr>
+            </thead>
+            <tbody>
+              {comparison.map((row) => (
+                <tr>
+                  <td style="font-weight:700;color:var(--ink)">{row.olcut}</td>
+                  <td>{row.pinterest}</td>
+                  <td>{row.diger}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Pinterest’te video, görsel, GIF ve fikir kaydetme nasıl çalışır?</h2>
+        <p>
+          Pinterest’te dört tür içerikle karşılaşırsınız: tek görsel pinler,
+          video pinler, hareketli (GIF) pinler ve birden fazla kare içeren
+          karusel pinler. Hepsinde “Kaydet” düğmesi aynı işi yapar: içeriği
+          seçtiğiniz panoya ekler. Burada önemli bir ayrıntı vardır —
+          <strong>kaydetmek dosyayı cihazınıza indirmez</strong>. Pin
+          panonuzda bir yer imi gibi durur ve her açılışında içerik yeniden
+          Pinterest’ten gelir.
+        </p>
+        <p>
+          İçeriği kendi cihazınızda dosya olarak saklamak istiyorsanız pinin
+          bağlantısını kopyalayıp bir indirme aracı kullanmanız gerekir. Türüne
+          göre <a href="/pinterest-video-indir/">video</a>, <a href="/pinterest-resim-indir/">görsel</a> ve <a href="/pinterest-gif-indir/">GIF</a> araçlarımızı kullanabilirsiniz. Aracın ne olduğunu ve nasıl
+          çalıştığını <a href="/pinterest-video-indirici-nedir/">video indirici nedir</a> ile <a href="/pinterest-downloader-nedir/">downloader nedir</a> sayfalarında açıklıyoruz.
+        </p>
+
+        <h2>Pinterest video indirme ile Pinterest kaydetme arasındaki fark</h2>
+        <p>
+          İkisi sık karıştırılır ama sonuçları farklıdır. <strong>Kaydetmek</strong>, pini hesabınızdaki panoya ekler; içerik
+          Pinterest’te kalır, internetsiz açılmaz ve kaynak pin silinirse
+          erişiminiz biter. <strong>İndirmek</strong> ise dosyayı cihazınızın
+          depolama alanına yazar; çevrimdışı açılır, başka bir cihaza
+          aktarılabilir ve kaynak kaldırılsa bile sizde kalır. İki yöntemin
+          madde madde karşılaştırmasını <a href="/pinterest-video-indirme-vs-kaydetme/">indirme ve kaydetme farkı</a> sayfasında bulabilirsiniz.
+        </p>
+
+        <h2>Kimler için uygundur?</h2>
+        <ul>
+          <li><strong>Ev ve dekorasyon planlayanlar:</strong> Oda, mobilya ve renk fikirlerini tek panoda toplamak için.</li>
+          <li><strong>Yemek yapmayı sevenler:</strong> Tarifleri ve sunum fikirlerini konu konu arşivlemek için.</li>
+          <li><strong>Tasarımcı ve içerik üreticileri:</strong> İlham panosu (moodboard) oluşturup referans biriktirmek için.</li>
+          <li><strong>Etkinlik hazırlığı yapanlar:</strong> Düğün, doğum günü ve organizasyon fikirlerini bir arada tutmak için.</li>
+          <li><strong>Öğrenmek isteyenler:</strong> “Nasıl yapılır” türü görsel anlatımları takip etmek için.</li>
+        </ul>
+
+        <h2>Güvenli ve sorumlu kullanım</h2>
+        <p>
+          Pinterest’teki içeriklerin büyük bölümü telif hakkıyla korunur ve bir
+          içeriğin herkese açık görünmesi onu serbestçe kullanabileceğiniz
+          anlamına gelmez. Kişisel arşiv ve çevrimdışı görüntüleme genellikle
+          sorun oluşturmaz; başkasına ait bir içeriği izinsiz yeniden yayımlamak
+          veya ticari bir işte kullanmak ise hak sahibinin haklarını ihlal
+          edebilir. Konunun genel çerçevesini <a href="/telif-hakki-ve-pinterest-indirme/">telif hakkı ve Pinterest indirme</a> rehberimizde anlatıyoruz.
+        </p>
+
+        <p class="disclaimer" role="note" style="margin-top:22px">
+          <strong>Sorumlu kullanım — </strong>Yalnızca size ait olan veya
+          indirme/kullanma iznine sahip olduğunuz içerikleri kaydetmenizi
+          öneririz. Bu sayfa genel bilgilendirme amaçlıdır ve hukuki tavsiye
+          niteliği taşımaz. Pinterest ile resmi bir bağlantımız yoktur.
+          “Pinterest” markası sahibine aittir.
+        </p>
+      </div>
+    </div>
+  </article>
+
+  <ToolCta
+    title="Beğendiğiniz pini cihazınıza kaydedin"
+    text="Panoya kaydetmek yetmiyorsa bağlantıyı yapıştırın; içeriği çevrimdışı açabileceğiniz bir dosya olarak indirin."
+    href="/pinterest-video-indir/"
+    label="Pinterest Video İndir"
+  />
+
+  <RelatedGuides
+    title="İlgili rehberler ve araçlar"
+    items={[
+      { title: 'Pinterest Video İndirici Nedir?', href: '/pinterest-video-indirici-nedir/', description: 'İndiricinin tanımı, türleri ve sınırları.' },
+      { title: 'Pinterest Downloader Nedir?', href: '/pinterest-downloader-nedir/', description: 'Terimin Türkçe karşılığı ve kapsamı.' },
+      { title: 'İndirme mi, Kaydetme mi?', href: '/pinterest-video-indirme-vs-kaydetme/', description: 'Panoya kaydetmekle cihaza indirmenin farkı.' },
+      { title: 'Pinterest Video İndir', href: '/pinterest-video-indir/', description: 'HD, Full HD ve 4K MP4 indirme aracı.' },
+      { title: 'Pinterest Resim İndir', href: '/pinterest-resim-indir/', description: 'Görselleri tam çözünürlükte kaydedin.' },
+      { title: 'Pinterest GIF İndir', href: '/pinterest-gif-indir/', description: 'Hareketli pinleri GIF veya MP4 olarak indirin.' },
+      { title: 'Telif Hakkı ve Pinterest İndirme', href: '/telif-hakki-ve-pinterest-indirme/', description: 'Hangi kullanım güvenli, hangisi riskli?' },
+      { title: 'Sıkça Sorulan Sorular', href: '/sss/', description: 'Tüm araçlar için toplu soru-cevap.' },
+    ]}
+  />
+
+  <Faq items={PINTEREST_NEDIR_FAQ} title="Pinterest hakkında sık sorulanlar" />
+</BaseLayout>
