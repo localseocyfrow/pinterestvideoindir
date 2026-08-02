@@ -49,26 +49,6 @@ const errors = [
   { neden: 'Bağlantı dış siteye çıkıyor', sonuc: 'Kaynak Pinterest’te değil', cozum: 'Pinin kendi sayfasındaki adresi kullanın' },
 ];
 
-const howTo = {
-  name: 'Pinterest link ile video indirme',
-  description:
-    'Pinterest videosunu bağlantı yapıştırarak indirmek için üç adım yeterlidir: bağlantıyı kopyalayın, araca yapıştırın ve kaliteyi seçip MP4 olarak kaydedin.',
-  totalTime: 'PT1M',
-  steps: [
-    {
-      name: 'Pin bağlantısını kopyalayın',
-      text: 'Videoyu Pinterest’te açın, “Paylaş → Bağlantıyı kopyala” deyin veya tarayıcıdaki adres çubuğundaki URL’yi alın.',
-    },
-    {
-      name: 'Bağlantıyı araca yapıştırın',
-      text: 'Kopyaladığınız adresi sayfanın üstündeki kutuya yapıştırıp “İndir” düğmesine basın; araç pini çözümler.',
-    },
-    {
-      name: 'Kaliteyi seçip kaydedin',
-      text: 'Listelenen çözünürlüklerden birini seçin ve videoyu MP4 olarak cihazınıza kaydedin.',
-    },
-  ],
-};
 ---
 
 <ToolPageLayout
@@ -83,7 +63,6 @@ const howTo = {
   crumbs={crumbs}
   faq={HOW_TOOL_WORKS_FAQ}
   faqTitle="Nasıl çalışır — sık sorulanlar"
-  howTo={howTo}
   extraSchemas={[articleSchema({ title, description, path })]}
 >
   <ShortAnswerBox question="Kısa cevap: Pinterest video indirici nasıl çalışır?">

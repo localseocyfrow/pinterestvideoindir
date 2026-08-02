@@ -15,16 +15,6 @@ const crumbs = [
   { name: 'Ücretsiz Video İndir', href: path },
 ];
 
-const howTo = {
-  name: 'Ücretsiz Pinterest video indirme',
-  description:
-    'Pinterest videosunu ücretsiz indirmek için bağlantıyı kopyalayın, araca yapıştırın ve indirin.',
-  steps: [
-    { name: 'Bağlantıyı kopyala', text: 'Pinterest’te videoyu açıp “Paylaş → Bağlantıyı kopyala” deyin.' },
-    { name: 'Araca yapıştır', text: 'Bağlantıyı yukarıdaki kutuya yapıştırıp “İndir”e basın.' },
-    { name: 'Ücretsiz indir', text: 'Kaliteyi seçin ve videoyu ücretsiz, filigransız MP4 olarak kaydedin.' },
-  ],
-};
 ---
 
 <ToolPageLayout
@@ -39,7 +29,6 @@ const howTo = {
   crumbs={crumbs}
   faq={FREE_FAQ}
   faqTitle="Ücretsiz video indirme — SSS"
-  howTo={howTo}
 >
   <ShortAnswerBox question="Pinterest video indirmek ücretsiz mi?">
     <p class="mt-0" style="margin:0">

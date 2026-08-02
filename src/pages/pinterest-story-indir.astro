@@ -15,17 +15,6 @@ const crumbs = [
   { name: 'Pinterest Story İndir', href: path },
 ];
 
-const howTo = {
-  name: 'Pinterest story (hikaye) indirme',
-  description:
-    'Pinterest story / Idea Pin videosunu indirmek için hikayenin bağlantısını kopyalayın, araca yapıştırın ve medyayı MP4 veya görsel olarak kaydedin.',
-  steps: [
-    { name: 'Hikayeyi aç', text: 'Pinterest’te indirmek istediğiniz story ya da Idea Pin’i açın.' },
-    { name: 'Bağlantıyı kopyala', text: '“Paylaş → Bağlantıyı kopyala” deyin.' },
-    { name: 'Araca yapıştır', text: 'Bağlantıyı yukarıdaki kutuya yapıştırıp “İndir”e basın.' },
-    { name: 'Medyayı kaydet', text: 'Listelenen video/görselleri MP4 veya resim olarak indirin.' },
-  ],
-};
 ---
 
 <ToolPageLayout
@@ -40,7 +29,6 @@ const howTo = {
   crumbs={crumbs}
   faq={STORY_FAQ}
   faqTitle="Pinterest story indirme — SSS"
-  howTo={howTo}
 >
   <ShortAnswerBox question="Pinterest story (hikaye) videosu nasıl indirilir?">
     <p class="mt-0" style="margin:0">

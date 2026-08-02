@@ -22,16 +22,6 @@ const qualities = [
   ['SD (480p)', 'Küçük dosya boyutu', 'Sınırlı internet'],
 ];
 
-const howTo = {
-  name: 'Pinterest videosunu 4K kalitede indirme',
-  description:
-    'Pinterest videosunu 4K veya Full HD indirmek için bağlantıyı kopyalayın, araca yapıştırın ve en yüksek kaliteyi seçin.',
-  steps: [
-    { name: 'Bağlantıyı kopyala', text: 'Videoyu Pinterest’te açıp “Paylaş → Bağlantıyı kopyala” deyin.' },
-    { name: 'Araca yapıştır', text: 'Bağlantıyı yukarıdaki kutuya yapıştırıp “İndir”e basın.' },
-    { name: 'En yüksek kaliteyi seç', text: 'Listeden 4K veya Full HD seçeneğini seçip MP4 olarak kaydedin.' },
-  ],
-};
 ---
 
 <ToolPageLayout
@@ -46,7 +36,6 @@ const howTo = {
   crumbs={crumbs}
   faq={VIDEO_4K_FAQ}
   faqTitle="4K video indirme — SSS"
-  howTo={howTo}
 >
   <ShortAnswerBox question="Pinterest videosu 4K kalitede nasıl indirilir?">
     <p class="mt-0" style="margin:0">

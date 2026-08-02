@@ -4,7 +4,7 @@ import Breadcrumb from '../components/Breadcrumb.astro';
 import ShortAnswerBox from '../components/ShortAnswerBox.astro';
 import Downloader from '../components/Downloader.astro';
 import { HUB_FAQ_GROUPS } from '../data/faq';
-import { faqSchema, breadcrumbSchema, articleSchema } from '../lib/schema';
+import { faqSchema, breadcrumbSchema, articleSchema, webAppSchema } from '../lib/schema';
 
 const path = '/sss/';
 const title = 'Sıkça Sorulan Sorular (SSS) — Pinterest İndirme Yardım Merkezi';
@@ -28,6 +28,9 @@ const totalCount = allItems.length;
   path={path}
   ogType="article"
   schemas={[
+    // The hub embeds the real downloader at the foot of the page, so the tool
+    // entity is declared here as well as on the dedicated tool pages.
+    webAppSchema(),
     breadcrumbSchema(crumbs),
     articleSchema({ title, description, path }),
     faqSchema(allItems),

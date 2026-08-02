@@ -5,6 +5,7 @@ import Faq from '../components/Faq.astro';
 import { SITE } from '../data/site';
 import type { QA } from '../data/faq';
 import {
+  webAppSchema,
   howToSchema,
   faqSchema,
   breadcrumbSchema,
@@ -69,6 +70,8 @@ const pageFaq: QA[] = [
   path={path}
   ogType="article"
   schemas={[
+    // The page embeds the real downloader, so the tool entity belongs here too.
+    webAppSchema(),
     breadcrumbSchema([
       { name: 'Ana Sayfa', href: '/' },
       { name: 'Nasıl Kullanılır', href: path },
