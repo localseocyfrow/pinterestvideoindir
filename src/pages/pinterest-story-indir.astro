@@ -15,6 +15,33 @@ const crumbs = [
   { name: 'Pinterest Story İndir', href: path },
 ];
 
+// Single source for BOTH the visible step list and the HowTo JSON-LD, so the
+// markup can never claim a step the page does not actually show.
+const steps = [
+  {
+    name: 'Hikâyeyi Pinterest’te açın',
+    text: 'İndirmek istediğiniz story ya da Idea Pin’i açın. Yalnızca herkese açık içerikler indirilebilir; gizli panodaki hikâyeler çözümlenemez.',
+  },
+  {
+    name: 'Bağlantıyı kopyalayın',
+    text: 'Üç nokta (•••) veya “Paylaş” simgesine dokunup “Bağlantıyı kopyala” deyin. Tarayıcıda açtıysanız adres çubuğundaki adresi de kullanabilirsiniz.',
+  },
+  {
+    name: 'Araca yapıştırın',
+    text: 'Bağlantıyı yukarıdaki kutuya yapıştırıp “İndir”e basın; araç hikâyedeki video ve görselleri ayrı ayrı listeler.',
+  },
+  {
+    name: 'İstediğiniz sayfaları kaydedin',
+    text: 'Çok sayfalı Idea Pin’lerde her bölümü tek tek indirebilirsiniz: videolar MP4, görseller tam çözünürlüklü resim olarak iner.',
+  },
+];
+
+const howTo = {
+  name: 'Pinterest story (hikaye) indirme',
+  description:
+    'Pinterest story veya Idea Pin içeriğini indirmek için hikâyeyi açın, bağlantısını kopyalayın, araca yapıştırın ve istediğiniz sayfaları MP4 ya da görsel olarak kaydedin.',
+  steps,
+};
 ---
 
 <ToolPageLayout
@@ -29,6 +56,7 @@ const crumbs = [
   crumbs={crumbs}
   faq={STORY_FAQ}
   faqTitle="Pinterest story indirme — SSS"
+  howTo={howTo}
 >
   <ShortAnswerBox question="Pinterest story (hikaye) videosu nasıl indirilir?">
     <p class="mt-0" style="margin:0">
@@ -39,6 +67,13 @@ const crumbs = [
       pinlerinde her sayfayı ayrı ayrı indirebilirsiniz.
     </p>
   </ShortAnswerBox>
+
+  <h2>Story nasıl indirilir?</h2>
+  <div class="steps" style="margin:20px 0">
+    {steps.map((s) => (
+      <div class="step"><h3>{s.name}</h3><p>{s.text}</p></div>
+    ))}
+  </div>
 
   <h2>Story ve Idea Pin nedir?</h2>
   <p>

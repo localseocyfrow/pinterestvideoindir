@@ -22,6 +22,33 @@ const qualities = [
   ['SD (480p)', 'Küçük dosya boyutu', 'Sınırlı internet'],
 ];
 
+// Single source for BOTH the visible step list and the HowTo JSON-LD, so the
+// markup can never claim a step the page does not actually show.
+const steps = [
+  {
+    name: 'Yüksek çözünürlüklü bir pin seçin',
+    text: 'İndirme tavanını videonun Pinterest’e yüklendiği çözünürlük belirler; 4K seçeneğini yalnızca kaynağı 4K olan pinlerde görürsünüz.',
+  },
+  {
+    name: 'Bağlantıyı kopyalayıp yapıştırın',
+    text: 'Pinterest’te “Paylaş → Bağlantıyı kopyala” deyin ve adresi yukarıdaki kutuya yapıştırıp “İndir”e basın.',
+  },
+  {
+    name: 'Listeden en yüksek çözünürlüğü seçin',
+    text: 'Çıkan seçenekler arasından 4K (2160p) ya da Full HD (1080p) satırını seçin; listede yalnızca kaynakta gerçekten bulunan kaliteler görünür.',
+  },
+  {
+    name: 'MP4 olarak kaydedin',
+    text: 'Dosya filigransız MP4 olarak iner. 4K dosyalar büyük olduğu için kararlı bir Wi‑Fi bağlantısında indirmek daha rahattır.',
+  },
+];
+
+const howTo = {
+  name: 'Pinterest videosunu 4K kalitede indirme',
+  description:
+    'Pinterest videosunu 4K veya Full HD indirmek için bağlantıyı kopyalayın, araca yapıştırın ve listeden en yüksek çözünürlüğü seçip MP4 olarak kaydedin.',
+  steps,
+};
 ---
 
 <ToolPageLayout
@@ -36,6 +63,7 @@ const qualities = [
   crumbs={crumbs}
   faq={VIDEO_4K_FAQ}
   faqTitle="4K video indirme — SSS"
+  howTo={howTo}
 >
   <ShortAnswerBox question="Pinterest videosu 4K kalitede nasıl indirilir?">
     <p class="mt-0" style="margin:0">
@@ -44,6 +72,13 @@ const qualities = [
       Pinterest’e yüklendiği çözünürlükle sınırlıdır.
     </p>
   </ShortAnswerBox>
+
+  <h2>4K video nasıl indirilir?</h2>
+  <div class="steps" style="margin:20px 0">
+    {steps.map((s) => (
+      <div class="step"><h3>{s.name}</h3><p>{s.text}</p></div>
+    ))}
+  </div>
 
   <h2>İndirme kalitesi seçenekleri</h2>
   <p>

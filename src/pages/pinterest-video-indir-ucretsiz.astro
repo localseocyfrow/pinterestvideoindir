@@ -15,6 +15,33 @@ const crumbs = [
   { name: 'Ücretsiz Video İndir', href: path },
 ];
 
+// Single source for BOTH the visible step list and the HowTo JSON-LD, so the
+// markup can never claim a step the page does not actually show.
+const steps = [
+  {
+    name: 'Bağlantıyı kopyalayın',
+    text: 'Pinterest’te videoyu açıp “Paylaş → Bağlantıyı kopyala” deyin. Bu aşamada hesap açmanız ya da giriş yapmanız gerekmez.',
+  },
+  {
+    name: 'Kutuya yapıştırın',
+    text: 'Adresi yukarıdaki kutuya yapıştırıp “İndir”e basın. Ödeme, kredi kartı veya e-posta bilgisi istenmez.',
+  },
+  {
+    name: 'Kaliteyi seçin',
+    text: 'Listelenen çözünürlüklerin tamamı ücretsizdir; “premium” için ayrılmış, kilitli bir seçenek yoktur.',
+  },
+  {
+    name: 'Kaydedin ve dilediğinizce tekrarlayın',
+    text: 'Videoyu filigransız MP4 olarak kaydedin. Günlük indirme kotası olmadığı için işlemi istediğiniz kadar tekrarlayabilirsiniz.',
+  },
+];
+
+const howTo = {
+  name: 'Ücretsiz Pinterest video indirme',
+  description:
+    'Pinterest videosunu ücretsiz indirmek için bağlantıyı kopyalayın, araca yapıştırın, kaliteyi seçin ve filigransız MP4 olarak kaydedin.',
+  steps,
+};
 ---
 
 <ToolPageLayout
@@ -29,12 +56,20 @@ const crumbs = [
   crumbs={crumbs}
   faq={FREE_FAQ}
   faqTitle="Ücretsiz video indirme — SSS"
+  howTo={howTo}
 >
   <ShortAnswerBox question="Pinterest video indirmek ücretsiz mi?">
     <p class="mt-0" style="margin:0">
       Evet. Pinterest videolarını indirmek <strong>tamamen ücretsizdir</strong>: ödeme, abonelik veya kredi kartı bilgisi gerekmez. Günlük indirme <strong>sınırı yoktur</strong> ve videolar <strong>filigransız</strong>, kaynaktaki en yüksek kalitede kaydedilir.
     </p>
   </ShortAnswerBox>
+
+  <h2>Ücretsiz olarak nasıl indirilir?</h2>
+  <div class="steps" style="margin:20px 0">
+    {steps.map((s) => (
+      <div class="step"><h3>{s.name}</h3><p>{s.text}</p></div>
+    ))}
+  </div>
 
   <h2>Tamamen ücretsiz ve sınırsız</h2>
   <p>
