@@ -1,4 +1,19 @@
 ---
+// Self-hosted Inter — replaces the render-blocking fonts.googleapis.com
+// stylesheet. Only the weights the design actually uses (400/600/700/800/900)
+// and only the subsets Turkish needs: `latin` covers ı/ç/ö/ü, `latin-ext`
+// covers ş/ğ/İ. Fontsource sets font-display: swap and registers the family
+// as 'Inter', so the existing font stack in src/data/site.ts keeps working.
+import '@fontsource/inter/latin-400.css';
+import '@fontsource/inter/latin-ext-400.css';
+import '@fontsource/inter/latin-600.css';
+import '@fontsource/inter/latin-ext-600.css';
+import '@fontsource/inter/latin-700.css';
+import '@fontsource/inter/latin-ext-700.css';
+import '@fontsource/inter/latin-800.css';
+import '@fontsource/inter/latin-ext-800.css';
+import '@fontsource/inter/latin-900.css';
+import '@fontsource/inter/latin-ext-900.css';
 import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
@@ -63,15 +78,6 @@ const jsonLd = graph(organizationSchema(), websiteSchema(), ...schemas);
     <meta name="twitter:image" content={ogImage} />
 
     <link rel="sitemap" href="/sitemap.xml" />
-    <link
-      rel="preconnect"
-      href="https://fonts.googleapis.com"
-    />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap"
-    />
 
     <script type="application/ld+json" set:html={jsonLd} is:inline />
   </head>
