@@ -43,6 +43,10 @@ it is the **12-month average** unless stated otherwise.
    and is fine, but the cluster should not receive further investment.
 5. **Two clusters closed** since July: `/pinterest-nedir/` and
    `/pinterest-coktu-mu/` were built on 2026-08-02.
+6. **C10 closed and two candidates rejected (2026-08-02, SERP-validated).**
+   `pinterest indir` (18,000) and `sss pinterest` (10,000) were both examined
+   with full SERP overviews. **Neither gets a page** — see §6. `pinterest indir`
+   is now handled as a disambiguation section on `/pinterest-nedir/`.
 
 ---
 
@@ -132,7 +136,7 @@ attacking the homepage head-on.
 | C7 | Carousel | ~0 | `/pinterest-karusel-indir/` | ✅ Keep, no further investment |
 | C8 | Watermark-free | ~0.6k | `/pinterest-filigransiz-video-indir/` | ✅ Covered |
 | C9 | MP4 / link / story / pin | ~0.9k | `/pinterest-mp4-indir/`, `/pinterest-video-link-indir/`, `/pinterest-story-indir/`, `/pinterest-pin-indir/` | ✅ Covered |
-| C10 | "sss / ss" shortcut queries | ~10k | *(none)* | ⚠️ **Re-evaluate** — parent topic changed |
+| C10 | "sss / ss" shortcut queries | ~10k | *(no page — deliberate)* | ❌ **Closed 2026-08-02** — do not create; see §6 |
 | C11 | Upload / yükleme | ~3.6k | `/pinterest-video-yukleme/` | ✅ Covered |
 | C12 | How-to / device guides | ~1.5k | `/pinterest-video-nasil-indirilir/` + 4 device pages | ✅ Covered |
 | C13 | English / downloader (global) | ~51k | `/pinterest-downloader-nedir/` (definition) | ⏸ KD 62, deprioritised |
@@ -148,11 +152,13 @@ attacking the homepage head-on.
 
 | Rank | Opportunity | Vol | KD | Parent topic | Why it is safe |
 |------|-------------|----:|---:|--------------|----------------|
-| 1 | `/pinterest-ucretli-mi/` (+ *paralı mı*) | 500 | 4 | `pinterest ücretli mi` | Own parent; asks whether **Pinterest** costs money — distinct from our tool being free |
-| 2 | **Improve** `/pinterest-resim-indir/` | 2,800 | 0 | `pinterest fotoğraf indir` | Page exists but the parent/head term is *fotoğraf*, not *resim*; title already updated, body should follow |
-| 3 | Evaluate `pinterest indir` | 18,000 | 11 | `pinterest` | Big, but intent is ambiguous (app download vs content download) — **SERP check required before building** |
-| 4 | Re-evaluate C10 `sss pinterest` | 10,000 | 10 | `pinterest video indir` | Parent now points at the pillar → likely a **pillar section**, not a new page |
-| 5 | `/pinterest-hesap-silme/` | 450 | 0 | `pinterest hesap silme` | Own parent, KD 0, but traffic potential only ~150 — low ceiling |
+| 1 | ~~`/pinterest-ucretli-mi/`~~ | 500 | 4 | `pinterest ücretli mi` | ✅ **Built 2026-08-02** |
+| 2 | ~~**Improve** `/pinterest-resim-indir/`~~ | 2,800 | 0 | `pinterest fotoğraf indir` | ✅ **Done 2026-08-02** — page now leads on *fotoğraf*, covers *foto*/*resim*/*görsel* |
+| 3 | `/pinterest-hesap-silme/` | 450 | 0 | `pinterest hesap silme` | Own parent, KD 0, but traffic potential only ~150 — low ceiling |
+
+> `pinterest indir` (18,000) and `sss pinterest` (10,000) were previously listed
+> here as "evaluate". Both were SERP-validated on 2026-08-02 and **rejected** —
+> moved to §6.
 
 ---
 
@@ -168,23 +174,83 @@ Validated by parent topic — each looks attractive on volume alone and is a tra
 | `/pinterest-baglanti-kopyalama/` | 80 | `pinterest video indir` | Too small; already covered by the link page |
 | `/pinterest-nasil-kullanilir/` | 250 | `pinterest nasıl kullanılır` | Collides with our existing `/nasil-kullanilir/` |
 | Micro-troubleshooting pages | 0–90 | — | *ses gelmiyor*, *giriş yapamıyorum*, *engellendi mi* — guaranteed thin |
+| **`/pinterest-indir/`** | **18,000** | `pinterest` | ❌ **Do not create** — see decision below |
+| **`/sss-pinterest/`** | **10,000** | `pinterest video indir` | ❌ **Do not create** — see decision below |
 | `/pinterest-link-indir/` | — | — | **Route does not exist.** The real route is `/pinterest-video-link-indir/` |
+
+### Decision: `pinterest indir` (18,000/mo, KD 11) — do NOT create a page
+
+SERP overview (tr, 2026-08-02) shows a **mixed SERP where app-download is the
+dominant distinct intent**. The decisive signal is which page *owns* the query:
+the Apple App Store (#5) and Microsoft Store (#8) listings both have
+**"pinterest indir" as their own top keyword**. Every downloader tool that
+ranks (#3 klickpin, #4 pindown, #6 indirpin, #10 pinload) has
+**"pinterest video indir"** as its top keyword — they bleed into this SERP on
+topical strength, not by targeting it. Pinterest's own homepage sits at #1 and
+official help ("Bir görüntüyü indirme") at #7.
+
+Two reasons not to build it:
+
+1. **We cannot honestly serve the dominant intent.** We do not distribute the
+   Pinterest app; a page that mainly links to app stores would be thin.
+2. **Cannibalisation.** `/pinterest-indir/` sits one word from
+   `/pinterest-video-indir/` — our single most valuable URL — for a query we
+   can only partially satisfy.
+
+**Handled instead as a disambiguation section on `/pinterest-nedir/`**
+("Pinterest indir ne demek: uygulama mı, içerik mi?"), whose parent topic
+(`pinterest`) matches. It separates the two meanings, states plainly that we
+neither host nor distribute the app and that it should come only from official
+stores, and routes content-download intent to `/pinterest-video-indir/`.
+Implemented 2026-08-02.
+
+### Decision: `sss pinterest` (10,000/mo, KD 10) — do NOT create a page
+
+This **reverses the original July recommendation** to build `/sss-pinterest/`.
+
+SERP overview (tr, 2026-08-02): 8 of the top 10 are Pinterest **downloader
+landing pages**, and three have "sss pinterest" as their top keyword —
+vidssave `/tr/pin`, pinssaver's image-downloader page, and (revealingly) a
+Pinterest user profile literally named "sss sss", which is accidental. **No FAQ
+page ranks at all.** The query is the `ssstiktok`/`sssinstagram` prefix habit
+carried to Pinterest: it is a *tool* query, not a help query.
+
+Why no page:
+
+- **Parent topic is `pinterest video indir`** → a new URL would cannibalise the
+  pillar directly.
+- **Every winner is a generic downloader landing page**, not an "sss"-specific
+  page. vidssave ranks #4 with a plain `/tr/pin` URL. There is nothing an "sss"
+  page could earn that the pillar cannot.
+- **Brand-safety.** "sss" is a prefix borrowed from specific third-party tools.
+  A page styled as an "SSS Pinterest" brand would edge into brand-squatting.
+  **Do not build one, and do not add a brand-like "SSS Pinterest" section.**
+
+**Also note:** our `/sss/` page means *Sıkça Sorulan Sorular* (FAQ) — a
+homograph collision, not an asset. **Do not add `sss pinterest` targeting to
+`/sss/`**; a searcher wanting a tool would land on a FAQ page and bounce.
 
 ---
 
 ## 7. Next 5 Work Days Recommendation (live-data based)
 
+Days 1–4 of the previous plan are **complete** (see the strikethroughs in §5 and
+the decisions in §6). Remaining and next:
+
 | Day | Task | Type | Rationale |
 |-----|------|------|-----------|
-| **1** | Build `/pinterest-ucretli-mi/` | New page | Only remaining candidate with its own parent topic, low KD (4) and a clean bridge to `/pinterest-video-indir-ucretsiz/` |
-| **2** | Improve `/pinterest-resim-indir/` body to lead on **fotoğraf** | Improve | Parent topic is `pinterest fotoğraf indir` (2,800) while the page still leads on *resim* (300) — ~9× the demand for an edit, not a new page |
-| **3** | SERP-validate `pinterest indir` (18,000) | Research | Intent is ambiguous; decide app-download vs content-download before committing. **Do not build blind** |
-| **4** | Decide C10 `sss pinterest` (10,000) | Research → edit | Parent topic now = pillar. Most likely outcome is a pillar section + internal anchor, **not** `/sss-pinterest/` |
-| **5** | Post-index review of `/pinterest-nedir/` + `/pinterest-coktu-mu/` | QA | Check GSC impressions/positions once indexed; tune titles and answer blocks from real query data |
+| **1** | Post-index review of the four new pages | QA | `/pinterest-nedir/`, `/pinterest-coktu-mu/`, `/pinterest-ucretli-mi/` and the improved `/pinterest-resim-indir/` — pull GSC impressions/positions once indexed and tune titles + answer blocks from real query data. **Highest value: this is the first real feedback loop** |
+| **2** | Decide `/pinterest-hesap-silme/` (450, KD 0) | Research → maybe build | Own parent topic and KD 0, but traffic potential ~150. Build only if the post-index review shows we have spare capacity |
+| **3** | Internal-link + AEO pass over the newest pages | Improve | Once indexed, strengthen contextual inbound links to whichever of the four underperforms |
+| **4** | Re-audit competitor set | Research | `toolsmart.ai` doubled and `mylifebox.com`/`convertico.com` are new entrants — check whether either is taking pillar-adjacent terms |
+| **5** | Refresh keyword volumes | Research | Re-pull the §2 table (12-month average, **not** latest-month — see §0) and diff against this snapshot |
 
-**Deliberately not scheduled:** any new download-variant page. Every remaining
-download keyword rolls up to the `pinterest video indir` parent and would
-cannibalise the pillar.
+**Deliberately not scheduled:**
+
+- Any new download-variant page. Every remaining download keyword rolls up to
+  the `pinterest video indir` parent and would cannibalise the pillar.
+- `/pinterest-indir/` and `/sss-pinterest/` — both rejected on SERP evidence
+  (§6). Do not revisit without new data.
 
 ---
 
@@ -207,8 +273,9 @@ or any statistic we cannot verify.
 
 ### Summary numbers (2026-08-02)
 
-- **Live routes:** 41
+- **Live routes:** 42
 - **Niche competitors tracked:** 11 (+ indirpin.com.tr)
-- **Clusters mapped:** 18 — 16 covered, 1 to improve (C5), 1 to re-evaluate (C10)
-- **Open page opportunities:** 2 build-ready, 2 research-first, 1 low-ceiling
+- **Clusters mapped:** 18 — 17 covered, 1 closed as do-not-build (C10)
+- **Open page opportunities:** 1 low-ceiling (`/pinterest-hesap-silme/`)
+- **Rejected on SERP evidence:** `/pinterest-indir/`, `/sss-pinterest/`
 - **Pillar volume:** 223,000/mo (12-month average), KD 2 — unchanged since July
