@@ -1,0 +1,182 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import ShortAnswerBox from '../components/ShortAnswerBox.astro';
+import Faq from '../components/Faq.astro';
+import ToolCta from '../components/ToolCta.astro';
+import RelatedGuides from '../components/RelatedGuides.astro';
+import { PINTEREST_UCRETLI_FAQ } from '../data/faq';
+import { articleSchema, faqSchema, breadcrumbSchema } from '../lib/schema';
+
+const path = '/pinterest-ucretli-mi/';
+const title = 'Pinterest Ücretli mi? Neler Ücretsiz, Ne Zaman Ödenir';
+const description =
+  'Pinterest ücretli mi, paralı mı? Hesap açma, pin kaydetme ve uygulama kullanımı ücretsizdir; ödeme yalnızca reklam tarafında devreye girer. Ayrıntılı Türkçe açıklama.';
+
+const crumbs = [
+  { name: 'Ana Sayfa', href: '/' },
+  { name: 'Pinterest Ücretli mi?', href: path },
+];
+
+// Ücretsiz olan ile ödeme gerektiren işlemlerin ayrımı.
+const pricing = [
+  { islem: 'Hesap açmak', durum: 'Ücretsiz', not: 'Kredi kartı veya ödeme bilgisi istenmez' },
+  { islem: 'İçerik aramak ve gezmek', durum: 'Ücretsiz', not: 'Hesapsız da mümkündür' },
+  { islem: 'Pin kaydetmek, pano oluşturmak', durum: 'Ücretsiz', not: 'Sınır belirtilmez' },
+  { islem: 'Uygulamayı indirmek', durum: 'Ücretsiz', not: 'Tarayıcıdan da kullanılabilir' },
+  { islem: 'İçerik paylaşmak / pin yüklemek', durum: 'Ücretsiz', not: 'İşletme hesabı dahil' },
+  { islem: 'İşletme hesabına geçmek', durum: 'Ücretsiz', not: 'İstatistik araçları dahil' },
+  { islem: 'Reklam kampanyası yürütmek', durum: 'Ücretli', not: 'Belirlediğiniz bütçe kadar' },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  path={path}
+  ogType="article"
+  schemas={[
+    breadcrumbSchema(crumbs),
+    articleSchema({ title, description, path }),
+    faqSchema(PINTEREST_UCRETLI_FAQ),
+  ]}
+>
+  <article class="section">
+    <div class="container">
+      <Breadcrumb crumbs={crumbs} />
+
+      <div class="prose">
+        <span class="eyebrow">Ücretlendirme rehberi</span>
+        <h1>Pinterest Ücretli mi?</h1>
+        <p class="lead">
+          Pinterest’i kullanmaya başlamadan önce en çok sorulan sorulardan biri
+          bu: platform para istiyor mu, sonradan bir ücret çıkıyor mu? Kısa
+          yanıt hayır — ancak ödemenin devreye girdiği tek bir alan var. Bu
+          sayfada neyin ücretsiz olduğunu, ücretin nerede başladığını ve bunun
+          bizim indirme araçlarımızla ilişkisini açıklıyoruz.
+        </p>
+
+        <ShortAnswerBox question="Kısa cevap: Pinterest ücretli mi?">
+          <p class="mt-0" style="margin:0">
+            <strong>Hayır, Pinterest kişisel kullanım için ücretsizdir.</strong> Hesap açmak, içerik aramak, pin kaydetmek, pano oluşturmak ve
+            uygulamayı indirmek para gerektirmez; kayıt sırasında ödeme bilgisi
+            de istenmez. Ödeme yalnızca <strong>reklam</strong> tarafında
+            devreye girer: içeriğinizi daha geniş kitleye ulaştırmak için
+            kampanya yürütürseniz belirlediğiniz bütçeyi ödersiniz. İşletme
+            hesabı açmak da ücretsizdir.
+          </p>
+        </ShortAnswerBox>
+      </div>
+
+      <div class="prose">
+        <h2>Pinterest ücretsiz kullanılabilir mi?</h2>
+        <p>
+          Evet. Platformun günlük kullanımı için tasarlanan tüm temel işlevler
+          ücretsizdir ve bir deneme süresiyle sınırlı değildir. “Paralı mı”,
+          “ücretsiz mi” gibi sorular genellikle şu endişeden doğar: başta
+          bedava görünüp sonradan ücret çıkması. Pinterest’te bilinen kullanım
+          modeli bu şekilde değildir — gelir, kullanıcıdan değil reklam veren
+          işletmelerden gelir. Platformun ne olduğunu ve nasıl çalıştığını <a href="/pinterest-nedir/">Pinterest nedir?</a> sayfasında ayrıntılı anlatıyoruz.
+        </p>
+
+        <h2>Pinterest’te hangi işlemler ücretsizdir?</h2>
+        <div class="table-wrap" style="margin:18px 0 8px">
+          <table>
+            <thead>
+              <tr>
+                <th style="text-align:right">İşlem</th>
+                <th>Durum</th>
+                <th>Not</th>
+              </tr>
+            </thead>
+            <tbody>
+              {pricing.map((row) => (
+                <tr>
+                  <td style="font-weight:700;color:var(--ink)">{row.islem}</td>
+                  <td>{row.durum}</td>
+                  <td>{row.not}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p>
+          Tablodaki tek ücretli satır reklamdır. Bunun dışındaki her şey —
+          arama, kaydetme, pano düzenleme, içerik paylaşma — ödeme gerektirmez.
+        </p>
+
+        <h2>Pinterest reklamları ve işletme hesabı ücretli mi?</h2>
+        <p>
+          <strong>İşletme hesabı açmak ücretsizdir.</strong> Kişisel hesabınızı
+          işletme hesabına dönüştürmek ya da yeni bir işletme hesabı oluşturmak
+          için ödeme yapmazsınız; bu hesap türü size içerik istatistikleri ve
+          ek yayınlama araçları sunar. Maliyet ancak <strong>reklam vermeyi seçtiğinizde</strong> ortaya çıkar: bir kampanya oluşturur, günlük ya da
+          toplam bütçenizi belirler ve yalnızca o bütçe kadar ödersiniz. Reklam
+          vermek zorunlu değildir; içerik paylaşarak reklamsız da görünürlük
+          elde edebilirsiniz.
+        </p>
+        <p>
+          Platformlar ürünlerini zaman içinde değiştirebilir. Bu sayfa genel
+          bir bilgilendirmedir; güncel ücretlendirme koşullarını her zaman
+          Pinterest’in kendi resmî kaynaklarından doğrulamanızı öneririz.
+        </p>
+
+        <h2>Pinterest video indirme aracı ücretsiz mi?</h2>
+        <p>
+          Bu sitedeki araçların tamamı ücretsizdir. <a href="/pinterest-video-indir/">Video indirme</a> için üyelik, e-posta,
+          ödeme bilgisi veya uygulama kurulumu gerekmez; günlük bir indirme
+          kotası ya da “premium” için ayrılmış kilitli bir kalite seçeneği de
+          yoktur. Ücretsiz kullanımın ayrıntılarını <a href="/pinterest-video-indir-ucretsiz/">ücretsiz indirme</a> sayfasında topladık. Aracın ne olduğunu merak ediyorsanız <a href="/pinterest-video-indirici-nedir/">video indirici nedir?</a> sayfası kavramı açıklar.
+        </p>
+
+        <h2>Pinterest ücretli mi, bizim araç ücretli mi?</h2>
+        <p>
+          Bu iki soru sık karıştırılır ama farklı şeyleri sorar.
+          <strong>Pinterest</strong>, içeriği bulup panolarınızda sakladığınız
+          platformdur ve kişisel kullanımı ücretsizdir. <strong>Bizim aracımız</strong> ise Pinterest’in sunmadığı tek şeyi yapar: bir pini
+          cihazınıza dosya olarak indirir — ve o da ücretsizdir. Yani ikisi için
+          de ödeme yapmazsınız; aralarındaki fark ücret değil, işlevdir.
+          Pinterest içeriği <em>gösterir ve saklar</em>, indirme aracı ise <em>cihazınıza kaydeder</em>.
+        </p>
+
+        <h2>Güvenli ve sorumlu kullanım</h2>
+        <p>
+          Ücretsiz olduğunu söyleyip sizden kredi kartı bilgisi, Pinterest
+          parolası ya da “doğrulama” için ödeme isteyen sayfalara karşı dikkatli
+          olun; güvenilir bir indirme aracı bunların hiçbirini istemez.
+          Güvenlik işaretlerini <a href="/pinterest-video-indirmek-guvenli-mi/">indirmek güvenli mi?</a> sayfasında, içerikleri nerede kullanabileceğinizi ise <a href="/pinterest-video-indirmek-yasal-mi/">yasal mı?</a> rehberinde açıklıyoruz.
+        </p>
+
+        <p class="disclaimer" role="note" style="margin-top:22px">
+          <strong>Sorumlu kullanım — </strong>Yalnızca size ait olan veya
+          indirme/kullanma iznine sahip olduğunuz içerikleri kaydetmenizi
+          öneririz. Bu sayfa genel bilgilendirme amaçlıdır, güncel fiyatlandırma
+          taahhüdü içermez ve hukuki tavsiye niteliği taşımaz. Pinterest ile
+          resmi bir bağlantımız yoktur.
+        </p>
+      </div>
+    </div>
+  </article>
+
+  <ToolCta
+    title="Ücretsiz indirmeye hemen başlayın"
+    text="Bağlantıyı yapıştırın; videoyu üyelik, ödeme ve limit olmadan MP4 olarak kaydedin."
+    href="/pinterest-video-indir/"
+    label="Pinterest Video İndir"
+  />
+
+  <RelatedGuides
+    title="İlgili rehberler ve araçlar"
+    items={[
+      { title: 'Pinterest Nedir?', href: '/pinterest-nedir/', description: 'Platformun kendisi, pin ve pano mantığı.' },
+      { title: 'Video İndir Ücretsiz', href: '/pinterest-video-indir-ucretsiz/', description: 'Limitsiz, kayıtsız ve filigransız indirme.' },
+      { title: 'Pinterest Video İndir', href: '/pinterest-video-indir/', description: 'HD, Full HD ve 4K MP4 indirme aracı.' },
+      { title: 'Pinterest Video İndirici Nedir?', href: '/pinterest-video-indirici-nedir/', description: 'İndiricinin tanımı, türleri ve sınırları.' },
+      { title: 'Video İndirmek Güvenli mi?', href: '/pinterest-video-indirmek-guvenli-mi/', description: 'Güvenli araç seçimi ve bilinen tuzaklar.' },
+      { title: 'Video İndirmek Yasal mı?', href: '/pinterest-video-indirmek-yasal-mi/', description: 'Telif hakkı, kişisel kullanım ve izin.' },
+      { title: 'Sıkça Sorulan Sorular', href: '/sss/', description: 'Tüm araçlar için toplu soru-cevap.' },
+    ]}
+  />
+
+  <Faq items={PINTEREST_UCRETLI_FAQ} title="Pinterest ücretlendirme — sık sorulanlar" />
+</BaseLayout>

@@ -8,7 +8,37 @@ import { webAppSchema, faqSchema, breadcrumbSchema } from '../lib/schema';
 const path = '/pinterest-resim-indir/';
 const title = 'Pinterest Fotoğraf & Resim İndir – Tam Çözünürlük Görsel İndirici';
 const description =
-  'Pinterest fotoğraf, resim ve görsellerini tam çözünürlükte, ücretsiz ve filigransız indirin. Kayıt olmadan, tek tıkla yüksek kaliteli foto kaydetme aracı.';
+  'Pinterest fotoğraf, foto, resim ve görsellerini tam çözünürlükte, ücretsiz ve filigransız indirin. Kayıt olmadan, tek tıkla yüksek kaliteli foto kaydetme aracı.';
+
+// İçerik türünü tanıma tablosu — hangi pin için hangi sayfanın doğru olduğunu
+// gösterir. Bilerek "nasıl anlaşılır" ekseninde: dosya biçimi listesi
+// /pinterest-downloader-nedir/ sayfasında zaten var, burada tekrar edilmez.
+const mediaTypes = [
+  {
+    tur: 'Fotoğraf / görsel pin',
+    nasil: 'Pin durağandır, oynatma düğmesi yoktur',
+    sayfa: 'Bu sayfa',
+    href: null,
+  },
+  {
+    tur: 'Video pin',
+    nasil: 'Pinin üzerinde oynatma düğmesi ve süre görünür',
+    sayfa: 'Video indirme',
+    href: '/pinterest-video-indir/',
+  },
+  {
+    tur: 'Hareketli (GIF) pin',
+    nasil: 'Kısa, sessiz ve döngü hâlinde kendiliğinden oynar',
+    sayfa: 'GIF indirme',
+    href: '/pinterest-gif-indir/',
+  },
+  {
+    tur: 'Karusel (çoklu görsel)',
+    nasil: 'Pinin altında nokta göstergesi vardır, kaydırılır',
+    sayfa: 'Karusel indirme',
+    href: '/pinterest-karusel-indir/',
+  },
+];
 ---
 
 <BaseLayout
@@ -69,6 +99,39 @@ const description =
         Aracımız hangi kelimeyi kullandığınıza bakmadan hepsini aynı şekilde, <strong>orijinal (tam) boyutta</strong> ve filigransız indirir. Küçük
         önizleme yerine görselin Pinterest’te bulunan en büyük sürümünü sunar;
         böylece fotoğraf net ve kırpılmamış olarak kaydedilir.
+      </p>
+
+      <h2>Görsel, video, GIF ve karusel arasındaki fark</h2>
+      <p>
+        Pinterest’te dört farklı içerik türü vardır ve her biri cihazınıza
+        farklı bir dosya olarak iner. Bu sayfadaki araç <strong>durağan görseller</strong> içindir; pinin türünü bir bakışta ayırt etmek için
+        şu işaretlere bakabilirsiniz:
+      </p>
+      <div class="table-wrap" style="margin:18px 0 8px">
+        <table>
+          <thead>
+            <tr>
+              <th style="text-align:right">İçerik türü</th>
+              <th>Nasıl anlaşılır?</th>
+              <th>Doğru sayfa</th>
+            </tr>
+          </thead>
+          <tbody>
+            {mediaTypes.map((m) => (
+              <tr>
+                <td style="font-weight:700;color:var(--ink)">{m.tur}</td>
+                <td>{m.nasil}</td>
+                <td>{m.href ? <a href={m.href}>{m.sayfa}</a> : m.sayfa}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p>
+        Yanlış sayfayı seçmeniz bir sorun yaratmaz — araç yapıştırdığınız pinin
+        türünü kendisi tanır ve uygun dosyaları listeler. Doğru sayfayla
+        başlamak yalnızca sonuca daha hızlı ulaşmanızı sağlar. Bir pini
+        Pinterest’te <strong>kaydetmek</strong> ile cihazınıza <strong>indirmek</strong> arasındaki farkı merak ediyorsanız <a href="/pinterest-video-indirme-vs-kaydetme/">indirme ve kaydetme karşılaştırmasına</a> göz atın: kaydedilen pin panonuzda kalır, indirilen dosya ise cihazınızda.
       </p>
 
       <h2>Öne çıkan özellikler</h2>

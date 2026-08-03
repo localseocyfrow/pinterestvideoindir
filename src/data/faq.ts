@@ -1076,6 +1076,44 @@ export const PINTEREST_NEDIR_FAQ: QA[] = [
   },
 ];
 
+// Platform-pricing cluster — /pinterest-ucretli-mi/.
+// About whether PINTEREST costs money, which is a different question from
+// whether OUR tool is free (FREE_FAQ on /pinterest-video-indir-ucretsiz/).
+export const PINTEREST_UCRETLI_FAQ: QA[] = [
+  {
+    q: 'Pinterest kullanmak para gerektirir mi?',
+    a: 'Hayır. Pinterest’i kişisel kullanım için gezmek, arama yapmak, pin kaydetmek ve pano oluşturmak ücretsizdir. Platformun temel işlevlerini kullanmak için herhangi bir ödeme yapmanız gerekmez.',
+  },
+  {
+    q: 'Pinterest hesabı açmak ücretli mi?',
+    a: 'Hesap açmak ücretsizdir. Kayıt sırasında ödeme bilgisi ya da kredi kartı istenmez. Hesap oluşturmadan da içeriklere göz atabilirsiniz; hesap yalnızca pin kaydetmek, pano oluşturmak ve paylaşım yapmak için gerekir.',
+  },
+  {
+    q: 'Pinterest’in abonelik veya premium paketi var mı?',
+    a: 'Normal kullanım için satın almanız gereken bir abonelik paketi bulunmaz; platform temel özellikleriyle ücretsizdir. Ücretli taraf, içerik tüketen kullanıcılar için değil, reklam veren işletmeler için tasarlanmıştır. Platformlar zaman içinde ürünlerini değiştirebildiği için güncel durumu Pinterest’in kendi resmî kaynaklarından doğrulamanız en sağlıklısıdır.',
+  },
+  {
+    q: 'Pinterest’te hangi durumlarda ödeme söz konusu olur?',
+    a: 'Ödeme yalnızca reklam tarafında devreye girer: içeriğinizi daha fazla kişiye ulaştırmak için reklam kampanyası yürüttüğünüzde bütçe belirler ve bunun karşılığını ödersiniz. Bunun dışında pin kaydetmek, aramak ve panoları düzenlemek gibi günlük işlemler ücretsizdir.',
+  },
+  {
+    q: 'İşletme (business) hesabı ücretli mi?',
+    a: 'İşletme hesabı oluşturmak ücretsizdir; hesap türünü değiştirmek için ödeme yapmazsınız. İşletme hesabı size istatistik ve içerik araçları sunar. Maliyet ancak reklam vermeyi seçtiğinizde ortaya çıkar.',
+  },
+  {
+    q: 'Pinterest’te reklam vermek zorunda mıyım?',
+    a: 'Hayır. Reklam tamamen isteğe bağlıdır. İşletme hesabı açıp içerik paylaşarak reklam vermeden de görünürlük elde edebilirsiniz; reklam yalnızca erişimi hızlandırmak isteyenler için bir seçenektir.',
+  },
+  {
+    q: 'Pinterest uygulamasını indirmek para ister mi?',
+    a: 'Hayır. Uygulama, mobil uygulama mağazalarından ücretsiz olarak indirilir ve kullanımı için ayrıca bir bedel ödemezsiniz. Uygulamayı hiç kurmadan, tarayıcı üzerinden de Pinterest’i kullanabilirsiniz.',
+  },
+  {
+    q: 'Pinterest ücretsizse indirme araçları neden ayrı sitelerde?',
+    a: 'Çünkü Pinterest, içeriği cihazınıza dosya olarak indiren bir özellik sunmaz; uygulamadaki “Kaydet” düğmesi pini yalnızca panonuza ekler. Bu boşluğu üçüncü taraf araçlar doldurur. Bizim araçlarımız da bu nedenle ayrı bir sitede çalışır ve kullanımı ücretsizdir.',
+  },
+];
+
 // Outage-verification cluster — /pinterest-coktu-mu/.
 // Deliberately about CONFIRMING an outage (is it everyone or just me), which is
 // a different intent from ACILMIYOR_FAQ (fixing it on your own device).

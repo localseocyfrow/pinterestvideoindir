@@ -60,6 +60,7 @@ export const FOOTER_GROUPS: { title: string; links: NavItem[] }[] = [
       { label: 'Video Nasıl İndirilir', href: '/pinterest-video-nasil-indirilir/' },
       { label: 'Pinterest Nedir?', href: '/pinterest-nedir/' },
       { label: 'Pinterest Çöktü mü?', href: '/pinterest-coktu-mu/' },
+      { label: 'Pinterest Ücretli mi?', href: '/pinterest-ucretli-mi/' },
       { label: 'Video İndirici Nedir?', href: '/pinterest-video-indirici-nedir/' },
       { label: 'Pinterest Downloader Nedir?', href: '/pinterest-downloader-nedir/' },
       { label: 'İndirme Aracı Nasıl Çalışır?', href: '/pinterest-video-indirme-araci-nasil-calisir/' },
