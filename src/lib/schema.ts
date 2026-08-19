@@ -171,7 +171,7 @@ export function videoObjectSchema(opts: {
 }
 
 // Person node for the site's named editor. Only verifiable, public facts go in
-// here (role, employer, working languages, profile link) â no invented awards,
+// here (role, employer, working languages, profile links) — no invented awards,
 // credentials or locations. Emitted on the author profile page, which owns the
 // canonical @id every other reference resolves to.
 export function personSchema(opts: { knowsAbout?: string[] } = {}): JsonLd {
@@ -184,12 +184,12 @@ export function personSchema(opts: { knowsAbout?: string[] } = {}): JsonLd {
     worksFor: { '@type': 'Organization', name: EDITOR.company },
     knowsLanguage: ['en', 'ur'],
     ...(opts.knowsAbout ? { knowsAbout: opts.knowsAbout } : {}),
-    // Single verified profile â do not pad this with unconfirmed links.
-    sameAs: [EDITOR.linkedin],
+    // Verified profiles only — do not pad this with unconfirmed links.
+    sameAs: [EDITOR.linkedin, EDITOR.website],
   };
 }
 
-// ProfilePage node â the author page's own WebPage type, whose mainEntity is
+// ProfilePage node — the author page's own WebPage type, whose mainEntity is
 // the Person above (schema.org's recommended shape for an author profile).
 export function profilePageSchema(opts: {
   title: string;

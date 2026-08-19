@@ -29,6 +29,7 @@ export const EDITOR = {
   jobTitle: 'Co-Founder & COO',
   company: 'Cyfrow Solutions',
   linkedin: 'https://www.linkedin.com/in/mohsin-ali-bubak-793',
+  website: 'https://mohsinalibubak.com/',
 } as const;
 
 export type NavItem = { label: string; href: string };
