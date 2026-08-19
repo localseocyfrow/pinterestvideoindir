@@ -1,7 +1,7 @@
 // JSON-LD structured data builders (schema.org).
 // These power rich results + AEO/GEO: search engines and AI answer
 // engines read them to understand the tool, steps and Q&A.
-import { SITE, abs } from '../data/site';
+import { SITE, EDITOR, abs } from '../data/site';
 import type { QA } from '../data/faq';
 
 type JsonLd = Record<string, unknown>;
@@ -136,6 +136,9 @@ export function articleSchema(opts: {
     datePublished: opts.datePublished ?? SITE.updated,
     dateModified: opts.dateModified ?? SITE.updated,
     author: { '@type': 'Organization', name: SITE.author, url: abs('/') },
+    // Content is produced by the site team (author) and editorially reviewed
+    // by a named person; the full Person node lives on their profile page.
+    editor: { '@type': 'Person', name: EDITOR.name, url: abs(EDITOR.path) },
     publisher: { '@id': `${SITE.url}/#organization` },
   };
 }
@@ -164,6 +167,46 @@ export function videoObjectSchema(opts: {
     ...(opts.path
       ? { mainEntityOfPage: { '@type': 'WebPage', '@id': abs(opts.path) } }
       : {}),
+  };
+}
+
+// Person node for the site's named editor. Only verifiable, public facts go in
+// here (role, employer, working languages, profile link) â no invented awards,
+// credentials or locations. Emitted on the author profile page, which owns the
+// canonical @id every other reference resolves to.
+export function personSchema(opts: { knowsAbout?: string[] } = {}): JsonLd {
+  return {
+    '@type': 'Person',
+    '@id': `${SITE.url}${EDITOR.path}#person`,
+    name: EDITOR.name,
+    url: abs(EDITOR.path),
+    jobTitle: EDITOR.jobTitle,
+    worksFor: { '@type': 'Organization', name: EDITOR.company },
+    knowsLanguage: ['en', 'ur'],
+    ...(opts.knowsAbout ? { knowsAbout: opts.knowsAbout } : {}),
+    // Single verified profile â do not pad this with unconfirmed links.
+    sameAs: [EDITOR.linkedin],
+  };
+}
+
+// ProfilePage node â the author page's own WebPage type, whose mainEntity is
+// the Person above (schema.org's recommended shape for an author profile).
+export function profilePageSchema(opts: {
+  title: string;
+  description: string;
+  path: string;
+  dateModified?: string;
+}): JsonLd {
+  return {
+    '@type': 'ProfilePage',
+    '@id': `${abs(opts.path)}#webpage`,
+    url: abs(opts.path),
+    name: opts.title,
+    description: opts.description,
+    inLanguage: SITE.lang,
+    isPartOf: { '@id': `${SITE.url}/#website` },
+    dateModified: opts.dateModified ?? SITE.updated,
+    mainEntity: { '@id': `${SITE.url}${EDITOR.path}#person` },
   };
 }
 

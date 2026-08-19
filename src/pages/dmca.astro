@@ -1,0 +1,175 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import RelatedGuides from '../components/RelatedGuides.astro';
+import { SITE } from '../data/site';
+import { articleSchema, breadcrumbSchema } from '../lib/schema';
+
+const path = '/dmca/';
+const title = 'DMCA ve Telif Hakkı Kaldırma Talepleri — Bildirim Süreci';
+const description =
+  'Telif hakkı sahipleri için DMCA / kaldırma talebi rehberi: bildiriminizde nelerin bulunması gerektiği, talebi hangi e-posta adresine göndereceğiniz ve sürecin nasıl işlediği.';
+const updated = '2026-08-19';
+
+// One source for the visible trail and the BreadcrumbList node, so the two
+// can never disagree.
+const crumbs = [
+  { name: 'Ana Sayfa', href: '/' },
+  { name: 'DMCA / Telif Talebi', href: path },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  path={path}
+  ogType="article"
+  schemas={[
+    breadcrumbSchema(crumbs),
+    articleSchema({
+      title,
+      description,
+      path,
+      datePublished: updated,
+      dateModified: updated,
+    }),
+  ]}
+>
+  <article class="section">
+    <div class="container">
+      <Breadcrumb crumbs={crumbs} />
+
+      <div class="prose">
+        <span class="eyebrow">Yasal — telif bildirimi</span>
+        <h1>DMCA ve Telif Hakkı Kaldırma Talepleri</h1>
+        <p class="lead">Son güncelleme: 19 Ağustos 2026</p>
+
+        <p>
+          Bu sayfa, <strong>telif hakkı ihlali bildirimleri</strong> (DMCA
+          usulüne benzer kaldırma talepleri) için hazırlanmıştır. Bir eserin hak
+          sahibiyseniz ya da hak sahibi adına hareket etmeye yetkili bir
+          temsilciyseniz ve haklarınızın etkilendiğini düşünüyorsanız, aşağıdaki
+          bilgileri içeren bir talebi bize e-posta ile iletebilirsiniz.
+        </p>
+
+        <h2>Bu site ne yapar, ne yapmaz?</h2>
+        <p>
+          {SITE.name} bir <strong>araçtır</strong>: yapıştırdığınız herkese açık
+          Pinterest bağlantısını çözümleyerek içeriğin indirilebilir medya
+          adresini sunar. Pinterest üzerindeki içeriklerin
+          <strong>sahipliğini iddia etmiyoruz</strong>; bu içeriklerin hakları,
+          aksi belirtilmedikçe onları üreten kişilere veya markalara aittir.
+          İçerikleri bir kütüphane gibi listelemez, arşivlemez ve kalıcı olarak
+          barındırmayız.
+        </p>
+        <p>
+          <strong>Pinterest ile resmi bir bağlantımız yoktur.</strong> Bu nedenle
+          bir içeriğin Pinterest üzerinden tamamen kaldırılması gerekiyorsa, o
+          talebin ayrıca içeriğin yayımlandığı platforma iletilmesi gerekir.
+          Bizden isteyebileceğiniz şey, sitemiz üzerinden erişilebilen ilgili
+          içerik referanslarının kaldırılması veya engellenmesidir.
+        </p>
+
+        <h2>Kimler kaldırma talebi gönderebilir?</h2>
+        <ul>
+          <li><strong>Hak sahibi:</strong> Eserin telif hakkını elinde bulunduran kişi veya kurum.</li>
+          <li><strong>Yetkili temsilci:</strong> Hak sahibi adına hareket etmeye yetkili avukat, ajans ya da çalışan.</li>
+        </ul>
+
+        <h2>Talebinizde neler bulunmalı?</h2>
+        <p>
+          Talebinizi hızlı ve doğru biçimde değerlendirebilmemiz için aşağıdaki
+          maddelerin tamamını eklemenizi rica ederiz:
+        </p>
+        <ol>
+          <li><strong>Ad ve sıfat:</strong> Telif hakkı sahibinin adı ya da yetkili temsilcinin adı ve hangi sıfatla hareket ettiği.</li>
+          <li><strong>Eserin tanımı:</strong> Telif hakkıyla korunan eserin açık tanımı (örneğin video, fotoğraf, tasarım) ve varsa özgün yayın bağlantısı.</li>
+          <li><strong>İhlal iddiasına konu içerik:</strong> İhlal ettiği ileri sürülen içeriğin URL adresi veya içeriği bulmamızı sağlayacak ayrıntılar.</li>
+          <li><strong>İletişim bilgisi:</strong> Size dönüş yapabileceğimiz geçerli bir e-posta adresi.</li>
+          <li><strong>İyi niyet beyanı:</strong> Söz konusu kullanımın hak sahibi, temsilcisi ya da yasa tarafından yetkilendirilmediğine iyi niyetle inandığınıza dair bir ifade.</li>
+          <li><strong>Doğruluk ve yetki beyanı:</strong> Bildirimde verdiğiniz bilgilerin doğru olduğuna ve hak sahibi adına hareket etmeye yetkili olduğunuza dair bir ifade.</li>
+        </ol>
+
+        <h2>Talebinizi nereye göndereceksiniz?</h2>
+        <div class="answer-box" style="margin:22px 0">
+          <p class="q">Telif / DMCA bildirimi e-posta adresi</p>
+          <p class="mt-0" style="margin:0">
+            <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
+          </p>
+        </div>
+        <p>
+          E-postanızın konu satırına <strong>“Telif kaldırma talebi”</strong> ya
+          da <strong>“DMCA”</strong> yazmanız, talebinizin doğru şekilde
+          sınıflandırılmasına yardımcı olur. Telif dışındaki soru ve geri
+          bildirimler için <a href="/iletisim/">iletişim</a> sayfamızı
+          kullanabilirsiniz.
+        </p>
+
+        <h2>Eksik veya belirsiz talepler</h2>
+        <p>
+          Bir talep yukarıdaki maddelerin bir kısmını içermiyorsa ya da hangi
+          içeriğin kastedildiği anlaşılmıyorsa, değerlendirmeyi
+          tamamlayabilmemiz için sizden <strong>ek bilgi isteyebiliriz</strong>.
+          Böyle bir durumda süreç, eksik bilgiler tamamlanana kadar bekletilir.
+          Bildirimleri makul bir süre içinde inceler ve sonucu, belirttiğiniz
+          e-posta adresine iletiriz.
+        </p>
+
+        <h2>Karşı bildirim (counter-notification) hakkında</h2>
+        <p>
+          Bu bölüm <strong>genel bilgilendirme</strong> amaçlıdır. Bir içerik
+          referansının hatalı biçimde ya da yanlış tanımlama sonucu
+          kaldırıldığını düşünüyorsanız, bir
+          <strong>karşı bildirim</strong> gönderebilirsiniz. Karşı bildirimlerde
+          genel olarak şu bilgiler yer alır:
+        </p>
+        <ul>
+          <li>Kaldırılan içeriğin tanımı ve kaldırılmadan önce bulunduğu adres.</li>
+          <li>İçeriğin hatalı tanımlama ya da yanlış değerlendirme sonucu kaldırıldığına iyi niyetle inandığınıza dair bir ifade.</li>
+          <li>Adınız ve size ulaşabileceğimiz geçerli bir e-posta adresi.</li>
+          <li>Verdiğiniz bilgilerin doğru olduğuna ve içeriği kullanmaya ya da yayımlamaya yetkili olduğunuza dair bir ifade.</li>
+        </ul>
+        <p>
+          Karşı bildirimler de aynı e-posta adresine gönderilir ve aynı özenle
+          değerlendirilir. Taraflar arasındaki anlaşmazlık sürerse konu hukuki
+          bir uyuşmazlığa dönüşebilir; böyle bir durumda tarafların kendi hukuki
+          danışmanlarına başvurması gerekir.
+        </p>
+
+        <h2>Tekrarlayan ihlal ve sürecin kötüye kullanımı</h2>
+        <p>
+          Hakkında <strong>tekrar tekrar haklı kaldırma talebi</strong> gelen
+          kullanımları ciddiye alır, gerekli gördüğümüzde hizmete erişimi
+          kısıtlayabiliriz. Aynı şekilde kaldırma sürecinin
+          <strong>kötüye kullanılması</strong> da kabul edilemez: hak sahibi
+          olmadığınız bir eser için talep göndermek, rekabeti engellemek ya da
+          eleştiriyi susturmak amacıyla bildirimde bulunmak bu kapsamdadır.
+          Bilerek yanlış beyanda bulunan kişi, bu beyandan doğabilecek
+          sonuçlardan kendisi sorumludur.
+        </p>
+
+        <p class="disclaimer" role="note" style="margin-top:22px">
+          <strong>Sorumluluk reddi — </strong>Bu sayfa yalnızca bilgilendirme
+          amaçlıdır ve <strong>hukuki tavsiye niteliği taşımaz</strong>. Somut
+          durumunuz için yetkili bir hukuk uzmanına danışın. Konuyla ilgili genel
+          rehberler için <a href="/telif-hakki-ve-pinterest-indirme/">Telif Hakkı
+          ve Pinterest İndirme</a> ve <a href="/pinterest-video-indirmek-yasal-mi/">Pinterest video indirmek
+          yasal mı?</a> sayfalarımıza, hizmet kuralları için <a href="/kullanim-sartlari/">Kullanım Şartları</a> ve <a href="/gizlilik-politikasi/">Gizlilik Politikası</a> sayfalarımıza
+          bakabilirsiniz. <strong>Pinterest ile resmi bir bağlantımız yoktur.</strong>
+        </p>
+      </div>
+    </div>
+  </article>
+
+  <RelatedGuides
+    title="Telif ve kullanım sayfaları"
+    eyebrow="İlgili sayfalar"
+    items={[
+      { title: 'Telif Hakkı ve Pinterest İndirme', href: '/telif-hakki-ve-pinterest-indirme/', description: 'Telif hakkının Pinterest içeriklerinde nasıl işlediğine dair genel rehber.' },
+      { title: 'Pinterest Video İndirmek Yasal mı?', href: '/pinterest-video-indirmek-yasal-mi/', description: 'Kişisel kullanım, izin ve yeniden yayımlama arasındaki fark.' },
+      { title: 'Kullanım Şartları', href: '/kullanim-sartlari/', description: 'Hizmetin kapsamı, telif ve kullanıcı sorumlulukları.' },
+      { title: 'Gizlilik Politikası', href: '/gizlilik-politikasi/', description: 'Verilerinizin nasıl işlendiğini öğrenin.' },
+      { title: 'İletişim', href: '/iletisim/', description: 'Soru, öneri ve diğer talepleriniz için bize yazın.' },
+    ]}
+  />
+</BaseLayout>

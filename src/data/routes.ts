@@ -50,4 +50,6 @@ export const ROUTES: Route[] = [
   { path: '/iletisim/', title: 'İletişim', changefreq: 'monthly', priority: 0.3 },
   { path: '/gizlilik-politikasi/', title: 'Gizlilik Politikası', changefreq: 'monthly', priority: 0.3 },
   { path: '/kullanim-sartlari/', title: 'Kullanım Şartları', changefreq: 'monthly', priority: 0.3 },
+  { path: '/dmca/', title: 'DMCA ve Telif Hakkı Kaldırma Talepleri', changefreq: 'monthly', priority: 0.3 },
+  { path: '/yazar/mohsin-ali-bubak/', title: 'Mohsin Ali Bubak — Editör ve İçerik Sorumlusu', changefreq: 'monthly', priority: 0.3 },
 ];

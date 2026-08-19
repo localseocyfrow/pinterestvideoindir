@@ -21,6 +21,16 @@ export const SITE = {
   founded: '2026',
 } as const;
 
+// Editorial owner of the site's content — reviewed/edited pages credit this
+// person, and /yazar/mohsin-ali-bubak/ is their profile page.
+export const EDITOR = {
+  name: 'Mohsin Ali Bubak',
+  path: '/yazar/mohsin-ali-bubak/',
+  jobTitle: 'Co-Founder & COO',
+  company: 'Cyfrow Solutions',
+  linkedin: 'https://www.linkedin.com/in/mohsin-ali-bubak-793',
+} as const;
+
 export type NavItem = { label: string; href: string };
 
 // Primary navigation, ordered by topical priority from keyword research.
@@ -81,6 +91,7 @@ export const FOOTER_GROUPS: { title: string; links: NavItem[] }[] = [
       { label: 'Nasıl Kullanılır', href: '/nasil-kullanilir/' },
       { label: 'Sıkça Sorulan Sorular', href: '/sss/' },
       { label: 'Hakkında', href: '/hakkinda/' },
+      { label: 'Yazar: Mohsin Ali Bubak', href: '/yazar/mohsin-ali-bubak/' },
     ],
   },
   {
@@ -89,6 +100,7 @@ export const FOOTER_GROUPS: { title: string; links: NavItem[] }[] = [
       { label: 'İletişim', href: '/iletisim/' },
       { label: 'Gizlilik Politikası', href: '/gizlilik-politikasi/' },
       { label: 'Kullanım Şartları', href: '/kullanim-sartlari/' },
+      { label: 'DMCA / Telif Talebi', href: '/dmca/' },
     ],
   },
 ];

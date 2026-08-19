@@ -1,0 +1,138 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import RelatedGuides from '../../components/RelatedGuides.astro';
+import { SITE, EDITOR } from '../../data/site';
+import {
+  breadcrumbSchema,
+  personSchema,
+  profilePageSchema,
+} from '../../lib/schema';
+
+const path = EDITOR.path;
+const title = 'Mohsin Ali Bubak — Editör ve İçerik Sorumlusu';
+const description =
+  'Mohsin Ali Bubak kimdir? Cyfrow Solutions kurucu ortağı ve COO’su; bu sitedeki Pinterest indirme rehberlerinin editoryal incelemesinden ve içerik kalitesinden sorumludur.';
+
+// Topics he actually reviews on this site — mirrored into the Person node so
+// the visible list and the structured data never drift apart.
+const TOPICS = [
+  'SEO uyumlu içerik',
+  'Pinterest indirme rehberleri',
+  'Güvenli ve sorumlu kullanım',
+  'AI / AEO / GEO odaklı içerik kalitesi',
+];
+
+const updated = '2026-08-19';
+
+// One source for the visible trail and the BreadcrumbList node.
+const crumbs = [
+  { name: 'Ana Sayfa', href: '/' },
+  { name: EDITOR.name, href: path },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  path={path}
+  ogType="profile"
+  schemas={[
+    breadcrumbSchema(crumbs),
+    profilePageSchema({ title, description, path, dateModified: updated }),
+    personSchema({ knowsAbout: TOPICS }),
+  ]}
+>
+  <article class="section">
+    <div class="container">
+      <Breadcrumb crumbs={crumbs} />
+
+      <div class="prose">
+        <span class="eyebrow">Yazar &amp; editör</span>
+        <h1>Mohsin Ali Bubak</h1>
+        <p class="lead">
+          Cyfrow Solutions kurucu ortağı ve COO’su. {SITE.name} sitesinde
+          yayımlanan rehberlerin editoryal incelemesinden sorumludur.
+        </p>
+
+        <h2>Kısa biyografi</h2>
+        <p>
+          Mohsin Ali Bubak, <strong>Cyfrow Solutions</strong> şirketinin kurucu
+          ortağı ve <strong>COO</strong>’sudur. İçerik üretimini profesyonel
+          olarak <strong>İngilizce ve Urduca</strong> yürütür; bu sitede ise
+          Türkçe yayımlanan Pinterest indirme rehberlerinin editoryal
+          denetimini üstlenir. Buradaki rolü, içeriklerin anlaşılır, doğru ve
+          sorumlu kullanımı destekleyen bir çerçevede yayımlanmasını sağlamaktır.
+        </p>
+
+        <h2>Editoryal rolü ve içerik incelemesi</h2>
+        <p>
+          Sitedeki sayfalar yayına alınmadan önce editoryal bir incelemeden
+          geçer. Bu inceleme sırasında şunlara bakılır:
+        </p>
+        <ul>
+          <li><strong>Doğruluk:</strong> Anlatılan adımların ve tanımların gerçekten çalıştığı, aracın yapabildikleriyle örtüştüğü.</li>
+          <li><strong>Anlaşılırlık:</strong> Teknik bilgisi olmayan bir okuyucunun da adımları takip edebilmesi.</li>
+          <li><strong>Abartısız anlatım:</strong> Yerine getirilemeyecek vaatler, garanti ifadeleri veya yanıltıcı başlıklar kullanılmaması.</li>
+          <li><strong>Sorumlu kullanım:</strong> Telif hakkı ve kişisel kullanım sınırlarının her rehberde net biçimde belirtilmesi.</li>
+          <li><strong>Tutarlılık:</strong> Sayfalar arasındaki terimlerin, iç bağlantıların ve yönlendirmelerin birbiriyle uyumlu olması.</li>
+        </ul>
+
+        <h2>İncelediği konular</h2>
+        <ul>
+          {TOPICS.map((topic) => <li>{topic}</li>)}
+        </ul>
+        <p>
+          Bu başlıklar, hem klasik arama motorları hem de yapay zekâ tabanlı
+          cevap motorları (AEO / GEO) için içeriğin ne kadar açık, kullanışlı ve
+          güvenilir olduğunu belirleyen alanlardır. Amaç, okuyucunun aradığı
+          cevabı sayfayı terk etmeden bulması ve aracı bilinçli biçimde
+          kullanmasıdır.
+        </p>
+
+        <h2>Yayın yaklaşımı</h2>
+        <p>
+          Bu sitedeki içerikler <strong>anlaşılırlık, gerçek fayda ve sorumlu
+          kullanım</strong> gözetilerek yazılır ve incelenir. Bir rehber, okuyucuya
+          yalnızca “nasıl yapılır” demekle kalmaz; ne zaman yapılmaması
+          gerektiğini, hangi sınırların bulunduğunu ve telif haklarının nasıl
+          korunacağını da anlatır. Rehberler, araçta ya da Pinterest tarafında
+          bir değişiklik olduğunda güncellenir.
+        </p>
+
+        <h2>İletişim ve profil</h2>
+        <ul>
+          <li>
+            <strong>LinkedIn:</strong> <a href={EDITOR.linkedin} target="_blank" rel="noopener noreferrer">linkedin.com/in/mohsin-ali-bubak-793</a>
+          </li>
+          <li>
+            <strong>Site içi iletişim:</strong> <a href="/iletisim/">İletişim sayfası</a> üzerinden bize yazabilirsiniz.
+          </li>
+        </ul>
+        <p>
+          İçerikle ilgili bir düzeltme, eksik bilgi veya öneriniz varsa <a href="/iletisim/">iletişim</a> sayfamızdan bildirebilirsiniz. Telif
+          hakkı ve kaldırma talepleri için <a href="/dmca/">DMCA</a> sayfamızda
+          ayrı bir süreç tanımlanmıştır.
+        </p>
+
+        <p class="disclaimer" role="note" style="margin-top:22px">
+          <strong>Pinterest ile resmi bir bağlantımız yoktur.</strong> Bu sayfa, {SITE.name} sitesinin editoryal sorumluluğunu tanıtmak için
+          hazırlanmıştır; “Pinterest” adı ve logosu ilgili sahibine aittir.
+        </p>
+      </div>
+    </div>
+  </article>
+
+  <RelatedGuides
+    title="Site hakkında ve yasal sayfalar"
+    eyebrow="Daha fazlası"
+    items={[
+      { title: 'Hakkında', href: '/hakkinda/', description: 'Sitenin misyonu, çalışma biçimi ve gizlilik yaklaşımı.' },
+      { title: 'DMCA / Telif Talebi', href: '/dmca/', description: 'Telif hakkı kaldırma talepleri için izlenecek süreç.' },
+      { title: 'Telif Hakkı ve Pinterest İndirme', href: '/telif-hakki-ve-pinterest-indirme/', description: 'Telif hakkının Pinterest içeriklerinde nasıl işlediği.' },
+      { title: 'Nasıl Kullanılır', href: '/nasil-kullanilir/', description: 'Aracın adım adım kullanım rehberi.' },
+      { title: 'Sıkça Sorulan Sorular', href: '/sss/', description: 'Pinterest indirme hakkında tüm sorular ve yanıtlar.' },
+      { title: 'İletişim', href: '/iletisim/', description: 'Soru, öneri ve geri bildirimleriniz için bize ulaşın.' },
+    ]}
+  />
+</BaseLayout>
