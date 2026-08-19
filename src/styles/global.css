@@ -572,55 +572,120 @@ tr:last-child td { border-bottom: none; }
 .cta-band p { color: rgba(255, 255, 255, 0.82); max-width: 48ch; margin-inline: auto; }
 
 /* ---------- Footer ---------- */
+/* Layout: a brand block + a 3-column link nav, so the footer reads as four
+   balanced columns on desktop and collapses predictably below it. The link
+   lists are deliberately lighter than the headings — the footer is for
+   orientation, not for competing with page content. */
 .site-footer {
   background: #0f0f14;
   color: #b9b9c4;
-  padding-block: 56px 32px;
+  padding-block: 64px 28px;
   margin-top: 40px;
 }
-.site-footer a { color: #d7d7e0; }
+.site-footer a { color: #c9c9d6; transition: color 0.15s ease; }
 .site-footer a:hover { color: #fff; }
 .footer-top {
   display: grid;
-  gap: 32px;
-  grid-template-columns: 1.7fr 1fr 1fr 1fr;
+  gap: 44px 56px;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 2.45fr);
+  align-items: start;
 }
-.footer-brand .brand { color: #fff; }
+
+/* Brand column. The wordmark is near-black artwork, so it needs a light plate
+   on the dark footer; keep that plate hugging the logo rather than stretching
+   across the column. */
 .footer-logo-link {
   display: inline-flex;
   background: #fff;
-  padding: 10px 14px;
-  border-radius: 12px;
+  padding: 8px 12px;
+  border-radius: 10px;
 }
-.footer-logo { display: block; width: 100%; max-width: 220px; height: auto; }
-.footer-brand p { color: #8a8a97; font-size: 0.95rem; max-width: 42ch; }
+.footer-logo-link:hover { background: #f4f4f6; }
+.footer-logo { display: block; width: 176px; max-width: 100%; height: auto; }
+.footer-tagline {
+  margin-top: 18px;
+  margin-bottom: 0;
+  color: #9a9aab;
+  font-size: 0.92rem;
+  line-height: 1.65;
+  max-width: 36ch;
+}
+.footer-note {
+  margin-top: 10px;
+  margin-bottom: 0;
+  color: #8f8f9e;
+  font-size: 0.85rem;
+}
+.footer-disclaimer {
+  margin-top: 18px;
+  margin-bottom: 0;
+  padding-left: 12px;
+  border-left: 2px solid rgba(230, 0, 35, 0.65);
+  color: #a4a4b4;
+  font-size: 0.84rem;
+  line-height: 1.55;
+  max-width: 34ch;
+}
+
+/* Link columns. */
+.footer-nav {
+  display: grid;
+  gap: 36px 28px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
 .footer-col h4 {
+  margin-bottom: 16px;
   color: #fff;
-  font-size: 0.9rem;
-  letter-spacing: 0.04em;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
   text-transform: uppercase;
 }
+.footer-col h4::after {
+  content: '';
+  display: block;
+  width: 22px;
+  height: 2px;
+  margin-top: 9px;
+  border-radius: 2px;
+  background: var(--brand);
+}
 .footer-col ul { list-style: none; margin: 0; padding: 0; }
-.footer-col li { margin-bottom: 10px; }
-.footer-col a { font-size: 0.96rem; }
+.footer-col li { margin-bottom: 9px; }
+.footer-col li:last-child { margin-bottom: 0; }
+.footer-col a { font-size: 0.9rem; line-height: 1.45; }
 .footer-bottom {
-  margin-top: 36px;
+  margin-top: 48px;
   padding-top: 22px;
-  border-top: 1px solid #26262f;
-  font-size: 0.86rem;
-  color: #7a7a86;
+  border-top: 1px solid #23232c;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: #8f8f9e;
   display: flex;
   justify-content: space-between;
-  gap: 12px;
+  gap: 8px 32px;
   flex-wrap: wrap;
 }
 
-@media (max-width: 860px) {
-  .footer-top { grid-template-columns: 1fr 1fr; gap: 28px; }
-  .footer-brand { grid-column: 1 / -1; }
+/* Tablet: brand stacks above the still-3-wide link nav. */
+@media (max-width: 1000px) {
+  .footer-top { grid-template-columns: 1fr; gap: 40px; }
+  .footer-tagline, .footer-disclaimer { max-width: 52ch; }
 }
+/* Small tablet / large phone: two link columns. */
+@media (max-width: 720px) {
+  .site-footer { padding-block: 48px 26px; }
+  .footer-nav { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 24px; }
+  .footer-bottom { margin-top: 38px; }
+}
+/* Phone: single stacked column. */
+@media (max-width: 460px) {
+  .footer-nav { grid-template-columns: 1fr; gap: 28px; }
+  .footer-logo { width: 156px; }
+}
+
+/* Unrelated to the footer, but this is where the rule has always lived. */
 @media (max-width: 520px) {
-  .footer-top { grid-template-columns: 1fr; gap: 24px; }
   th, td { padding: 11px 12px; }
 }
 

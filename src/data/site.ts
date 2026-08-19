@@ -45,63 +45,55 @@ export const NAV: NavItem[] = [
 ];
 
 // Grouped footer navigation.
+//
+// Deliberately CURATED, not exhaustive. The footer surfaces the highest-intent
+// tools, the most-asked guides and every trust/legal page — three balanced
+// columns instead of one 25-link dump.
+//
+// Long-tail pages (device guides, troubleshooting variants, niche formats) are
+// intentionally absent here. They stay in src/data/routes.ts, so sitemap.xml
+// and llms.txt still list them, and they are reached through in-content links
+// plus the <RelatedGuides> blocks on their parent pages — every one of them has
+// several contextual inbound links, so none is orphaned by leaving the footer.
 export const FOOTER_GROUPS: { title: string; links: NavItem[] }[] = [
   {
-    title: 'Araçlar',
+    title: 'Popüler Araçlar',
     links: [
       { label: 'Pinterest Video İndir', href: '/pinterest-video-indir/' },
       { label: 'Pinterest Video İndirici', href: '/pinterest-video-indirici/' },
-      { label: 'Video İndir Galeriye', href: '/pinterest-video-galeriye-indir/' },
-      { label: 'Pinterest 4K Video İndir', href: '/pinterest-4k-video-indir/' },
-      { label: 'Pinterest HD Video İndir', href: '/pinterest-hd-video-indir/' },
-      { label: 'Pinterest MP4 İndir', href: '/pinterest-mp4-indir/' },
-      { label: 'Pinterest Video Link İndir', href: '/pinterest-video-link-indir/' },
-      { label: 'Video İndir Ücretsiz', href: '/pinterest-video-indir-ucretsiz/' },
-      { label: 'Pinterest Pin İndir', href: '/pinterest-pin-indir/' },
-      { label: 'Filigransız Video İndir', href: '/pinterest-filigransiz-video-indir/' },
-      { label: 'Pinterest Story İndir', href: '/pinterest-story-indir/' },
+      { label: 'Video Link İndir', href: '/pinterest-video-link-indir/' },
       { label: 'Pinterest Resim İndir', href: '/pinterest-resim-indir/' },
       { label: 'Pinterest GIF İndir', href: '/pinterest-gif-indir/' },
       { label: 'Pinterest Karusel İndir', href: '/pinterest-karusel-indir/' },
+      { label: 'Pinterest MP4 İndir', href: '/pinterest-mp4-indir/' },
+      { label: 'HD Video İndir', href: '/pinterest-hd-video-indir/' },
     ],
   },
   {
-    title: 'Rehber',
+    title: 'Öne Çıkan Rehberler',
     links: [
-      { label: 'Video Nasıl İndirilir', href: '/pinterest-video-nasil-indirilir/' },
       { label: 'Pinterest Nedir?', href: '/pinterest-nedir/' },
-      { label: 'Pinterest Çöktü mü?', href: '/pinterest-coktu-mu/' },
-      { label: 'Pinterest Ücretli mi?', href: '/pinterest-ucretli-mi/' },
       { label: 'Video İndirici Nedir?', href: '/pinterest-video-indirici-nedir/' },
       { label: 'Pinterest Downloader Nedir?', href: '/pinterest-downloader-nedir/' },
-      { label: 'İndirme Aracı Nasıl Çalışır?', href: '/pinterest-video-indirme-araci-nasil-calisir/' },
-      { label: 'İndirme mi, Kaydetme mi?', href: '/pinterest-video-indirme-vs-kaydetme/' },
-      { label: 'Video Kalitesi (Neden Bulanık?)', href: '/pinterest-video-kalitesi/' },
+      { label: 'Video Nasıl İndirilir?', href: '/pinterest-video-nasil-indirilir/' },
       { label: 'Video İndirilemiyor mu?', href: '/pinterest-video-indirilemiyor/' },
-      { label: 'Pinterest Açılmıyor mu?', href: '/pinterest-acilmiyor/' },
-      { label: 'Video Açılmıyor / Oynatılmıyor mu?', href: '/pinterest-video-acilmiyor/' },
-      { label: 'Pinterest Linki Çalışmıyor mu?', href: '/pinterest-link-calismiyor/' },
-      { label: 'iPhone’da Video İndir', href: '/iphone-pinterest-video-indir/' },
-      { label: 'Android’de Video İndir', href: '/android-pinterest-video-indir/' },
-      { label: 'Mac’te Video İndir', href: '/mac-pinterest-video-indir/' },
-      { label: 'Windows’ta Video İndir', href: '/windows-pinterest-video-indir/' },
-      { label: 'Pinterest Video Yükleme', href: '/pinterest-video-yukleme/' },
-      { label: 'Video İndirmek Yasal mı?', href: '/pinterest-video-indirmek-yasal-mi/' },
-      { label: 'Video İndirmek Güvenli mi?', href: '/pinterest-video-indirmek-guvenli-mi/' },
-      { label: 'Telif Hakkı ve İndirme', href: '/telif-hakki-ve-pinterest-indirme/' },
-      { label: 'Nasıl Kullanılır', href: '/nasil-kullanilir/' },
+      { label: 'Pinterest Çöktü mü?', href: '/pinterest-coktu-mu/' },
+      { label: 'Pinterest Ücretli mi?', href: '/pinterest-ucretli-mi/' },
       { label: 'Sıkça Sorulan Sorular', href: '/sss/' },
-      { label: 'Hakkında', href: '/hakkinda/' },
-      { label: 'Yazar: Mohsin Ali Bubak', href: '/yazar/mohsin-ali-bubak/' },
     ],
   },
   {
-    title: 'Kurumsal',
+    title: 'Güven & Kurumsal',
     links: [
+      { label: 'Hakkında', href: '/hakkinda/' },
+      { label: 'Yazar: Mohsin Ali Bubak', href: '/yazar/mohsin-ali-bubak/' },
       { label: 'İletişim', href: '/iletisim/' },
+      { label: 'DMCA / Telif Talebi', href: '/dmca/' },
+      { label: 'Telif Hakkı ve İndirme', href: '/telif-hakki-ve-pinterest-indirme/' },
+      { label: 'İndirmek Yasal mı?', href: '/pinterest-video-indirmek-yasal-mi/' },
+      { label: 'İndirmek Güvenli mi?', href: '/pinterest-video-indirmek-guvenli-mi/' },
       { label: 'Gizlilik Politikası', href: '/gizlilik-politikasi/' },
       { label: 'Kullanım Şartları', href: '/kullanim-sartlari/' },
-      { label: 'DMCA / Telif Talebi', href: '/dmca/' },
     ],
   },
 ];

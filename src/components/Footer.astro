@@ -7,34 +7,39 @@ const year = 2026;
   <div class="container">
     <div class="footer-top">
       <div class="footer-brand">
-        <a class="brand footer-logo-link" href="/" aria-label={`${SITE.name} ana sayfa`}>
+        <a class="footer-logo-link" href="/" aria-label={`${SITE.name} ana sayfa`}>
           <img
             class="footer-logo"
             src="/logo.svg"
-            width="220"
-            height="43"
+            width="176"
+            height="35"
             alt="pinterestvideoindirme Pinterest video indirme aracı logosu"
           />
         </a>
-        <p>
-          Pinterest videolarını, resimlerini, GIF'lerini ve karusel
-          içeriklerini HD kalitede, ücretsiz ve filigransız indirmenin en
-          hızlı yolu. Kayıt yok, reklam yok, sınır yok.
+        <p class="footer-tagline">
+          Pinterest videolarını, resimlerini, GIF'lerini ve karusel içeriklerini
+          HD kalitede, ücretsiz ve filigransız indirmenin en hızlı yolu.
+        </p>
+        <p class="footer-note">Kayıt gerekmez, hızlı ve sorumlu kullanım.</p>
+        <p class="footer-disclaimer">
+          Pinterest ile resmi bir bağlantımız yoktur.
         </p>
       </div>
 
-      {
-        FOOTER_GROUPS.map((group) => (
-          <div class="footer-col">
-            <h4>{group.title}</h4>
-            <ul>
-              {group.links.map((l) => (
-                <li><a href={l.href}>{l.label}</a></li>
-              ))}
-            </ul>
-          </div>
-        ))
-      }
+      <nav class="footer-nav" aria-label="Alt bilgi bağlantıları">
+        {
+          FOOTER_GROUPS.map((group) => (
+            <div class="footer-col">
+              <h4>{group.title}</h4>
+              <ul>
+                {group.links.map((l) => (
+                  <li><a href={l.href}>{l.label}</a></li>
+                ))}
+              </ul>
+            </div>
+          ))
+        }
+      </nav>
     </div>
 
     <div class="footer-bottom">
