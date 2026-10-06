@@ -5,7 +5,11 @@ import cloudflare from '@astrojs/cloudflare';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://pinterestvideoindirme.tr',
-  trailingSlash: 'ignore',
+  // Force slash URLs so canonicals, sitemap and internal links stay on one
+  // form. Cloudflare's default html_handling still 307s slash-less requests;
+  // public/_redirects issues 301s first. Also turn on Always Use HTTPS in the
+  // Cloudflare dashboard (HTTP→HTTPS cannot be done from this file).
+  trailingSlash: 'always',
   // 301s for legacy / renamed URLs. Targets are the closest live page. These
   // old URLs are redirect-only and are NOT listed in sitemap.xml / llms.txt
   // (those derive from src/data/routes.ts).
@@ -55,6 +59,29 @@ export default defineConfig({
     '/pinterest-gif-indirici': {
       status: 301,
       destination: '/pinterest-gif-indir/',
+    },
+    // Same-intent tool clones → homepage. Google already ranks `/` for the
+    // head terms; these URLs split equity and win nothing (GSC 2026-10).
+    // Source is slash-less; trailingSlash: 'always' also matches the slash form.
+    '/pinterest-video-indir': {
+      status: 301,
+      destination: '/',
+    },
+    '/pinterest-video-indirici': {
+      status: 301,
+      destination: '/',
+    },
+    '/pinterest-video-indir-ucretsiz': {
+      status: 301,
+      destination: '/',
+    },
+    '/pinterest-video-link-indir': {
+      status: 301,
+      destination: '/',
+    },
+    '/pinterest-pin-indir': {
+      status: 301,
+      destination: '/',
     },
   },
   // Pages stay static (prerendered) for SEO. Only /api/* routes opt into

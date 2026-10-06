@@ -27,15 +27,15 @@ const qualities = [
 const steps = [
   {
     name: 'Yüksek çözünürlüklü bir pin seçin',
-    text: 'İndirme tavanını videonun Pinterest’e yüklendiği çözünürlük belirler; 4K seçeneğini yalnızca kaynağı 4K olan pinlerde görürsünüz.',
+    text: 'İndirme tavanını videonun Pinterest’e yüklendiği çözünürlük belirler. 4K dosya yalnızca kaynağı 4K olan pinlerde iner.',
   },
   {
     name: 'Bağlantıyı kopyalayıp yapıştırın',
     text: 'Pinterest’te “Paylaş → Bağlantıyı kopyala” deyin ve adresi yukarıdaki kutuya yapıştırıp “İndir”e basın.',
   },
   {
-    name: 'Listeden en yüksek çözünürlüğü seçin',
-    text: 'Çıkan seçenekler arasından 4K (2160p) ya da Full HD (1080p) satırını seçin; listede yalnızca kaynakta gerçekten bulunan kaliteler görünür.',
+    name: 'Listeden en yüksek kaliteyi seçin',
+    text: 'Araç, Pinterest’in verdiği kaynak dosyalarını listeler (çoğu zaman “Orijinal”). Pin 4K yüklendiyse o dosya 4K’dır; ayrı bir 2160p etiketi göstermeyiz.',
   },
   {
     name: 'MP4 olarak kaydedin',
@@ -46,7 +46,7 @@ const steps = [
 const howTo = {
   name: 'Pinterest videosunu 4K kalitede indirme',
   description:
-    'Pinterest videosunu 4K veya Full HD indirmek için bağlantıyı kopyalayın, araca yapıştırın ve listeden en yüksek çözünürlüğü seçip MP4 olarak kaydedin.',
+    'Pinterest videosunu kaynaktaki en yüksek çözünürlükte indirmek için bağlantıyı kopyalayın, araca yapıştırın ve listeden Orijinal (en yüksek) satırı seçip MP4 olarak kaydedin.',
   steps,
 };
 ---
@@ -57,7 +57,7 @@ const howTo = {
   path={path}
   eyebrow="4K · Full HD · Ultra HD"
   h1="Pinterest 4K Video İndir"
-  lead="Pinterest videolarını kaynaktaki en yüksek çözünürlükte — 4K, Full HD veya HD — filigransız MP4 olarak indirin."
+  lead="Pinterest videolarını kaynaktaki en yüksek çözünürlükte — pin 4K ise 4K — filigransız MP4 olarak indirin."
   kind="video"
   placeholder="Pinterest video bağlantısını buraya yapıştırın…"
   crumbs={crumbs}
@@ -67,9 +67,7 @@ const howTo = {
 >
   <ShortAnswerBox question="Pinterest videosu 4K kalitede nasıl indirilir?">
     <p class="mt-0" style="margin:0">
-      Videonun bağlantısını <strong>kopyalayın</strong>, kutuya <strong>yapıştırın</strong> ve <strong>“İndir”</strong>e basın. İndirme
-      seçenekleri arasından <strong>4K (2160p)</strong> veya <strong>Full HD (1080p)</strong> kaliteyi seçip videoyu <strong>MP4</strong> olarak kaydedin. En yüksek kalite, videonun
-      Pinterest’e yüklendiği çözünürlükle sınırlıdır.
+      Videonun bağlantısını <strong>kopyalayın</strong>, kutuya <strong>yapıştırın</strong> ve <strong>“İndir”</strong>e basın. Listeden <strong>Orijinal</strong> (en yüksek) satırı seçip videoyu <strong>MP4</strong> olarak kaydedin. Pin Pinterest’e 4K yüklendiyse o dosya 4K’dır; 1080p yüklendiyse tavan Full HD kalır. Araç çözünürlüğü yükseltmez.
     </p>
   </ShortAnswerBox>
 
@@ -102,13 +100,13 @@ const howTo = {
     </table>
   </div>
 
-  <h2>Neden bazı videolarda 4K seçeneği çıkmaz?</h2>
+  <h2>Neden her video 4K inmez?</h2>
   <p>
     İndirilebilecek en yüksek kalite, tamamen içeriği <strong>yükleyen kişinin
     seçtiği çözünürlüğe</strong> bağlıdır. Bir video Pinterest’e yalnızca 1080p
     olarak yüklendiyse, hiçbir araç onu 4K’ya “yükseltemez”; yapay olarak
     büyütülen görüntü gerçek 4K netliği vermez. Bu yüzden yalnızca kaynakta
-    mevcut olan gerçek kaliteleri gösteririz — böylece bulanık, şişirilmiş
+    mevcut olan gerçek kaliteyi indiririz — böylece bulanık, şişirilmiş
     dosyalar yerine net ve doğru bir video indirirsiniz.
   </p>
 
@@ -128,14 +126,14 @@ const howTo = {
   </ul>
 
   <p style="margin-top:24px">
-    Listede 4K çıkmıyorsa video Pinterest’e o çözünürlükte yüklenmemiştir; nedenini <a href="/pinterest-video-kalitesi/">video kalitesi rehberinde</a> açıklıyoruz. Bir alt kademe yeterliyse <a href="/pinterest-hd-video-indir/">Full HD indirme</a>, dosyayı doğrudan biçimiyle almak isterseniz <a href="/pinterest-mp4-indir/">MP4 indirme</a> sayfasına geçebilirsiniz.
+    Listede beklediğiniz netlik yoksa video Pinterest’e o çözünürlükte yüklenmemiştir; nedenini <a href="/pinterest-video-kalitesi/">video kalitesi rehberinde</a> açıklıyoruz. Bir alt kademe yeterliyse <a href="/pinterest-hd-video-indir/">Full HD indirme</a>, dosyayı doğrudan biçimiyle almak isterseniz <a href="/pinterest-mp4-indir/">MP4 indirme</a> sayfasına geçebilirsiniz.
   </p>
 
   <ToolCta
     slot="after"
     title="En yüksek kalitede indirmeye başlayın"
-    text="Bağlantıyı yapıştırın, 4K veya Full HD seçin ve videoyu saniyeler içinde kaydedin."
-    href="/pinterest-video-indir/"
+    text="Bağlantıyı yapıştırın, listeden Orijinal (en yüksek) kaliteyi seçin ve kaydedin."
+    href="/#arac"
     label="Pinterest Video İndir"
   />
 
@@ -143,13 +141,13 @@ const howTo = {
     slot="after"
     title="İlgili araçlar ve rehberler"
     items={[
-      { title: 'Pinterest Video İndir', href: '/pinterest-video-indir/', description: 'Tüm cihazlarda HD, Full HD ve 4K MP4 indirme.' },
+      { title: 'Pinterest Video İndir', href: '/', description: 'Ana sayfadaki HD MP4 indirme aracı.' },
       { title: 'Pinterest HD Video İndir', href: '/pinterest-hd-video-indir/', description: 'Full HD (1080p) kalitede net indirme.' },
       { title: 'Pinterest MP4 İndir', href: '/pinterest-mp4-indir/', description: 'Videoyu doğrudan HD MP4 olarak, dönüştürücüsüz kaydedin.' },
       { title: 'Pinterest Video Kalitesi', href: '/pinterest-video-kalitesi/', description: 'Video neden bulanık iniyor ve nasıl HD indirilir?' },
       { title: 'Pinterest Video İndir Galeriye', href: '/pinterest-video-galeriye-indir/', description: 'Videoyu doğrudan telefon galerinize kaydedin.' },
-      { title: 'Pinterest Resim & Fotoğraf İndir', href: '/pinterest-resim-indir/', description: 'Görselleri tam çözünürlükte indirin.' },
-      { title: 'Nasıl Kullanılır', href: '/nasil-kullanilir/', description: 'Adım adım Pinterest indirme rehberi.' },
+      { title: 'Pinterest Fotoğraf İndir', href: '/pinterest-resim-indir/', description: 'Görselleri tam çözünürlükte indirin.' },
+      { title: 'Nasıl Kullanılır', href: '/nasil-kullanilir/', description: 'Adım adım Pinterest indirme rehberi.' }
     ]}
   />
 </ToolPageLayout>

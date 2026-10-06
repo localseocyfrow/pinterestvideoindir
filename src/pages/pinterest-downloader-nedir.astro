@@ -22,13 +22,13 @@ const terms = [
     en: 'Pinterest downloader',
     tr: 'Pinterest indirici',
     kapsam: 'Tüm içerik türleri (şemsiye terim)',
-    href: '/pinterest-video-indirici/',
+    href: '/',
   },
   {
     en: 'Pinterest video downloader',
     tr: 'Pinterest video indirici',
     kapsam: 'Yalnızca video pinleri',
-    href: '/pinterest-video-indirici/',
+    href: '/',
   },
   {
     en: 'Pinterest image / photo downloader',
@@ -46,13 +46,13 @@ const terms = [
     en: 'Pinterest link downloader',
     tr: 'Pinterest bağlantı ile indirme',
     kapsam: 'Bağlantı yapıştırarak indirme',
-    href: '/pinterest-video-link-indir/',
+    href: '/',
   },
 ];
 
 // Downloader'ın tanıdığı pin türleri ve ürettiği dosya biçimleri.
 const contentTypes = [
-  { pin: 'Video pin', format: 'MP4 (H.264)', detay: 'HD, Full HD, kaynakta varsa 4K', href: '/pinterest-video-indir/' },
+  { pin: 'Video pin', format: 'MP4 (H.264)', detay: 'HD, Full HD, kaynakta varsa 4K', href: '/' },
   { pin: 'Görsel pin', format: 'JPG / PNG', detay: 'Tam çözünürlük, küçültülmemiş', href: '/pinterest-resim-indir/' },
   { pin: 'Hareketli pin', format: 'GIF veya MP4', detay: 'Kaynağın sunduğu biçime göre', href: '/pinterest-gif-indir/' },
   { pin: 'Karusel (çoklu görsel)', format: 'JPG / PNG', detay: 'Kareler tek tek indirilir', href: '/pinterest-karusel-indir/' },
@@ -91,7 +91,7 @@ const contentTypes = [
     indirici” anlamına gelir. Terim Türkçeye çevrilmeden yerleştiği için
     Türkiye’de her iki biçim de yan yana kullanılır: kimi kullanıcı
     “pinterest downloader”, kimi “pinterest indirici”, kimi de doğrudan
-    “<a href="/pinterest-video-indir/">pinterest video indir</a>” diye arar.
+    “<a href="/">pinterest video indir</a>” diye arar.
     Üçü de aynı ihtiyacı anlatır — bir pini Pinterest’in dışına, kendi cihazınıza
     almak.
   </p>
@@ -206,7 +206,7 @@ const contentTypes = [
     slot="after"
     title="Terimi öğrendiniz — aracı kullanın"
     text="İster “downloader” deyin ister “indirici”: bağlantıyı yapıştırın, içeriği saniyeler içinde kaydedin."
-    href="/pinterest-video-indir/"
+    href="/#arac"
     label="Pinterest Video İndir"
   />
 
@@ -217,15 +217,13 @@ const contentTypes = [
       { title: 'Pinterest Video İndirici Nedir?', href: '/pinterest-video-indirici-nedir/', description: 'Kavramın teknik tanımı, türleri ve sınırları.' },
       { title: 'İndirme Aracı Nasıl Çalışır?', href: '/pinterest-video-indirme-araci-nasil-calisir/', description: 'Bağlantıdan MP4 dosyasına giden sürecin açıklaması.' },
       { title: 'İndirme mi, Kaydetme mi?', href: '/pinterest-video-indirme-vs-kaydetme/', description: 'Panoya kaydetmekle indirmenin farkı.' },
-      { title: 'Pinterest Video İndir', href: '/pinterest-video-indir/', description: 'HD, Full HD ve 4K MP4 indirme aracı.' },
-      { title: 'Pinterest Video İndirici', href: '/pinterest-video-indirici/', description: 'Kurulumsuz, tarayıcı tabanlı online araç.' },
-      { title: 'Pinterest Video Link İndir', href: '/pinterest-video-link-indir/', description: 'Bağlantı yapıştırarak doğrudan indirme.' },
+      { title: 'Pinterest Video İndir', href: '/', description: 'Ana sayfadaki HD MP4 indirme aracı.' },
       { title: 'Pinterest MP4 İndir', href: '/pinterest-mp4-indir/', description: 'Dönüştürücüsüz, doğrudan MP4 kaydetme.' },
       { title: 'Pinterest HD Video İndir', href: '/pinterest-hd-video-indir/', description: 'Full HD 1080p kalitede indirme.' },
       { title: 'Pinterest Video Nasıl İndirilir', href: '/pinterest-video-nasil-indirilir/', description: 'Adım adım, cihaz cihaz rehber.' },
       { title: 'Video İndirmek Güvenli mi?', href: '/pinterest-video-indirmek-guvenli-mi/', description: 'Güvenli araç seçimi ve bilinen tuzaklar.' },
       { title: 'Telif Hakkı ve Pinterest İndirme', href: '/telif-hakki-ve-pinterest-indirme/', description: 'İzin, kişisel kullanım ve riskli kullanımlar.' },
-      { title: 'Sıkça Sorulan Sorular', href: '/sss/', description: 'Tüm araçlar için toplu soru-cevap.' },
+      { title: 'Sıkça Sorulan Sorular', href: '/sss/', description: 'Tüm araçlar için toplu soru-cevap.' }
     ]}
   />
 </ToolPageLayout>

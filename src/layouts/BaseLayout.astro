@@ -40,7 +40,7 @@ const {
 } = Astro.props;
 
 const canonical = abs(path);
-const ogImage = abs('/og-image.svg');
+const ogImage = abs('/og-image.png');
 
 // Merge site-wide nodes with page-specific ones into one @graph doc.
 const jsonLd = graph(organizationSchema(), websiteSchema(), ...schemas);
@@ -70,12 +70,17 @@ const jsonLd = graph(organizationSchema(), websiteSchema(), ...schemas);
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={ogImage} />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={`${SITE.name} — filigransız HD Pinterest video indirici`} />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image:alt" content={`${SITE.name} — filigransız HD Pinterest video indirici`} />
 
     <link rel="sitemap" href="/sitemap.xml" />
 

@@ -1,0 +1,57 @@
+# Cloudflare static redirects (301). First match wins.
+# These run before Workers html_handling, which would otherwise 307 slash-less URLs.
+# Also turn on Always Use HTTPS + www→apex in the Cloudflare dashboard.
+
+# Same-intent tool clones → homepage
+/pinterest-video-indir / 301
+/pinterest-video-indir/ / 301
+/pinterest-video-indirici / 301
+/pinterest-video-indirici/ / 301
+/pinterest-video-indir-ucretsiz / 301
+/pinterest-video-indir-ucretsiz/ / 301
+/pinterest-video-link-indir / 301
+/pinterest-video-link-indir/ / 301
+/pinterest-pin-indir / 301
+/pinterest-pin-indir/ / 301
+
+/index.html / 301
+
+# Force trailing slash on live pages (slash-less → slash)
+/pinterest-video-galeriye-indir /pinterest-video-galeriye-indir/ 301
+/pinterest-4k-video-indir /pinterest-4k-video-indir/ 301
+/pinterest-hd-video-indir /pinterest-hd-video-indir/ 301
+/pinterest-mp4-indir /pinterest-mp4-indir/ 301
+/pinterest-filigransiz-video-indir /pinterest-filigransiz-video-indir/ 301
+/pinterest-video-nasil-indirilir /pinterest-video-nasil-indirilir/ 301
+/pinterest-video-indirici-nedir /pinterest-video-indirici-nedir/ 301
+/pinterest-downloader-nedir /pinterest-downloader-nedir/ 301
+/pinterest-video-indirme-araci-nasil-calisir /pinterest-video-indirme-araci-nasil-calisir/ 301
+/pinterest-video-indirme-vs-kaydetme /pinterest-video-indirme-vs-kaydetme/ 301
+/pinterest-video-kalitesi /pinterest-video-kalitesi/ 301
+/pinterest-video-indirilemiyor /pinterest-video-indirilemiyor/ 301
+/pinterest-nedir /pinterest-nedir/ 301
+/pinterest-coktu-mu /pinterest-coktu-mu/ 301
+/pinterest-ucretli-mi /pinterest-ucretli-mi/ 301
+/pinterest-acilmiyor /pinterest-acilmiyor/ 301
+/pinterest-video-acilmiyor /pinterest-video-acilmiyor/ 301
+/pinterest-link-calismiyor /pinterest-link-calismiyor/ 301
+/iphone-pinterest-video-indir /iphone-pinterest-video-indir/ 301
+/android-pinterest-video-indir /android-pinterest-video-indir/ 301
+/mac-pinterest-video-indir /mac-pinterest-video-indir/ 301
+/windows-pinterest-video-indir /windows-pinterest-video-indir/ 301
+/pinterest-story-indir /pinterest-story-indir/ 301
+/pinterest-video-yukleme /pinterest-video-yukleme/ 301
+/pinterest-resim-indir /pinterest-resim-indir/ 301
+/pinterest-gif-indir /pinterest-gif-indir/ 301
+/pinterest-karusel-indir /pinterest-karusel-indir/ 301
+/pinterest-video-indirmek-yasal-mi /pinterest-video-indirmek-yasal-mi/ 301
+/pinterest-video-indirmek-guvenli-mi /pinterest-video-indirmek-guvenli-mi/ 301
+/telif-hakki-ve-pinterest-indirme /telif-hakki-ve-pinterest-indirme/ 301
+/nasil-kullanilir /nasil-kullanilir/ 301
+/sss /sss/ 301
+/hakkinda /hakkinda/ 301
+/iletisim /iletisim/ 301
+/gizlilik-politikasi /gizlilik-politikasi/ 301
+/kullanim-sartlari /kullanim-sartlari/ 301
+/dmca /dmca/ 301
+/yazar/mohsin-ali-bubak /yazar/mohsin-ali-bubak/ 301

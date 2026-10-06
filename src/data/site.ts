@@ -9,15 +9,16 @@ export const SITE = {
   url: 'https://pinterestvideoindirme.tr',
   lang: 'tr',
   locale: 'tr_TR',
-  title: 'Pinterest Video İndir – HD MP4 Video İndirici (Ücretsiz)',
+  title: 'Pinterest Video İndir – Filigransız HD Pinterest Downloader',
   description:
-    'Pinterest videolarını HD kalitede, ücretsiz ve filigransız indirin. ' +
-    'Kayıt olmadan, reklamsız ve tek tıkla Pinterest MP4, GIF ve görsel indirme aracı.',
+    'Pinterest video indirici: bağlantıyı yapıştırın, videoyu HD MP4 olarak ' +
+    'filigransız ve ücretsiz indirin. iPhone, Android ve PC’de çalışır; kayıt gerekmez.',
   email: 'pinterestvideoindirme2@gmail.com',
   author: 'Pinterest Video İndir Ekibi',
   twitter: '@pinvideoindir',
+  youtube: 'https://www.youtube.com/@Pinterestvideoindirme-d6p',
   // Launch/updated dates are used in structured data + footer.
-  updated: '2026-07-10',
+  updated: '2026-10-06',
   founded: '2026',
 } as const;
 
@@ -36,8 +37,8 @@ export type NavItem = { label: string; href: string };
 
 // Primary navigation, ordered by topical priority from keyword research.
 export const NAV: NavItem[] = [
-  { label: 'Video İndir', href: '/pinterest-video-indir/' },
-  { label: 'Resim İndir', href: '/pinterest-resim-indir/' },
+  { label: 'Video İndir', href: '/' },
+  { label: 'Fotoğraf İndir', href: '/pinterest-resim-indir/' },
   { label: 'GIF İndir', href: '/pinterest-gif-indir/' },
   { label: 'Karusel İndir', href: '/pinterest-karusel-indir/' },
   { label: 'Nasıl Kullanılır', href: '/nasil-kullanilir/' },
@@ -59,10 +60,8 @@ export const FOOTER_GROUPS: { title: string; links: NavItem[] }[] = [
   {
     title: 'Popüler Araçlar',
     links: [
-      { label: 'Pinterest Video İndir', href: '/pinterest-video-indir/' },
-      { label: 'Pinterest Video İndirici', href: '/pinterest-video-indirici/' },
-      { label: 'Video Link İndir', href: '/pinterest-video-link-indir/' },
-      { label: 'Pinterest Resim İndir', href: '/pinterest-resim-indir/' },
+      { label: 'Pinterest Video İndir', href: '/' },
+      { label: 'Pinterest Fotoğraf İndir', href: '/pinterest-resim-indir/' },
       { label: 'Pinterest GIF İndir', href: '/pinterest-gif-indir/' },
       { label: 'Pinterest Karusel İndir', href: '/pinterest-karusel-indir/' },
       { label: 'Pinterest MP4 İndir', href: '/pinterest-mp4-indir/' },

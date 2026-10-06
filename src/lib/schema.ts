@@ -21,6 +21,17 @@ export function organizationSchema(): JsonLd {
       url: abs('/logo.svg'),
     },
     description: SITE.description,
+    sameAs: [SITE.youtube],
+    parentOrganization: {
+      '@type': 'Organization',
+      name: EDITOR.company,
+    },
+    contactPoint: {
+      '@type': 'ContactPoint',
+      email: SITE.email,
+      contactType: 'customer support',
+      availableLanguage: ['tr', 'en'],
+    },
   };
 }
 
@@ -52,7 +63,7 @@ export function webAppSchema(): JsonLd {
       priceCurrency: 'TRY',
     },
     featureList: [
-      'HD, Full HD (1080p) ve 4K Pinterest video indirme',
+      'Kaynakta mevcut en yüksek kalitede Pinterest video indirme (HD)',
       'Filigransız indirme',
       'Videoyu galeriye / cihaza kaydetme',
       'Pinterest GIF indirme',
@@ -135,7 +146,11 @@ export function articleSchema(opts: {
     mainEntityOfPage: { '@type': 'WebPage', '@id': abs(opts.path) },
     datePublished: opts.datePublished ?? SITE.updated,
     dateModified: opts.dateModified ?? SITE.updated,
-    author: { '@type': 'Organization', name: SITE.author, url: abs('/') },
+    author: {
+      '@type': 'Person',
+      name: EDITOR.name,
+      url: abs(EDITOR.path),
+    },
     // Content is produced by the site team (author) and editorially reviewed
     // by a named person; the full Person node lives on their profile page.
     editor: { '@type': 'Person', name: EDITOR.name, url: abs(EDITOR.path) },

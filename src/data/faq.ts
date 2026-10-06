@@ -36,7 +36,7 @@ export const HOME_FAQ: QA[] = [
   },
   {
     q: 'HD veya 4K Pinterest videosu indirebilir miyim?',
-    a: 'Evet. Kaynak video hangi çözünürlükte yüklendiyse, o kaliteyi (HD 720p, Full HD 1080p ve mümkünse 4K) indirme seçeneği olarak sunarız.',
+    a: 'Evet. Kaynak video hangi çözünürlükte yüklendiyse, o kaliteyi indirme seçeneği olarak sunarız. Listede yalnızca gerçekten var olan çözünürlükler görünür.',
   },
   {
     q: 'İndirdiğim videoları nasıl kullanmam gerekir?',
@@ -44,7 +44,11 @@ export const HOME_FAQ: QA[] = [
   },
   {
     q: 'Kayıt olmam veya uygulama indirmem gerekiyor mu?',
-    a: 'Hayır. Hesap oluşturmanıza veya herhangi bir uygulama kurmanıza gerek yoktur. Bağlantıyı yapıştırıp doğrudan tarayıcıdan indirebilirsiniz.',
+    a: 'Hayır. Hesap oluşturmanıza veya herhangi bir uygulama kurmanıza gerek yoktur. Bağlantıyı yapıştırıp doğrudan tarayıcıdan indirebilirsiniz. APK veya “Pinterest video indirme uygulaması” gerekmez.',
+  },
+  {
+    q: 'Pinterest video download / downloader İngilizce araması bu araç mı?',
+    a: 'Evet. “Pinterest video download”, “Pinterest downloader” ve “Pinterest video downloader” aynı tarayıcı aracını ifade eder. Bu sayfadaki kutuya pin bağlantısını yapıştırıp İndir’e basmanız yeterlidir.',
   },
   {
     q: 'Videolarınızı sunucularınızda saklıyor musunuz?',
@@ -52,7 +56,7 @@ export const HOME_FAQ: QA[] = [
   },
 ];
 
-// Pillar tool page FAQ — /pinterest-video-indir/.
+// Pillar tool page FAQ — /.
 // Kept separate from HOME_FAQ (which is broad) so the two pages never publish
 // the same question. These answers are practical, about USING the tool:
 // what to pick, what the file looks like, what happens mid-download.
@@ -172,11 +176,11 @@ export const GALLERY_FAQ: QA[] = [
 export const VIDEO_4K_FAQ: QA[] = [
   {
     q: 'Pinterest’ten 4K video indirebilir miyim?',
-    a: 'Evet. Kaynak video 4K (2160p) olarak yüklendiyse, indirme seçenekleri arasında 4K çözünürlüğü sunarız. Videoyu MP4 formatında, filigransız ve en yüksek kalitede kaydedersiniz.',
+    a: 'Pin 4K (2160p) olarak yüklendiyse, listelenen en yüksek (Orijinal) dosya o çözünürlüktedir. Araç ayrı bir “4K” düğmesi göstermez ve düşük çözünürlüklü videoyu 4K’ya yükseltmez. Dosyayı MP4, filigransız kaydedersiniz.',
   },
   {
     q: 'Video neden 4K yerine daha düşük çözünürlükte iniyor?',
-    a: 'İndirilebilecek en yüksek kalite, videonun Pinterest’e yüklendiği çözünürlükle sınırlıdır. İçerik üreticisi videoyu 1080p olarak yüklediyse 4K seçeneği çıkmaz; aracımız yalnızca kaynakta gerçekten var olan kaliteleri listeler.',
+    a: 'Tavan, videonun Pinterest’e yüklendiği çözünürlüktür. 1080p yüklenmiş bir pinde 4K dosya olmaz; listeden Orijinal satırı yine kaynağın tavanını verir. Yapay büyütme uygulanmaz.',
   },
   {
     q: 'HD (720p), Full HD (1080p) ve 4K arasındaki fark nedir?',
@@ -188,11 +192,11 @@ export const VIDEO_4K_FAQ: QA[] = [
   },
   {
     q: '4K Pinterest videosu indirmek ücretsiz mi?',
-    a: 'Evet. HD, Full HD ve 4K dahil tüm kalite seçenekleri tamamen ücretsizdir; kayıt, ödeme veya günlük indirme sınırı yoktur.',
+    a: 'Evet. Kaynakta hangi kalite varsa (HD, Full HD veya 4K) hepsi ücretsizdir; kayıt, ödeme veya günlük indirme sınırı yoktur.',
   },
 ];
 
-// "Video indirici" (downloader tool) cluster — /pinterest-video-indirici/.
+// "Video indirici" (downloader tool) cluster — /.
 // NOTE: the "…indirici nedir?" definition question deliberately lives on
 // /pinterest-video-indirici-nedir/ instead, so the two pages don't emit
 // competing FAQPage answers for the same query. Keep this set tool-focused.
@@ -219,7 +223,7 @@ export const DOWNLOADER_FAQ: QA[] = [
   },
 ];
 
-// Free / ücretsiz cluster — /pinterest-video-indir-ucretsiz/.
+// Free / ücretsiz cluster — /.
 export const FREE_FAQ: QA[] = [
   {
     q: 'Pinterest video indirmek gerçekten ücretsiz mi?',
@@ -243,7 +247,7 @@ export const FREE_FAQ: QA[] = [
   },
 ];
 
-// Generic "pin" cluster (any media type) — /pinterest-pin-indir/.
+// Generic "pin" cluster (any media type) — /.
 export const PIN_FAQ: QA[] = [
   {
     q: 'Pinterest pini nasıl indirilir?',
@@ -567,7 +571,7 @@ export const QUALITY_FAQ: QA[] = [
   },
   {
     q: 'Pinterest videosunu en yüksek kalitede nasıl indiririm?',
-    a: 'Bağlantıyı aracımıza yapıştırdıktan sonra listelenen kalite seçenekleri arasından en yükseğini — mümkünse Full HD (1080p) veya 4K — seçin. Aracımız yalnızca kaynakta gerçekten var olan çözünürlükleri gösterir, böylece şişirilmiş değil gerçek kaliteli bir video indirirsiniz.',
+    a: 'Bağlantıyı aracımıza yapıştırdıktan sonra listelenen kalite seçenekleri arasından en yüksek (Orijinal) satırı seçin. Aracımız kaynağın tavanını verir; şişirilmiş değil gerçek kaliteli bir video indirirsiniz.',
   },
   {
     q: 'Düşük çözünürlüklü bir videoyu 1080p veya 4K’ya yükseltebilir miyim?',
@@ -611,7 +615,7 @@ export const HD_FAQ: QA[] = [
   },
 ];
 
-// Link / URL-based download cluster — /pinterest-video-link-indir/.
+// Link / URL-based download cluster — /.
 export const LINK_FAQ: QA[] = [
   {
     q: 'Pinterest video linki (bağlantısı) ile nasıl indirilir?',
@@ -1078,7 +1082,7 @@ export const PINTEREST_NEDIR_FAQ: QA[] = [
 
 // Platform-pricing cluster — /pinterest-ucretli-mi/.
 // About whether PINTEREST costs money, which is a different question from
-// whether OUR tool is free (FREE_FAQ on /pinterest-video-indir-ucretsiz/).
+// whether OUR tool is free (FREE_FAQ on /).
 export const PINTEREST_UCRETLI_FAQ: QA[] = [
   {
     q: 'Pinterest kullanmak para gerektirir mi?',
@@ -1173,11 +1177,11 @@ export const HUB_FAQ_GROUPS: FaqGroup[] = [
       },
       {
         q: 'Hangi Pinterest içerik türlerini indirebiliyorum?',
-        a: 'Video, görsel, hareketli (GIF) içerik ve çoklu görsel içeren pinler desteklenir. Ne indirmek istediğinize göre ilgili araca gidin: <a href="/pinterest-video-indir/">video</a>, <a href="/pinterest-resim-indir/">görsel</a>, <a href="/pinterest-gif-indir/">GIF</a> veya <a href="/pinterest-karusel-indir/">karusel</a>. Her araç, yapıştırdığınız pinin türünü tanıyıp uygun dosyayı sunar.',
+        a: 'Video, görsel, hareketli (GIF) içerik ve çoklu görsel içeren pinler desteklenir. Ne indirmek istediğinize göre ilgili araca gidin: <a href="/#arac">video</a>, <a href="/pinterest-resim-indir/">görsel</a>, <a href="/pinterest-gif-indir/">GIF</a> veya <a href="/pinterest-karusel-indir/">karusel</a>. Her araç, yapıştırdığınız pinin türünü tanıyıp uygun dosyayı sunar.',
       },
       {
         q: 'Hizmet için ödeme yapmam ya da üye olmam gerekiyor mu?',
-        a: 'Hayır. Araçların tamamı ücretsizdir; üyelik, e-posta adresi veya ödeme bilgisi istemez. Deneme süresi ya da sonradan devreye giren bir abonelik de yoktur. Ayrıntılar için <a href="/pinterest-video-indir-ucretsiz/">ücretsiz indirme sayfamıza</a> bakabilirsiniz.',
+        a: 'Hayır. Araçların tamamı ücretsizdir; üyelik, e-posta adresi veya ödeme bilgisi istemez. Deneme süresi ya da sonradan devreye giren bir abonelik de yoktur. Ana sayfadaki araç kayıtsız ve limitsiz çalışır.',
       },
       {
         q: 'Bu site Pinterest’in resmî bir hizmeti mi?',
@@ -1195,7 +1199,7 @@ export const HUB_FAQ_GROUPS: FaqGroup[] = [
     items: [
       {
         q: 'Video indirmek için hangi sayfayı kullanmalıyım?',
-        a: 'Ana araç <a href="/pinterest-video-indir/">Pinterest video indir</a> sayfasındadır; çoğu ihtiyaç için bu sayfa yeterlidir. Belirli bir amaç için özel sayfalar da vardır: en yüksek çözünürlük için <a href="/pinterest-hd-video-indir/">HD indirme</a>, doğrudan dosya biçimi için <a href="/pinterest-mp4-indir/">MP4 indirme</a>.',
+        a: 'Ana araç <a href="/#arac">ana sayfadaki Pinterest video indir</a> kutusudur; çoğu ihtiyaç için bu yeterlidir. Belirli bir amaç için özel sayfalar da vardır: en yüksek çözünürlük için <a href="/pinterest-hd-video-indir/">HD indirme</a>, doğrudan dosya biçimi için <a href="/pinterest-mp4-indir/">MP4 indirme</a>.',
       },
       {
         q: 'İndirme işlemi kaç adımda tamamlanıyor?',
@@ -1251,7 +1255,7 @@ export const HUB_FAQ_GROUPS: FaqGroup[] = [
     items: [
       {
         q: 'Bağlantı yapıştırarak indirmeye odaklanan bir sayfa var mı?',
-        a: 'Evet, <a href="/pinterest-video-link-indir/">Pinterest video link indir</a> sayfası tam bu iş için hazırlanmıştır. Elinizde yalnızca bir bağlantı varsa en hızlı yol bu sayfadır. Çalışma biçimi ana araçla aynıdır.',
+        a: 'Evet. Elinizde yalnızca bir bağlantı varsa en hızlı yol ana sayfadaki kutuya yapıştırmaktır. <strong>pin.it</strong> kısa linki ve <strong>pinterest.com/pin/…</strong> adresi aynı araçta çalışır.',
       },
       {
         q: 'Hangi bağlantı biçimleri kabul ediliyor?',
@@ -1299,7 +1303,7 @@ export const HUB_FAQ_GROUPS: FaqGroup[] = [
     items: [
       {
         q: 'Görsel indirmek için hangi sayfayı kullanmalıyım?',
-        a: '<a href="/pinterest-resim-indir/">Pinterest resim indir</a> sayfası tüm görsel pinleri için kullanılır. Bağlantıyı yapıştırdığınızda görselin tam çözünürlüklü hâli sunulur. Tek bir pini bütün olarak indirmek isterseniz <a href="/pinterest-pin-indir/">pin indir</a> sayfası da işinizi görür.',
+        a: '<a href="/pinterest-resim-indir/">Pinterest fotoğraf indir</a> sayfası tüm görsel pinleri için kullanılır. Bağlantıyı yapıştırdığınızda görselin tam çözünürlüklü hâli sunulur. Video, GIF veya karusel için ilgili araçları kullanın.',
       },
       {
         q: '“Fotoğraf”, “resim” ve “görsel” için ayrı araçlar mı gerekiyor?',

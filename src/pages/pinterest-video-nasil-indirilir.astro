@@ -22,7 +22,7 @@ const howTo = {
   steps: [
     { name: 'Videoyu aç ve bağlantıyı kopyala', text: 'Pinterest’te videoyu açın, “Paylaş → Bağlantıyı kopyala” deyin.' },
     { name: 'Bağlantıyı araca yapıştır', text: 'Bağlantıyı yukarıdaki kutuya yapıştırıp “İndir”e basın.' },
-    { name: 'Kaliteyi seç', text: 'HD, Full HD veya 4K seçeneklerinden birini seçin.' },
+    { name: 'Kaliteyi seç', text: 'Listeden en yüksek (Orijinal) kaliteyi seçin.' },
     { name: 'Videoyu kaydet', text: 'Video MP4 olarak telefonunuza veya bilgisayarınıza kaydedilir.' },
   ],
 };
@@ -81,7 +81,7 @@ const howTo = {
   <ul>
     <li><strong>Bağlantı çalışmıyor:</strong> URL’nin <code>pin.it</code> veya <code>pinterest.com</code> ile başladığından emin olun.</li>
     <li><strong>Video özel/gizli:</strong> Yalnızca herkese açık pinler indirilebilir.</li>
-    <li><strong>En yüksek kalite:</strong> Kaynakta varsa <a href="/pinterest-4k-video-indir/">4K çözünürlük</a> seçeneğini tercih edin.</li>
+    <li><strong>En yüksek kalite:</strong> Listeden <strong>Orijinal</strong> satırı seçin. Pin 4K yüklendiyse <a href="/pinterest-4k-video-indir/">kaynak 4K</a> iner.</li>
     <li><strong>Filigran istemiyorsanız:</strong> Videolar zaten <a href="/pinterest-filigransiz-video-indir/">filigransız</a> indirilir.</li>
   </ul>
 
@@ -89,7 +89,7 @@ const howTo = {
     slot="after"
     title="Şimdi deneyin"
     text="Bağlantıyı yapıştırın ve Pinterest videosunu saniyeler içinde indirin."
-    href="/pinterest-video-indir/"
+    href="/#arac"
     label="Pinterest Video İndir"
   />
 
@@ -97,12 +97,12 @@ const howTo = {
     slot="after"
     title="İlgili araçlar ve rehberler"
     items={[
-      { title: 'Pinterest Video İndir', href: '/pinterest-video-indir/', description: 'HD, Full HD ve 4K MP4 indirme aracı.' },
+      { title: 'Pinterest Video İndir', href: '/', description: 'Ana sayfadaki HD MP4 indirme aracı.' },
       { title: 'Video İndir Galeriye', href: '/pinterest-video-galeriye-indir/', description: 'Videoyu doğrudan telefon galerinize kaydedin.' },
       { title: 'Filigransız Video İndir', href: '/pinterest-filigransiz-video-indir/', description: 'Logo ve damga olmadan temiz video.' },
       { title: 'Nasıl Kullanılır', href: '/nasil-kullanilir/', description: 'Sitenin tüm araçları için genel rehber.' },
       { title: 'İndirme mi, Kaydetme mi?', href: '/pinterest-video-indirme-vs-kaydetme/', description: 'Panoya kaydetmekle cihaza indirmenin farkı.' },
-      { title: 'İndirme Aracı Nasıl Çalışır?', href: '/pinterest-video-indirme-araci-nasil-calisir/', description: 'Bağlantı yapıştırıldıktan sonra arka planda ne olur?' },
+      { title: 'İndirme Aracı Nasıl Çalışır?', href: '/pinterest-video-indirme-araci-nasil-calisir/', description: 'Bağlantı yapıştırıldıktan sonra arka planda ne olur?' }
     ]}
   />
 </ToolPageLayout>

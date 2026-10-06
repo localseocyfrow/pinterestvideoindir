@@ -22,7 +22,7 @@ yoktur ve Android, iPhone (iOS), tablet ile masaüstünde çalışır.
 - **Aranan terimler:** pinterest video indir, pinterest video indirme, pinterest video indirici, pinterest video indir 4k, pinterest video galeriye indir.
 - **Ücret:** Tamamen ücretsiz, sınırsız.
 - **Filigran:** Yok — indirilen dosyalar orijinal, temiz kalitede.
-- **Kalite:** HD 720p, Full HD 1080p ve mümkün olduğunda 4K.
+- **Kalite:** Kaynakta mevcut en yüksek dosya (çoğu pin HD/Full HD; 4K yalnızca pin 4K yüklendiyse).
 - **Kayıt / uygulama:** Gerekmez; işlem tarayıcıdan yapılır.
 - **Nasıl çalışır:** Pinterest bağlantısını kopyala → araca yapıştır → "İndir" → kaliteyi seç → cihazına/galerine kaydet.
 - **Gizlilik:** Yapıştırılan bağlantılar ve indirilen dosyalar kalıcı olarak saklanmaz.
@@ -47,6 +47,7 @@ ${pages}
 
 - E-posta: ${SITE.email}
 - Web: ${abs('/')}
+- YouTube: ${SITE.youtube}
 `;
 
   return new Response(body, {

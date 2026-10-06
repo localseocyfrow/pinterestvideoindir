@@ -27,7 +27,7 @@ const howTo = {
   steps: [
     { name: 'Bağlantıyı kopyala', text: 'Pinterest uygulamasında videoyu açıp “Paylaş → Bağlantıyı kopyala” deyin.' },
     { name: 'Safari’de araca yapıştır', text: 'Safari’de bu sayfayı açın, bağlantıyı kutuya yapıştırıp “İndir”e basın.' },
-    { name: 'Kaliteyi seç ve indir', text: 'HD, Full HD veya varsa 4K seçin; video “Dosyalar”a MP4 olarak iner.' },
+    { name: 'Kaliteyi seç ve indir', text: 'Listeden en yüksek (Orijinal) kaliteyi seçin; video “Dosyalar”a MP4 olarak iner.' },
     { name: 'Fotoğraflar’a kaydet', text: 'Dosyalar → İndirilenler’de videoya dokunup “Paylaş → Videoyu Kaydet” deyin.' },
   ],
 };
@@ -66,7 +66,7 @@ const howTo = {
   <div class="steps" style="margin:20px 0">
     <div class="step"><h3>Bağlantıyı kopyala</h3><p>Pinterest uygulamasında videoyu açın, “Paylaş” simgesine dokunup “Bağlantıyı kopyala” deyin.</p></div>
     <div class="step"><h3>Safari’de yapıştır</h3><p>Safari’de bu sayfayı açın ve bağlantıyı indirme kutusuna yapıştırın.</p></div>
-    <div class="step"><h3>Kaliteyi seç &amp; indir</h3><p>“İndir”e basıp HD, Full HD veya varsa 4K seçin; video “Dosyalar”a iner.</p></div>
+    <div class="step"><h3>Kaliteyi seç &amp; indir</h3><p>“İndir”e basıp listeden en yüksek (Orijinal) kaliteyi seçin; video “Dosyalar”a iner.</p></div>
     <div class="step"><h3>Fotoğraflar’a kaydet</h3><p>Dosyalar → İndirilenler’de videoya dokunun, “Paylaş → Videoyu Kaydet” deyin.</p></div>
   </div>
 
@@ -122,7 +122,7 @@ const howTo = {
     slot="after"
     title="iPhone’dan hemen indirin"
     text="Bağlantıyı Safari’de yapıştırın ve Pinterest videosunu saniyeler içinde kaydedin."
-    href="/pinterest-video-indir/"
+    href="/#arac"
     label="Pinterest Video İndir"
   />
 
@@ -130,14 +130,13 @@ const howTo = {
     slot="after"
     title="İlgili araçlar ve rehberler"
     items={[
-      { title: 'Pinterest Video İndir', href: '/pinterest-video-indir/', description: 'Tüm cihazlarda HD, Full HD ve 4K MP4 indirme aracı.' },
+      { title: 'Pinterest Video İndir', href: '/', description: 'Ana sayfadaki HD MP4 indirme aracı.' },
       { title: 'Android Pinterest Video İndir', href: '/android-pinterest-video-indir/', description: 'Android telefonlarda galeriye doğrudan kaydetme.' },
       { title: 'Mac Pinterest Video İndir', href: '/mac-pinterest-video-indir/', description: 'macOS’ta Safari veya Chrome ile bilgisayara indirme.' },
       { title: 'Windows Pinterest Video İndir', href: '/windows-pinterest-video-indir/', description: 'Windows PC’de tarayıcıyla indirme rehberi.' },
       { title: 'Video İndir Galeriye', href: '/pinterest-video-galeriye-indir/', description: 'Videoyu telefon galerinize kaydetme rehberi.' },
       { title: 'Video Nasıl İndirilir', href: '/pinterest-video-nasil-indirilir/', description: 'Adım adım genel indirme rehberi.' },
-      { title: 'Pinterest 4K Video İndir', href: '/pinterest-4k-video-indir/', description: 'En yüksek çözünürlükte video indirin.' },
-      { title: 'Pinterest Video İndirici', href: '/pinterest-video-indirici/', description: 'Online, kurulumsuz indirme aracı.' },
+      { title: 'Pinterest 4K Video İndir', href: '/pinterest-4k-video-indir/', description: 'En yüksek çözünürlükte video indirin.' }
     ]}
   />
 </ToolPageLayout>

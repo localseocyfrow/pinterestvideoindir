@@ -6,9 +6,9 @@ import { IMAGE_FAQ } from '../data/faq';
 import { webAppSchema, faqSchema, breadcrumbSchema } from '../lib/schema';
 
 const path = '/pinterest-resim-indir/';
-const title = 'Pinterest Fotoğraf & Resim İndir – Tam Çözünürlük Görsel İndirici';
+const title = 'Pinterest Fotoğraf İndir – Tam Çözünürlük (Ücretsiz)';
 const description =
-  'Pinterest fotoğraf, foto, resim ve görsellerini tam çözünürlükte, ücretsiz ve filigransız indirin. Kayıt olmadan, tek tıkla yüksek kaliteli foto kaydetme aracı.';
+  'Pinterest fotoğraf indir: resmi ve görseli tam çözünürlükte, filigransız ve ücretsiz kaydedin. Kayıt yok; JPG/PNG olarak telefona iner.';
 
 // İçerik türünü tanıma tablosu — hangi pin için hangi sayfanın doğru olduğunu
 // gösterir. Bilerek "nasıl anlaşılır" ekseninde: dosya biçimi listesi
@@ -24,7 +24,7 @@ const mediaTypes = [
     tur: 'Video pin',
     nasil: 'Pinin üzerinde oynatma düğmesi ve süre görünür',
     sayfa: 'Video indirme',
-    href: '/pinterest-video-indir/',
+    href: '/',
   },
   {
     tur: 'Hareketli (GIF) pin',
@@ -49,7 +49,7 @@ const mediaTypes = [
     webAppSchema(),
     breadcrumbSchema([
       { name: 'Ana Sayfa', href: '/' },
-      { name: 'Resim & Fotoğraf İndir', href: path },
+      { name: 'Fotoğraf İndir', href: path },
     ]),
     faqSchema(IMAGE_FAQ),
   ]}
@@ -58,7 +58,7 @@ const mediaTypes = [
     <div class="container" style="max-width:760px;margin-inline:auto;text-align:center">
       <div class="stack">
         <span class="eyebrow">Tam çözünürlük · Ücretsiz</span>
-        <h1 style="margin-inline:auto">Pinterest Fotoğraf &amp; Resim İndir</h1>
+        <h1 style="margin-inline:auto">Pinterest Fotoğraf İndir</h1>
         <p class="lead" style="margin-inline:auto">
           Pinterest <strong>fotoğraf</strong>, <strong>resim</strong> ve <strong>görsellerini</strong> en yüksek çözünürlükte, <strong>filigransız</strong> ve ücretsiz indirin. Tek tıkla
           cihazınıza kaydedin.
@@ -153,7 +153,7 @@ const mediaTypes = [
       </p>
 
       <p style="margin-top:24px">
-        Video, GIF veya karusel mi indireceksiniz? <a href="/pinterest-video-indir/">Video</a>, <a href="/pinterest-video-galeriye-indir/">videoyu galeriye</a>, <a href="/pinterest-gif-indir/">GIF</a> ve <a href="/pinterest-karusel-indir/">karusel</a> araçlarımızı deneyin. Türü ne olursa olsun bir pini bütün hâlinde almak için <a href="/pinterest-pin-indir/">pin indirme</a>, hikâye içerikleri için <a href="/pinterest-story-indir/">story indirme</a> sayfası uygundur.
+        Video, GIF veya karusel mi indireceksiniz? <a href="/">Video</a>, <a href="/pinterest-video-galeriye-indir/">videoyu galeriye</a>, <a href="/pinterest-gif-indir/">GIF</a> ve <a href="/pinterest-karusel-indir/">karusel</a> araçlarımızı deneyin. Türü ne olursa olsun bir pini bütün hâlinde almak için <a href="/">pin indirme</a>, hikâye içerikleri için <a href="/pinterest-story-indir/">story indirme</a> sayfası uygundur.
       </p>
 
       <p style="margin-top:14px">
@@ -162,5 +162,5 @@ const mediaTypes = [
     </div>
   </section>
 
-  <Faq items={IMAGE_FAQ} title="Pinterest fotoğraf & resim indirme — SSS" />
+  <Faq items={IMAGE_FAQ} title="Pinterest fotoğraf indirme — SSS" />
 </BaseLayout>
