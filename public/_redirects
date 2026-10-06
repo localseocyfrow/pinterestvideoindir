@@ -2,17 +2,15 @@
 # These run before Workers html_handling, which would otherwise 307 slash-less URLs.
 # Also turn on Always Use HTTPS + www→apex in the Cloudflare dashboard.
 
-# Same-intent tool clones → homepage
+# Same-intent tool clones → homepage.
+# Slash-less sources only: slash forms collide with trailingSlash: always
+# (Cloudflare html_handling 307 + this 301 = loop / failed deploy).
+# Astro redirects in astro.config.mjs cover the slash form.
 /pinterest-video-indir / 301
-/pinterest-video-indir/ / 301
 /pinterest-video-indirici / 301
-/pinterest-video-indirici/ / 301
 /pinterest-video-indir-ucretsiz / 301
-/pinterest-video-indir-ucretsiz/ / 301
 /pinterest-video-link-indir / 301
-/pinterest-video-link-indir/ / 301
 /pinterest-pin-indir / 301
-/pinterest-pin-indir/ / 301
 
 /index.html / 301
 
