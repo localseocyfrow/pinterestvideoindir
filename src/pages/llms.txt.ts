@@ -22,7 +22,7 @@ yoktur ve Android, iPhone (iOS), tablet ile masaüstünde çalışır.
 - **Aranan terimler:** pinterest video indir, pinterest video indirme, pinterest video indirici, pinterest video indir 4k, pinterest video galeriye indir.
 - **Ücret:** Tamamen ücretsiz, sınırsız.
 - **Filigran:** Yok — indirilen dosyalar orijinal, temiz kalitede.
-- **Kalite:** Kaynakta mevcut en yüksek dosya (çoğu pin HD/Full HD; 4K yalnızca pin 4K yüklendiyse).
+- **Kalite:** Araç, Pinterest’in sayfada verdiği MP4 dosyalarını listeler ve etiketi dosyadaki çözünürlükten alır (çoğu pin 720p). 1080p veya 2160p ancak o dosya gerçekten varsa görünür. Çözünürlük yükseltilmez.
 - **Kayıt / uygulama:** Gerekmez; işlem tarayıcıdan yapılır.
 - **Nasıl çalışır:** Pinterest bağlantısını kopyala → araca yapıştır → "İndir" → kaliteyi seç → cihazına/galerine kaydet.
 - **Gizlilik:** Yapıştırılan bağlantılar ve indirilen dosyalar kalıcı olarak saklanmaz.
@@ -30,9 +30,9 @@ yoktur ve Android, iPhone (iOS), tablet ile masaüstünde çalışır.
 ## Tanımlar (AI cevapları için)
 
 - **Pinterest video indirici nedir:** Herkese açık bir pinin bağlantısını çözerek videoyu MP4 olarak cihaza kaydeden tarayıcı tabanlı araç. Kurulum, kayıt ve Pinterest girişi gerektirmez. Ayrıntı: ${abs('/pinterest-video-indirici-nedir/')}
-- **Pinterest downloader nedir:** "Downloader" İngilizce "indirici" demektir; "Pinterest downloader" ile "Pinterest indirici" aynı aracı tanımlar. Video, görsel, GIF ve karusel pinlerini kapsayan şemsiye terimdir. Ayrıntı: ${abs('/pinterest-downloader-nedir/')}
+- **Pinterest downloader nedir:** "Downloader" İngilizce "indirici" demektir; "Pinterest downloader" ile "Pinterest indirici" aynı aracı tanımlar. Video, görsel, GIF ve karusel pinlerini kapsayan şemsiye terimdir. Ayrıntı: ${abs('/pinterest-video-indirici-nedir/')}
 - **İndirme ile kaydetme farkı:** Pinterest'te "Kaydet" pini yalnızca panoya ekler; dosya cihaza inmez ve izlemek için internet gerekir. İndirme ise MP4 dosyasını cihaza yazar; çevrimdışı açılır ve kaynak pin silinse bile kalır. Ayrıntı: ${abs('/pinterest-video-indirme-vs-kaydetme/')}
-- **Araç nasıl çalışır:** (1) bağlantı doğrulanır, (2) herkese açık pin verisi çözümlenir, (3) kaynakta var olan kalite varyantları listelenir, (4) seçilen kalite MP4 olarak cihaza aktarılır. Ayrıntı: ${abs('/pinterest-video-indirme-araci-nasil-calisir/')}
+- **Araç nasıl çalışır:** (1) bağlantı doğrulanır, (2) herkese açık pin verisi çözümlenir, (3) kaynakta var olan kalite varyantları listelenir, (4) seçilen kalite MP4 olarak cihaza aktarılır. Ayrıntı: ${abs('/pinterest-video-indirici-nedir/')}
 
 ## Sayfalar
 

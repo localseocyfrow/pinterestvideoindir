@@ -36,7 +36,7 @@ export const HOME_FAQ: QA[] = [
   },
   {
     q: 'HD veya 4K Pinterest videosu indirebilir miyim?',
-    a: 'Evet. Kaynak video hangi çözünürlükte yüklendiyse, o kaliteyi indirme seçeneği olarak sunarız. Listede yalnızca gerçekten var olan çözünürlükler görünür.',
+    a: 'Bağlantıyı yapıştırdıktan sonra listede dosyanın gerçek yüksekliği yazar. Çoğu pin 720p’dir. 1080p veya 2160p ancak Pinterest o dosyayı verdiyse görünür. Araç ayrı bir 4K düğmesi göstermez ve çözünürlüğü yükseltmez.',
   },
   {
     q: 'İndirdiğim videoları nasıl kullanmam gerekir?',
@@ -172,7 +172,7 @@ export const GALLERY_FAQ: QA[] = [
   },
 ];
 
-// 4K / HD quality cluster — consumed by /pinterest-4k-video-indir/.
+// 4K / HD quality cluster — consumed by /pinterest-video-kalitesi/.
 export const VIDEO_4K_FAQ: QA[] = [
   {
     q: 'Pinterest’ten 4K video indirebilir miyim?',
@@ -211,7 +211,7 @@ export const DOWNLOADER_FAQ: QA[] = [
   },
   {
     q: 'Pinterest video indirici HD ve 4K destekliyor mu?',
-    a: 'Evet. İndirici, kaynak videoda mevcut olan en yüksek kaliteyi (HD 720p, Full HD 1080p ve mümkünse 4K) seçenek olarak sunar ve videoyu filigransız indirir.',
+    a: 'Kaynaktaki en yüksek dosyayı (Orijinal) listeler; çoğu pin HD veya Full HD’dir. 4K yalnızca pin 4K yüklendiyse o dosyadadır. Araç “4K” adlı bir kalite düğmesi göstermez ve çözünürlüğü yükseltmez.',
   },
   {
     q: 'Online indirici ile tarayıcı eklentisi arasındaki fark nedir?',
@@ -235,7 +235,7 @@ export const FREE_FAQ: QA[] = [
   },
   {
     q: 'Ücretsiz sürümde filigran veya kalite kısıtlaması oluyor mu?',
-    a: 'Hayır. Ücretsiz olmasına rağmen videolar filigransız ve kaynaktaki en yüksek kalitede (HD, Full HD, 4K) indirilir. “Premium” için saklanan gizli bir özellik yoktur.',
+    a: 'Hayır. Ücretsiz olmasına rağmen videolar filigransız ve kaynaktaki en yüksek dosya olarak iner. Araç ayrı bir 4K düğmesi göstermez; “Premium” için saklanan gizli bir özellik yoktur.',
   },
   {
     q: 'Kayıt olmam veya hesap açmam gerekir mi?',
@@ -491,7 +491,7 @@ export const MAC_FAQ: QA[] = [
   },
   {
     q: 'Video 4K veya Full HD olarak Mac’e iniyor mu?',
-    a: 'Evet. Kaynak video hangi çözünürlükte yüklendiyse (HD 720p, Full HD 1080p ve mümkünse 4K) onu seçenek olarak sunarız. Retina ekranlı Mac’lerde yüksek çözünürlüklü indirme daha net görüntü sağlar.',
+    a: 'Listede dosyanın gerçek yüksekliği yazar. Çoğu pin 720p’dir. 1080p veya 2160p ancak o dosya Pinterest sayfasında varsa görünür. Araç çözünürlüğü yükseltmez.',
   },
   {
     q: 'Mac’te Pinterest video indirmek ücretsiz ve güvenli mi?',
@@ -527,7 +527,7 @@ export const WINDOWS_FAQ: QA[] = [
   },
   {
     q: 'Bilgisayardan Full HD veya 4K Pinterest videosu indirebilir miyim?',
-    a: 'Evet. Kaynak videonun yüklendiği çözünürlüğe göre HD 720p, Full HD 1080p ve mümkünse 4K seçeneği sunarız. Büyük monitörlerde izlemek veya düzenlemek için en yüksek kaliteyi seçebilirsiniz.',
+    a: 'Listede dosyanın gerçek yüksekliği yazar. Çoğu pin 720p’dir. Daha yüksek bir dosya yoksa araç onu üretmez.',
   },
   {
     q: 'Windows’ta Pinterest video indirmek ücretsiz ve güvenli mi?',
@@ -547,7 +547,7 @@ export const MP4_FAQ: QA[] = [
   },
   {
     q: 'HD (1080p) MP4 indirebilir miyim?',
-    a: 'Evet. Kaynak video hangi çözünürlükte yüklendiyse (HD 720p, Full HD 1080p ve mümkünse 4K) o kaliteyi MP4 olarak sunarız. İndirme seçenekleri arasından en yüksek HD kaliteyi seçebilirsiniz.',
+    a: 'Pin hangi yükseklikte yüklendiyse MP4 o yüksekliktedir. Çoğu dosya 720p’dir. Araç 1080p veya 4K etiketi uydurmaz.',
   },
   {
     q: 'MP4 dosyasının doğrudan bağlantısını (link) alabilir miyim?',
@@ -587,7 +587,7 @@ export const QUALITY_FAQ: QA[] = [
   },
 ];
 
-// HD / Full HD download cluster — /pinterest-hd-video-indir/.
+// HD / Full HD download cluster — /pinterest-video-kalitesi/.
 export const HD_FAQ: QA[] = [
   {
     q: 'Pinterest videosunu HD olarak nasıl indiririm?',
@@ -933,7 +933,7 @@ export const INDIRICI_NEDIR_FAQ: QA[] = [
   },
 ];
 
-// Terminology / umbrella-definition cluster — /pinterest-downloader-nedir/.
+// Terminology / umbrella-definition cluster — /pinterest-video-indirici-nedir/.
 export const DOWNLOADER_NEDIR_FAQ: QA[] = [
   {
     q: 'Pinterest downloader ne demek?',
@@ -1005,7 +1005,7 @@ export const SAVE_VS_DOWNLOAD_FAQ: QA[] = [
   },
 ];
 
-// Mechanism / explainer cluster — /pinterest-video-indirme-araci-nasil-calisir/.
+// Mechanism / explainer cluster — /pinterest-video-indirici-nedir/.
 export const HOW_TOOL_WORKS_FAQ: QA[] = [
   {
     q: 'Pinterest video indirme aracı nasıl çalışır?',
@@ -1199,7 +1199,7 @@ export const HUB_FAQ_GROUPS: FaqGroup[] = [
     items: [
       {
         q: 'Video indirmek için hangi sayfayı kullanmalıyım?',
-        a: 'Ana araç <a href="/#arac">ana sayfadaki Pinterest video indir</a> kutusudur; çoğu ihtiyaç için bu yeterlidir. Belirli bir amaç için özel sayfalar da vardır: en yüksek çözünürlük için <a href="/pinterest-hd-video-indir/">HD indirme</a>, doğrudan dosya biçimi için <a href="/pinterest-mp4-indir/">MP4 indirme</a>.',
+        a: 'Ana araç <a href="/#arac">ana sayfadaki Pinterest video indir</a> kutusudur; çoğu ihtiyaç için bu yeterlidir. Belirli bir amaç için özel sayfalar da vardır: en yüksek çözünürlük için <a href="/pinterest-video-kalitesi/">HD indirme</a>, doğrudan dosya biçimi için <a href="/pinterest-mp4-indir/">MP4 indirme</a>.',
       },
       {
         q: 'İndirme işlemi kaç adımda tamamlanıyor?',
@@ -1229,11 +1229,11 @@ export const HUB_FAQ_GROUPS: FaqGroup[] = [
     items: [
       {
         q: 'Sitede geçen “indirici” ve “downloader” sözcükleri neyi anlatıyor?',
-        a: 'İkisi de aynı şeyi anlatır: bir pin bağlantısını çözüp içeriği cihazınıza kaydeden aracı. “Downloader” bu ifadenin İngilizcesidir ve Türkiye’de her iki biçim de yaygın olarak aranır. Kavramları <a href="/pinterest-video-indirici-nedir/">video indirici nedir</a> ve <a href="/pinterest-downloader-nedir/">downloader nedir</a> sayfalarında ayrıntılı ele alıyoruz.',
+        a: 'İkisi de aynı şeyi anlatır: bir pin bağlantısını çözüp içeriği cihazınıza kaydeden aracı. “Downloader” bu ifadenin İngilizcesidir ve Türkiye’de her iki biçim de yaygın olarak aranır. Kavramları <a href="/pinterest-video-indirici-nedir/">video indirici nedir</a> ve <a href="/pinterest-video-indirici-nedir/">downloader nedir</a> sayfalarında ayrıntılı ele alıyoruz.',
       },
       {
         q: 'Aracın çalışma mantığını nereden öğrenebilirim?',
-        a: 'Bağlantıyı yapıştırdıktan sonra arka planda işleyen adımları — doğrulama, pin çözümleme, kalite listeleme ve dosya aktarımı — <a href="/pinterest-video-indirme-araci-nasil-calisir/">aracın nasıl çalıştığını</a> anlatan sayfada aşama aşama açıklıyoruz. Gizlilik tarafı da aynı sayfada yer alır.',
+        a: 'Bağlantıyı yapıştırdıktan sonra arka planda işleyen adımları — doğrulama, pin çözümleme, kalite listeleme ve dosya aktarımı — <a href="/pinterest-video-indirici-nedir/">aracın nasıl çalıştığını</a> anlatan sayfada aşama aşama açıklıyoruz. Gizlilik tarafı da aynı sayfada yer alır.',
       },
       {
         q: 'Kaç çeşit indirici var ve hangisi daha pratik?',
@@ -1281,7 +1281,7 @@ export const HUB_FAQ_GROUPS: FaqGroup[] = [
       },
       {
         q: 'En yüksek kaliteyi nasıl seçerim?',
-        a: 'Bağlantıyı yapıştırdıktan sonra listelenen çözünürlükler arasından en büyüğünü seçin; araç yalnızca kaynakta gerçekten var olan seçenekleri gösterir. Full HD ve üzeri indirme için <a href="/pinterest-hd-video-indir/">HD video indirme</a> sayfasını kullanabilirsiniz.',
+        a: 'Bağlantıyı yapıştırdıktan sonra listelenen çözünürlükler arasından en büyüğünü seçin; araç yalnızca kaynakta gerçekten var olan seçenekleri gösterir. Full HD ve üzeri indirme için <a href="/pinterest-video-kalitesi/">HD video indirme</a> sayfasını kullanabilirsiniz.',
       },
       {
         q: 'Neden bazı videolarda yüksek çözünürlük seçeneği çıkmıyor?',

@@ -1,31 +1,62 @@
-# Cloudflare static redirects (301). First match wins.
-# These run before Workers html_handling, which would otherwise 307 slash-less URLs.
-# Also turn on Always Use HTTPS + www→apex in the Cloudflare dashboard.
+# Cloudflare static redirects. First match wins. This is the ONLY redirect list
+# (do not also set redirects in astro.config.mjs).
+# /api/* is intentionally absent so the Worker serves those URLs directly.
+# The downloader calls /api/download/ and /api/file/ (already slashed).
 
-# Same-intent tool clones → homepage.
-# Slash-less sources only: slash forms collide with trailingSlash: always
-# (Cloudflare html_handling 307 + this 301 = loop / failed deploy).
-# Astro redirects in astro.config.mjs cover the slash form.
+# Legacy and renamed URLs — both forms, one 301, final destination.
+/hakkimizda /hakkinda/ 301
+/hakkimizda/ /hakkinda/ 301
+/gizlilik /gizlilik-politikasi/ 301
+/gizlilik/ /gizlilik-politikasi/ 301
+/kullanim-kosullari /kullanim-sartlari/ 301
+/kullanim-kosullari/ /kullanim-sartlari/ 301
+/sikca-sorulan-sorular /sss/ 301
+/sikca-sorulan-sorular/ /sss/ 301
+/resim-indir /pinterest-resim-indir/ 301
+/resim-indir/ /pinterest-resim-indir/ 301
+/pinterest-fotograf-indirici /pinterest-resim-indir/ 301
+/pinterest-fotograf-indirici/ /pinterest-resim-indir/ 301
+/bize-ulasin /iletisim/ 301
+/bize-ulasin/ /iletisim/ 301
+/pinterest-gif-indirici /pinterest-gif-indir/ 301
+/pinterest-gif-indirici/ /pinterest-gif-indir/ 301
+/pinterest-video-indirilmiyor /pinterest-video-indirilemiyor/ 301
+/pinterest-video-indirilmiyor/ /pinterest-video-indirilemiyor/ 301
+
+# Retired same-intent clones → homepage.
 /pinterest-video-indir / 301
+/pinterest-video-indir/ / 301
 /pinterest-video-indirici / 301
+/pinterest-video-indirici/ / 301
 /pinterest-video-indir-ucretsiz / 301
+/pinterest-video-indir-ucretsiz/ / 301
 /pinterest-video-link-indir / 301
+/pinterest-video-link-indir/ / 301
 /pinterest-pin-indir / 301
+/pinterest-pin-indir/ / 301
+
+# Consolidated pages → the page that now owns the intent.
+/pinterest-hd-video-indir /pinterest-video-kalitesi/ 301
+/pinterest-hd-video-indir/ /pinterest-video-kalitesi/ 301
+/pinterest-4k-video-indir /pinterest-video-kalitesi/ 301
+/pinterest-4k-video-indir/ /pinterest-video-kalitesi/ 301
+/nasil-kullanilir /pinterest-video-nasil-indirilir/ 301
+/nasil-kullanilir/ /pinterest-video-nasil-indirilir/ 301
+/pinterest-downloader-nedir /pinterest-video-indirici-nedir/ 301
+/pinterest-downloader-nedir/ /pinterest-video-indirici-nedir/ 301
+/pinterest-video-indirme-araci-nasil-calisir /pinterest-video-indirici-nedir/ 301
+/pinterest-video-indirme-araci-nasil-calisir/ /pinterest-video-indirici-nedir/ 301
 
 /index.html / 301
 
-# Force trailing slash on live pages (slash-less → slash)
+# Live pages: slash-less → canonical slash, one hop. No slash-to-slash rules.
 /pinterest-video-galeriye-indir /pinterest-video-galeriye-indir/ 301
-/pinterest-4k-video-indir /pinterest-4k-video-indir/ 301
-/pinterest-hd-video-indir /pinterest-hd-video-indir/ 301
+/pinterest-video-kalitesi /pinterest-video-kalitesi/ 301
 /pinterest-mp4-indir /pinterest-mp4-indir/ 301
 /pinterest-filigransiz-video-indir /pinterest-filigransiz-video-indir/ 301
 /pinterest-video-nasil-indirilir /pinterest-video-nasil-indirilir/ 301
 /pinterest-video-indirici-nedir /pinterest-video-indirici-nedir/ 301
-/pinterest-downloader-nedir /pinterest-downloader-nedir/ 301
-/pinterest-video-indirme-araci-nasil-calisir /pinterest-video-indirme-araci-nasil-calisir/ 301
 /pinterest-video-indirme-vs-kaydetme /pinterest-video-indirme-vs-kaydetme/ 301
-/pinterest-video-kalitesi /pinterest-video-kalitesi/ 301
 /pinterest-video-indirilemiyor /pinterest-video-indirilemiyor/ 301
 /pinterest-nedir /pinterest-nedir/ 301
 /pinterest-coktu-mu /pinterest-coktu-mu/ 301
@@ -42,10 +73,12 @@
 /pinterest-resim-indir /pinterest-resim-indir/ 301
 /pinterest-gif-indir /pinterest-gif-indir/ 301
 /pinterest-karusel-indir /pinterest-karusel-indir/ 301
+/pinterest-profil-fotografi-indir /pinterest-profil-fotografi-indir/ 301
+/pinterest-video-kaydet /pinterest-video-kaydet/ 301
+/uygulamasiz-pinterest-video-indir /uygulamasiz-pinterest-video-indir/ 301
 /pinterest-video-indirmek-yasal-mi /pinterest-video-indirmek-yasal-mi/ 301
 /pinterest-video-indirmek-guvenli-mi /pinterest-video-indirmek-guvenli-mi/ 301
 /telif-hakki-ve-pinterest-indirme /telif-hakki-ve-pinterest-indirme/ 301
-/nasil-kullanilir /nasil-kullanilir/ 301
 /sss /sss/ 301
 /hakkinda /hakkinda/ 301
 /iletisim /iletisim/ 301

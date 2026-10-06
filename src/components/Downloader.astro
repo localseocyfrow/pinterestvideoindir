@@ -107,7 +107,7 @@ const label =
     ): string {
       const label = item.type === 'video' ? 'Video' : 'Görsel';
       const fileBaseName = `pin-${label.toLowerCase()}-${index + 1}`;
-      const downloadHref = `/api/file?url=${encodeURIComponent(item.url)}&name=${encodeURIComponent(fileBaseName)}`;
+      const downloadHref = `/api/file/?url=${encodeURIComponent(item.url)}&name=${encodeURIComponent(fileBaseName)}`;
 
       return `
         <div class="option-row">
@@ -177,7 +177,7 @@ const label =
       results.innerHTML = '';
 
       try {
-        const response = await fetch('/api/download', {
+        const response = await fetch('/api/download/', {
           method: 'POST',
           headers: { 'content-type': 'application/json' },
           body: JSON.stringify({ url }),

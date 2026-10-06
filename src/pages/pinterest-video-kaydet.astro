@@ -1,0 +1,104 @@
+---
+import ToolPageLayout from '../layouts/ToolPageLayout.astro';
+import ShortAnswerBox from '../components/ShortAnswerBox.astro';
+import RelatedGuides from '../components/RelatedGuides.astro';
+import ToolCta from '../components/ToolCta.astro';
+import type { QA } from '../data/faq';
+
+const path = '/pinterest-video-kaydet/';
+const title = 'Pinterest Video Kaydet – Galeriye Kaydetme';
+const description =
+  'Pinterest videosunu kaydetmek panoya eklemek değildir. MP4 dosyasını telefon galerisine veya bilgisayarınıza yazmak için bağlantıyı yapıştırın.';
+
+const crumbs = [
+  { name: 'Ana Sayfa', href: '/' },
+  { name: 'Video Kaydet', href: path },
+];
+
+const faq: QA[] = [
+  {
+    q: 'Pinterest’te Kaydet düğmesi videoyu galeriye indirir mi?',
+    a: 'Hayır. Kaydet, pini hesabınızdaki bir panoya ekler. Video Pinterest’te kalır; telefon galerisinde bir MP4 oluşmaz. Galeriye kaydetmek için dosyayı indirmek gerekir.',
+  },
+  {
+    q: 'Kaydettiğim video internetsiz açılır mı?',
+    a: 'Panoya kaydettiyseniz hayır, izlemek için bağlantı gerekir. MP4 olarak indirdiyseniz dosya cihazınızdadır ve internet olmadan açılır.',
+  },
+  {
+    q: 'Android’de video galeride görünmüyor, ne yapayım?',
+    a: 'Chrome çoğu dosyayı önce İndirilenler klasörüne yazar. Dosya Yöneticisi → İndirilenler’e bakın. Bazı galeri uygulamaları bu klasörü kendiliğinden tarar.',
+  },
+];
+
+const howTo = {
+  name: 'Pinterest videosunu galeriye kaydetme',
+  description: 'Panoya kaydetmek yerine MP4 dosyasını cihaza indirin.',
+  steps: [
+    { name: 'Kaydet ile indirmeyi ayırın', text: 'Pinterest’teki Kaydet düğmesi panoya ekler. Galeri için dosya indirmeniz gerekir.' },
+    { name: 'Bağlantıyı kopyalayın', text: 'Videoda Paylaş → Bağlantıyı kopyala deyin.' },
+    { name: 'Yapıştırıp indirin', text: 'Bağlantıyı yukarıdaki kutuya yapıştırın ve İndir’e basın.' },
+    { name: 'Galeriyi kontrol edin', text: 'Android’de İndirilenler veya Galeri, iPhone’da Dosyalar sonra Fotoğraflar, bilgisayarda İndirilenler klasörü.' },
+  ],
+};
+---
+
+<ToolPageLayout
+  title={title}
+  description={description}
+  path={path}
+  eyebrow="Kaydet · Galeri"
+  h1="Pinterest Video Kaydet"
+  lead="Pinterest’te Kaydet’e basmak videoyu galeriye yazmaz. Bu sayfa, MP4 dosyasını telefon galerisine veya bilgisayarın İndirilenler klasörüne kaydetmeyi anlatır."
+  kind="video"
+  placeholder="Kaydetmek istediğiniz videonun bağlantısı…"
+  crumbs={crumbs}
+  faq={faq}
+  faqTitle="Video kaydetme — SSS"
+  howTo={howTo}
+>
+  <ShortAnswerBox question="Pinterest videosu galeriye nasıl kaydedilir?">
+    <p class="mt-0" style="margin:0">
+      Uygulamada videoyu açın, <strong>Paylaş → Bağlantıyı kopyala</strong> deyin,
+      bağlantıyı yukarıya yapıştırın ve <strong>İndir</strong>’e basın. Android’de
+      dosya çoğunlukla galeriye veya İndirilenler’e düşer. iPhone’da önce Dosyalar’a
+      iner; oradan “Videoyu Kaydet” ile Fotoğraflar’a alırsınız.
+    </p>
+  </ShortAnswerBox>
+
+  <h2>Kaydet düğmesi ne işe yarar?</h2>
+  <p>
+    Kırmızı Kaydet, pini sizin panonuza yer imi olarak ekler. Beğendiğiniz
+    tarifi daha sonra Pinterest içinde bulursunuz. Telefonun belleğinde bir
+    video dosyası oluşmaz. İnternet kesilince o video da açılmaz. Karşılaştırma
+    <a href="/pinterest-video-indirme-vs-kaydetme/">indirme ve kaydetme</a> sayfasında.
+  </p>
+
+  <h2>Galeriye kaydetmek ne zaman gerekir?</h2>
+  <ul>
+    <li>Uçakta veya internetsiz izleyecekseniz.</li>
+    <li>WhatsApp ile birine dosya olarak gönderecekseniz.</li>
+    <li>Kendi yüklediğiniz videonun yedeğini alacaksanız.</li>
+  </ul>
+  <p>
+    Cihaza göre klasör adları değişir. Android ayrıntısı
+    <a href="/pinterest-video-galeriye-indir/">galeriye indirme</a>, iPhone adımları
+    <a href="/iphone-pinterest-video-indir/">iPhone rehberi</a> içindedir.
+  </p>
+
+  <ToolCta
+    slot="after"
+    title="Videoyu dosya olarak kaydedin"
+    text="Panoya eklemek için Pinterest’te Kaydet’e basın. Galeri için bağlantıyı buraya yapıştırın."
+    href="/#arac"
+    label="Videoyu kaydet"
+  />
+
+  <RelatedGuides
+    slot="after"
+    items={[
+      { title: 'Galeriye İndir', href: '/pinterest-video-galeriye-indir/', description: 'Android ve iPhone’da dosyanın düştüğü klasör.' },
+      { title: 'İndirme ve kaydetme farkı', href: '/pinterest-video-indirme-vs-kaydetme/', description: 'Pano ile MP4 dosyasını yan yana görün.' },
+      { title: 'Uygulamasız indir', href: '/uygulamasiz-pinterest-video-indir/', description: 'APK kurmadan tarayıcıdan kaydedin.' },
+    ]}
+  />
+</ToolPageLayout>

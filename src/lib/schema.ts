@@ -63,7 +63,7 @@ export function webAppSchema(): JsonLd {
       priceCurrency: 'TRY',
     },
     featureList: [
-      'Kaynakta mevcut en yüksek kalitede Pinterest video indirme (HD)',
+      'Pinterest’in verdiği MP4 dosyasını indirme',
       'Filigransız indirme',
       'Videoyu galeriye / cihaza kaydetme',
       'Pinterest GIF indirme',

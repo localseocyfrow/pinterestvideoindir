@@ -18,8 +18,8 @@ export const SITE = {
   twitter: '@pinvideoindir',
   youtube: 'https://www.youtube.com/@Pinterestvideoindirme-d6p',
   // Launch/updated dates are used in structured data + footer.
-  updated: '2026-10-06',
-  founded: '2026',
+  updated: '2026-10-07',
+  founded: '2026-07-12',
 } as const;
 
 // Editorial owner of the site's content — reviewed/edited pages credit this
@@ -41,7 +41,7 @@ export const NAV: NavItem[] = [
   { label: 'Fotoğraf İndir', href: '/pinterest-resim-indir/' },
   { label: 'GIF İndir', href: '/pinterest-gif-indir/' },
   { label: 'Karusel İndir', href: '/pinterest-karusel-indir/' },
-  { label: 'Nasıl Kullanılır', href: '/nasil-kullanilir/' },
+  { label: 'Nasıl Kullanılır', href: '/pinterest-video-nasil-indirilir/' },
   { label: 'SSS', href: '/sss/' },
 ];
 
@@ -65,7 +65,7 @@ export const FOOTER_GROUPS: { title: string; links: NavItem[] }[] = [
       { label: 'Pinterest GIF İndir', href: '/pinterest-gif-indir/' },
       { label: 'Pinterest Karusel İndir', href: '/pinterest-karusel-indir/' },
       { label: 'Pinterest MP4 İndir', href: '/pinterest-mp4-indir/' },
-      { label: 'HD Video İndir', href: '/pinterest-hd-video-indir/' },
+      { label: 'Video kalitesi', href: '/pinterest-video-kalitesi/' },
     ],
   },
   {
@@ -73,7 +73,6 @@ export const FOOTER_GROUPS: { title: string; links: NavItem[] }[] = [
     links: [
       { label: 'Pinterest Nedir?', href: '/pinterest-nedir/' },
       { label: 'Video İndirici Nedir?', href: '/pinterest-video-indirici-nedir/' },
-      { label: 'Pinterest Downloader Nedir?', href: '/pinterest-downloader-nedir/' },
       { label: 'Video Nasıl İndirilir?', href: '/pinterest-video-nasil-indirilir/' },
       { label: 'Video İndirilemiyor mu?', href: '/pinterest-video-indirilemiyor/' },
       { label: 'Pinterest Çöktü mü?', href: '/pinterest-coktu-mu/' },

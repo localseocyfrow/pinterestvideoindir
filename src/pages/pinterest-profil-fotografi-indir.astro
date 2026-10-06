@@ -1,0 +1,112 @@
+---
+import ToolPageLayout from '../layouts/ToolPageLayout.astro';
+import ShortAnswerBox from '../components/ShortAnswerBox.astro';
+import RelatedGuides from '../components/RelatedGuides.astro';
+import ToolCta from '../components/ToolCta.astro';
+import type { QA } from '../data/faq';
+
+const path = '/pinterest-profil-fotografi-indir/';
+const title = 'Pinterest Profil Fotoğrafı İndir – PP Kaydetme';
+const description =
+  'Pinterest profil fotoğrafını (PP) indirin: avatar bir pine açılıyorsa bağlantıyı yapıştırın. Açılmıyorsa tarayıcıdan görseli kaydedin. Ücretsiz.';
+
+const crumbs = [
+  { name: 'Ana Sayfa', href: '/' },
+  { name: 'Profil Fotoğrafı İndir', href: path },
+];
+
+const faq: QA[] = [
+  {
+    q: 'Pinterest profil fotoğrafı ile pin görseli aynı şey mi?',
+    a: 'Hayır. Profil fotoğrafı hesabın avatarıdır. Pin görseli ise bir gönderinin içindeki resimdir. Avatar bir pine açılıyorsa bu sayfadaki kutu onu indirir. Açılmıyorsa avatarı tarayıcıdan kaydetmek gerekir.',
+  },
+  {
+    q: 'Kullanıcı adını yazınca profil fotoğrafı iner mi?',
+    a: 'Hayır. Araç kullanıcı adı veya profil adresiyle arama yapmaz. Yalnızca herkese açık bir pin bağlantısı veya avatarın açıldığı pin adresiyle çalışır.',
+  },
+  {
+    q: 'İndirilen profil fotoğrafında filigran olur mu?',
+    a: 'Araç dosyaya logo eklemez. Pinterest’in kendisinin koyduğu bir işaret varsa o, kaynak dosyanın parçasıdır.',
+  },
+];
+
+const howTo = {
+  name: 'Pinterest profil fotoğrafı indirme',
+  description: 'Avatar bir pine açılıyorsa bağlantıyı kopyalayıp indirin. Açılmıyorsa görseli tarayıcıdan kaydedin.',
+  steps: [
+    { name: 'Profili açın', text: 'Pinterest’te hesabın profil sayfasını açın.' },
+    { name: 'Avatara dokunun', text: 'Yuvarlak profil fotoğrafına dokunun. Büyük görsel veya bir pin açılırsa devam edin.' },
+    { name: 'Bağlantı varsa yapıştırın', text: 'Açılan sayfa bir pin ise Paylaş → Bağlantıyı kopyala deyip yukarıdaki kutuya yapıştırın.' },
+    { name: 'Pin yoksa tarayıcıdan kaydedin', text: 'Görsel yeni sekmede açılıyorsa görsele uzun basıp veya sağ tıklayıp kaydedin. Kullanıcı adı yeterli değildir.' },
+  ],
+};
+---
+
+<ToolPageLayout
+  title={title}
+  description={description}
+  path={path}
+  eyebrow="Profil fotoğrafı · PP"
+  h1="Pinterest Profil Fotoğrafı İndir"
+  lead="Pinterest PP indirme, bir pin görseli indirmekten farklıdır. Avatar bir pine açılıyorsa bağlantıyı yapıştırın. Açılmıyorsa görseli tarayıcıdan kaydedin; kullanıcı adı yetmez."
+  kind="gorsel"
+  placeholder="Avatarın açıldığı pin bağlantısını yapıştırın…"
+  crumbs={crumbs}
+  faq={faq}
+  faqTitle="Profil fotoğrafı — SSS"
+  howTo={howTo}
+>
+  <ShortAnswerBox question="Pinterest profil fotoğrafı nasıl indirilir?">
+    <p class="mt-0" style="margin:0">
+      Profildeki yuvarlak fotoğrafa dokunun. Açılan adres bir <strong>pin</strong> ise
+      “Paylaş → Bağlantıyı kopyala” deyip yukarıya yapıştırın. Avatar ayrı bir pine
+      dönüşmüyorsa bu kutu onu bulamaz; görseli tarayıcıda açıp kaydedin.
+    </p>
+  </ShortAnswerBox>
+
+  <h2>PP ile pin görseli neden karışır?</h2>
+  <p>
+    Arama sonuçlarında “Pinterest PP indir” çoğu zaman profil avatarını kasteder.
+    Sitedeki <a href="/pinterest-resim-indir/">fotoğraf indirme</a> aracı ise bir
+    gönderinin içindeki resmi alır. İkisi aynı dosya değildir. Avatar küçük
+    daire içinde görünür; pin görseli gönderinin kendisidir.
+  </p>
+
+  <h2>Telefonda adımlar</h2>
+  <ol>
+    <li>Pinterest uygulamasında profile girin.</li>
+    <li>Üstteki fotoğrafa dokunun. Büyük hali açılmazsa tarayıcıda aynı profile gidin.</li>
+    <li>Adres çubuğunda <code>/pin/</code> görüyorsanız bağlantıyı kopyalayıp bu sayfaya yapıştırın.</li>
+    <li>Adres profilde kalıyorsa görsele uzun basın ve “Görseli kaydet” deyin. Android’de dosya galeriye, iPhone’da Fotoğraflar’a düşer.</li>
+  </ol>
+
+  <h2>Bilgisayarda adımlar</h2>
+  <p>
+    Profili Chrome, Edge veya Safari’de açın. Avatara sağ tıklayın. “Resmi yeni
+    sekmede aç” çıkıyorsa o sekmenin görseli pinimg adresidir; sağ tıklayıp
+    “Resmi farklı kaydet” deyin. Menüde yalnızca profil linki varsa avatar bir
+    pin değildir ve bu araç onu indiremez.
+  </p>
+
+  <p class="disclaimer" role="note" style="margin-top:22px">
+    Başkasının profil fotoğrafını izinsiz yayımlamak veya ticari işte kullanmak
+    uygun değildir. Kişisel arşiv için kaydedin.
+  </p>
+
+  <ToolCta
+    slot="after"
+    title="Pin olarak açılan avatarı indirin"
+    text="Bağlantıda /pin/ varsa yapıştırın. Kullanıcı adı bu kutuda çalışmaz."
+    href="/#arac"
+    label="Görseli indir"
+  />
+
+  <RelatedGuides
+    slot="after"
+    items={[
+      { title: 'Pinterest Fotoğraf İndir', href: '/pinterest-resim-indir/', description: 'Gönderinin içindeki görseli tam çözünürlükte kaydedin.' },
+      { title: 'Pinterest Karusel İndir', href: '/pinterest-karusel-indir/', description: 'Çoklu görsel pinindeki kareleri indirin.' },
+      { title: 'Video Nasıl İndirilir', href: '/pinterest-video-nasil-indirilir/', description: 'Bağlantı kopyalama adımları.' },
+    ]}
+  />
+</ToolPageLayout>

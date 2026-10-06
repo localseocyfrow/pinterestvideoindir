@@ -11,7 +11,7 @@ import { articleSchema, faqSchema, breadcrumbSchema } from '../lib/schema';
 const path = '/pinterest-video-indirme-vs-kaydetme/';
 const title = 'Pinterest Video İndirme ve Kaydetme Farkı — Hangisi Ne Yapar?';
 const description =
-  'Pinterest’te videoyu kaydetmek mi indirmek mi? Panoya kaydetme ile cihaza indirme arasındaki farkı, çevrimdışı erişimi, kalıcılığı ve telif tarafını karşılaştıran Türkçe rehber.';
+  'Pinterest’te kaydetmek ile indirmek aynı mı? Pano ve cihaza inen dosyanın farkını karşılaştırıyoruz.';
 
 const crumbs = [
   { name: 'Ana Sayfa', href: '/' },
@@ -27,7 +27,7 @@ const comparison = [
   { olcut: 'Pinterest hesabı gerekir mi?', kaydet: 'Evet, giriş yapmış olmalısınız', indir: 'Hayır, hesap ve giriş gerekmez' },
   { olcut: 'Düzenleme / kesme yapılabilir mi?', kaydet: 'Hayır, dosyaya erişemezsiniz', indir: 'Evet, MP4 dosyası üzerinde çalışılır' },
   { olcut: 'Başka cihaza aktarılır mı?', kaydet: 'Yalnızca aynı hesapla görüntülenir', indir: 'Evet, dosya olarak paylaşılabilir' },
-  { olcut: 'Kalite seçimi var mı?', kaydet: 'Hayır, bağlantı hızına göre değişir', indir: 'Evet, HD / Full HD / 4K seçilir' },
+  { olcut: 'Kalite seçimi var mı?', kaydet: 'Hayır, bağlantı hızına göre değişir', indir: 'Listede dosyanın gerçek çözünürlüğü yazar' },
   { olcut: 'Depolama alanı harcar mı?', kaydet: 'Hayır', indir: 'Evet, dosya boyutu kadar' },
 ];
 
@@ -172,7 +172,7 @@ const scenarios = [
         <ul>
           <li><strong>Artı:</strong> Çevrimdışı izlenir, galeride görünür.</li>
           <li><strong>Artı:</strong> Kaynak silinse bile dosya sizde kalır.</li>
-          <li><strong>Artı:</strong> Kalite seçilebilir; videoyu <a href="/pinterest-hd-video-indir/">HD çözünürlükte</a>, <a href="/pinterest-mp4-indir/">MP4 biçiminde</a> kaydedersiniz.</li>
+          <li><strong>Artı:</strong> Kalite seçilebilir; videoyu <a href="/pinterest-video-kalitesi/">HD çözünürlükte</a>, <a href="/pinterest-mp4-indir/">MP4 biçiminde</a> kaydedersiniz.</li>
           <li><strong>Artı:</strong> Hesap, giriş ve kurulum gerektirmez.</li>
           <li><strong>Sınır:</strong> Depolama alanı harcar.</li>
           <li><strong>Sınır:</strong> Yalnızca herkese açık pinlerde çalışır.</li>
@@ -186,7 +186,7 @@ const scenarios = [
           çevrimdışı izlemek istediklerinizi ise <strong>ayrıca indirin</strong>. Böylece hem Pinterest’in keşif
           gücünden yararlanır hem de önemsediğiniz içerikleri kaybetme riskini
           ortadan kaldırırsınız. İndirme adımlarını <a href="/pinterest-video-nasil-indirilir/">Pinterest video nasıl
-          indirilir</a> rehberinde, sürecin arka planını ise <a href="/pinterest-video-indirme-araci-nasil-calisir/">indirme aracı
+          indirilir</a> rehberinde, sürecin arka planını ise <a href="/pinterest-video-indirici-nedir/">indirme aracı
           nasıl çalışır?</a> sayfasında bulabilirsiniz.
         </p>
         <p>
@@ -228,11 +228,11 @@ const scenarios = [
     title="İlgili rehberler ve araçlar"
     items={[
       { title: 'Pinterest Video İndirici Nedir?', href: '/pinterest-video-indirici-nedir/', description: 'İndiricinin tanımı, türleri ve sınırları.' },
-      { title: 'Pinterest Downloader Nedir?', href: '/pinterest-downloader-nedir/', description: 'Terimin Türkçe karşılığı ve kapsamı.' },
-      { title: 'İndirme Aracı Nasıl Çalışır?', href: '/pinterest-video-indirme-araci-nasil-calisir/', description: 'Bağlantıdan dosyaya giden sürecin açıklaması.' },
+      { title: 'Pinterest Downloader Nedir?', href: '/pinterest-video-indirici-nedir/', description: 'Terimin Türkçe karşılığı ve kapsamı.' },
+      { title: 'İndirme Aracı Nasıl Çalışır?', href: '/pinterest-video-indirici-nedir/', description: 'Bağlantıdan dosyaya giden sürecin açıklaması.' },
       { title: 'Pinterest Video İndir', href: '/', description: 'Ana sayfadaki HD MP4 indirme aracı.' },
       { title: 'Pinterest MP4 İndir', href: '/pinterest-mp4-indir/', description: 'Dönüştürücüsüz, doğrudan MP4 kaydetme.' },
-      { title: 'Pinterest HD Video İndir', href: '/pinterest-hd-video-indir/', description: 'Full HD 1080p kalitede indirme.' },
+      { title: 'Pinterest HD Video İndir', href: '/pinterest-video-kalitesi/', description: 'Full HD 1080p kalitede indirme.' },
       { title: 'Pinterest Video Nasıl İndirilir', href: '/pinterest-video-nasil-indirilir/', description: 'Adım adım, cihaz cihaz rehber.' },
       { title: 'Video İndirmek Güvenli mi?', href: '/pinterest-video-indirmek-guvenli-mi/', description: 'Güvenli indirme kuralları ve tuzaklar.' },
       { title: 'Telif Hakkı ve Pinterest İndirme', href: '/telif-hakki-ve-pinterest-indirme/', description: 'İzin, kişisel kullanım ve riskli kullanımlar.' },
