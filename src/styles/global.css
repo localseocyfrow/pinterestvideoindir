@@ -240,26 +240,52 @@ img { max-width: 100%; display: block; }
 .hero {
   position: relative;
   overflow: hidden;
-  padding-block: clamp(48px, 7vw, 84px) clamp(40px, 6vw, 64px);
+  padding-block: clamp(28px, 4.5vw, 52px) clamp(28px, 4.5vw, 48px);
   background:
     radial-gradient(1200px 500px at 80% -10%, var(--brand-soft), transparent 60%),
     radial-gradient(900px 500px at 0% 10%, #efe9ff, transparent 55%);
 }
-.hero h1 { max-width: 16ch; }
-.hero .lead { max-width: 52ch; }
+.hero-inner {
+  display: grid;
+  gap: 16px;
+  max-width: 720px;
+  margin-inline: auto;
+  text-align: center;
+}
+.hero h1 {
+  max-width: none;
+  margin: 0 auto;
+  font-size: clamp(2.05rem, 5.2vw, 3.1rem);
+}
+.hero .lead {
+  max-width: 40ch;
+  margin: 0 auto;
+}
+.hero .eyebrow {
+  margin-bottom: 0;
+  justify-self: center;
+}
+.hero .tool { margin-top: 6px; text-align: left; }
 .hero-cta { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 8px; }
 
 .trust-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 18px 26px;
-  margin-top: 26px;
+  justify-content: center;
+  gap: 10px 22px;
+  margin-top: 4px;
   color: var(--muted);
-  font-size: 0.92rem;
+  font-size: 0.9rem;
   font-weight: 600;
 }
 .trust-row span { display: inline-flex; align-items: center; gap: 7px; }
 .trust-row svg { color: var(--ok); }
+
+@media (max-width: 640px) {
+  .hero .tool-row { flex-direction: column; flex-wrap: nowrap; }
+  .hero .tool-input,
+  .hero .tool-row .btn { flex: 1 1 auto; width: 100%; border-radius: 14px; }
+}
 
 /* ---------- Downloader tool ---------- */
 .tool {
