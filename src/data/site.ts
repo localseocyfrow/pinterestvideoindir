@@ -71,12 +71,10 @@ export const FOOTER_GROUPS: { title: string; links: NavItem[] }[] = [
   {
     title: 'Öne Çıkan Rehberler',
     links: [
-      { label: 'Pinterest Nedir?', href: '/pinterest-nedir/' },
       { label: 'Video İndirici Nedir?', href: '/pinterest-video-indirici-nedir/' },
       { label: 'Video Nasıl İndirilir?', href: '/pinterest-video-nasil-indirilir/' },
       { label: 'Video İndirilemiyor mu?', href: '/pinterest-video-indirilemiyor/' },
       { label: 'Pinterest Çöktü mü?', href: '/pinterest-coktu-mu/' },
-      { label: 'Pinterest Ücretli mi?', href: '/pinterest-ucretli-mi/' },
       { label: 'Sıkça Sorulan Sorular', href: '/sss/' },
     ],
   },

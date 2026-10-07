@@ -3,12 +3,31 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Downloader from '../components/Downloader.astro';
 import Faq from '../components/Faq.astro';
 import { CAROUSEL_FAQ } from '../data/faq';
-import { webAppSchema, faqSchema, breadcrumbSchema } from '../lib/schema';
+import { webAppSchema, faqSchema, breadcrumbSchema, howToSchema } from '../lib/schema';
 
 const path = '/pinterest-karusel-indir/';
 const title = 'Pinterest Karusel İndir – Çoklu Görsel & Video İndirici';
 const description =
-  'Pinterest karusel (çoklu görsel) pinlerindeki tüm resim ve videoları tek seferde, ücretsiz ve filigransız indirin. Kayıt gerektirmeyen karusel indirme aracı.';
+  'Pinterest karusel indir: çoklu görsel pindeki kareleri tek tek, filigransız ve ücretsiz kaydedin. Toplu ZIP yok.';
+
+const steps = [
+  {
+    name: 'Karusel pinini açın',
+    text: 'Arama ızgarasına değil, pinin kendi sayfasına girin. Altta noktalar varsa ve yana kaydırınca başka görsel geliyorsa bu bir karuseldir.',
+  },
+  {
+    name: 'Bağlantıyı kopyalayın',
+    text: 'Paylaş → Bağlantıyı kopyala deyin. Adres pin.it, pinterest.com/pin/ veya tr.pinterest.com/pin/ ile başlamalıdır. Pano veya profil adresi kareleri vermez.',
+  },
+  {
+    name: 'Kutuya yapıştırın',
+    text: 'Bağlantıyı yukarıdaki kutuya yapıştırıp “İndir”e basın. Araç, herkese açık pin verisindeki kareleri sırayla listeler.',
+  },
+  {
+    name: 'İstediğiniz kareyi kaydedin',
+    text: 'Her görselin kendi indirme düğmesi vardır. Tek kareyi veya hepsini ayrı ayrı kaydedebilirsiniz. Tarayıcı art arda indirmeye izin isterse izin verin. Tek ZIP dosyası üretilmez.',
+  },
+];
 ---
 
 <BaseLayout
@@ -22,6 +41,12 @@ const description =
       { name: 'Karusel İndir', href: path },
     ]),
     faqSchema(CAROUSEL_FAQ),
+    howToSchema({
+      name: 'Pinterest karusel indirme',
+      description:
+        'Pinterest karusel pinindeki görselleri indirmek için pini açın, bağlantısını kopyalayın, araca yapıştırın ve listelenen kareleri tek tek kaydedin.',
+      steps,
+    }),
   ]}
 >
   <section class="hero">
@@ -30,8 +55,8 @@ const description =
         <span class="eyebrow">Çoklu görsel · Ücretsiz</span>
         <h1 style="margin-inline:auto">Pinterest Karusel İndir</h1>
         <p class="lead" style="margin-inline:auto">
-          Bir karusel pinindeki <strong>tüm görselleri ve videoları</strong> tek seferde, <strong>filigransız</strong> ve ücretsiz indirin.
-          İstediğinizi seçin veya hepsini kaydedin.
+          <strong>Çoklu görsel</strong> pindeki kareleri <strong>filigransız</strong> kaydedin.
+          Her görsel ayrı iner; istediğiniz kareyi seçersiniz. Kayıt gerekmez, tek ZIP arşivi de yoktur.
         </p>
       </div>
       <div style="margin-top:34px">
@@ -46,40 +71,120 @@ const description =
 
   <section class="section">
     <div class="container prose" style="margin-inline:auto">
-      <h2>Pinterest karusel nedir?</h2>
-      <p>
-        Karusel, tek bir pinde birden fazla görsel veya videonun kaydırılarak
-        görüntülendiği içerik türüdür. Genellikle 2–5 medya içerir; adım adım
-        tarifler, ilham panoları ve “önce/sonra” içerikleri için sık kullanılır.
-      </p>
-
-      <h2>Karuseldeki tüm görseller nasıl indirilir?</h2>
+      <h2>Pinterest karusel nasıl indirilir?</h2>
       <div class="answer-box" style="margin:20px 0">
         <p class="q">Kısa cevap: Pinterest karusel pini nasıl indirilir?</p>
         <p class="mt-0" style="margin:0">
-          Karusel pininin bağlantısını <strong>kopyalayın</strong>, yukarıdaki
-          kutuya <strong>yapıştırın</strong> ve <strong>“İndir”</strong>e basın.
-          Araç, pindeki kareleri tek tek listeler; yalnızca istediğinizi ya da
-          tamamını filigransız olarak kaydedebilirsiniz. <strong>Karusel</strong>, tek bir pinde birden fazla görsel veya video barındıran
-          içerik türüdür.
+          Karusel pinini açıp bağlantısını <strong>kopyalayın</strong>, yukarıdaki kutuya <strong>yapıştırın</strong> ve <strong>“İndir”</strong>e basın.
+          Araç, pinin herkese açık verisinde büyük boy olarak duran kareleri tek tek listeler.
+          Izgaradaki küçük önizleme büyütülmez. Beş görselin beşi de bu veride yoksa, olmayan kare listede de yoktur.
         </p>
       </div>
 
       <div class="steps" style="margin:24px 0">
-        <div class="step"><h3>Bağlantıyı kopyala</h3><p>Karusel pinini açıp “Paylaş → Bağlantıyı kopyala” deyin.</p></div>
-        <div class="step"><h3>Yapıştır</h3><p>Bağlantıyı indirme kutusuna yapıştırın.</p></div>
-        <div class="step"><h3>Seç &amp; indir</h3><p>Listelenen görsellerden istediğinizi ya da tümünü indirin.</p></div>
+        {steps.map((s) => (
+          <div class="step"><h3>{s.name}</h3><p>{s.text}</p></div>
+        ))}
       </div>
 
-      <h2>Öne çıkan özellikler</h2>
-      <ul>
-        <li><strong>Toplu indirme:</strong> Tüm karusel medyasını tek seferde alın.</li>
-        <li><strong>Seçmeli indirme:</strong> Yalnızca istediğiniz görseli kaydedin.</li>
-        <li><strong>Filigransız &amp; ücretsiz:</strong> Kayıt veya ödeme gerekmez.</li>
-      </ul>
+      <h2>Karusel pin nedir?</h2>
+      <p>
+        <strong>Pinterest karusel</strong>, tek bir pinde yana kaydırılan birden fazla karttır.
+        Pinterest’in kendi anlatımında organik karusel, masaüstünde oluşturulan ve çoğu zaman <strong>2 ile 5 durağan görsel</strong> içeren bir pindir; görseller kare (1:1) ya da dikey (2:3) olur.
+        Tarif adımları, önce/sonra karşılaştırmaları, kombinler ve ilham serileri bu biçimde paylaşılır.
+        Pinin altında küçük noktalar görürsünüz. Nokta kadar görsel vardır; kaydırınca sıradaki kare gelir.
+      </p>
+      <p>
+        İngilizce aramalardaki <strong>carousel pin</strong> ile Türkçe <strong>karusel</strong> veya <strong>çoklu görsel pin</strong> aynı şeydir.
+        Bu sayfa o pin içindir. Tam ekran, sayfa sayfa ilerleyen <strong>Idea Pin</strong> (eski adıyla story) ayrı bir türdür; onu <a href="/pinterest-story-indir/">story indirme</a> sayfasında kaydedin.
+        Tek durağan fotoğraf için <a href="/pinterest-resim-indir/">fotoğraf indir</a>, kısa döngü için <a href="/pinterest-gif-indir/">GIF indir</a> daha doğru sayfadır.
+      </p>
 
-      <p style="margin-top:24px">
-        Tekli içerikler için <a href="/">video</a>, <a href="/pinterest-resim-indir/">resim</a> ve <a href="/pinterest-gif-indir/">GIF</a> araçlarımızı kullanabilirsiniz. Birden çok sayfadan oluşan hikâye içerikleri <a href="/pinterest-story-indir/">story indirme</a> sayfasında, bir pini türü ne olursa olsun bütün hâlinde almak ise <a href="/">pin indirme</a> sayfasında anlatılıyor. Kısa yanıtlar için <a href="/sss/">SSS merkezimize</a> göz atın.
+      <h2>Karusel, tek fotoğraf ve story nasıl ayırt edilir?</h2>
+      <div class="table-wrap" style="margin:18px 0 8px">
+        <table>
+          <thead>
+            <tr>
+              <th style="text-align:right">Ne görüyorsunuz?</th>
+              <th>Tür</th>
+              <th>Doğru sayfa</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="font-weight:700;color:var(--ink)">Tek görsel, kaydırma yok</td>
+              <td>Fotoğraf</td>
+              <td><a href="/pinterest-resim-indir/">Fotoğraf indir</a></td>
+            </tr>
+            <tr>
+              <td style="font-weight:700;color:var(--ink)">Altta noktalar, yana kaydırma</td>
+              <td>Karusel</td>
+              <td>Bu sayfa</td>
+            </tr>
+            <tr>
+              <td style="font-weight:700;color:var(--ink)">Sessiz, kendi kendine dönen kısa animasyon</td>
+              <td>GIF veya MP4 döngüsü</td>
+              <td><a href="/pinterest-gif-indir/">GIF indir</a></td>
+            </tr>
+            <tr>
+              <td style="font-weight:700;color:var(--ink)">Tam ekran, sayfa sayfa Idea Pin</td>
+              <td>Story</td>
+              <td><a href="/pinterest-story-indir/">Story indir</a></td>
+            </tr>
+            <tr>
+              <td style="font-weight:700;color:var(--ink)">Süre ve oynatma düğmesi olan tek video</td>
+              <td>Video</td>
+              <td><a href="/">Video indir</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Neden bazı kareler listede çıkmaz?</h2>
+      <p>
+        Araç, karuseli ekran görüntüsü alarak birleştirmez. Pinin herkese açık verisindeki büyük görsellere bakar
+        (orijinal veya 736 piksel genişliğindeki sürüm). Genişliği 400 pikselin altındaki küçük önizlemeler, avatarlar ve arayüz ikonları listeye girmez.
+        Bu yüzden iki sonuç normaldir:
+      </p>
+      <ul>
+        <li><strong>Birden fazla satır:</strong> Pinterest o kareleri büyük boy yayınlamış demektir. Her satır kendi dosyasıdır.</li>
+        <li><strong>Tek satır:</strong> Diğer kareler bu veride yoktur. Izgaradaki bulanık küçük resmi büyütüp “eksik kare” diye sunmayız.</li>
+      </ul>
+      <p>
+        Tek satır geldiyse önce bağlantıyı kontrol edin. Arama sonucundan, panodan veya başka birinin paylaştığı önizlemeden kopyalanan adres bazen pinin tamamını açmaz.
+        Pini açıp <strong>Paylaş → Bağlantıyı kopyala</strong> ile yeniden alın. Gizli veya silinmiş pin hiç sonuç vermez;
+        o durumda <a href="/pinterest-video-indirilemiyor/">indirilemiyor</a> ve <a href="/pinterest-link-calismiyor/">link çalışmıyor</a> sayfalarındaki ayrımı kullanın.
+      </p>
+      <p>
+        “Tümünü indir” bir ZIP değildir. Her kare ayrı dosya olarak iner. Chrome ve Safari art arda indirmeyi durdurup izin isteyebilir; izin verdikten sonra kalan karelere tekrar basın.
+        Beş dosyayı tek arşivde isteyen araçlar bunu ayrıca paketler. Burada paket yok, böylece istemediğiniz kareyi hiç kaydetmezsiniz.
+      </p>
+
+      <h2>Çözünürlük ve filigran</h2>
+      <p>
+        Kaydedilen görsel, Pinterest’in o kare için verdiği en büyük herkese açık sürümüdür. Küçük kapak resmi alınıp keskinleştirilmez.
+        Bir kare video ise satırda MP4 ve dosyanın gerçek yüksekliği yazar; 720p olan bir kare 4K diye etiketlenmez ve yükseltilmez.
+        Araç dosyaya kendi logosunu basmaz. Görselin üzerinde zaten yazı veya marka varsa o, yükleyen kişinin yerleştirdiği şeydir ve silinmez.
+      </p>
+
+      <h2>Kareler telefonda nereye kaydedilir?</h2>
+      <p>
+        <a href="/android-pinterest-video-indir/">Android</a>’de görseller çoğu zaman Galeri veya <strong>İndirilenler</strong> klasörüne düşer.
+        Galeri’de göremiyorsanız Dosya Yöneticisi → İndirilenler’e bakın. Xiaomi ve Samsung’da tarayıcı indirmeyi önce bu klasöre yazar.
+      </p>
+      <p>
+        <a href="/iphone-pinterest-video-indir/">iPhone</a>’da Safari dosyayı <strong>Dosyalar</strong> uygulamasına indirir.
+        Görseli Fotoğraflar’a almak için dosyaya dokunup kaydetme veya paylaşma adımını kullanın. Video kareleri için Dosyalar → İndirilenler’de <strong>Paylaş → Videoyu Kaydet</strong> gerekir.
+        Bilgisayarda (<a href="/windows-pinterest-video-indir/">Windows</a>, <a href="/mac-pinterest-video-indir/">Mac</a>) her kare İndirilenler klasörüne ayrı dosya olarak iner.
+      </p>
+
+      <h2>Hangi kareyi saklamalısınız?</h2>
+      <p>
+        Karuselin değeri çoğu zaman bütün set değil, içindeki bir karedir: tarifin ölçü görseli, önce/sonra çiftinden “sonra” karesi, bir kombin veya bir oda köşesi.
+        Hepsini indirmek zorunda değilsiniz. Pinterest’te kaydetmek bu kareyi panoda tutar; indirmek ise seçtiğiniz kareyi cihazınızda dosya yapar.
+        İkisinin farkı <a href="/pinterest-video-indirme-vs-kaydetme/">indirme ve kaydetme</a> sayfasında.
+        Başkasına ait görseli yeniden yayımlamak veya ticari işte kullanmak ayrı bir konudur; sınırlar <a href="/telif-hakki-ve-pinterest-indirme/">telif hakkı rehberinde</a>.
+        Aracın medyayı nasıl ayıkladığı <a href="/pinterest-video-indirici-nedir/">indirici nedir</a> sayfasında, kısa yanıtlar <a href="/sss/">SSS</a> merkezindedir.
       </p>
     </div>
   </section>

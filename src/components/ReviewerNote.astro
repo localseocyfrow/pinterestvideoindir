@@ -1,15 +1,12 @@
 ---
-// Shown on guide pages. The name is intentionally blank until a native
-// Turkish reviewer is assigned.
-// TODO(reviewer): replace the placeholder with a real person's name and role.
-// Do not invent a person.
+// Credits the named editor. Do not invent a second reviewer.
+import { EDITOR } from '../data/site';
 ---
 
-<aside class="reviewer-note" aria-label="İnceleme notu">
+<aside class="reviewer-note" aria-label="Editoryal kontrol">
   <p>
-    <strong>İnceleme:</strong>
-    Yerli Türkçe incelemeci henüz atanmadı.
-    <!-- TODO(reviewer): put the real name here. Do not invent a person. -->
+    <strong>Editoryal kontrol:</strong>
+    <a href={EDITOR.path}>{EDITOR.name}</a> bu Türkçe rehberi aracın gerçek davranışıyla karşılaştırır.
   </p>
 </aside>
 
@@ -24,4 +21,5 @@
     font-size: 0.92rem;
   }
   .reviewer-note p { margin: 0; }
+  .reviewer-note a { color: inherit; text-decoration: underline; }
 </style>
