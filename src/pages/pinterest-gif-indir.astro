@@ -3,12 +3,31 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Downloader from '../components/Downloader.astro';
 import Faq from '../components/Faq.astro';
 import { GIF_FAQ } from '../data/faq';
-import { webAppSchema, faqSchema, breadcrumbSchema } from '../lib/schema';
+import { webAppSchema, faqSchema, breadcrumbSchema, howToSchema } from '../lib/schema';
 
 const path = '/pinterest-gif-indir/';
 const title = 'Pinterest GIF İndir – Filigransız GIF ve MP4 (Ücretsiz)';
 const description =
-  'Pinterest GIF’lerini ücretsiz ve hızlı indirin. Hareketli görselleri GIF veya MP4 olarak, filigransız ve kayıt olmadan telefonunuza kaydedin.';
+  'Pinterest GIF indir: hareketli pini filigransız kaydedin. Dosya gerçek GIF veya MP4 döngüsü olarak, kaynak ne veriyorsa o iner.';
+
+const steps = [
+  {
+    name: 'Hareketli pini açın',
+    text: 'Pinterest uygulamasında veya sitede GIF gibi oynayan pini açın. Arama ızgarasındaki küçük önizleme yetmez; pinin kendi sayfası gerekir.',
+  },
+  {
+    name: 'Bağlantıyı kopyalayın',
+    text: 'Paylaş simgesine dokunup “Bağlantıyı kopyala” deyin. pin.it kısa adresi, pinterest.com/pin/ ve tr.pinterest.com/pin/ aynı şekilde çalışır.',
+  },
+  {
+    name: 'Kutuya yapıştırın',
+    text: 'Bağlantıyı bu sayfadaki kutuya yapıştırıp “İndir”e basın. Araç pini okur ve indirebileceğiniz dosyaları listeler.',
+  },
+  {
+    name: 'GIF veya MP4’ü kaydedin',
+    text: 'Satırda GIF yazıyorsa dosya gerçek .gif’tir. MP4 ve bir yükseklik yazıyorsa Pinterest bu animasyonu döngülü video olarak saklıyordur. İstediğiniz satırı kaydedin.',
+  },
+];
 ---
 
 <BaseLayout
@@ -22,6 +41,12 @@ const description =
       { name: 'GIF İndir', href: path },
     ]),
     faqSchema(GIF_FAQ),
+    howToSchema({
+      name: 'Pinterest GIF indirme',
+      description:
+        'Pinterest’teki hareketli pini indirmek için pini açın, bağlantısını kopyalayın, araca yapıştırın ve listelenen GIF veya MP4 dosyasını kaydedin.',
+      steps,
+    }),
   ]}
 >
   <section class="hero">
@@ -30,8 +55,8 @@ const description =
         <span class="eyebrow">GIF &amp; MP4 · Ücretsiz</span>
         <h1 style="margin-inline:auto">Pinterest GIF İndir</h1>
         <p class="lead" style="margin-inline:auto">
-          Pinterest’teki hareketli GIF’leri <strong>ücretsiz</strong> ve <strong>filigransız</strong> indirin. GIF veya MP4 formatında,
-          tek tıkla kaydedin.
+          <strong>Pinterest GIF indirici</strong> ile hareketli pini <strong>filigransız</strong> kaydedin.
+          Dosya gerçek bir GIF ise GIF, Pinterest onu video olarak tutuyorsa MP4 olarak iner. Kayıt ve uygulama gerekmez.
         </p>
       </div>
       <div style="margin-top:36px">
@@ -47,32 +72,116 @@ const description =
     <div class="container prose" style="margin-inline:auto">
       <h2>Pinterest GIF nasıl indirilir?</h2>
       <div class="answer-box" style="margin:20px 0">
-        <p class="q">Kısa cevap: Pinterest GIF’i nasıl indirilir?</p>
+        <p class="q">Kısa cevap: Pinterest’ten GIF indirme</p>
         <p class="mt-0" style="margin:0">
-          Hareketli pinin Pinterest bağlantısını <strong>kopyalayın</strong>, yukarıdaki
-          kutuya <strong>yapıştırın</strong> ve <strong>“İndir”</strong>e basın.
-          İçerik, kaynakta hangi biçimde saklanıyorsa <strong>GIF</strong> veya <strong>MP4</strong> olarak, filigransız ve orijinal kalitesinde iner.
-          Paylaşım kolaylığı için GIF’i, daha küçük dosya ve akıcı görüntü için
-          MP4’ü tercih edebilirsiniz.
+          Hareketli pinin bağlantısını <strong>kopyalayın</strong>, yukarıdaki kutuya <strong>yapıştırın</strong> ve <strong>“İndir”</strong>e basın.
+          Araç, dosyanın uzantısına bakar: adres <strong>.gif</strong> ise etiket GIF’tir, <strong>.mp4</strong> ise etikette gerçek yükseklik yazar.
+          Dönüştürme veya yapay büyütme yapılmaz. Pinterest’in “Kaydet” düğmesi bu işi görmez; o yalnızca pini panonuza ekler, dosyayı telefona indirmez.
         </p>
       </div>
 
       <div class="steps" style="margin:24px 0">
-        <div class="step"><h3>Bağlantıyı kopyala</h3><p>Pinterest’te GIF’i açıp “Paylaş → Bağlantıyı kopyala” deyin.</p></div>
-        <div class="step"><h3>Yapıştır</h3><p>Kopyaladığınız bağlantıyı indirme kutusuna yapıştırın.</p></div>
-        <div class="step"><h3>İndir</h3><p>“İndir”e basın, GIF veya MP4 formatını seçip kaydedin.</p></div>
+        {steps.map((s) => (
+          <div class="step"><h3>{s.name}</h3><p>{s.text}</p></div>
+        ))}
       </div>
 
-      <h2>Neden Pinterest GIF indirici?</h2>
-      <ul>
-        <li><strong>Çift format:</strong> Hem GIF hem MP4 olarak indirme imkânı.</li>
-        <li><strong>Filigransız:</strong> Temiz, orijinal kalite.</li>
-        <li><strong>Ücretsiz &amp; sınırsız:</strong> Kayıt veya ödeme gerekmez.</li>
-        <li><strong>Her cihaz:</strong> Android, iPhone ve bilgisayarda çalışır.</li>
-      </ul>
+      <h2>Pinterest GIF’i neden uygulamadan kaydedemezsiniz?</h2>
+      <p>
+        Pinterest, hareketli pini kendi içinde oynatır ama size “GIF’i indir” seçeneği vermez.
+        Uygulamadaki <strong>Kaydet</strong>, içeriği bir panoya iğneler. O pano internetsiz açılmaz ve galeride bir dosya olarak durmaz.
+        <strong>Pinterest’ten GIF indirme</strong> ancak pinin herkese açık bağlantısını alıp dosyayı ayrıca kaydetmekle olur.
+        Gizli panodaki, silinmiş veya kısıtlanmış pinler okunamaz.
+      </p>
+      <p>
+        Pano, profil veya arama sonuçlarının adresi de işe yaramaz. Kopyalamanız gereken şey pinin kendi bağlantısıdır:
+        <strong>pin.it/…</strong>, <strong>pinterest.com/pin/…</strong> veya <strong>tr.pinterest.com/pin/…</strong>.
+        Bağlantı açılmıyorsa <a href="/pinterest-link-calismiyor/">link çalışmıyor</a> rehberindeki kontrollere bakın.
+      </p>
 
-      <p style="margin-top:24px">
-        Video, resim veya karusel mi arıyorsunuz? <a href="/">Video</a>, <a href="/pinterest-resim-indir/">resim</a> ve <a href="/pinterest-karusel-indir/">karusel</a> araçlarımızı kullanın. Hareketli içerik bir hikâye biçiminde paylaşıldıysa <a href="/pinterest-story-indir/">story indirme sayfası</a> daha uygun sonuç verir. Aracın bağlantıyı nasıl çözümlediğini merak ediyorsanız <a href="/pinterest-video-indirme-araci-nasil-calisir/">işleyişi anlattığımız sayfaya</a>, diğer tüm sorular için <a href="/sss/">SSS merkezimize</a> bakabilirsiniz.
+      <h2>Gerçek GIF ile MP4 döngüsü aynı şey değildir</h2>
+      <p>
+        Birçok <strong>Pinterest GIF indirici</strong>, ekranda dönen her şeye GIF der. Bu yanıltıcıdır.
+        Pinterest, yüklenen GIF’lerin büyük kısmını daha küçük olduğu için <strong>döngülü MP4</strong> olarak saklar.
+        Siz uygulamada sessiz, kendi kendine tekrar eden bir animasyon görürsünüz; sunucudaki dosya ise video olabilir.
+        Eski veya kısa animasyonlarda hâlâ gerçek <strong>.gif</strong> bulunur.
+      </p>
+      <div class="table-wrap" style="margin:18px 0 8px">
+        <table>
+          <thead>
+            <tr>
+              <th style="text-align:right">Pinterest’te gördüğünüz</th>
+              <th>İnen dosya</th>
+              <th>Ne zaman işe yarar</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="font-weight:700;color:var(--ink)">Kısa, sessiz döngü ve dosya .gif</td>
+              <td>GIF</td>
+              <td>Görsel gibi açılan animasyon; bazı sohbet ve editörler bunu bekler</td>
+            </tr>
+            <tr>
+              <td style="font-weight:700;color:var(--ink)">Aynı görünüm, dosya video</td>
+              <td>MP4, gerçek yükseklik etiketi</td>
+              <td>Daha küçük dosya, daha akıcı oynatma, galeri ve video oynatıcı</td>
+            </tr>
+            <tr>
+              <td style="font-weight:700;color:var(--ink)">Oynatma düğmeli, sesli video</td>
+              <td>MP4</td>
+              <td>Bu bir GIF değildir; <a href="/">video indirme</a> sayfası o iş içindir</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        Araç MP4’ü GIF’e çevirmez ve GIF’i de videoya dönüştürmez. Listede hangi ad yazıyorsa dosya odur.
+        Çoğu tarif, makyaj ve “nasıl yapılır” döngüsü MP4 olarak daha kullanışlıdır: WhatsApp ve galeri onu video gibi açar, dosya da GIF’ten küçüktür.
+        Elinizde illa .gif olması gerekiyorsa, listedeki satırın GIF olmasına bakın; MP4 satırını sonradan bir dönüştürücüyle GIF yapmak ayrı bir işlemdir ve bu sitede yapılmaz.
+      </p>
+
+      <h2>Filigran ve kalite</h2>
+      <p>
+        İndirilen dosyaya bu sitenin logosu eklenmez. Kalite, pini yükleyen kişinin Pinterest’e verdiği dosyadır; düşük çözünürlüklü bir animasyon burada büyütülmez.
+        Görüntünün üzerinde zaten duran yazı, marka veya “filigran” içerik sahibine aittir. O yazı dosyanın parçasıdır, araç onu silmez.
+        Bu ayrım önemlidir: “filigransız” ifadesi, aracı kullandığınız için ekstra bir damga gelmeyeceği anlamına gelir.
+      </p>
+
+      <h2>GIF telefona ve bilgisayara nereye iner?</h2>
+      <p>
+        <a href="/android-pinterest-video-indir/">Android</a>’de Chrome veya Samsung Internet dosyayı çoğu zaman <strong>İndirilenler</strong> klasörüne yazar.
+        MP4 döngüsü Galeri’de video olarak da görünebilir. GIF bir görsel dosyasıdır; Galeri onu göstermezse Dosya Yöneticisi → İndirilenler’e bakın.
+      </p>
+      <p>
+        <a href="/iphone-pinterest-video-indir/">iPhone</a> ve iPad’de Safari, indirilen dosyayı önce <strong>Dosyalar</strong> uygulamasına koyar.
+        MP4 için Dosyalar → İndirilenler’de videoya dokunup <strong>Paylaş → Videoyu Kaydet</strong> deyin; dosya Fotoğraflar’a geçer.
+        Gerçek GIF görsel olarak inmişse Fotoğraflar’a görsel kaydetme yolunu kullanın. iOS, GIF’i her zaman canlı animasyon olarak galeriye koymaz; dosya yine de Dosyalar’da durur.
+      </p>
+      <p>
+        <a href="/windows-pinterest-video-indir/">Windows</a> ve <a href="/mac-pinterest-video-indir/">Mac</a>’te dosya tarayıcının İndirilenler klasörüne kaydedilir.
+        MP4’ü video oynatıcı, GIF’i tarayıcı veya bir görsel uygulaması açar. Dosya hiç inmiyorsa <a href="/pinterest-video-indirilemiyor/">indirme sorunları</a> sayfasındaki sırayı deneyin.
+      </p>
+
+      <h2>Bu sayfa hangi pin içindir?</h2>
+      <p>
+        Kısa, sessiz ve kendi kendine tekrar eden pinler buraya aittir. Diğer türler aynı kutuda da açılabilir, ama doğru sayfa sonucu daha net anlatır:
+      </p>
+      <ul>
+        <li><strong>Durağan fotoğraf:</strong> oynatma yoksa <a href="/pinterest-resim-indir/">Pinterest fotoğraf indir</a>.</li>
+        <li><strong>Sesli veya uzun video:</strong> süre ve oynatma düğmesi varsa <a href="/">Pinterest video indir</a>.</li>
+        <li><strong>Altında noktalar olan çoklu görsel:</strong> <a href="/pinterest-karusel-indir/">karusel indir</a>.</li>
+        <li><strong>Tam ekran, çok sayfalı Idea Pin:</strong> <a href="/pinterest-story-indir/">story indir</a>.</li>
+      </ul>
+      <p>
+        Yanlış sayfadan başlamanız dosyayı bozmaz. Araç, yapıştırdığınız pindeki gerçek medyayı listeler.
+        Kaydetmek ile indirmek arasındaki fark <a href="/pinterest-video-indirme-vs-kaydetme/">ayrı bir rehberde</a>, aracın bağlantıyı nasıl okuduğu ise <a href="/pinterest-video-indirici-nedir/">indirici nedir</a> sayfasında.
+      </p>
+
+      <h2>İndirdiğiniz GIF’i nerede kullanabilirsiniz?</h2>
+      <p>
+        Pratik kullanım kişiseldir: bir tarifin döngüsünü internetsiz izlemek, kendi yüklediğiniz animasyonun yedeğini almak veya bir el işi adımını ekran görüntüsü yerine dosya olarak saklamak.
+        Başkasına ait bir GIF’i yeniden yayımlamak veya ticari işte kullanmak içerik sahibinin hakkına girebilir.
+        Hangi kullanımın riskli olduğu <a href="/telif-hakki-ve-pinterest-indirme/">telif hakkı rehberinde</a> yazılıdır. Kalan sorular <a href="/sss/">SSS</a> sayfasındadır.
       </p>
     </div>
   </section>

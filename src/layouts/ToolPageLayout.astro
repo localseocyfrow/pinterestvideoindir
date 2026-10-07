@@ -17,12 +17,12 @@
 //   <ToolPageLayout
 //     title="Pinterest 4K Video İndir – Ultra HD MP4"
 //     description="Pinterest videolarını 4K/Full HD kalitede, filigransız indirin."
-//     path="/pinterest-4k-video-indir/"
+//     path="/pinterest-video-kalitesi/"
 //     eyebrow="4K · Ultra HD"
 //     h1="Pinterest 4K Video İndir"
 //     lead="Videoları kaynaktaki en yüksek çözünürlükte kaydedin."
 //     kind="video"
-//     crumbs={[{ name: 'Ana Sayfa', href: '/' }, { name: '4K Video İndir', href: '/pinterest-4k-video-indir/' }]}
+//     crumbs={[{ name: 'Ana Sayfa', href: '/' }, { name: '4K Video İndir', href: '/pinterest-video-kalitesi/' }]}
 //     faq={VIDEO_4K_FAQ}
 //   >
 //     <ShortAnswerBox question="…" answer="…" />
@@ -35,6 +35,7 @@ import Downloader from '../components/Downloader.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 import FaqBlock from '../components/FaqBlock.astro';
 import SafetyNote from '../components/SafetyNote.astro';
+import ReviewerNote from '../components/ReviewerNote.astro';
 import type { QA } from '../data/faq';
 import {
   webAppSchema,
@@ -140,6 +141,7 @@ const schemas = [
   }
 
   <div class="container" style="padding-bottom:56px">
+    <ReviewerNote />
     <SafetyNote />
   </div>
 </BaseLayout>

@@ -25,12 +25,20 @@
   --shadow-lg: 0 30px 60px -20px rgba(20, 20, 26, 0.28);
 
   --maxw: 1120px;
-  --font: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica,
-    Arial, 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif;
+  --font: 'Inter', 'Inter Fallback', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
 * {
   box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'Inter Fallback';
+  src: local('Segoe UI'), local('Arial');
+  size-adjust: 107%;
+  ascent-override: 90%;
+  descent-override: 22%;
+  line-gap-override: 0%;
 }
 
 html {
@@ -253,9 +261,10 @@ img { max-width: 100%; display: block; }
   text-align: center;
 }
 .hero h1 {
-  max-width: none;
+  max-width: 18em;
   margin: 0 auto;
-  font-size: clamp(2.05rem, 5.2vw, 3.1rem);
+  font-size: clamp(1.7rem, 4.2vw, 2.55rem);
+  line-height: 1.15;
 }
 .hero .lead {
   max-width: 40ch;

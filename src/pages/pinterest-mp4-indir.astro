@@ -8,7 +8,7 @@ import { MP4_FAQ } from '../data/faq';
 const path = '/pinterest-mp4-indir/';
 const title = 'Pinterest MP4 İndir – HD MP4 Video Linki (Ücretsiz)';
 const description =
-  'Pinterest videosunu MP4 olarak indirin: bağlantıyı yapıştırın, HD (1080p) MP4 dosyasını dönüştürücü olmadan doğrudan kaydedin. Tüm cihazlarda ücretsiz ve filigransız.';
+  'Pinterest videosunu MP4 olarak indirin: bağlantıyı yapıştırın, dosyayı dönüştürücü olmadan kaydedin. Ücretsiz, filigransız; çözünürlük dosyada neyse odur.';
 
 const crumbs = [
   { name: 'Ana Sayfa', href: '/' },
@@ -22,7 +22,7 @@ const howTo = {
   steps: [
     { name: 'Bağlantıyı kopyala', text: 'Videoyu Pinterest’te açıp “Paylaş → Bağlantıyı kopyala” deyin.' },
     { name: 'Araca yapıştır', text: 'Bağlantıyı yukarıdaki kutuya yapıştırıp “İndir”e basın.' },
-    { name: 'MP4 kalitesini seç', text: 'Listeden en yüksek (Orijinal) MP4 satırını seçin.' },
+    { name: 'MP4 kalitesini seç', text: 'Listeden listelenen MP4 dosyasını seçin.' },
     { name: 'MP4 olarak kaydet', text: 'İndirme bağlantısına dokunup videoyu MP4 olarak cihazınıza kaydedin.' },
   ],
 };
@@ -46,7 +46,7 @@ const howTo = {
     <p class="mt-0" style="margin:0">
       Videonun bağlantısını <strong>kopyalayın</strong>, kutuya <strong>yapıştırın</strong> ve <strong>“İndir”</strong>e basın. Pinterest
       videoları zaten MP4 tabanlı olduğu için ayrı bir <strong>MP4
-      dönüştürücüye</strong> gerek kalmadan videoyu doğrudan <strong>MP4</strong> olarak kaydedersiniz. İndirme seçenekleri arasından <strong>HD (1080p)</strong> ya da varsa 4K kaliteyi seçebilirsiniz.
+      dönüştürücüye</strong> gerek kalmadan videoyu doğrudan <strong>MP4</strong> olarak kaydedersiniz. Listede gördüğünüz etiket, dosyanın gerçek yüksekliğidir.
     </p>
   </ShortAnswerBox>
 
@@ -59,12 +59,13 @@ const howTo = {
     doğrudan indirilebilir bir <strong>MP4 bağlantısı</strong> sunulur.
   </p>
 
-  <h2>HD MP4: 1080p ve 4K kalite</h2>
+  <h2>MP4 ve çözünürlük</h2>
   <p>
-    MP4 yalnızca bir kapsayıcı formattır; asıl kaliteyi videonun çözünürlüğü
-    belirler. Bu yüzden aynı MP4 dosyası hem <strong>HD 720p</strong> hem <strong>Full HD 1080p</strong> hem de <strong>4K (2160p)</strong> olabilir. Aracımız kaynakta gerçekten var olan çözünürlükleri listeler;
-    böylece bulanık, şişirilmiş bir dosya yerine net bir HD MP4 indirirsiniz.
-    Çözünürlükler arasındaki farkı <a href="/pinterest-4k-video-indir/">4K video indirme sayfamızda</a> ayrıntılı bulabilir, düşük kalite sorunları için <a href="/pinterest-video-kalitesi/">video kalitesi rehberimize</a> göz atabilirsiniz.
+    MP4 yalnızca bir kapsayıcıdır. Araç, Pinterest’in verdiği MP4 adresini
+    yeniden sıkıştırmadan listeler ve etiketi dosya adındaki yükseklikten alır.
+    Çoğu pin <strong>720p</strong>’dir. Daha yüksek bir dosya sayfada yoksa
+    listede de yoktur; araç 1080p veya 2160p üretmez. Ayrıntı
+    <a href="/pinterest-video-kalitesi/">video kalitesi rehberinde</a>.
   </p>
 
   <h2>MP4 formatının avantajları</h2>
@@ -80,14 +81,14 @@ const howTo = {
     MP4, videoyu <strong>oynatmak, paylaşmak veya düzenlemek</strong> istediğiniz her durumda doğru seçimdir; Pinterest videoları zaten bu
     biçimde saklandığı için dönüştürme yapılmaz ve kalite kaybı oluşmaz.
     Hareketli ama sessiz, kısa bir içerik indirip döngü hâlinde paylaşacaksanız <a href="/pinterest-gif-indir/">GIF biçimi</a> daha kullanışlı olabilir. Çözünürlük seçimi biçimden bağımsızdır:
-    aynı MP4’ü <a href="/pinterest-hd-video-indir/">Full HD</a> ya da daha küçük bir boyutta indirebilirsiniz.
+    aynı MP4’ü <a href="/pinterest-video-kalitesi/">Full HD</a> ya da daha küçük bir boyutta indirebilirsiniz.
   </p>
 
   <h2>MP4 indirmenin adımları</h2>
   <div class="steps" style="margin:20px 0">
     <div class="step"><h3>Bağlantıyı kopyala</h3><p>Pinterest’te videoyu açın, “Paylaş → Bağlantıyı kopyala” deyin.</p></div>
     <div class="step"><h3>Araca yapıştır</h3><p>Bağlantıyı yukarıdaki kutuya yapıştırıp “İndir”e basın.</p></div>
-    <div class="step"><h3>Kaliteyi seç</h3><p>Listeden en yüksek (Orijinal) MP4 satırını seçin.</p></div>
+    <div class="step"><h3>Kaliteyi seç</h3><p>Listeden listelenen MP4 dosyasını seçin.</p></div>
     <div class="step"><h3>MP4 olarak kaydet</h3><p>İndirme bağlantısına dokunup videoyu cihazınıza kaydedin.</p></div>
   </div>
 
@@ -110,8 +111,8 @@ const howTo = {
     title="İlgili araçlar ve rehberler"
     items={[
       { title: 'Pinterest Video İndir', href: '/', description: 'Ana sayfadaki HD MP4 indirme aracı.' },
-      { title: 'Pinterest HD Video İndir', href: '/pinterest-hd-video-indir/', description: 'Full HD (1080p) kalitede net indirme.' },
-      { title: 'Pinterest 4K Video İndir', href: '/pinterest-4k-video-indir/', description: 'En yüksek çözünürlükte Ultra HD MP4 indirin.' },
+      { title: 'Pinterest HD Video İndir', href: '/pinterest-video-kalitesi/', description: 'Full HD (1080p) kalitede net indirme.' },
+      { title: 'Pinterest 4K Video İndir', href: '/pinterest-video-kalitesi/', description: 'En yüksek çözünürlükte Ultra HD MP4 indirin.' },
       { title: 'Pinterest Video Kalitesi', href: '/pinterest-video-kalitesi/', description: 'Video neden düşük kaliteli iniyor ve nasıl HD indirilir?' },
       { title: 'Filigransız Video İndir', href: '/pinterest-filigransiz-video-indir/', description: 'Logosuz, temiz MP4 indirme.' },
       { title: 'Video İndir Galeriye', href: '/pinterest-video-galeriye-indir/', description: 'Videoyu telefon galerinize kaydedin.' }

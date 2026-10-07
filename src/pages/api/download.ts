@@ -1,5 +1,5 @@
 import type { APIRoute } from "astro";
-import { resolveDownload } from "../../lib/downloader";
+import { DownloadError, resolveDownload } from "../../lib/downloader";
 
 export const prerender = false;
 
@@ -20,10 +20,6 @@ export const POST: APIRoute = async ({ request }) => {
 
     const data = await resolveDownload(rawUrl);
 
-    if (data.items.length === 0) {
-      throw new Error("İndirilebilir medya bulunamadı. Herkese açık başka bir pin bağlantısı deneyin.");
-    }
-
     return new Response(JSON.stringify({ success: true, data }), {
       status: 200,
       headers: { "content-type": "application/json" },
@@ -33,13 +29,14 @@ export const POST: APIRoute = async ({ request }) => {
       error instanceof Error
         ? error.message
         : "Bağlantı işlenirken beklenmeyen bir hata oluştu.";
+    const status = error instanceof DownloadError ? error.status : 400;
 
     return new Response(
       JSON.stringify({
         success: false,
         message,
       }),
-      { status: 400, headers: { "content-type": "application/json" } },
+      { status, headers: { "content-type": "application/json" } },
     );
   }
 };

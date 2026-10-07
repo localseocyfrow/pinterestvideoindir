@@ -22,7 +22,7 @@ const howTo = {
   steps: [
     { name: 'Videoyu aç ve bağlantıyı kopyala', text: 'Pinterest’te videoyu açın, “Paylaş → Bağlantıyı kopyala” deyin.' },
     { name: 'Bağlantıyı araca yapıştır', text: 'Bağlantıyı yukarıdaki kutuya yapıştırıp “İndir”e basın.' },
-    { name: 'Kaliteyi seç', text: 'Listeden en yüksek (Orijinal) kaliteyi seçin.' },
+    { name: 'Kaliteyi seç', text: 'Listeden dosyanın gerçek çözünürlük etiketini seçin. Çoğu pin 720p’dir.' },
     { name: 'Videoyu kaydet', text: 'Video MP4 olarak telefonunuza veya bilgisayarınıza kaydedilir.' },
   ],
 };
@@ -77,11 +77,23 @@ const howTo = {
     klasörüne MP4 olarak kaydedilir. Windows ve macOS’ta aynı şekilde çalışır.
   </p>
 
-  <h2>İpuçları ve sık karşılaşılan sorunlar</h2>
+  <h2>Video dışında: fotoğraf, GIF ve karusel</h2>
+  <p>
+    Aynı kutu yalnızca video için değildir. Görsel pin için
+    <a href="/pinterest-resim-indir/">fotoğraf indirme</a>, hareketli pin için
+    <a href="/pinterest-gif-indir/">GIF indirme</a>, çoklu görsel için
+    <a href="/pinterest-karusel-indir/">karusel indirme</a> sayfası daha doğrudur.
+    Profil fotoğrafı ayrı bir akıştır:
+    <a href="/pinterest-profil-fotografi-indir/">profil fotoğrafı indirme</a>.
+    Uygulama kurmadan devam etmek için
+    <a href="/uygulamasiz-pinterest-video-indir/">uygulamasız indirme</a> rehberine bakın.
+  </p>
+
+  <h2>İpuçları</h2>
   <ul>
     <li><strong>Bağlantı çalışmıyor:</strong> URL’nin <code>pin.it</code> veya <code>pinterest.com</code> ile başladığından emin olun.</li>
     <li><strong>Video özel/gizli:</strong> Yalnızca herkese açık pinler indirilebilir.</li>
-    <li><strong>En yüksek kalite:</strong> Listeden <strong>Orijinal</strong> satırı seçin. Pin 4K yüklendiyse <a href="/pinterest-4k-video-indir/">kaynak 4K</a> iner.</li>
+    <li><strong>Çözünürlük:</strong> Etiket dosyanın gerçek yüksekliğidir. Çoğu pin 720p’dir; araç bunu 1080p veya 4K yapmaz. Ayrıntı <a href="/pinterest-video-kalitesi/">video kalitesi</a> sayfasında.</li>
     <li><strong>Filigran istemiyorsanız:</strong> Videolar zaten <a href="/pinterest-filigransiz-video-indir/">filigransız</a> indirilir.</li>
   </ul>
 
@@ -100,9 +112,9 @@ const howTo = {
       { title: 'Pinterest Video İndir', href: '/', description: 'Ana sayfadaki HD MP4 indirme aracı.' },
       { title: 'Video İndir Galeriye', href: '/pinterest-video-galeriye-indir/', description: 'Videoyu doğrudan telefon galerinize kaydedin.' },
       { title: 'Filigransız Video İndir', href: '/pinterest-filigransiz-video-indir/', description: 'Logo ve damga olmadan temiz video.' },
-      { title: 'Nasıl Kullanılır', href: '/nasil-kullanilir/', description: 'Sitenin tüm araçları için genel rehber.' },
-      { title: 'İndirme mi, Kaydetme mi?', href: '/pinterest-video-indirme-vs-kaydetme/', description: 'Panoya kaydetmekle cihaza indirmenin farkı.' },
-      { title: 'İndirme Aracı Nasıl Çalışır?', href: '/pinterest-video-indirme-araci-nasil-calisir/', description: 'Bağlantı yapıştırıldıktan sonra arka planda ne olur?' }
+      { title: 'Video kalitesi', href: '/pinterest-video-kalitesi/', description: 'Etiket dosyanın gerçek yüksekliğidir.' },
+      { title: 'Pinterest Video Kaydet', href: '/pinterest-video-kaydet/', description: 'Panoya kaydetmekle galeriye kaydetmenin farkı.' },
+      { title: 'İndirme mi, Kaydetme mi?', href: '/pinterest-video-indirme-vs-kaydetme/', description: 'İki işlemin yan yana karşılaştırması.' },
     ]}
   />
 </ToolPageLayout>

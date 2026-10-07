@@ -1,17 +1,14 @@
 import type { APIRoute } from 'astro';
-import { SITE, abs } from '../data/site';
+import { abs } from '../data/site';
 import { ROUTES } from '../data/routes';
 
-// Hand-rolled sitemap (no adapter dependency). Uses the shared ROUTES list.
+// Hand-rolled sitemap. lastmod comes from each route, not the build clock.
+// changefreq and priority are omitted (Google ignores them).
 export const GET: APIRoute = () => {
-  const lastmod = SITE.updated;
-
   const urls = ROUTES.map(
     (r) => `  <url>
     <loc>${abs(r.path)}</loc>
-    <lastmod>${lastmod}</lastmod>
-    <changefreq>${r.changefreq}</changefreq>
-    <priority>${r.priority.toFixed(1)}</priority>
+    <lastmod>${r.lastmod}</lastmod>
   </url>`,
   ).join('\n');
 

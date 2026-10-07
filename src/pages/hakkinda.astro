@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { SITE } from '../data/site';
+import { SITE, EDITOR } from '../data/site';
 import { breadcrumbSchema } from '../lib/schema';
 
 const path = '/hakkinda/';
@@ -29,46 +29,64 @@ const description =
         <span class="eyebrow">Hakkında</span>
         <h1>{SITE.name} Hakkında</h1>
         <p class="lead">
-          Pinterest içeriklerini herkes için hızlı, ücretsiz ve güvenli bir
-          şekilde indirilebilir kılmak için buradayız.
+          {SITE.name} ({SITE.domain}), Pinterest’teki herkese açık videoları,
+          fotoğrafları, GIF’leri ve karusel pinlerini tarayıcıdan, ücretsiz ve
+          kayıt olmadan indirmek için hazırlanmış bağımsız bir araçtır.
+        </p>
+
+        <h2>Kim işletiyor?</h2>
+        <p>
+          Site {EDITOR.company} bünyesinde geliştirilir. İçerik ve rehberlerin
+          editörü <a href={EDITOR.path}>{EDITOR.name}</a> ({EDITOR.jobTitle})’dir;
+          profilinde iletişim ve yayın geçmişi yer alır. Destek için
+          <a href="/iletisim/">iletişim</a> sayfası ve {SITE.email} kullanılır.
+          Telif kaldırma talepleri <a href="/dmca/">DMCA</a> sürecinden geçer.
         </p>
 
         <h2>Misyonumuz</h2>
         <p>
-          {SITE.name}, Pinterest videolarını, GIF’lerini ve görsellerini
-          indirmeyi olabildiğince basit hale getirmek için tasarlandı.
-          Kullanıcıların karmaşık uygulamalar kurmadan, üyelik açmadan ve ücret
-          ödemeden içeriklerini çevrimdışı arşivleyebilmesini istiyoruz.
+          Kullanıcıların uygulama kurmadan, üyelik açmadan ve ücret ödemeden
+          kendi arşivleri için Pinterest içeriğini çevrimdışı kaydedebilmesini
+          istiyoruz. Araç sade tutulur: bağlantıyı yapıştırın, listeden dosyayı
+          seçin, cihazınıza indirin. Rehberler Türkçe yazılır; iPhone, Android,
+          Mac ve Windows için kısa anlatımlar
+          <a href={SITE.youtube} target="_blank" rel="noopener noreferrer">YouTube kanalımızda</a>
+          yayımlanır.
         </p>
 
-        <h2>Nasıl çalışır?</h2>
+        <h2>Nasıl çalışır — ve ne yapmaz?</h2>
         <p>
-          Bir Pinterest bağlantısı yapıştırdığınızda, aracımız içeriğin herkese
-          açık medya dosyasını çözümleyerek indirilebilir bir bağlantı sunar.
-          İşlem tamamen tarayıcı üzerinden yürür; ek yazılım gerektirmez.
+          Yapıştırdığınız adres herkese açık bir pin ise, araç Pinterest’in
+          verdiği medya dosyasını çözer ve tarayıcınızın indirmesine bırakır.
+          Pinterest hesabınıza giriş istenmez; gizli panolar, silinmiş pinler
+          ve kısıtlı içerik çalışmaz. Kalite listesinde gördüğünüz etiketler
+          <strong>Orijinal</strong> ve <strong>Standart</strong>’tır. Pin 4K
+          yüklendiyse Orijinal dosya 4K’dır; araç “4K” düğmesi göstermez ve
+          düşük çözünürlüğü yükseltmez. Dosyalar kalıcı olarak sunucuda
+          tutulmaz. Ayrıntılı gizlilik metni
+          <a href="/gizlilik-politikasi/">Gizlilik Politikası</a>’ndadır.
         </p>
 
-        <h2>Gizlilik önceliğimiz</h2>
+        <h2>Sorumlu kullanım</h2>
         <p>
-          Yapıştırdığınız bağlantıları kalıcı olarak saklamayız ve indirdiğiniz
-          dosyaları sunucularımızda tutmayız. Ayrıntılar için <a href="/gizlilik-politikasi/">Gizlilik Politikası</a> sayfamıza
-          bakabilirsiniz.
+          İndirme, kişisel arşiv ve çevrimdışı izleme içindir. Başkasına ait
+          içeriği izinsiz yeniden yayımlamak veya ticari işte kullanmak telif
+          ihlali olabilir. Yasal çerçeve
+          <a href="/pinterest-video-indirmek-yasal-mi/">Pinterest video indirmek yasal mı?</a>
+          ve <a href="/telif-hakki-ve-pinterest-indirme/">telif hakkı rehberi</a>
+          sayfalarında anlatılır. Kullanım kuralları
+          <a href="/kullanim-sartlari/">Kullanım Şartları</a>’ndadır.
         </p>
 
         <h2>Sunduğumuz araçlar</h2>
         <ul>
-          <li><a href="/">Pinterest Video İndir</a> — HD MP4, filigransız.</li>
+          <li><a href="/">Pinterest Video İndir</a> — filigransız HD MP4; kayıt yok.</li>
           <li><a href="/pinterest-resim-indir/">Pinterest Fotoğraf İndir</a> — tam çözünürlük görsel.</li>
-          <li><a href="/pinterest-gif-indir/">Pinterest GIF İndir</a> — GIF &amp; MP4.</li>
+          <li><a href="/pinterest-gif-indir/">Pinterest GIF İndir</a> — GIF ve MP4.</li>
           <li><a href="/pinterest-karusel-indir/">Pinterest Karusel İndir</a> — çoklu görsel.</li>
+          <li><a href="/pinterest-video-kalitesi/">HD Video İndir</a> — 720p / 1080p kaynağı.</li>
+          <li><a href="/pinterest-video-nasil-indirilir/">Nasıl Kullanılır</a> — adım adım rehber.</li>
         </ul>
-
-        <h2>Video anlatımlar</h2>
-        <p>
-          iPhone, Android, Mac ve Windows için kısa anlatımlar
-          <a href={SITE.youtube} target="_blank" rel="noopener noreferrer">YouTube kanalımızda</a>
-          yayımlanır.
-        </p>
 
         <div class="disclaimer" style="margin-top:28px">
           {SITE.name}, Pinterest, Inc. ile bağlantılı, onun tarafından

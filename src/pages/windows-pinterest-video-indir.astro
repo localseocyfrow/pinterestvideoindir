@@ -11,7 +11,7 @@ import { videoObjectSchema } from '../lib/schema';
 const path = '/windows-pinterest-video-indir/';
 const title = 'Windows Pinterest Video İndir – Bilgisayara Ücretsiz (PC)';
 const description =
-  'Windows’ta Pinterest videosu nasıl indirilir? Chrome, Edge veya Firefox ile bağlantıyı yapıştırın, videoyu MP4 olarak “İndirilenler” klasörüne kaydedin. PC için ücretsiz, program gerekmez.';
+  'Windows’ta Pinterest videosunu Chrome veya Edge ile indirin. MP4, İndirilenler klasörüne kaydedilir.';
 
 const video = TUTORIALS.windows;
 
@@ -27,7 +27,7 @@ const howTo = {
   steps: [
     { name: 'Bağlantıyı kopyala', text: 'Pinterest’te videoyu açıp “Paylaş → Bağlantıyı kopyala” deyin ya da adres çubuğundaki URL’yi kopyalayın.' },
     { name: 'Tarayıcıda yapıştır', text: 'Chrome, Edge veya Firefox’ta bu sayfayı açın, bağlantıyı kutuya yapıştırıp “İndir”e basın.' },
-    { name: 'Kaliteyi seç', text: 'Listeden en yüksek (Orijinal) kaliteyi seçin.' },
+    { name: 'Kaliteyi seç', text: 'Listeden dosyanın gerçek çözünürlük etiketini seçin.' },
     { name: 'İndirilenler’den aç', text: 'Video MP4 olarak “İndirilenler” klasörüne iner; tarayıcının indirme simgesinden “Klasörde göster” diyebilirsiniz.' },
   ],
 };
@@ -68,7 +68,7 @@ const howTo = {
   <div class="steps" style="margin:20px 0">
     <div class="step"><h3>Bağlantıyı kopyala</h3><p>Pinterest’te videoyu açın, “Paylaş → Bağlantıyı kopyala” deyin veya adres çubuğundaki URL’yi alın.</p></div>
     <div class="step"><h3>Tarayıcıda yapıştır</h3><p>Chrome, Microsoft Edge veya Firefox’ta bu sayfayı açıp bağlantıyı indirme kutusuna yapıştırın.</p></div>
-    <div class="step"><h3>Kaliteyi seç &amp; indir</h3><p>“İndir”e basın; listeden en yüksek (Orijinal) kaliteyi seçin.</p></div>
+    <div class="step"><h3>Kaliteyi seç &amp; indir</h3><p>“İndir”e basın; listeden dosyanın gerçek çözünürlük etiketini seçin.</p></div>
     <div class="step"><h3>İndirilenler’de bul</h3><p>Video, Dosya Gezgini’ndeki “İndirilenler” (Downloads) klasörüne MP4 olarak kaydedilir.</p></div>
   </div>
 
@@ -114,6 +114,15 @@ const howTo = {
     Aynı işlemi telefonda yapmak isterseniz <a href="/android-pinterest-video-indir/">Android</a> ve <a href="/iphone-pinterest-video-indir/">iPhone</a> rehberlerimiz, macOS için de <a href="/mac-pinterest-video-indir/">Mac rehberimiz</a> hazır. Dosya bilgisayara inmiyorsa <a href="/pinterest-video-indirilemiyor/">indirme sorunları</a>, yapıştırdığınız adres açılmıyorsa <a href="/pinterest-link-calismiyor/">bağlantı sorunları</a> sayfasına bakabilirsiniz.
   </p>
 
+  <h2>Edge ve Chrome’da İndirilenler</h2>
+  <p>
+    Edge’de indirme bitince adres çubuğunun sağında ok simgesi belirir.
+    <strong>Ctrl+J</strong> indirme listesini açar. Varsayılan klasör
+    <code>C:\Users\…\Downloads</code> altıdır. “Her indirmede nereye kaydedileceğini
+    sor” açıksa klasörü siz seçersiniz. Dosya .exe değildir; MP4’ü Clipchamp
+    veya Filmler ve TV açar. Kurulum dosyası indirmeniz gerekmez.
+  </p>
+
   <p class="disclaimer" role="note" style="margin-top:22px">
     <strong>Sorumlu kullanım — </strong>Yalnızca size ait olan veya indirme
     iznine sahip olduğunuz içerikleri kaydetmenizi öneririz. Pinterest ile resmi
@@ -137,7 +146,7 @@ const howTo = {
       { title: 'iPhone Pinterest Video İndir', href: '/iphone-pinterest-video-indir/', description: 'iOS’ta Safari ile indirme ve galeriye kaydetme.' },
       { title: 'Android Pinterest Video İndir', href: '/android-pinterest-video-indir/', description: 'Android telefonlarda galeriye doğrudan kaydetme.' },
       { title: 'Video Nasıl İndirilir', href: '/pinterest-video-nasil-indirilir/', description: 'Adım adım genel indirme rehberi.' },
-      { title: 'Pinterest 4K Video İndir', href: '/pinterest-4k-video-indir/', description: 'En yüksek çözünürlükte video indirin.' },
+      { title: 'Pinterest 4K Video İndir', href: '/pinterest-video-kalitesi/', description: 'En yüksek çözünürlükte video indirin.' },
       { title: 'Video İndir Galeriye', href: '/pinterest-video-galeriye-indir/', description: 'Videoyu telefon galerinize kaydetme rehberi.' },
       { title: 'Sıkça Sorulan Sorular', href: '/sss/', description: 'Pinterest indirme hakkında tüm yanıtlar.' }
     ]}

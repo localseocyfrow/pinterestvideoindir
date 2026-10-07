@@ -47,6 +47,11 @@ export const GET: APIRoute = async ({ url }) => {
       return new Response("Unsupported protocol.", { status: 400 });
     }
 
+    const host = parsed.hostname.toLowerCase();
+    if (host !== "pinimg.com" && !host.endsWith(".pinimg.com")) {
+      return new Response("Unsupported file host.", { status: 400 });
+    }
+
     const upstream = await fetch(parsed.toString(), {
       method: "GET",
       redirect: "follow",

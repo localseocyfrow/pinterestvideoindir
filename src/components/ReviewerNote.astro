@@ -1,0 +1,25 @@
+---
+// Credits the named editor. Do not invent a second reviewer.
+import { EDITOR } from '../data/site';
+---
+
+<aside class="reviewer-note" aria-label="Editoryal kontrol">
+  <p>
+    <strong>Editoryal kontrol:</strong>
+    <a href={EDITOR.path}>{EDITOR.name}</a> bu Türkçe rehberi aracın gerçek davranışıyla karşılaştırır.
+  </p>
+</aside>
+
+<style>
+  .reviewer-note {
+    margin-top: 28px;
+    padding: 14px 16px;
+    border: 1px dashed var(--line);
+    border-radius: 12px;
+    background: var(--bg-soft);
+    color: var(--muted);
+    font-size: 0.92rem;
+  }
+  .reviewer-note p { margin: 0; }
+  .reviewer-note a { color: inherit; text-decoration: underline; }
+</style>

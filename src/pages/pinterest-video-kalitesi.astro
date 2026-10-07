@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Faq from '../components/Faq.astro';
 import ToolCta from '../components/ToolCta.astro';
 import RelatedGuides from '../components/RelatedGuides.astro';
+import ReviewerNote from '../components/ReviewerNote.astro';
 import { QUALITY_FAQ } from '../data/faq';
 import {
   articleSchema,
@@ -28,7 +29,7 @@ const steps: Step[] = [
   },
   {
     name: 'En yüksek kaliteyi seçin',
-    text: 'Listelenen seçenekler arasından en yüksek (Orijinal) satırı seçin. Pin 4K yüklendiyse o dosya 4K’dır.',
+    text: 'Listede görünen etiketi seçin. Etiket dosyanın gerçek yüksekliğidir (çoğu pin 720p). Araç çözünürlük yükseltmez.',
   },
   {
     name: 'MP4 olarak kaydedin',
@@ -79,9 +80,7 @@ const steps: Step[] = [
         <div class="answer-box" style="margin:26px 0">
           <p class="q">Kısa cevap: Video neden düşük kaliteli iniyor?</p>
           <p class="mt-0" style="margin:0">
-            İndirilebilecek en yüksek kalite, videonun Pinterest’e <strong>yüklendiği çözünürlükle sınırlıdır</strong>. Kaynak 1080p
-            ise 4K indiremezsiniz; ayrıca bazı araçlar yalnızca düşük çözünürlüklü <strong>önizlemeyi</strong> yakalar. Çözüm: kaynağın en yüksek
-            sürümünü hedefleyen bir araç kullanıp listeden <strong>Orijinal</strong> (en yüksek) satırı seçmektir.
+            İndirilebilecek en yüksek kalite, videonun Pinterest’e <strong>yüklendiği çözünürlükle sınırlıdır</strong>. Çoğu pin 720p’dir. Araç listede dosyanın gerçek yüksekliğini yazar; 1080p veya 2160p ancak o dosya sayfada varsa görünür. Düşük bir önizlemeyi yüksek çözünürlük gibi etiketlemez.
           </p>
         </div>
       </div>
@@ -108,8 +107,8 @@ const steps: Step[] = [
           (upscale) yalnızca dosya boyutunu artırır, gerçek ayrıntı eklemez;
           görüntü yine yumuşak ve bulanık kalır. Gerçek yüksek kalite ancak
           videonun kaynağı yüksek çözünürlükteyse elde edilir. Bu yüzden aracımız
-          şişirilmiş sahte çözünürlükler yerine yalnızca <strong>kaynakta gerçekten var olan</strong> kaliteleri gösterir.
-          Çözünürlük seçenekleri hakkında daha fazla bilgi için <a href="/pinterest-4k-video-indir/">4K video indirme sayfamıza</a>, videoyu doğrudan MP4 olarak almak için <a href="/pinterest-mp4-indir/">MP4 indirme sayfamıza</a> bakın.
+          şişirilmiş sahte çözünürlükler yerine yalnızca <strong>sayfada gerçekten bulunan</strong> MP4 dosyasını gösterir.
+          Videoyu doğrudan MP4 olarak almak için <a href="/pinterest-mp4-indir/">MP4 indirme sayfamıza</a> bakın.
         </p>
 
         <h2>MP4 formatı kaliteyi düşürür mü?</h2>
@@ -124,9 +123,11 @@ const steps: Step[] = [
         <blockquote>
           <strong>İpucu — </strong>Aynı pini farklı araçlarda denediğinizde
           kalite değişiyorsa, sorun videoda değil araçtadır. Kaynağın en yüksek
-          sürümünü hedefleyen <a href="/">indirme aracımızı</a> kullanarak
-          videoyu her zaman en net haliyle kaydedebilirsiniz. Belirli bir çözünürlük arıyorsanız <a href="/pinterest-hd-video-indir/">Full HD indirme</a> sayfası işinizi görür. Video Pinterest’te bulanık görünmek yerine hiç oynamıyorsa sorun kalitede değildir; <a href="/pinterest-video-acilmiyor/">videoların açılmaması</a> rehberine bakın.
+          sürümünü hedefleyen <a href="/">indirme aracımızı</a> kullanın.
+          Video hiç oynamıyorsa sorun kalitede değildir; <a href="/pinterest-video-acilmiyor/">videoların açılmaması</a> rehberine bakın.
         </blockquote>
+
+        <ReviewerNote />
 
         <p class="disclaimer" role="note" style="margin-top:22px">
           <strong>Sorumlu kullanım — </strong>Yalnızca size ait olan veya
@@ -139,7 +140,7 @@ const steps: Step[] = [
 
   <ToolCta
     title="Videoyu en yüksek kalitede indirin"
-    text="Bağlantıyı yapıştırın, listeden Orijinal (en yüksek) kaliteyi seçin ve kaynaktaki netlikte MP4 olarak kaydedin."
+    text="Bağlantıyı yapıştırın. Listede dosyanın gerçek yüksekliği yazar; araç çözünürlük yükseltmez."
     href="/#arac"
     label="Pinterest Video İndir"
   />
@@ -147,13 +148,13 @@ const steps: Step[] = [
   <RelatedGuides
     title="İlgili araçlar ve rehberler"
     items={[
-      { title: 'Pinterest 4K Video İndir', href: '/pinterest-4k-video-indir/', description: 'En yüksek çözünürlükte Ultra HD MP4 indirin.' },
+      { title: 'Pinterest 4K Video İndir', href: '/pinterest-video-kalitesi/', description: 'En yüksek çözünürlükte Ultra HD MP4 indirin.' },
       { title: 'Pinterest MP4 İndir', href: '/pinterest-mp4-indir/', description: 'Videoyu doğrudan HD MP4 olarak kaydedin.' },
       { title: 'Pinterest Videosu İndirilemiyor', href: '/pinterest-video-indirilemiyor/', description: 'Video inmiyorsa nedenleri ve adım adım çözümü.' },
       { title: 'Pinterest Video İndir', href: '/', description: 'Ana sayfadaki HD MP4 indirme aracı.' },
       { title: 'Filigransız Video İndir', href: '/pinterest-filigransiz-video-indir/', description: 'Logosuz, temiz ve net video indirme.' },
       { title: 'Video Nasıl İndirilir', href: '/pinterest-video-nasil-indirilir/', description: 'Adım adım Pinterest video indirme rehberi.' },
-      { title: 'Nasıl Kullanılır', href: '/nasil-kullanilir/', description: 'Sitenin tüm araçları için genel rehber.' }
+      { title: 'Nasıl Kullanılır', href: '/pinterest-video-nasil-indirilir/', description: 'Sitenin tüm araçları için genel rehber.' }
     ]}
   />
 

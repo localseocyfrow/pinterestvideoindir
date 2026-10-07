@@ -9,7 +9,7 @@ import { articleSchema } from '../lib/schema';
 const path = '/pinterest-video-indirici-nedir/';
 const title = 'Pinterest Video İndirici Nedir? Tanımı, Türleri ve Sınırları';
 const description =
-  'Pinterest video indirici nedir, ne işe yarar ve hangi türleri var? Pinterest video indirme aracının tanımını, çalışma mantığını, artılarını ve sınırlarını açıklayan Türkçe rehber.';
+  'Pinterest video indirici nedir? Tanımı, türleri, nasıl çalıştığı ve sınırları. Türkçe rehber.';
 
 const crumbs = [
   { name: 'Ana Sayfa', href: '/' },
@@ -154,9 +154,19 @@ const types = [
     <li><strong>Yapıştırın:</strong> Bağlantıyı yukarıdaki kutuya yapıştırıp “İndir”e basın.</li>
     <li><strong>Kaliteyi seçin:</strong> Listelenen çözünürlüklerden birini seçip videoyu MP4 olarak kaydedin.</li>
   </ol>
+  <h2>Downloader ne demek, araç arka planda ne yapar?</h2>
   <p>
-    Arka planda hangi adımların işlediğini merak ediyorsanız, <a href="/pinterest-video-indirme-araci-nasil-calisir/">Pinterest video
-    indirme aracı nasıl çalışır?</a> sayfasında süreci adım adım açıklıyoruz.
+    “Downloader”, “indirici”nin İngilizcesidir. “Pinterest downloader” araması
+    da bu sayfadaki aracı anlatır: video, görsel, GIF ve karusel pinleri.
+  </p>
+  <p>
+    “İndir”e bastığınızda sırayla şunlar olur: bağlantının bir Pinterest pinine
+    ait olduğu kontrol edilir, herkese açık pin sayfası okunur, sayfada gerçekten
+    bulunan MP4 veya görsel adresleri listelenir, seçtiğiniz dosya tarayıcınıza
+    aktarılır. Dosya yeniden kodlanmaz. Etiket, dosyanın yüksekliğidir; çoğu
+    video 720p’dir. Gizli pano, silinmiş pin ve Pinterest girişi bu akışta yoktur.
+  </p>
+  <p>
     Cihaza özel anlatım için <a href="/pinterest-video-nasil-indirilir/">Pinterest video nasıl indirilir</a> rehberine bakabilirsiniz.
   </p>
 
@@ -207,16 +217,14 @@ const types = [
     slot="after"
     title="İlgili tanımlar, araçlar ve rehberler"
     items={[
-      { title: 'Pinterest Downloader Nedir?', href: '/pinterest-downloader-nedir/', description: 'İngilizce terimin karşılığı ve kapsadığı içerik türleri.' },
-      { title: 'İndirme mi, Kaydetme mi?', href: '/pinterest-video-indirme-vs-kaydetme/', description: 'İki işlemin farkı, tablo hâlinde karşılaştırma.' },
-      { title: 'İndirme Aracı Nasıl Çalışır?', href: '/pinterest-video-indirme-araci-nasil-calisir/', description: 'Bağlantıdan dosyaya giden yolun adım adım açıklaması.' },
-      { title: 'Pinterest Video İndir', href: '/', description: 'Ana sayfadaki HD MP4 indirme aracı.' },
-      { title: 'Pinterest MP4 İndir', href: '/pinterest-mp4-indir/', description: 'Videoyu dönüştürücüsüz, doğrudan MP4 olarak kaydedin.' },
-      { title: 'Pinterest HD Video İndir', href: '/pinterest-hd-video-indir/', description: 'Full HD 1080p kalitede net indirme.' },
+      { title: 'İndirme mi, Kaydetme mi?', href: '/pinterest-video-indirme-vs-kaydetme/', description: 'Panoya kaydetmekle dosyayı indirmenin farkı.' },
+      { title: 'Pinterest Video İndir', href: '/', description: 'Ana sayfadaki indirme kutusu.' },
+      { title: 'Pinterest MP4 İndir', href: '/pinterest-mp4-indir/', description: 'Videoyu dönüştürücüsüz MP4 olarak kaydedin.' },
+      { title: 'Video kalitesi', href: '/pinterest-video-kalitesi/', description: 'Etiket dosyanın gerçek yüksekliğidir; yükseltme yok.' },
       { title: 'Pinterest Video Nasıl İndirilir', href: '/pinterest-video-nasil-indirilir/', description: 'Cihaz cihaz, adım adım indirme rehberi.' },
-      { title: 'Video İndirmek Güvenli mi?', href: '/pinterest-video-indirmek-guvenli-mi/', description: 'Riskler, tuzaklar ve güvenli indirme kuralları.' },
-      { title: 'Telif Hakkı ve Pinterest İndirme', href: '/telif-hakki-ve-pinterest-indirme/', description: 'Hangi kullanım güvenli, hangisi riskli?' },
-      { title: 'Sıkça Sorulan Sorular', href: '/sss/', description: 'Tüm araçlar için toplu soru-cevap.' }
+      { title: 'Video İndirmek Güvenli mi?', href: '/pinterest-video-indirmek-guvenli-mi/', description: 'Riskler ve güvenli indirme.' },
+      { title: 'Telif Hakkı ve Pinterest İndirme', href: '/telif-hakki-ve-pinterest-indirme/', description: 'Hangi kullanım riskli?' },
+      { title: 'Sıkça Sorulan Sorular', href: '/sss/', description: 'Toplu soru-cevap.' }
     ]}
   />
 </ToolPageLayout>

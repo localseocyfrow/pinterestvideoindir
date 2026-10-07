@@ -1,19 +1,6 @@
 ---
-// Self-hosted Inter — replaces the render-blocking fonts.googleapis.com
-// stylesheet. Only the weights the design actually uses (400/600/700/800/900)
-// and only the subsets Turkish needs: `latin` covers ı/ç/ö/ü, `latin-ext`
-// covers ş/ğ/İ. Fontsource sets font-display: swap and registers the family
-// as 'Inter', so the existing font stack in src/data/site.ts keeps working.
-import '@fontsource/inter/latin-400.css';
-import '@fontsource/inter/latin-ext-400.css';
-import '@fontsource/inter/latin-600.css';
-import '@fontsource/inter/latin-ext-600.css';
-import '@fontsource/inter/latin-700.css';
-import '@fontsource/inter/latin-ext-700.css';
-import '@fontsource/inter/latin-800.css';
-import '@fontsource/inter/latin-ext-800.css';
-import '@fontsource/inter/latin-900.css';
-import '@fontsource/inter/latin-ext-900.css';
+import latinWoff from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url';
+import latinExtWoff from '@fontsource-variable/inter/files/inter-latin-ext-wght-normal.woff2?url';
 import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
@@ -51,6 +38,12 @@ const jsonLd = graph(organizationSchema(), websiteSchema(), ...schemas);
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preload" href={latinWoff} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={latinExtWoff} as="font" type="font/woff2" crossorigin />
+    <style is:inline set:html={`
+      @font-face{font-family:Inter;font-style:normal;font-weight:400 900;font-display:swap;src:url(${latinWoff}) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+      @font-face{font-family:Inter;font-style:normal;font-weight:400 900;font-display:swap;src:url(${latinExtWoff}) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+    `} />
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
@@ -61,6 +54,7 @@ const jsonLd = graph(organizationSchema(), websiteSchema(), ...schemas);
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
 
     <!-- Open Graph -->
     <meta property="og:type" content={ogType} />

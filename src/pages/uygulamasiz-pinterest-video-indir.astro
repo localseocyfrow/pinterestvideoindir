@@ -1,0 +1,105 @@
+---
+import ToolPageLayout from '../layouts/ToolPageLayout.astro';
+import ShortAnswerBox from '../components/ShortAnswerBox.astro';
+import RelatedGuides from '../components/RelatedGuides.astro';
+import ToolCta from '../components/ToolCta.astro';
+import type { QA } from '../data/faq';
+
+const path = '/uygulamasiz-pinterest-video-indir/';
+const title = 'Uygulamasız Pinterest Video İndir – APK Gerekmez';
+const description =
+  'Pinterest videosunu uygulama veya APK kurmadan indirin. Tarayıcıda bağlantıyı yapıştırın; Play Store veya profil izni gerekmez.';
+
+const crumbs = [
+  { name: 'Ana Sayfa', href: '/' },
+  { name: 'Uygulamasız İndir', href: path },
+];
+
+const faq: QA[] = [
+  {
+    q: 'Pinterest video indirmek için APK gerekir mi?',
+    a: 'Hayır. Bu site tarayıcıda çalışır. APK, Play Store uygulaması veya tarayıcı eklentisi kurmanız gerekmez.',
+  },
+  {
+    q: 'Neden mağaza dışı APK riskli?',
+    a: 'Mağaza dışından inen kurulum dosyaları depolama izni ister ve reklam veya istenmeyen yazılım taşıyabilir. Tarayıcı aracı telefona kalıcı bir program yazmaz.',
+  },
+  {
+    q: 'iPhone’da da uygulama şart mı?',
+    a: 'Hayır. Safari yeterlidir. İnen dosya önce Dosyalar uygulamasına yazılır; Fotoğraflar’a aktarmak iOS’un kendi paylaş menüsüdür, ayrı bir indirici uygulaması değildir.',
+  },
+];
+
+const howTo = {
+  name: 'Uygulama kurmadan Pinterest videosu indirme',
+  description: 'APK veya ek uygulama olmadan pin bağlantısını tarayıcıda indirin.',
+  steps: [
+    { name: 'Mağaza dışı dosya kurmayın', text: 'APK veya “Pinterest video indir” adlı uygulamayı yüklemeyin.' },
+    { name: 'Bağlantıyı kopyalayın', text: 'Pinterest’te Paylaş → Bağlantıyı kopyala deyin.' },
+    { name: 'Tarayıcıda yapıştırın', text: 'Chrome, Safari, Edge veya Samsung Internet’te bu sayfayı açıp bağlantıyı yapıştırın.' },
+    { name: 'İndir’e basın', text: 'Dosya tarayıcının indirme klasörüne yazılır. Ek izin istenmez.' },
+  ],
+};
+---
+
+<ToolPageLayout
+  title={title}
+  description={description}
+  path={path}
+  eyebrow="APK yok · Tarayıcı"
+  h1="Uygulamasız Pinterest Video İndir"
+  lead="Pinterest videosunu indirmek için APK, Play Store uygulaması veya eklenti gerekmez. Telefon veya bilgisayarın tarayıcısı yeterlidir."
+  kind="video"
+  placeholder="Pinterest video bağlantısını yapıştırın…"
+  crumbs={crumbs}
+  faq={faq}
+  faqTitle="Uygulamasız indirme — SSS"
+  howTo={howTo}
+>
+  <ShortAnswerBox question="Pinterest videosu uygulama kurmadan nasıl indirilir?">
+    <p class="mt-0" style="margin:0">
+      Pinterest’te <strong>Paylaş → Bağlantıyı kopyala</strong> deyin. Bu sayfayı
+      tarayıcıda açıp bağlantıyı yapıştırın ve <strong>İndir</strong>’e basın.
+      Kurulum, hesap açma ve depolama izni yoktur.
+    </p>
+  </ShortAnswerBox>
+
+  <h2>APK aramak neden gerekmez?</h2>
+  <p>
+    “Pinterest video indir APK” aramaları üçüncü taraf kurulum dosyalarına çıkar.
+    Bu dosyalar telefona kalıcı yazılır, bildirim ve depolama izni ister, güncelleme
+    beklemez. Buradaki araç bir sayfadır: sekmeyi kapatınca geride program kalmaz.
+    Android’de klasör ayrıntısı
+    <a href="/android-pinterest-video-indir/">Android rehberinde</a>, iPhone’da
+    Dosyalar adımı <a href="/iphone-pinterest-video-indir/">iPhone rehberinde</a>.
+  </p>
+
+  <h2>Hangi tarayıcılar</h2>
+  <ul>
+    <li><strong>Android:</strong> Chrome veya Samsung Internet. İndirme bildirimine dokununca dosya açılır.</li>
+    <li><strong>iPhone:</strong> Safari. Dosya Fotoğraflar’a kendiliğinden düşmez; Dosyalar → Paylaş → Videoyu Kaydet.</li>
+    <li><strong>Bilgisayar:</strong> Edge, Chrome, Firefox veya Safari. Dosya İndirilenler klasöründedir.</li>
+  </ul>
+
+  <p>
+    Ses dosyası (MP3) bu araçtan çıkmaz. Pinterest videosunun sesini ayırmak için
+    ayrı bir dönüştürücü gerekir; bu sitede böyle bir adım yoktur.
+  </p>
+
+  <ToolCta
+    slot="after"
+    title="Tarayıcıdan indirin"
+    text="APK aramayın. Bağlantıyı yapıştırıp İndir’e basın."
+    href="/#arac"
+    label="Uygulamasız indir"
+  />
+
+  <RelatedGuides
+    slot="after"
+    items={[
+      { title: 'Android’de indir', href: '/android-pinterest-video-indir/', description: 'Galeri ve İndirilenler klasörü.' },
+      { title: 'iPhone’da indir', href: '/iphone-pinterest-video-indir/', description: 'Safari ve Dosyalar adımları.' },
+      { title: 'Video nasıl indirilir', href: '/pinterest-video-nasil-indirilir/', description: 'Genel adım adım rehber.' },
+    ]}
+  />
+</ToolPageLayout>

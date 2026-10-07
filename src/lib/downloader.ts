@@ -13,6 +13,19 @@ export interface DownloadResult {
   items: DownloadItem[];
 }
 
+export class DownloadError extends Error {
+  status: number;
+
+  constructor(message: string, status = 400) {
+    super(message);
+    this.name = "DownloadError";
+    this.status = status;
+  }
+}
+
+const NOT_FOUND =
+  "Bu pin bulunamadı veya herkese açık değil. Bağlantıyı kontrol edip başka bir pin deneyin.";
+
 const COMMON_HEADERS = {
   "user-agent":
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
@@ -34,7 +47,7 @@ function decodeEscaped(raw: string): string {
       return decodeURIComponent(unescaped);
     }
   } catch {
-    // Keep original string if URI decode fails.
+    // Keep the original string if URI decoding fails.
   }
 
   return unescaped;
@@ -44,136 +57,175 @@ function toAbsolute(input: string): URL {
   try {
     return new URL(input.trim());
   } catch {
-    throw new Error("Lütfen geçerli bir bağlantı girin.");
+    throw new DownloadError("Lütfen geçerli bir bağlantı girin.");
   }
 }
 
 function assertPinterestUrl(url: URL): void {
   const host = url.hostname.toLowerCase();
   if (!host.includes("pinterest.") && !host.includes("pin.it")) {
-    throw new Error("Desteklenmeyen bağlantı. Lütfen geçerli bir Pinterest pin bağlantısı yapıştırın.");
+    throw new DownloadError(
+      "Desteklenmeyen bağlantı. Lütfen geçerli bir Pinterest pin bağlantısı yapıştırın.",
+    );
   }
-}
-
-async function fetchHtml(url: string): Promise<string> {
-  const response = await fetch(url, {
-    method: "GET",
-    headers: COMMON_HEADERS,
-    redirect: "follow",
-  });
-  const html = await response.text();
-  if (!html || html.trim().length === 0) {
-    throw new Error("Bağlantıdaki içerik okunamadı.");
-  }
-  return html;
 }
 
 function uniqueItems(items: DownloadItem[]): DownloadItem[] {
   const seen = new Set<string>();
   return items.filter((item) => {
-    if (seen.has(item.url)) return false;
-    seen.add(item.url);
+    const key = item.url.split("?")[0];
+    if (seen.has(key)) return false;
+    seen.add(key);
     return true;
   });
 }
 
-function collectPatternMatches(
-  html: string,
-  pattern: RegExp,
-  itemType: MediaType,
-  quality?: string,
-): DownloadItem[] {
-  const items: DownloadItem[] = [];
-  for (const match of html.matchAll(pattern)) {
-    if (match[1]) {
-      items.push({ type: itemType, quality, url: decodeEscaped(match[1]) });
-    }
+function isPinimg(url: string): boolean {
+  try {
+    const host = new URL(url).hostname.toLowerCase();
+    return host === "pinimg.com" || host.endsWith(".pinimg.com");
+  } catch {
+    return false;
   }
-  return items;
 }
 
-async function parsePinterestMedia(normalizedUrl: string): Promise<DownloadItem[]> {
-  const html = await fetchHtml(normalizedUrl);
+/** Static chrome, avatars and tiny thumbs — the gradient icon lives here. */
+function isUiAsset(url: string): boolean {
+  const path = url.toLowerCase();
+  if (path.includes("s.pinimg.com")) return true;
+  if (/\/(?:30x30|45x45|60x60|75x75|136x136|150x150|170x|200x|216x|222x|236x)\//.test(path)) {
+    return true;
+  }
+  return /avatar|profile_image|default_|placeholder|gradient|empty-state|user_icon/.test(path);
+}
+
+function resolutionLabel(url: string, width?: number, height?: number): string {
+  const fromPath = url.match(/\/(\d{3,4})p(?:\/|_|\.)/i)?.[1]
+    ?? url.match(/[_/-](\d{3,4})w(?:\/|_|\.)/i)?.[1];
+  const px = Number(fromPath) || height || width || 0;
+  if (px >= 200) return `${px}p`;
+  return "MP4";
+}
+
+function pushVideo(
+  items: DownloadItem[],
+  rawUrl: string,
+  width?: number,
+  height?: number,
+): void {
+  const url = decodeEscaped(rawUrl);
+  if (!url.includes(".mp4") || !isPinimg(url) || isUiAsset(url)) return;
+  items.push({ type: "video", url, quality: resolutionLabel(url, width, height) });
+}
+
+function pushImage(items: DownloadItem[], rawUrl: string, quality = "Görsel"): void {
+  const url = decodeEscaped(rawUrl);
+  if (!isPinimg(url) || isUiAsset(url)) return;
+  if (/\.(mp4|m3u8)(\?|$)/i.test(url)) return;
+  const isGif = url.toLowerCase().includes(".gif");
+  items.push({ type: "image", url, quality: isGif ? "GIF" : quality });
+}
+
+/**
+ * Pull only the media Pinterest actually embeds for this pin.
+ * Labels come from the file (720p, 1080p, …). Nothing is called 4K
+ * unless the URL or dimensions say so, and low-res files are never
+ * relabelled "Orijinal".
+ */
+export function parsePinterestHtml(html: string): DownloadItem[] {
+  const normalized = html.replace(/\\\//g, "/");
   const items: DownloadItem[] = [];
 
-  const imagePatterns = [
-    /"images":\{"url":"(.*?)"/g,
-    /"orig":\{"url":"(.*?)"/g,
-    /"image_url":"(.*?)"/g,
-    /"image_large_url":"(.*?)"/g,
-    /"url":"(https:\\\/\\\/i\.pinimg\.com[^"]+)"/g,
-  ];
-  for (const pattern of imagePatterns) {
-    items.push(...collectPatternMatches(html, pattern, "image"));
+  const videoList = normalized.match(/"video_list"\s*:\s*\{[\s\S]{0,20000}?\n?\s*\}\s*,/);
+  const videoScope = videoList?.[0] ?? "";
+  if (videoScope) {
+    for (const block of videoScope.matchAll(/\{[^{}]{0,800}\}/g)) {
+      const chunk = block[0];
+      const url = chunk.match(/"url"\s*:\s*"([^"]+\.mp4[^"]*)"/)?.[1];
+      if (!url) continue;
+      const width = Number(chunk.match(/"width"\s*:\s*(\d+)/)?.[1] ?? 0);
+      const height = Number(chunk.match(/"height"\s*:\s*(\d+)/)?.[1] ?? 0);
+      pushVideo(items, url, width, height);
+    }
   }
 
-  for (const match of html.matchAll(/"contentUrl":\s*"(.*?)"/g)) {
-    if (match[1]) items.push({ type: "video", quality: "Original", url: decodeEscaped(match[1]) });
+  if (!items.some((item) => item.type === "video")) {
+    for (const match of normalized.matchAll(/https:\/\/(?:v\d*\.)?pinimg\.com\/[^"'\s<>]+\.mp4/g)) {
+      pushVideo(items, match[0]);
+    }
   }
 
-  const gif = html.match(/"embed":\s*\{\s*"src":\s*"(.*?)"/)?.[1];
-  if (gif) items.push({ type: "image", quality: "GIF", url: decodeEscaped(gif) });
-
-  const ogVideo = html.match(/<meta\s+property="og:video"\s+content="([^"]+)"/i)?.[1];
-  const ogImage = html.match(/<meta\s+property="og:image"\s+content="([^"]+)"/i)?.[1];
-  if (ogVideo) items.push({ type: "video", quality: "Standard", url: decodeEscaped(ogVideo) });
-  if (ogImage) items.push({ type: "image", url: decodeEscaped(ogImage) });
-
-  // Fallback: the logged-out / lightweight pin page exposes media as plain CDN
-  // URLs (CSS backgrounds, inline JSON with escaped slashes) rather than the
-  // structured keys above. Normalise escaped slashes, then pick any pin video
-  // (v.pinimg.com/....mp4) and the main full-resolution image
-  // (i.pinimg.com/originals/...). Videos are collected first so they preview first.
-  const normalized = html.replace(/\\\//g, "/");
-
-  const videoFallback = /https:\/\/v\.pinimg\.com\/[A-Za-z0-9/._-]+\.mp4/g;
-  for (const match of normalized.matchAll(videoFallback)) {
-    items.push({ type: "video", quality: "Video", url: match[0] });
+  const carouselAt = normalized.indexOf('"carousel_data"');
+  const carousel = carouselAt >= 0 ? normalized.slice(carouselAt, carouselAt + 30000) : "";
+  const imageScope = carousel || normalized;
+  const imagePattern = /"(?:orig|736x|originals)"\s*:\s*\{[^{}]{0,400}?"url"\s*:\s*"([^"]+)"/g;
+  for (const match of imageScope.matchAll(imagePattern)) {
+    const width = Number(match[0].match(/"width"\s*:\s*(\d+)/)?.[1] ?? 0);
+    if (width > 0 && width < 400) continue;
+    pushImage(items, match[1], "Görsel");
   }
 
-  const imageFallback =
-    /https:\/\/i\.pinimg\.com\/originals\/[A-Za-z0-9/._-]+\.(?:jpg|jpeg|png|webp|gif)/g;
-  for (const match of normalized.matchAll(imageFallback)) {
-    const isGif = match[0].toLowerCase().endsWith(".gif");
-    items.push({ type: "image", quality: isGif ? "GIF" : "Orijinal", url: match[0] });
+  const gif = normalized.match(/"embed"\s*:\s*\{\s*"src"\s*:\s*"([^"]+)"/)?.[1];
+  if (gif) pushImage(items, gif, "GIF");
+
+  const ogImage = normalized.match(/<meta\s+property="og:image"\s+content="([^"]+)"/i)?.[1];
+  if (ogImage && !items.some((item) => item.type === "image")) {
+    pushImage(items, ogImage, "Görsel");
   }
 
   return uniqueItems(items);
 }
 
-async function resolvePinterestUrl(inputUrl: string): Promise<string> {
+function looksMissing(html: string, finalUrl: string): boolean {
+  if (!/\/pin\//.test(finalUrl)) return true;
+  const missing = /couldn.?t find that page|sorry! we couldn|sayfa bulunamad|pin bulunamadı|this page isn.?t available/i.test(html);
+  const hasMedia = /"video_list"|og:video|og:image|"carousel_data"/i.test(html);
+  return missing && !hasMedia;
+}
+
+async function resolvePinterestUrl(inputUrl: string): Promise<{ url: string; html: string }> {
   const response = await fetch(inputUrl, {
     method: "GET",
     headers: COMMON_HEADERS,
     redirect: "follow",
   }).catch(() => null);
 
-  const finalUrl = response?.url ?? inputUrl;
-  const html = response ? await response.text().catch(() => "") : "";
-
-  if (finalUrl.includes("pinterest.") && finalUrl.includes("/pin/")) {
-    return finalUrl;
+  if (!response) {
+    throw new DownloadError("Bağlantıdaki içerik okunamadı. Biraz sonra tekrar deneyin.", 502);
   }
+
+  const html = await response.text().catch(() => "");
+  const finalUrl = response.url || inputUrl;
+
+  if (response.status === 404 || looksMissing(html, finalUrl)) {
+    throw new DownloadError(NOT_FOUND, 404);
+  }
+
+  if (!response.ok || !html.trim()) {
+    throw new DownloadError("Bağlantıdaki içerik okunamadı. Biraz sonra tekrar deneyin.", 502);
+  }
+
+  if (finalUrl.includes("/pin/")) return { url: finalUrl, html };
 
   const canonical = html.match(
     /<link[^>]+rel=["']canonical["'][^>]+href=["']([^"']+)["']/i,
   )?.[1];
-  if (canonical && canonical.includes("pinterest.") && canonical.includes("/pin/")) {
-    return canonical;
+  if (canonical && canonical.includes("/pin/")) {
+    return { url: canonical, html };
   }
 
-  return finalUrl;
+  throw new DownloadError(NOT_FOUND, 404);
 }
 
 export async function resolveDownload(inputUrl: string): Promise<DownloadResult> {
   const initialUrl = toAbsolute(inputUrl);
   assertPinterestUrl(initialUrl);
 
-  const normalizedUrl = await resolvePinterestUrl(initialUrl.toString());
-  const items = await parsePinterestMedia(normalizedUrl);
+  const { url: normalizedUrl, html } = await resolvePinterestUrl(initialUrl.toString());
+  const items = parsePinterestHtml(html);
 
   if (items.length === 0) {
-    throw new Error("İndirilebilir medya bulunamadı. Herkese açık başka bir pin bağlantısı deneyin.");
+    throw new DownloadError(NOT_FOUND, 404);
   }
 
   return {

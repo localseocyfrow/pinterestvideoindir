@@ -7,7 +7,6 @@ import SystemCompatibility from '../components/SystemCompatibility.astro';
 import AboutSection from '../components/AboutSection.astro';
 import Faq from '../components/Faq.astro';
 import VideoTutorial from '../components/VideoTutorial.astro';
-import { SITE } from '../data/site';
 import { HOME_FAQ } from '../data/faq';
 import { HOME_TUTORIALS } from '../data/videos';
 import {
@@ -38,7 +37,7 @@ const steps: Step[] = [
   },
   {
     name: 'Kaliteyi seçip kaydedin',
-    text: 'HD, Full HD veya standart kaliteyi seçin ve videoyu cihazınıza (galeri veya Dosyalar) kaydedin.',
+    text: 'Listeden dosyanın gerçek çözünürlük etiketini seçin ve videoyu cihazınıza kaydedin.',
   },
 ];
 
@@ -75,14 +74,6 @@ const features = [
   },
 ];
 
-const compareRows = [
-  ['HD indirme', 'Kaynak kalite', 'Araca göre değişir'],
-  ['Filigransız video', 'Hedefimiz bu', 'Araca göre değişir'],
-  ['Ücret', 'Ücretsiz', 'Bazılarında limit veya ücret'],
-  ['Kayıt / uygulama', 'Gerekmez', 'Bazılarında istenir'],
-  ['Reklam', 'Reklamsız deneyim', 'Çoğu sitede reklam var'],
-  ['GIF & görsel desteği', 'Var', 'Araca göre değişir'],
-];
 ---
 
 <BaseLayout
@@ -113,7 +104,7 @@ const compareRows = [
     <div class="container">
       <div class="hero-inner">
         <span class="eyebrow">Ücretsiz · Filigransız · HD</span>
-        <h1>Pinterest Video İndir</h1>
+        <h1>Pinterest Video İndir – Filigransız ve Ücretsiz Pinterest Video İndirici</h1>
         <p class="lead">
           Filigransız HD MP4. Bağlantıyı yapıştırın, <strong>İndir</strong>’e basın — kayıt yok.
         </p>
@@ -239,38 +230,6 @@ const compareRows = [
             </article>
           ))
         }
-      </div>
-    </div>
-  </section>
-
-  <!-- Comparison -->
-  <section class="section section-soft">
-    <div class="container" style="max-width:820px">
-      <div class="center" style="margin-bottom:36px">
-        <span class="eyebrow">Karşılaştırma</span>
-        <h2>Diğer araçlardan farkımız</h2>
-      </div>
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr>
-              <th style="text-align:right">Özellik</th>
-              <th>{SITE.name}</th>
-              <th>Diğer araçlar</th>
-            </tr>
-          </thead>
-          <tbody>
-            {
-              compareRows.map((r) => (
-                <tr>
-                  <td style="font-weight:600;color:var(--ink)">{r[0]}</td>
-                  <td style="color:var(--ok);font-weight:700">{r[1]}</td>
-                  <td>{r[2]}</td>
-                </tr>
-              ))
-            }
-          </tbody>
-        </table>
       </div>
     </div>
   </section>
